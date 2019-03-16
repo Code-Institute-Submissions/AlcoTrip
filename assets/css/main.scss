@@ -2,10 +2,17 @@
 
 //______________________________________________________________________________ CLASSES and VARIABLES
 $primary-color: #2E4A63;
+$secondary-color: #ffb400;
+$white-color: #ffffff;
+
 %basic_margin {
     margin: auto;
     width: 80%;
 }
+
+%shadow_effect {
+    box-shadow: 0px 4px 0px #303030!important;
+} 
 
 
 //______________________________________________________________________________ BASIC CSS STYLE
@@ -91,6 +98,7 @@ a:hover {
 
 .form-control {
     margin-bottom: 30px;
+        @extend %shadow_effect;
 }
 
 //______________________________________________________________________________ TOWN AND POSTCODE FIELDS
@@ -126,6 +134,7 @@ input[type="checkbox"] {
 
 .btn {
     float: right;
+    @extend %shadow_effect;
 }
 
 .btn-primary {
@@ -136,8 +145,8 @@ input[type="checkbox"] {
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #ffb400!important;
-    border-color: #ffb400;
+    background-color: $secondary-color!important;
+    border-color: $secondary-color;
 }
 
 //______________________________________________________________________________ FOOTER - MAIN PAGE
