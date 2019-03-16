@@ -200,15 +200,25 @@ a:hover {
 }
 
 .btn-primary:hover {
-    color: #fff;
+    color: #000;
     background-color: $secondary-color!important;
     border-color: $secondary-color;
 }
 
 //______________________________________________________________________________ GEO LOCALIZATION + BUTTON
-.geoloc {
-    margin-top: 20px;
-    margin-bottom: 20px;
+.loc_addres {
+
+}
+
+.geoloc_button{
+    color: #fff;
+    background-color: $primary-color;
+    border-color: $primary-font;
+}
+
+.geoloc_button:hover {
+    color: #000;
+    background-color: $secondary-color!important;
 }
 
 //______________________________________________________________________________ SEARCH OPTIONS - MAIN PAGE
@@ -230,7 +240,6 @@ input[type="checkbox"] {
 
 //______________________________________________________________________________ FOOTER - MAIN PAGE
 footer {
-    min-height: 40px;
     margin-bottom: 40px;
     text-align: center;
 }

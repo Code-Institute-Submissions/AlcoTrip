@@ -200,13 +200,18 @@ a:hover {
   border-color: #fff; }
 
 .btn-primary:hover {
-  color: #fff;
+  color: #000;
   background-color: #ffb400 !important;
   border-color: #ffb400; }
 
-.geoloc {
-  margin-top: 20px;
-  margin-bottom: 20px; }
+.geoloc_button {
+  color: #fff;
+  background-color: #2E4A63;
+  border-color: #ffffff; }
+
+.geoloc_button:hover {
+  color: #000;
+  background-color: #ffb400 !important; }
 
 .search_options {
   vertical-align: middle; }
@@ -221,7 +226,6 @@ input[type="checkbox"] {
   width: 100%; }
 
 footer {
-  min-height: 40px;
   margin-bottom: 40px;
   text-align: center; }
 
