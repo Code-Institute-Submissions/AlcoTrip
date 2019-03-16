@@ -22,6 +22,7 @@
   font-weight: 100; }
 
 .p-text-light1 {
+  color: #fff;
   font-family: Roboto, san-serif;
   font-size: 14px;
   font-weight: 100; }
@@ -73,7 +74,9 @@ body {
   top: 0;
   right: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  color: #fff;
+  background-color: #2E4A62; }
 
 h1 {
   font-size: 2.2em; }
@@ -96,13 +99,20 @@ p {
 .hidden {
   visibility: hidden; }
 
+a {
+  color: #fff; }
+
+a:hover {
+  color: #ffb400;
+  text-decoration: none; }
+
 .main_logo img {
+  margin-top: 20px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   max-height: 80%;
-  max-width: 80%;
-  background-color: #cddfcd; }
+  max-width: 80%; }
 
 footer {
   margin-left: auto;
@@ -110,6 +120,7 @@ footer {
   text-align: center; }
 
 .copyrights {
-  border-top: 1px solid #e1e4e8 !important; }
+  border-top: 1px solid #e1e4e8 !important;
+  margin-top: 10px; }
 
 /*# sourceMappingURL=main.css.map */

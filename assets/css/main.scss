@@ -9,6 +9,8 @@ body {
     right: 0;
     width: 100%;
     height: 100%;
+    color: #fff;
+    background-color: #2E4A62;
 }
 
 h1 {
@@ -40,14 +42,23 @@ p {
     visibility: hidden;
 }
 
+a {
+    color: #fff;
+}
+
+a:hover {
+    color: #ffb400;
+    text-decoration: none;
+}
+
 .main_logo {
     img {
+        margin-top: 20px;
         display: block;
         margin-left: auto;
         margin-right: auto;
         max-height: 80%;
         max-width: 80%;
-        background-color: #cddfcd;
     }
 }
 
@@ -59,5 +70,6 @@ footer {
 
 
 .copyrights {
-    border-top: 1px solid #e1e4e8!important
+    border-top: 1px solid #e1e4e8!important;
+    margin-top: 10px;
 }
