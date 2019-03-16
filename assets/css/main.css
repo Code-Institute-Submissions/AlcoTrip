@@ -107,6 +107,15 @@ a:hover {
   color: #ffb400;
   text-decoration: none; }
 
+.separate_line {
+  background-color: #fff;
+  width: 80%;
+  height: 1px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto; }
+
 .main_logo img {
   margin-top: 50px;
   display: block;
@@ -121,15 +130,22 @@ a:hover {
   margin-top: 20px;
   width: 80%; }
 
-.main_form {
-  height: 400px; }
-
 .form-control {
   margin-bottom: 30px; }
 
 .town_postcode {
   margin: auto;
   width: 80%; }
+
+.geoloc {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%; }
+
+.geoloc_button {
+  float: left; }
 
 .search_options {
   margin: auto;

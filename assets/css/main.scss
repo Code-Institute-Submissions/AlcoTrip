@@ -52,6 +52,17 @@ a:hover {
     color: #ffb400;
     text-decoration: none;
 }
+
+.separate_line {
+    background-color: #fff;
+    width: 80%;
+    height: 1px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 //______________________________________________________________________________ MAIN LOGOTYPE AND TEXT
 .main_logo {
     img {
@@ -70,20 +81,33 @@ a:hover {
     margin-top: 20px;
     width: 80%;
 }
+
 //______________________________________________________________________________ MAIN FORM AND ALL CRITERIA FIELDS
 .main_form {
-    height: 400px;
 }
 
 .form-control {
     margin-bottom: 30px;
 }
+
 //______________________________________________________________________________ TOWN AND POSTCODE FIELDS
 .town_postcode {
     margin: auto;
     width: 80%;
 }
+
 //______________________________________________________________________________ GEO LOCALIZATION + BUTTON
+.geoloc {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.geoloc_button {
+    float: left;
+}
 
 
 //______________________________________________________________________________ SEARCH OPTIONS - MAIN PAGE
@@ -93,10 +117,11 @@ a:hover {
 }
 
 input[type="checkbox"] {
-  margin: 20px 0 0;
+    margin: 20px 0 0;
 }
+
 //______________________________________________________________________________ BUTTON PRIMART - MAIN PAGE
-.btn{
+.btn {
     float: right;
 }
 
@@ -111,6 +136,7 @@ input[type="checkbox"] {
     background-color: #ffb400!important;
     border-color: #ffb400;
 }
+
 //______________________________________________________________________________ FOOTER - MAIN PAGE
 footer {
     height: 20px;
