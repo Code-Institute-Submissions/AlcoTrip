@@ -81,51 +81,72 @@ a:hover {
 }
 
 
-//______________________________________________________________________________ LOADING PAGE ICON
+//______________________________________________________________________________ PAGE LOADER
 #loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 150px;
-  height: 150px;
-  margin: -75px 0 0 -75px;
-  border: 16px solid $primary-font;
-  border-radius: 50%;
-  border-top: 16px solid $secondary-color;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid $primary-font;
+    border-radius: 50%;
+    border-top: 16px solid $secondary-color;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
 }
 
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Add animation to "page content" */
+
 .animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
 }
 
 @-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 } 
-  to { bottom:0px; opacity:1 }
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
 }
 
-@keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
-  to{ bottom:0; opacity:1 }
+@keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
 }
 
 //______________________________________________________________________________ MAIN LOGOTYPE AND TEXT
@@ -147,7 +168,6 @@ a:hover {
 }
 
 //______________________________________________________________________________ MAIN FORM AND ALL CRITERIA FIELDS
-
 .lead-edit {
     margin-bottom: 10px;
 }
@@ -168,7 +188,6 @@ a:hover {
 }
 
 .btn {
-    margin-top: 20px;
     float: left;
     width: 150px;
     @extend %shadow_effect;
@@ -190,16 +209,17 @@ a:hover {
 .geoloc {
     margin-top: 20px;
     margin-bottom: 20px;
-    @extend %basic_margin;
 }
 
 //______________________________________________________________________________ SEARCH OPTIONS - MAIN PAGE
 .search_options {
     @extend %basic_margin;
+    vertical-align: middle;
 }
 
 input[type="checkbox"] {
     margin: 20px 0 0;
+    vertical-align: 4px;
 }
 
 .btn_wide {

@@ -26,92 +26,102 @@
 </head>
 
 <body onload="myFunction()">
-    
+
     <div id="loader"></div>
     <div style="display:none;" id="page_loader" class="animate-bottom">
-        
-        
-    <!-- header with logotype -->
-    <header class="container">
-        <div class="row">
-            <a href="index.html" class="main_logo"><img src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
-            <div class="main-title">
-                <h1 class="hidden">Alco Trip</h1>
-                <p class="lead ">
-                    Find all Pubs, Bars, Disco Clubs near You! It's so simple, isn't it ?
-                </p>
-                <p class="lead p-text-light1">Enter the name or zip code of the city you want to visit. Or simply click on 'Find Me' button to locate yourself.
-                    <br> Choose what you're looking for today and let's start your trip!
-                </p>
-            </div>
-            <!-- white separate line -->
-            <div class="separate_line"></div>
-        </div>
-    </header>
-    <!-- section with input boxes and check boxes to retrive data for google maps-->
-    <div class="container">
-        <div class="row">
-            <form>
-                <!-- town adn postcode fields -->
-                <div class="town_postcode">
-                    <div class="form-group">
-                        <label class="lead lead-edit bold1" for="mainbox_city">Town:</label>
-                        <input type="text" class="form-control" id="mainbox_city" placeholder="LONDON">
-                    </div>
-                    <div class="form-group">
-                        <label class="lead lead-edit bold1" for="mainbox_postcode">Post Code:</label>
-                        <input type="text" class="form-control" id="mainbox_postcode" placeholder="WC2N 5DU">
-                    </div>
-                </div>
-                <!-- geo-localizator -->
-                <div class="geoloc">
-                    <button type="submit" class="btn btn-primary geoloc_button">Find Me</button>
-                    <!-- show geo loc address-->
-                    <h3 class="p-text-light1">Your address: </h3>
-                </div>
-                <!-- white separate line -->
-                <div class="separate_line"></div>
-                <!-- search options CLUBS PUBS BARS -->
-                <div class="search_options">
-                    <p class="lead bold1">What are you looking for tonight?</p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="clubs_check">
-                        <label class="form-check-label p-text-light1" for="clubs_check">Clubs</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="pubs_check">
-                        <label class="form-check-label p-text-light1" for="pubs_check1">Pubs</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="bars_check">
-                        <label class="form-check-label p-text-light1" for="ars_check">Bars</label>
-                    </div>
-                </div>
-                <!-- submit button -->
-                <div class="formsubmition">
-                    <button type="submit" class="btn btn-primary btn_wide">Start Trip</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <footer>
-        <div class="contianer">
+
+
+        <!-- header with logotype -->
+        <header class="container">
             <div class="row">
+                <a href="index.html" class="main_logo"><img src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
+                <div class="main-title">
+                    <h1 class="hidden">Alco Trip</h1>
+                    <p class="lead ">
+                        Find all Pubs, Bars, Disco Clubs near You! It's so simple, isn't it ?
+                    </p>
+                    <p class="lead p-text-light1">Enter the name or zip code of the city you want to visit. Or simply click on 'Find Me' button to locate yourself.
+                        <br> Choose what you're looking for today and let's start your trip!
+                    </p>
+                </div>
                 <!-- white separate line -->
                 <div class="separate_line"></div>
-                <!-- copyright area -->
-                <div class="col-md-12">
-                    <div class="copyrights">
-                        <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a> - All Rights Reserved</p>
-                    </div>
+            </div>
+        </header>
+        <!-- section with input boxes and check boxes to retrive data for google maps-->
+        <div class="container">
+            <div class="row">
+                <div class="row">
+                    <form>
+                        <!-- town adn postcode fields -->
+                        <div class="town_postcode">
+                            <div class="form-group">
+                                <label class="lead lead-edit bold1" for="mainbox_city">Town:</label>
+                                <input type="text" class="form-control" id="mainbox_city" placeholder="LONDON">
+                            </div>
+                            <div class="form-group">
+                                <label class="lead lead-edit bold1" for="mainbox_postcode">Post Code:</label>
+                                <input type="text" class="form-control" id="mainbox_postcode" placeholder="WC2N 5DU">
+                            </div>
+                            <!-- geo-localizator -->
+                            <div class="col-mid-6">
+                                <div class="geoloc">
+                                    <button type="submit" class="btn btn-primary geoloc_button">Find Me</button>
+                                    <!-- show geo loc address-->
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="p-text-light1">Your address: </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                                    <!-- white separate line -->
+                    <div class="separate_line"></div>
+                <!-- search options CLUBS PUBS BARS -->
+                <div class="row">
+                    <form>
+                        <div class="search_options">
+                            <p class="lead bold1">What are you looking for tonight?</p>
+                            <div class="form-check">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                <label class="lead bold1 font_space" for="clubs_check">Clubs</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="pubs_check">
+                                <label class="lead bold1 font_space" for="pubs_check1">Pubs</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="bars_check">
+                                <label class="lead bold1 font_space" for="ars_check">Bars</label>
+                            </div>
+                        </div>
+                        <!-- submit button -->
+                        <div class="formsubmition">
+                            <button type="submit" class="btn btn-primary btn_wide">Start Trip</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.js"></script>
-    
+        <footer>
+            <div class="contianer">
+                <div class="row">
+                    <!-- white separate line -->
+                    <div class="separate_line"></div>
+                    <!-- copyright area -->
+                    <div class="col-md-12">
+                        <div class="copyrights">
+                            <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a> - All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </div>
 </body>
 
 </html>
