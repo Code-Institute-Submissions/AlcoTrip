@@ -152,14 +152,29 @@ a:hover {
 //______________________________________________________________________________ MAIN LOGOTYPE AND TEXT
 .main_logo {
     img {
-        margin-top: 50px;
         display: block;
         margin-left: auto;
         margin-right: auto;
-        max-height: 40%;
         max-width: 40%;
     }
 }
+
+@media screen and (max-width: 780px){
+    .main_logo{
+        img{
+            max-width: 60%;
+        }
+    }
+}
+
+@media screen and (max-width: 400px){
+    .main_logo{
+        img{
+            max-width: 70%;
+        }
+    }
+}
+
 
 .main-title {
     margin-left: auto;
@@ -194,31 +209,24 @@ a:hover {
 }
 
 .btn-primary {
-    color: #000;
-    background-color: #fff;
+    color: #fff;
+    background-color: $primary-color;
     border-color: #fff;
 }
 
 .btn-primary:hover {
     color: #000;
-    background-color: $secondary-color!important;
+    background-color: $secondary-color;
     border-color: $secondary-color;
 }
 
 //______________________________________________________________________________ GEO LOCALIZATION + BUTTON
 .loc_addres {
-
+    
 }
 
 .geoloc_button{
-    color: #fff;
-    background-color: $primary-color;
-    border-color: $primary-font;
-}
-
-.geoloc_button:hover {
-    color: #000;
-    background-color: $secondary-color!important;
+    margin-top: 10px;
 }
 
 //______________________________________________________________________________ SEARCH OPTIONS - MAIN PAGE

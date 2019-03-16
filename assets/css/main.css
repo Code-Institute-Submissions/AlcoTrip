@@ -173,13 +173,17 @@ a:hover {
     bottom: 0;
     opacity: 1; } }
 .main_logo img {
-  margin-top: 50px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-height: 40%;
   max-width: 40%; }
 
+@media screen and (max-width: 780px) {
+  .main_logo img {
+    max-width: 60%; } }
+@media screen and (max-width: 400px) {
+  .main_logo img {
+    max-width: 70%; } }
 .main-title {
   margin-left: auto;
   margin-right: auto; }
@@ -195,23 +199,17 @@ a:hover {
   width: 150px; }
 
 .btn-primary {
-  color: #000;
-  background-color: #fff;
+  color: #fff;
+  background-color: #2E4A63;
   border-color: #fff; }
 
 .btn-primary:hover {
   color: #000;
-  background-color: #ffb400 !important;
+  background-color: #ffb400;
   border-color: #ffb400; }
 
 .geoloc_button {
-  color: #fff;
-  background-color: #2E4A63;
-  border-color: #ffffff; }
-
-.geoloc_button:hover {
-  color: #000;
-  background-color: #ffb400 !important; }
+  margin-top: 10px; }
 
 .search_options {
   vertical-align: middle; }
