@@ -159,17 +159,17 @@ a:hover {
     }
 }
 
-@media screen and (max-width: 780px){
-    .main_logo{
-        img{
+@media screen and (max-width: 780px) {
+    .main_logo {
+        img {
             max-width: 60%;
         }
     }
 }
 
-@media screen and (max-width: 400px){
-    .main_logo{
-        img{
+@media screen and (max-width: 400px) {
+    .main_logo {
+        img {
             max-width: 70%;
         }
     }
@@ -221,11 +221,9 @@ a:hover {
 }
 
 //______________________________________________________________________________ GEO LOCALIZATION + BUTTON
-.loc_addres {
-    
-}
+.loc_addres {}
 
-.geoloc_button{
+.geoloc_button {
     margin-top: 10px;
 }
 
