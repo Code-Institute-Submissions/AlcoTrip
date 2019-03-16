@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800');
+
+/*______________________________________________________________________________ title styles */
+
+.m-title-light {
+    font-family: Roboto, san-serif;
+    font-size: 24px;
+}
+
+.m-title-medium {
+    font-family: Roboto, san-serif;
+    font-size: 32px;
+}
+
+.m-title-big {
+    font-family: Roboto, san-serif;
+    font-size: 4vw/*84px*/;
+}
+
+
+.mtb-space {
+    margin-left: 5vw;
+}
+
+
+/*______________________________________________________________________________ paragraphs styles */
+
+.p-text-light {
+    font-family: Roboto, san-serif;
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.p-text-light1 {
+    font-family: Roboto, san-serif;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.p-text-light2 {
+    font-family: Roboto, san-serif;
+    font-size: 1vw;
+    font-weight: 100;
+    letter-spacing: 6px;
+}
+
+.p-text-medium {
+    font-family: Roboto, san-serif;
+    font-size: 16px;
+}
+
+.p-text-big {
+    font-family: Roboto, san-serif;
+    font-size: 18px;
+}
+
+.ptm-space {
+    margin-top: -10px;
+    margin-left: 5vw;
+    text-align: right;
+}
+
+/*______________________________________________________________________________ bold styles */
+
+.bold1 {
+    font-weight: 500;
+}
+
+
+.bold2 {
+    font-weight: 600;
+}
+
+
+.bold3 {
+    font-weight: 700;
+}
+
+
+.bold4 {
+    font-weight: 800;
+}
+
+/*______________________________________________________________________________ uppercase/lowercase styles */
+
+.upper {
+    text-transform: uppercase;
+}
+
+.lower {
+    text-transform: lowercase;
+}
