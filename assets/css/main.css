@@ -67,6 +67,10 @@
 .lower {
   text-transform: lowercase; }
 
+.separate_line, .main-title, .town_postcode, .geoloc, .search_options, .formsubmition, .copyrights {
+  margin: auto;
+  width: 80%; }
+
 html,
 body {
   margin: 0;
@@ -77,7 +81,7 @@ body {
   height: 100%;
   min-height: 100%;
   color: #fff;
-  background-color: #2E4A62; }
+  background-color: #2E4A63; }
 
 h1 {
   font-size: 2.2em; }
@@ -109,12 +113,9 @@ a:hover {
 
 .separate_line {
   background-color: #fff;
-  width: 80%;
   height: 1px;
   margin-top: 40px;
-  margin-bottom: 40px;
-  margin-left: auto;
-  margin-right: auto; }
+  margin-bottom: 40px; }
 
 .main_logo img {
   margin-top: 50px;
@@ -124,32 +125,19 @@ a:hover {
   max-height: 40%;
   max-width: 40%; }
 
-.main-tile {
+.main-title {
   margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  width: 80%; }
+  margin-right: auto; }
 
 .form-control {
   margin-bottom: 30px; }
 
-.town_postcode {
-  margin: auto;
-  width: 80%; }
-
 .geoloc {
   margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%; }
+  margin-bottom: 20px; }
 
 .geoloc_button {
   float: left; }
-
-.search_options {
-  margin: auto;
-  width: 80%; }
 
 input[type="checkbox"] {
   margin: 20px 0 0; }
@@ -172,10 +160,6 @@ footer {
   text-align: center; }
 
 .copyrights {
-  display: block;
-  margin: auto;
-  width: 80%;
-  padding: 40px;
-  border-top: 1px solid #e1e4e8 !important; }
+  display: block; }
 
 /*# sourceMappingURL=main.css.map */

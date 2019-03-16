@@ -1,5 +1,12 @@
 @import './fontstyles.scss';
 
+//______________________________________________________________________________ CLASSES and VARIABLES
+$primary-color: #2E4A63;
+%basic_margin {
+    margin: auto;
+    width: 80%;
+}
+
 
 //______________________________________________________________________________ BASIC CSS STYLE
 html,
@@ -12,7 +19,7 @@ body {
     height: 100%;
     min-height: 100%;
     color: #fff;
-    background-color: #2E4A62;
+    background-color: $primary-color
 }
 
 h1 {
@@ -55,12 +62,10 @@ a:hover {
 
 .separate_line {
     background-color: #fff;
-    width: 80%;
     height: 1px;
     margin-top: 40px;
     margin-bottom: 40px;
-    margin-left: auto;
-    margin-right: auto;
+    @extend %basic_margin;
 }
 
 //______________________________________________________________________________ MAIN LOGOTYPE AND TEXT
@@ -75,16 +80,14 @@ a:hover {
     }
 }
 
-.main-tile {
+.main-title {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
-    width: 80%;
+    @extend %basic_margin;
 }
 
 //______________________________________________________________________________ MAIN FORM AND ALL CRITERIA FIELDS
-.main_form {
-}
+.main_form {}
 
 .form-control {
     margin-bottom: 30px;
@@ -92,17 +95,14 @@ a:hover {
 
 //______________________________________________________________________________ TOWN AND POSTCODE FIELDS
 .town_postcode {
-    margin: auto;
-    width: 80%;
+    @extend %basic_margin;
 }
 
 //______________________________________________________________________________ GEO LOCALIZATION + BUTTON
 .geoloc {
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
+    @extend %basic_margin;
 }
 
 .geoloc_button {
@@ -112,8 +112,7 @@ a:hover {
 
 //______________________________________________________________________________ SEARCH OPTIONS - MAIN PAGE
 .search_options {
-    margin: auto;
-    width: 80%;
+    @extend %basic_margin;
 }
 
 input[type="checkbox"] {
@@ -121,6 +120,10 @@ input[type="checkbox"] {
 }
 
 //______________________________________________________________________________ BUTTON PRIMART - MAIN PAGE
+.formsubmition {
+    @extend %basic_margin;
+}
+
 .btn {
     float: right;
 }
@@ -145,8 +148,5 @@ footer {
 
 .copyrights {
     display: block;
-    margin: auto;
-    width: 80%;
-    padding: 40px;
-    border-top: 1px solid #e1e4e8!important;
+    @extend %basic_margin;
 }
