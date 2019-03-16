@@ -3,7 +3,8 @@
 //______________________________________________________________________________ CLASSES and VARIABLES
 $primary-color: #2E4A63;
 $secondary-color: #ffb400;
-$white-color: #ffffff;
+$primary-font: #ffffff;
+$secondary-font: #000000;
 
 %basic_margin {
     margin: auto;
@@ -12,8 +13,12 @@ $white-color: #ffffff;
 
 %shadow_effect {
     box-shadow: 0px 4px 0px #303030!important;
-} 
+}
 
+.auto-margin {
+    @extend %basic_margin;
+    margin-bottom: 20px;
+}
 
 //______________________________________________________________________________ BASIC CSS STYLE
 html,
@@ -63,16 +68,64 @@ a {
 }
 
 a:hover {
-    color: #ffb400;
+    color: $secondary-color;
     text-decoration: none;
 }
 
 .separate_line {
     background-color: #fff;
     height: 1px;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 60px;
     @extend %basic_margin;
+}
+
+
+//______________________________________________________________________________ LOADING PAGE ICON
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid $primary-font;
+  border-radius: 50%;
+  border-top: 16px solid $secondary-color;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
 }
 
 //______________________________________________________________________________ MAIN LOGOTYPE AND TEXT
@@ -94,37 +147,19 @@ a:hover {
 }
 
 //______________________________________________________________________________ MAIN FORM AND ALL CRITERIA FIELDS
-.main_form {}
+
+.lead-edit {
+    margin-bottom: 10px;
+}
 
 .form-control {
     margin-bottom: 30px;
-        @extend %shadow_effect;
+    @extend %shadow_effect;
 }
 
 //______________________________________________________________________________ TOWN AND POSTCODE FIELDS
 .town_postcode {
     @extend %basic_margin;
-}
-
-//______________________________________________________________________________ GEO LOCALIZATION + BUTTON
-.geoloc {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    @extend %basic_margin;
-}
-
-.geoloc_button {
-    float: left;
-}
-
-
-//______________________________________________________________________________ SEARCH OPTIONS - MAIN PAGE
-.search_options {
-    @extend %basic_margin;
-}
-
-input[type="checkbox"] {
-    margin: 20px 0 0;
 }
 
 //______________________________________________________________________________ BUTTON PRIMART - MAIN PAGE
@@ -133,7 +168,9 @@ input[type="checkbox"] {
 }
 
 .btn {
-    float: right;
+    margin-top: 20px;
+    float: left;
+    width: 150px;
     @extend %shadow_effect;
 }
 
@@ -149,13 +186,35 @@ input[type="checkbox"] {
     border-color: $secondary-color;
 }
 
+//______________________________________________________________________________ GEO LOCALIZATION + BUTTON
+.geoloc {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @extend %basic_margin;
+}
+
+//______________________________________________________________________________ SEARCH OPTIONS - MAIN PAGE
+.search_options {
+    @extend %basic_margin;
+}
+
+input[type="checkbox"] {
+    margin: 20px 0 0;
+}
+
+.btn_wide {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
 //______________________________________________________________________________ FOOTER - MAIN PAGE
 footer {
-    height: 20px;
+    min-height: 40px;
+    margin-bottom: 40px;
     text-align: center;
 }
 
 .copyrights {
-    display: block;
     @extend %basic_margin;
 }

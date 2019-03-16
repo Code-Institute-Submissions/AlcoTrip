@@ -30,9 +30,7 @@
 
 .p-text-light2 {
   font-family: Roboto, san-serif;
-  font-size: 1vw;
-  font-weight: 100;
-  letter-spacing: 6px; }
+  font-size: 16px; }
 
 .p-text-medium {
   font-family: Roboto, san-serif;
@@ -67,12 +65,15 @@
 .lower {
   text-transform: lowercase; }
 
-.separate_line, .main-title, .town_postcode, .geoloc, .search_options, .formsubmition, .copyrights {
+.auto-margin, .separate_line, .main-title, .town_postcode, .formsubmition, .geoloc, .search_options, .copyrights {
   margin: auto;
   width: 80%; }
 
 .form-control, .btn {
   box-shadow: 0px 4px 0px #303030 !important; }
+
+.auto-margin {
+  margin-bottom: 20px; }
 
 html,
 body {
@@ -117,9 +118,57 @@ a:hover {
 .separate_line {
   background-color: #fff;
   height: 1px;
-  margin-top: 40px;
-  margin-bottom: 40px; }
+  margin-top: 20px;
+  margin-bottom: 60px; }
 
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #ffffff;
+  border-radius: 50%;
+  border-top: 16px solid #ffb400;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s; }
+
+@-webkit-keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0; }
+  to {
+    bottom: 0px;
+    opacity: 1; } }
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0; }
+  to {
+    bottom: 0;
+    opacity: 1; } }
 .main_logo img {
   margin-top: 50px;
   display: block;
@@ -132,21 +181,16 @@ a:hover {
   margin-left: auto;
   margin-right: auto; }
 
+.lead-edit {
+  margin-bottom: 10px; }
+
 .form-control {
   margin-bottom: 30px; }
 
-.geoloc {
-  margin-top: 20px;
-  margin-bottom: 20px; }
-
-.geoloc_button {
-  float: left; }
-
-input[type="checkbox"] {
-  margin: 20px 0 0; }
-
 .btn {
-  float: right; }
+  margin-top: 20px;
+  float: left;
+  width: 150px; }
 
 .btn-primary {
   color: #000;
@@ -158,11 +202,21 @@ input[type="checkbox"] {
   background-color: #ffb400 !important;
   border-color: #ffb400; }
 
-footer {
-  height: 20px;
-  text-align: center; }
+.geoloc {
+  margin-top: 20px;
+  margin-bottom: 20px; }
 
-.copyrights {
-  display: block; }
+input[type="checkbox"] {
+  margin: 20px 0 0; }
+
+.btn_wide {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  width: 100%; }
+
+footer {
+  min-height: 40px;
+  margin-bottom: 40px;
+  text-align: center; }
 
 /*# sourceMappingURL=main.css.map */
