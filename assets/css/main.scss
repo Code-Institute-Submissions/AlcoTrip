@@ -22,13 +22,15 @@ $secondary-font: #000000;
 
 //______________________________________________________________________________ BASIC CSS STYLE
 html,
-body {
+body,
+.row {
     margin: 0;
     padding: 0;
     left: 0;
     top: 0;
     right: 0;
     height: 100%;
+    width: 100%;
     min-height: 100%;
     color: #fff;
     background-color: $primary-color
@@ -79,7 +81,6 @@ a:hover {
     margin-bottom: 60px;
     @extend %basic_margin;
 }
-
 
 //______________________________________________________________________________ PAGE LOADER
 #loader {
