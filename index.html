@@ -40,7 +40,7 @@
                     <h2>
                         Find all Pubs, Bars, Disco Clubs near You! It's so simple, isn't it ?
                     </h2>
-                    <h3 class="lead">1. Enter the name or zip code of the city you want to visit.<br>&nbsp&nbsp&nbsp Or simply click on 'Find Me' button to locate yourself.<br>2. Choose what you're looking for today and let's start your trip!
+                    <h3 class="lead">1. Enter the name and postcode of the city you want to visit.<br>&nbsp&nbsp&nbsp Or simply click on 'Find Me' button to locate yourself.<br>2. Choose what you're looking for today and let's start your trip!
                         <h3>
                 </div>
                 <!-- white separate line -->
@@ -56,16 +56,18 @@
                         <div class="town_postcode">
                             <div class="form-group">
                                 <label class="lead lead-edit bold1" for="mainbox_city">Town:</label>
-                                <input type="text" class="form-control" id="mainbox_city" placeholder="LONDON">
+                                <input type="text" class="form-control upper" id="mainbox_city" placeholder="LONDON">
+                                <small id="town_missing" class="form-text hidden">Please provide a valid town name.</small>
                             </div>
                             <div class="form-group">
                                 <label class="lead lead-edit bold1" for="mainbox_postcode">Post Code:</label>
-                                <input type="text" class="form-control" id="mainbox_postcode" placeholder="WC2N 5DU">
+                                <input type="text" class="form-control upper" id="mainbox_postcode" placeholder="WC2N 5DU">
+                                <small id="postcode_missing" class="form-text hidden">Please provide a valid postcode.</small>
                             </div>
                             <!-- geo-localizator -->
                             <div class="form-group">
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 float-left">
-                                    <button type="button" class="btn btn-primary geoloc_button" onclik="FindMe()" value="Find Me">Find Me!</button>
+                                    <button type="button" class="btn btn-primary geoloc_button" onclick="FindMe()">Find Me!</button>
                                 </div>
                                 <!-- show geo loc address-->
                                 <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 float-right">
@@ -84,7 +86,7 @@
                     <div class="search_options">
                         <p class="lead bold1">What are you looking for tonight?</p>
                         <div class="form-check">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                            <input type="checkbox" class="custom-control-input" id="clubs_check">
                             <label class="lead bold1 font_space" for="clubs_check">Clubs</label>
                         </div>
                         <div class="form-check">
@@ -98,7 +100,7 @@
                     </div>
                     <!-- submit button -->
                     <div class="formsubmition">
-                        <button type="button" class="btn btn-primary btn_wide" onclik="StartYourTrip();">Start Trip</button>
+                        <button type="button" class="btn btn-primary btn_wide" onclick="StartYourTrip();">Start Trip</button>
                     </div>
                 </form>
             </div>
