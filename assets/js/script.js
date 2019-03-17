@@ -8,3 +8,10 @@ function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("page_loader").style.display = "block";
 }
+
+function FindMe() {
+  document.getElementById("main_form").reset();
+}
+
+
+function StartYourTrip() {}

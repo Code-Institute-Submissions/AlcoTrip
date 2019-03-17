@@ -51,7 +51,7 @@
         <div class="container">
             <div class="row">
                 <div class="row">
-                    <form>
+                    <form id="main_form">
                         <!-- town adn postcode fields -->
                         <div class="town_postcode">
                             <div class="form-group">
@@ -65,7 +65,7 @@
                             <!-- geo-localizator -->
                             <div class="form-group">
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 float-left">
-                                    <button type="submit" class="btn btn-primary geoloc_button">Find Me</button>
+                                    <button type="button" class="btn btn-primary geoloc_button" onclik="FindMe()" value="Find Me">Find Me!</button>
                                 </div>
                                 <!-- show geo loc address-->
                                 <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 float-right">
@@ -73,8 +73,8 @@
                                 </div>
                             </div>
                         </div>
+                    </form>
                 </div>
-                </form>
             </div>
             <!-- white separate line -->
             <div class="separate_line"></div>
@@ -98,30 +98,30 @@
                     </div>
                     <!-- submit button -->
                     <div class="formsubmition">
-                        <button type="submit" class="btn btn-primary btn_wide">Start Trip</button>
+                        <button type="button" class="btn btn-primary btn_wide" onclik="StartYourTrip();">Start Trip</button>
                     </div>
                 </form>
             </div>
         </div>
-    </div>
-    <footer>
-        <div class="contianer">
-            <div class="row">
-                <!-- white separate line -->
-                <div class="separate_line"></div>
-                <!-- copyright area -->
-                <div class="col-md-12">
-                    <div class="copyrights">
-                        <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a> - All Rights Reserved</p>
+        <footer>
+            <div class="contianer">
+                <div class="row">
+                    <!-- white separate line -->
+                    <div class="separate_line"></div>
+                    <!-- copyright area -->
+                    <div class="col-md-12">
+                        <div class="copyrights">
+                            <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a> - All Rights Reserved</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="assets/js/script.js"></script>
-    </div>
 </body>
 
 </html>
