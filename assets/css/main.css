@@ -114,7 +114,8 @@ p {
   visibility: hidden; }
 
 a {
-  color: #fff; }
+  color: #fff;
+  text-decoration: none; }
 
 a:hover {
   color: #ffb400;
@@ -193,8 +194,11 @@ a:hover {
 .lead-edit {
   margin-bottom: 10px; }
 
-.form-control {
+.form-group {
   margin-bottom: 30px; }
+
+.text-muted {
+  color: #fff; }
 
 .btn {
   float: left;

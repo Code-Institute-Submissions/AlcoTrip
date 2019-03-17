@@ -67,6 +67,7 @@ p {
 
 a {
     color: #fff;
+    text-decoration: none;
 }
 
 a:hover {
@@ -189,9 +190,17 @@ a:hover {
 }
 
 .form-control {
-    margin-bottom: 30px;
     @extend %shadow_effect;
 }
+
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.text-muted {
+    color: #fff;
+} 
 
 //______________________________________________________________________________ TOWN AND POSTCODE FIELDS
 .town_postcode {
