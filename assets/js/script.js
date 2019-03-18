@@ -17,8 +17,17 @@ function FindMe() {
   document.getElementById("main_form").reset();
 
   /* remove input fields error messages */
+  /* town field */
+  document.getElementById("town_missing").classList.add("hidden");
   document.getElementById("town_missing").classList.remove("text-muted");
-  document.getElementById("town_missing").classList.remove("text-muted");
+  document.getElementById("mainbox_city").setAttribute("style", "border: 1px solid #ccc");
+  /* postcode field */
+  document.getElementById("postcode_missing").classList.add("hidden");
+  document.getElementById("postcode_missing").classList.remove("text-muted");
+  document.getElementById("mainbox_postcode").setAttribute("style", "border: 1px solid #ccc");
+  /* tick boxes */
+  document.getElementById("tickbox_missing").classList.add("hidden");
+  document.getElementById("tickbox_missing").classList.remove("text-muted");
 
   /* geo localization to find user location via clicking on "FindMe" button */
   var myFindMe = "Find Me!";
@@ -36,20 +45,24 @@ function StartYourTrip() {
   if (!myTown) {
     document.getElementById("town_missing").classList.remove("hidden");
     document.getElementById("town_missing").classList.add("text-muted");
+    document.getElementById("mainbox_city").setAttribute("style", "border: 1px solid #f00");
   }
   else {
     document.getElementById("town_missing").classList.add("hidden");
     document.getElementById("town_missing").classList.remove("text-muted");
+    document.getElementById("mainbox_city").setAttribute("style", "border: 1px solid #ccc");
   }
 
   /* check if Post Code input box is empty */
   if (!myPostCode) {
     document.getElementById("postcode_missing").classList.remove("hidden");
     document.getElementById("postcode_missing").classList.add("text-muted");
+    document.getElementById("mainbox_postcode").setAttribute("style", "border: 1px solid #f00");
   }
   else {
     document.getElementById("postcode_missing").classList.add("hidden");
     document.getElementById("postcode_missing").classList.remove("text-muted");
+    document.getElementById("mainbox_postcode").setAttribute("style", "border: 1px solid #ccc");
   }
 
   /* check if any of tick boxes has been clicked 'checked' */
