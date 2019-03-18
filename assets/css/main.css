@@ -215,7 +215,8 @@ a:hover {
   border-color: #ffb400; }
 
 .geoloc_button {
-  margin-top: 10px; }
+  margin-top: 10px;
+  margin-left: -14px; }
 
 .search_options {
   vertical-align: middle; }
