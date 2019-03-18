@@ -20,14 +20,14 @@ function FindMe() {
   /* town field */
   document.getElementById("town_missing").classList.add("hidden");
   document.getElementById("town_missing").classList.remove("text-muted");
-  document.getElementById("mainbox_city").setAttribute("style", "border: 1px solid #ccc");
+  document.getElementById("mainbox_city").style.border = "1px solid #ccc";
   /* postcode field */
   document.getElementById("postcode_missing").classList.add("hidden");
   document.getElementById("postcode_missing").classList.remove("text-muted");
-  document.getElementById("mainbox_postcode").setAttribute("style", "border: 1px solid #ccc");
+  document.getElementById("mainbox_postcode").style.border = "1px solid #ccc";
   /* tick boxes */
   document.getElementById("tickbox_missing").classList.add("hidden");
-  document.getElementById("tickbox_missing").classList.remove("text-muted");
+  document.getElementById("tickbox_missing").classList.remove("text-muted1");
 
   /* geo localization to find user location via clicking on "FindMe" button */
   var myFindMe = "Find Me!";
@@ -45,24 +45,24 @@ function StartYourTrip() {
   if (!myTown) {
     document.getElementById("town_missing").classList.remove("hidden");
     document.getElementById("town_missing").classList.add("text-muted");
-    document.getElementById("mainbox_city").setAttribute("style", "border: 1px solid #f00");
+    document.getElementById("mainbox_city").style.border = "1px solid #f00";
   }
   else {
     document.getElementById("town_missing").classList.add("hidden");
     document.getElementById("town_missing").classList.remove("text-muted");
-    document.getElementById("mainbox_city").setAttribute("style", "border: 1px solid #ccc");
+    document.getElementById("mainbox_city").style.border = "1px solid #ccc";
   }
 
   /* check if Post Code input box is empty */
   if (!myPostCode) {
     document.getElementById("postcode_missing").classList.remove("hidden");
     document.getElementById("postcode_missing").classList.add("text-muted");
-    document.getElementById("mainbox_postcode").setAttribute("style", "border: 1px solid #f00");
+    document.getElementById("mainbox_postcode").style.border = "1px solid #f00";
   }
   else {
     document.getElementById("postcode_missing").classList.add("hidden");
     document.getElementById("postcode_missing").classList.remove("text-muted");
-    document.getElementById("mainbox_postcode").setAttribute("style", "border: 1px solid #ccc");
+    document.getElementById("mainbox_postcode").style.border = "1px solid #ccc";
   }
 
   /* check if any of tick boxes has been clicked 'checked' */
@@ -72,11 +72,13 @@ function StartYourTrip() {
 
   if (!clubs_tick.checked && !pubs_tick.checked && !bars_tick.checked) {
     document.getElementById("tickbox_missing").classList.remove("hidden");
-    document.getElementById("tickbox_missing").classList.add("text-muted");
+    document.getElementById("tickbox_missing").classList.add("text-muted1");
   }
   else {
     document.getElementById("tickbox_missing").classList.add("hidden");
-    document.getElementById("tickbox_missing").classList.remove("text-muted");
+    document.getElementById("tickbox_missing").classList.remove("text-muted1");
   }
+
+
 
 }
