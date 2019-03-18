@@ -41,7 +41,7 @@
                         Find all Pubs, Bars, Disco Clubs near You! It's so simple, isn't it ?
                     </h2>
                     <h3 class="lead">1. Enter the name and postcode of the city you want to visit.<br>&nbsp&nbsp&nbsp Or simply click on 'Find Me' button to locate yourself.<br>2. Choose what you're looking for today and let's start your trip!
-                        <h3>
+                    <h3>
                 </div>
                 <!-- white separate line -->
                 <div class="separate_line"></div>
@@ -68,10 +68,6 @@
                             <div class="form-group">
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 float-left">
                                     <button type="button" class="btn btn-primary geoloc_button" onclick="FindMe()">Find Me!</button>
-                                </div>
-                                <!-- show geo loc address-->
-                                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 float-right">
-                                    <h3 class="p-text-light1 loc_addres">Your address :</h3>
                                 </div>
                             </div>
                         </div>
@@ -119,9 +115,12 @@
             </div>
         </footer>
     </div>
-
+    <!-- google maps API with key -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJuhJdmAIHpAnmB8Iz_SfURsbAIsmuSxo&callback=initMap" type="text/javascript"></script>
+    <!-- jquery and bootstrap scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- personal scripts -->
     <script src="assets/js/script.js"></script>
 </body>
 
