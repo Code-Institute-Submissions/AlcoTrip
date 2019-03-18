@@ -70,6 +70,7 @@ function StartYourTrip() {
   var pubs_tick = document.getElementById("pubs_check");
   var bars_tick = document.getElementById("bars_check");
 
+  /* if any of tick boxes is empty show allert comment*/
   if (!clubs_tick.checked && !pubs_tick.checked && !bars_tick.checked) {
     document.getElementById("tickbox_missing").classList.remove("hidden");
     document.getElementById("tickbox_missing").classList.add("text-muted1");
@@ -79,6 +80,17 @@ function StartYourTrip() {
     document.getElementById("tickbox_missing").classList.remove("text-muted1");
   }
 
-
+  if (!myTown) {
+    document.getElementById("town_missing").scrollIntoView({ behavior: "smooth" });
+  }
+  else if (!myPostCode) {
+    document.getElementById("postcode_missing").scrollIntoView({ behavior: "smooth" });
+  }
+  else if (!clubs_tick.checked && !pubs_tick.checked && !bars_tick.checked) {
+    document.getElementById("tickbox_missing").scrollIntoView({ behavior: "smooth" });
+  }
+  else {
+    /*do nithing*/
+  }
 
 }
