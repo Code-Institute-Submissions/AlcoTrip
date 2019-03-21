@@ -1,4 +1,4 @@
-/* page loader function */
+/* _____________________________________________________________________________  page loader function */
 let loader;
 
 function myFunction() {
@@ -9,8 +9,11 @@ function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("page_loader").style.display = "block";
 }
-
-/* _____________________________________________________________________________ main from functions */
+/* _____________________________________________________________________________
+________________________________________________________________________________
+________________________________________________________________________________ main form - find me localization function
+This function is clearing all fields if any value exist in fields
+Function also using geo location script to get User - town name and postcode */
 function FindMe() {
 
   /* clear user form fields */
@@ -33,15 +36,23 @@ function FindMe() {
   let myTown = document.getElementById("mainbox_city");
   let myPostCode = document.getElementById("mainbox_postcode");
   
+  
+  /* test value */
   myTown.value = "Wellingborough";
   myPostCode.value = "NN82DF";
   
-  
-  let myFindMe = "Find Me!";
+}
+/* _____________________________________________________________________________
+________________________________________________________________________________
+_______________________________________________________________________________main from - clear fields function
+This function is clearing Twon and Postcode filed in main form, on main page */
+function Clearfields(){
   
 }
-
-/*  This function validate main form and checks, if any tick box has been ticked */
+/* _____________________________________________________________________________
+________________________________________________________________________________
+_______________________________________________________________________________ main from - tix boxes, checking function
+This function validate main form and checks, if any tick box has been ticked */
 function StartYourTrip() {
 
   /* main form variables */
