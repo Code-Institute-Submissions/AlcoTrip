@@ -30,8 +30,15 @@ function FindMe() {
   document.getElementById("tickbox_missing").classList.remove("text-muted1");
 
   /* geo localization to find user location via clicking on "FindMe" button */
-  var myFindMe = "Find Me!";
-
+  let myTown = document.getElementById("mainbox_city");
+  let myPostCode = document.getElementById("mainbox_postcode");
+  
+  myTown.value = "Wellingborough";
+  myPostCode.value = "NN82DF";
+  
+  
+  let myFindMe = "Find Me!";
+  
 }
 
 /*  This function validate main form and checks, if any tick box has been ticked */

@@ -220,8 +220,40 @@ a:hover {
 
 .geoloc_button {
   margin-top: 10px;
-  margin-left: -14px; }
+  margin-left: -14px;
+  float: left;
+  border: 2px solid #ffb400; }
 
+.geoloc_button:hover {
+  color: #ffffff;
+  background-color: #ffb400;
+  border: 2px solid #ffb400; }
+
+.clearfields_button {
+  float: right;
+  margin-top: 10px;
+  margin-right: -14px;
+  border: 2px solid #ffffff; }
+
+.clearfields_button:hover {
+  margin-top: 10px;
+  margin-left: -14px;
+  color: #fff;
+  background: #670000;
+  border-color: #670000; }
+
+@media screen and (max-width: 768px) {
+  .clearfields_button {
+    float: left;
+    margin-top: 20px;
+    margin-left: -14px; }
+
+  .clearfields_button:hover {
+    margin-top: 20px;
+    margin-left: -14px;
+    color: #fff;
+    background: #670000;
+    border-color: #670000; } }
 .search_options {
   vertical-align: middle; }
 

@@ -5,6 +5,7 @@ $primary-color: #2E4A63;
 $secondary-color: #ffb400;
 $primary-font: #ffffff;
 $secondary-font: #000000;
+$tertiary-color: #670000;
 
 %basic_margin {
     margin: auto;
@@ -91,7 +92,7 @@ a:hover {
     z-index: 1;
     width: 150px;
     height: 150px;
-    margin: -75px 0 0 -70px ;
+    margin: -75px 0 0 -70px;
     border: 16px solid $primary-font;
     border-radius: 50%;
     border-top: 16px solid $secondary-color;
@@ -239,6 +240,45 @@ a:hover {
 .geoloc_button {
     margin-top: 10px;
     margin-left: -14px;
+    float: left;
+    border: 2px solid $secondary-color;
+}
+
+.geoloc_button:hover {
+    color: $primary-font;
+    background-color: $secondary-color;
+    border: 2px solid $secondary-color;
+}
+
+.clearfields_button {
+    float: right;
+    margin-top: 10px;
+    margin-right: -14px;
+    border: 2px solid $primary-font;
+
+}
+
+.clearfields_button:hover {
+    margin-top: 10px;
+    margin-left: -14px;
+    color: #fff;
+    background: $tertiary-color;
+    border-color: $tertiary-color;
+}
+
+@media screen and (max-width: 768px) {
+    .clearfields_button {
+        float: left;
+        margin-top: 20px;
+        margin-left: -14px;
+    }
+    .clearfields_button:hover {
+        margin-top: 20px;
+        margin-left: -14px;
+        color: #fff;
+        background: $tertiary-color;
+        border-color: $tertiary-color;
+    }
 }
 
 //______________________________________________________________________________ SEARCH OPTIONS - MAIN PAGE
