@@ -49,9 +49,12 @@ This function is clearing Twon and Postcode filed in main form, on main page */
 function Clearfields() {
   let myTown = document.getElementById("mainbox_city");
   let myPostCode = document.getElementById("mainbox_postcode");
-  
+
   myTown.value = "";
   myPostCode.value = "";
+  document.getElementById("tickbox_missing").classList.add("hidden");
+  document.getElementById("tickbox_missing").classList.remove("text-muted1");
+
 }
 /* _____________________________________________________________________________
 ________________________________________________________________________________
