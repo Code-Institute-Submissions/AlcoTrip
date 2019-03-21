@@ -1,5 +1,5 @@
 /* page loader function */
-var loader;
+let loader;
 
 function myFunction() {
   loader = setTimeout(showPage, 1000);
@@ -38,8 +38,8 @@ function FindMe() {
 function StartYourTrip() {
 
   /* main form variables */
-  var myTown = document.getElementById("mainbox_city").value;
-  var myPostCode = document.getElementById("mainbox_postcode").value;
+  let myTown = document.getElementById("mainbox_city").value;
+  let myPostCode = document.getElementById("mainbox_postcode").value;
 
   /* check if Town input box is empty */
   if (!myTown) {
@@ -66,9 +66,9 @@ function StartYourTrip() {
   }
 
   /* check if any of tick boxes has been clicked 'checked' */
-  var clubs_tick = document.getElementById("clubs_check");
-  var pubs_tick = document.getElementById("pubs_check");
-  var bars_tick = document.getElementById("bars_check");
+  let clubs_tick = document.getElementById("clubs_check");
+  let pubs_tick = document.getElementById("pubs_check");
+  let bars_tick = document.getElementById("bars_check");
 
   /* if any of tick boxes is empty show allert comment*/
   if (!clubs_tick.checked && !pubs_tick.checked && !bars_tick.checked) {
