@@ -35,19 +35,23 @@ function FindMe() {
   /* geo localization to find user location via clicking on "FindMe" button */
   let myTown = document.getElementById("mainbox_city");
   let myPostCode = document.getElementById("mainbox_postcode");
-  
-  
+
+
   /* test value */
   myTown.value = "Wellingborough";
   myPostCode.value = "NN82DF";
-  
+
 }
 /* _____________________________________________________________________________
 ________________________________________________________________________________
 _______________________________________________________________________________main from - clear fields function
 This function is clearing Twon and Postcode filed in main form, on main page */
-function Clearfields(){
+function Clearfields() {
+  let myTown = document.getElementById("mainbox_city");
+  let myPostCode = document.getElementById("mainbox_postcode");
   
+  myTown.value = "";
+  myPostCode.value = "";
 }
 /* _____________________________________________________________________________
 ________________________________________________________________________________
