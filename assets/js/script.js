@@ -39,13 +39,13 @@ function FindMe() {
 
   /* test value */
   myTown.value = "Wellingborough";
-  myPostCode.value = "NN82DF"; 
+  myPostCode.value = "NN82DF";
 
 
 }
 /* _____________________________________________________________________________
 ________________________________________________________________________________
-_______________________________________________________________________________main from - clear fields function
+________________________________________________________________________________ main from - clear fields function
 This function is clearing Twon and Postcode filed in main form, on main page */
 function Clearfields() {
   let myTown = document.getElementById("mainbox_city");
@@ -59,7 +59,25 @@ function Clearfields() {
 }
 /* _____________________________________________________________________________
 ________________________________________________________________________________
-_______________________________________________________________________________ main from - tix boxes, checking function
+________________________________________________________________________________ checkboxes - clear fields function
+This function is clearing Twon and Postcode filed in main form, on main page */
+function ClearCheckboxes() {
+  let chck_clubs = document.getElementById("clubs_check");
+  if (chck_clubs.checked = true) {
+    chck_clubs.click();
+  }
+  let chck_pubs = document.getElementById("pubs_check");
+  if (chck_pubs.checked = true) {
+    chck_pubs.click();
+  }
+  let chck_bars = document.getElementById("bars_check");
+  if (chck_bars.checked = true) {
+    chck_bars.click();
+  }
+}
+/* _____________________________________________________________________________
+________________________________________________________________________________
+________________________________________________________________________________ main from - tix boxes, checking function
 This function validate main form and checks, if any tick box has been ticked */
 function StartYourTrip() {
 
