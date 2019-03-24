@@ -80,7 +80,15 @@ a:hover {
     background-color: #fff;
     height: 1px;
     margin-top: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+    @extend %basic_margin;
+}
+
+.separate_line1 {
+    background-color: #fff;
+    height: 1px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     @extend %basic_margin;
 }
 
@@ -196,7 +204,7 @@ a:hover {
 
 
 .form-group {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .text-muted {
@@ -234,9 +242,7 @@ a:hover {
     color: #000;
     background-color: $secondary-color;
     border-color: $secondary-color;
-}
-
-//______________________________________________________________________________ GEO LOCALIZATION + BUTTON
+} //______________________________________________________________________________ GEO LOCALIZATION + BUTTON
 .geoloc_button {
     margin-top: 10px;
     margin-left: -14px;
@@ -279,9 +285,7 @@ a:hover {
         background: $tertiary-color;
         border-color: $tertiary-color;
     }
-}
-
-//______________________________________________________________________________ SEARCH OPTIONS - MAIN PAGE
+} //______________________________________________________________________________ SEARCH OPTIONS - MAIN PAGE
 .search_options {
     @extend %basic_margin;
     vertical-align: middle;
@@ -296,10 +300,7 @@ input[type="checkbox"] {
     margin-top: 40px;
     margin-bottom: 20px;
     width: 100%;
-}
-
-
-//______________________________________________________________________________ FOOTER - MAIN PAGE
+} //______________________________________________________________________________ FOOTER - MAIN PAGE
 footer {
     margin-bottom: 40px;
     text-align: center;

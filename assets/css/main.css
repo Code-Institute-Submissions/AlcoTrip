@@ -68,7 +68,7 @@
 .font_space {
   margin-left: 20px; }
 
-.auto-margin, .separate_line, .main-title, .town_postcode, .formsubmition, .search_options, .copyrights {
+.auto-margin, .separate_line, .separate_line1, .main-title, .town_postcode, .formsubmition, .search_options, .copyrights {
   margin: auto;
   width: 80%; }
 
@@ -125,7 +125,13 @@ a:hover {
   background-color: #fff;
   height: 1px;
   margin-top: 20px;
-  margin-bottom: 60px; }
+  margin-bottom: 40px; }
+
+.separate_line1 {
+  background-color: #fff;
+  height: 1px;
+  margin-top: 40px;
+  margin-bottom: 40px; }
 
 #loader {
   position: absolute;
@@ -195,7 +201,7 @@ a:hover {
   margin-bottom: 10px; }
 
 .form-group {
-  margin-bottom: 30px; }
+  margin-bottom: 40px; }
 
 .text-muted {
   color: #fff; }

@@ -39,7 +39,8 @@ function FindMe() {
 
   /* test value */
   myTown.value = "Wellingborough";
-  myPostCode.value = "NN82DF";
+  myPostCode.value = "NN82DF"; 
+
 
 }
 /* _____________________________________________________________________________
