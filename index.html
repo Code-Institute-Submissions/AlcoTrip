@@ -67,11 +67,11 @@
                             <div class="form-group">
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <!-- find me button -->
-                                    <button type="button" class="btn btn-primary geoloc_button" onclick="FindMe()">Find Me!</button>
+                                    <button type="button" class="btn btn-primary geoloc_button" onclick="FindMe()">Find Me!</button><span class="hint_mainform"></span>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <!-- clear fields button -->
-                                    <button type="button" class="btn btn-primary clearfields_button" onclick="Clearfields()">Clear fields</button>
+                                    <button type="button" class="btn btn-primary clearfields_button" onclick="Clearfields()">Clear</button>
                                 </div>
                             </div>
                         </div>
@@ -97,6 +97,10 @@
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" value="" id="bars_check">
                             <label class="lead bold1 font_space" for="bars_check">Bars</label>
+                        </div>
+                        <div class="col-lg-12">
+                            <!-- clear checkboxes button -->
+                            <button type="button" class="btn btn-primary clearcheck_button" onclick="ClearCheckboxes()">Clear</button>
                         </div>
                     </div>
                     <!-- submit button -->
