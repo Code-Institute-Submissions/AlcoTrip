@@ -88,7 +88,7 @@ a:hover {
     background-color: #fff;
     height: 1px;
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     @extend %basic_margin;
 }
 
@@ -300,6 +300,36 @@ input[type="checkbox"] {
     vertical-align: 4px;
 }
 
+.clearcheck_button {
+    float: right;
+    margin-top: -45px;
+    margin-right: -14px;
+    border: 2px solid $primary-font!important;
+}
+
+.clearcheck_button:hover {
+    margin-top: -45px;
+    margin-left: -14px;
+    color: #fff;
+    background: $tertiary-color!important;
+    border-color: $tertiary-color!important;
+}
+
+@media screen and (max-width: 768px) {
+    .clearcheck_button {
+        float: left;
+        margin-top: 20px;
+        margin-left: -14px;
+    }
+    .clearcheck_button:hover {
+        margin-top: 20px;
+        margin-left: -14px;
+        color: #fff;
+        background: $tertiary-color!important;
+        border-color: $tertiary-color!important;
+    }
+}
+
 .btn_wide {
     margin-top: 40px;
     margin-bottom: 20px;
@@ -308,7 +338,7 @@ input[type="checkbox"] {
 
 //______________________________________________________________________________ FOOTER - MAIN PAGE
 footer {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
