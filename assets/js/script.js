@@ -82,6 +82,9 @@ function ClearCheckboxes() {
   if (chck_bars.checked = true) {
     chck_bars.click();
   }
+    /* tick boxes */
+  document.getElementById("tickbox_missing").classList.add("hidden");
+  document.getElementById("tickbox_missing").classList.remove("text-muted1");
 }
 /* _____________________________________________________________________________
 ________________________________________________________________________________
