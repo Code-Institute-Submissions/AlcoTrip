@@ -53,8 +53,16 @@ function Clearfields() {
 
   myTown.value = "";
   myPostCode.value = "";
-  document.getElementById("tickbox_missing").classList.add("hidden");
-  document.getElementById("tickbox_missing").classList.remove("text-muted1");
+
+  /* remove input fields error messages */
+  /* town field */
+  document.getElementById("town_missing").classList.add("hidden");
+  document.getElementById("town_missing").classList.remove("text-muted");
+  document.getElementById("mainbox_city").style.border = "1px solid #ccc";
+  /* postcode field */
+  document.getElementById("postcode_missing").classList.add("hidden");
+  document.getElementById("postcode_missing").classList.remove("text-muted");
+  document.getElementById("mainbox_postcode").style.border = "1px solid #ccc";
 
 }
 /* _____________________________________________________________________________
@@ -138,16 +146,21 @@ function StartYourTrip() {
   }
 
   document.getElementById("main_page_container").classList.add("hidden");
+
   document.getElementById("map_container").classList.remove("hidden");
   document.getElementById("map_container").classList.add("map_main");
+
   document.getElementById("footer_main").classList.add("hidden");
 }
 /* _____________________________________________________________________________
 ________________________________________________________________________________ MAP FUNCTION */
 
 function initMap() {
+  let myLat = 51.509865
+  let myLong = -0.118092
+
   // The location of Uluru
-  var uluru = { lat: 51.509865, lng: -0.118092 };
+  var uluru = { lat: myLat, lng: myLong };
   // The map, centered at Uluru
   var map = new google.maps.Map(
     document.getElementById('map'), { zoom: 15, center: uluru });
@@ -158,6 +171,8 @@ function initMap() {
 
 function closeMap() {
   document.getElementById("main_page_container").classList.remove("hidden");
+
   document.getElementById("map_container").classList.add("hidden");
+
   document.getElementById("footer_main").classList.remove("hidden");
 }
