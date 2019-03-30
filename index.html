@@ -24,110 +24,108 @@
 
 <body onload="myFunction(); initMap()">
 
-
     <!-- page loader section -->
     <div id="loader"></div>
-    <div style="display:none;" id="page_loader" class="animate-bottom">
+    <div style="display:none" id="page_loader" class="animate-bottom"></div>
 
-
-    <!-- page loader section end -->
-    <div id="main_page_container" class="">
-        <!-- header with logotype -->
-        <header class="container">
-            <div class="row">
-                <a href="index.html" class="main_logo"><img src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
-                <div class="main-title">
-                    <h1 class="hidden">Alco Trip</h1>
-                    <h2>
-                        Find all Pubs, Bars, Disco Clubs near You! It's so simple, isn't it ?
-                    </h2>
-                    <h3 class="lead">1. Enter the name and postcode of the city you want to visit.<br>Or simply click on 'Find Me' button to locate yourself.<br>2. Choose what you're looking for today and let's start your trip!
-                    </h3>
+        <!-- page loader section end -->
+        <div id="main_page_container" class="">
+            <!-- header with logotype -->
+            <header class="container">
+                <div class="row">
+                    <a href="index.html" class="main_logo"><img src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
+                    <div class="main-title">
+                        <h1 class="hidden">Alco Trip</h1>
+                        <h2>
+                            Find all Pubs, Bars, Disco Clubs near You! It's so simple, isn't it ?
+                        </h2>
+                        <h3 class="lead">1. Enter the name and postcode of the city you want to visit.<br>Or simply click on 'Find Me' button to locate yourself.<br>2. Choose what you're looking for today and let's start your trip!
+                        </h3>
+                    </div>
+                    <!-- white separate line -->
+                    <div class="separate_line"></div>
+                </div>
+            </header>
+            <!-- section with input boxes and check boxes to retrive data for google maps-->
+            <div class="container">
+                <div class="row">
+                    <div class="row">
+                        <form id="main_form">
+                            <!-- town adn postcode fields -->
+                            <div class="town_postcode">
+                                <div class="form-group">
+                                    <h3 class="lead lead-edit bold1" for="mainbox_city">Enter your town</h3>
+                                    <span class="hint_mainform"></span>
+                                    <input type="text" class="form-control upper" id="mainbox_city" placeholder="LONDON">
+                                    <small id="town_missing" class="form-text hidden">*Please provide a valid town name.</small>
+                                </div>
+                                <div class="form-group">
+                                    <h3 class="lead lead-edit bold1" for="mainbox_postcode">Enter your postcode</h3>
+                                    <input type="text" class="form-control upper" id="mainbox_postcode" placeholder="WC2N 5DU">
+                                    <small id="postcode_missing" class="form-text hidden">*Please provide a valid postcode.</small>
+                                </div>
+                                <!-- geo-localizator -->
+                                <div class="form-group">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <!-- find me button -->
+                                        <button type="button" class="btn btn-primary geoloc_button" onclick="FindMe()">Find Me!</button><span class="hint_mainform"></span>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <!-- clear fields button -->
+                                        <button type="button" class="btn btn-primary clearfields_button" onclick="Clearfields()">Clear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <!-- white separate line -->
-                <div class="separate_line"></div>
-            </div>
-        </header>
-        <!-- section with input boxes and check boxes to retrive data for google maps-->
-        <div class="container">
-            <div class="row">
+                <div class="separate_line1"></div>
+                <!-- search options CLUBS PUBS BARS -->
                 <div class="row">
-                    <form id="main_form">
-                        <!-- town adn postcode fields -->
-                        <div class="town_postcode">
-                            <div class="form-group">
-                                <h3 class="lead lead-edit bold1" for="mainbox_city">Enter your town</h3>
-                                <span class="hint_mainform"></span>
-                                <input type="text" class="form-control upper" id="mainbox_city" placeholder="LONDON">
-                                <small id="town_missing" class="form-text hidden">*Please provide a valid town name.</small>
+                    <form role="form">
+                        <div class="search_options">
+                            <h3 class="lead bold1">What are you looking for tonight?</h3>
+                            <small id="tickbox_missing" class="form-text hidden">*Please tick any of tick boxes.</small>
+                            <div class="form-check">
+                                <input type="checkbox" class="custom-check-input" value="" id="clubs_check">
+                                <label class="lead bold1 font_space" for="clubs_check">Clubs</label>
                             </div>
-                            <div class="form-group">
-                                <h3 class="lead lead-edit bold1" for="mainbox_postcode">Enter your postcode</h3>
-                                <input type="text" class="form-control upper" id="mainbox_postcode" placeholder="WC2N 5DU">
-                                <small id="postcode_missing" class="form-text hidden">*Please provide a valid postcode.</small>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" value="" id="pubs_check">
+                                <label class="lead bold1 font_space" for="pubs_check">Pubs</label>
                             </div>
-                            <!-- geo-localizator -->
-                            <div class="form-group">
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                    <!-- find me button -->
-                                    <button type="button" class="btn btn-primary geoloc_button" onclick="FindMe()">Find Me!</button><span class="hint_mainform"></span>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                    <!-- clear fields button -->
-                                    <button type="button" class="btn btn-primary clearfields_button" onclick="Clearfields()">Clear</button>
-                                </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" value="" id="bars_check">
+                                <label class="lead bold1 font_space" for="bars_check">Bars</label>
                             </div>
+                            <div class="col-lg-12">
+                                <!-- clear checkboxes button -->
+                                <button type="button" class="btn btn-primary clearcheck_button" onclick="ClearCheckboxes()">Clear</button>
+                            </div>
+                        </div>
+                        <!-- submit button -->
+                        <div class="formsubmition">
+                            <button type="button" class="btn btn-primary btn_wide" onclick="StartYourTrip();">Start Trip</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <!-- white separate line -->
-            <div class="separate_line1"></div>
-            <!-- search options CLUBS PUBS BARS -->
-            <div class="row">
-                <form role="form">
-                    <div class="search_options">
-                        <h3 class="lead bold1">What are you looking for tonight?</h3>
-                        <small id="tickbox_missing" class="form-text hidden">*Please tick any of tick boxes.</small>
-                        <div class="form-check">
-                            <input type="checkbox" class="custom-check-input" value="" id="clubs_check">
-                            <label class="lead bold1 font_space" for="clubs_check">Clubs</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" value="" id="pubs_check">
-                            <label class="lead bold1 font_space" for="pubs_check">Pubs</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" value="" id="bars_check">
-                            <label class="lead bold1 font_space" for="bars_check">Bars</label>
-                        </div>
-                        <div class="col-lg-12">
-                            <!-- clear checkboxes button -->
-                            <button type="button" class="btn btn-primary clearcheck_button" onclick="ClearCheckboxes()">Clear</button>
-                        </div>
-                    </div>
-                    <!-- submit button -->
-                    <div class="formsubmition">
-                        <button type="button" class="btn btn-primary btn_wide" onclick="StartYourTrip();">Start Trip</button>
-                    </div>
-                </form>
-            </div>
         </div>
-    </div>
 
-    <!-- map container -->
-    <div id="map_container" class="hidden">
-        <div class="sidebar">
-            <div class="logotype">
-                <a href="index.html" class="main_logo"><img src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
+        <!-- map container -->
+        <div id="map_container" class="hidden">
+            <div class="sidebar">
+                <div class="logotype">
+                    <a href="index.html" class="main_logo"><img src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
+                </div>
+                <div class="close_map" onclick="closeMap()">
+                </div>
             </div>
-            <div class="close_map" onclick="closeMap()">
-            </div>
+            <div id="map"></div>
         </div>
-        <div id="map"></div>
-    </div>
 
-    <!-- footer section -->
+        <!-- footer section -->
         <footer id="footer_main" class="">
             <div class="row">
                 <!-- white separate line -->
