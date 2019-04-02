@@ -170,6 +170,10 @@ function initMap() {
     document.getElementById('map'), { zoom: 15, center: uluru });
   // The marker, positioned at Uluru
   var marker = new google.maps.Marker({ position: uluru, map: map });
+
+  var marker = new google.maps.Marker({
+    position: map.getCenter
+  });
 }
 
 
