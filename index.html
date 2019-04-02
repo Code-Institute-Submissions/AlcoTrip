@@ -26,9 +26,8 @@
 
     <!-- page loader section -->
     <div id="loader"></div>
-    <div style="display:none" id="page_loader" class="animate-bottom">
+        <div style="display:none" id="page_loader" class="animate-bottom"></div>
         <div id="whole_page"></div>
-    </div>
     <!-- page loader section end -->
     <div id="main_page_container" class="">
         <!-- header with logotype -->
@@ -102,7 +101,7 @@
                         </div>
                         <div class="col-lg-12">
                             <!-- clear checkboxes button -->
-                            <button type="button" class="btn btn-primary clearcheck_button" onclick="ClearCheckboxes()">Clear</button>
+                            <button type="button" class="btn btn-primary clearcheck_button" onclick="ClearCheckboxes();">Clear</button>
                         </div>
                     </div>
                     <!-- submit button -->
@@ -118,10 +117,10 @@
     <div id="map_container" class="hidden">
         <div class="sidebar">
             <div class="logotype">
-                <a href="index.html" class="main_logo"><img src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
+                <a href="index.html" class="main_logo_sidebar"><img src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
             </div>
-            <div class="close_map" onclick="closeMap()">
-            </div>
+            <div class="collapse_sidebar" onclick="collapseSideBar();"></div>
+            <div class="" onclick="closeMap();"></div>
         </div>
         <div id="map"></div>
     </div>
