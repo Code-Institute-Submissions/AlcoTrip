@@ -8,6 +8,7 @@ function myFunction() {
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("page_loader").style.display = "block";
+  document.getElementById("whole_page").style.display = "none";
 }
 /* _____________________________________________________________________________
 ________________________________________________________________________________
@@ -82,7 +83,7 @@ function ClearCheckboxes() {
   if (chck_bars.checked = true) {
     chck_bars.click();
   }
-    /* tick boxes */
+  /* tick boxes */
   document.getElementById("tickbox_missing").classList.add("hidden");
   document.getElementById("tickbox_missing").classList.remove("text-muted1");
 }
@@ -145,15 +146,15 @@ function StartYourTrip() {
     document.getElementById("tickbox_missing").scrollIntoView({ behavior: "smooth" });
   }
   else {
-    /*do nithing*/
+
+
+    document.getElementById("main_page_container").classList.add("hidden");
+
+    document.getElementById("map_container").classList.remove("hidden");
+    document.getElementById("map_container").classList.add("map_main");
+
+    document.getElementById("footer_main").classList.add("hidden");
   }
-
-  document.getElementById("main_page_container").classList.add("hidden");
-
-  document.getElementById("map_container").classList.remove("hidden");
-  document.getElementById("map_container").classList.add("map_main");
-
-  document.getElementById("footer_main").classList.add("hidden");
 }
 /* _____________________________________________________________________________
 ________________________________________________________________________________ MAP FUNCTION */

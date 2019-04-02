@@ -181,6 +181,11 @@ a:hover {
   to {
     bottom: 0;
     opacity: 1; } }
+.whole_page {
+  width: 100%;
+  height: 100%;
+  background-color: red; }
+
 .main_logo img {
   display: block;
   margin-left: auto;
