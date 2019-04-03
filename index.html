@@ -26,8 +26,8 @@
 
     <!-- page loader section -->
     <div id="loader"></div>
-        <div style="display:none" id="page_loader" class="animate-bottom"></div>
-        <div id="whole_page"></div>
+    <div style="display:none" id="page_loader" class="animate-bottom"></div>
+    <div id="whole_page"></div>
     <!-- page loader section end -->
     <div id="main_page_container" class="hidden">
         <!-- header with logotype -->
@@ -106,7 +106,7 @@
                     </div>
                     <!-- submit button -->
                     <div class="formsubmition">
-                        <button type="button" class="btn btn-primary btn_wide" onclick="StartYourTrip();">Start Trip</button>
+                        <button type="button" class="btn btn-primary btn_wide" onclick="StartYourTrip()">Start Trip</button>
                     </div>
                 </form>
             </div>
@@ -115,12 +115,14 @@
 
     <!-- map container -->
     <div id="map_container" class="map_main">
-        <div class="sidebar">
+        <div id="sidebar_blue" class="sidebar">
             <div class="logotype">
                 <a href="index.html" class="main_logo_sidebar"><img src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
+                <div class="collapse_sidebar" onclick="collapseSideBar()">
+                    <img src="assets/images/icons/minimize_button.png" alt="minimize sidebar button"></img>
+                </div>
             </div>
-            <div class="collapse_sidebar" onclick="collapseSideBar();"></div>
-            <div class="" onclick="closeMap();"></div>
+            <div class="" onclick="closeMap()"></div>
         </div>
         <div id="map"></div>
     </div>
