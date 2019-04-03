@@ -331,11 +331,11 @@ input[type="checkbox"] {
   width: 100%; }
 
 .collapse_sidebar {
-  background-image: url(../images/icons/minimize_button.png);
   width: 40px;
   height: 40px;
   float: right;
-  margin-right: 10px; }
+  margin-right: 10px;
+  transition: 300ms linear; }
 
 .sidebar {
   float: left;
@@ -348,7 +348,8 @@ input[type="checkbox"] {
 .main_logo_sidebar img {
   display: block;
   margin: auto;
-  max-width: 40%; }
+  max-width: 40%;
+  float: left; }
 
 .map_main {
   margin: 0px auto;
