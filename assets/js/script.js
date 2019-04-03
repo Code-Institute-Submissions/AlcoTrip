@@ -157,14 +157,28 @@ function StartYourTrip() {
 /* _____________________________________________________________________________
 ________________________________________________________________________________ SIDEBAR FUNCTION */
 function collapseSideBar() {
-  
-  
-  
   /* width change with smooth animation */
   $(this).click(function() {
     $("#sidebar_blue").animate({
-      width: "50px",
-    }, 400);
+      width: "70px",
+    }, 300);
+    let root = document.documentElement;
+    root.addEventListener("mousemove", e => {
+      root.style.setProperty('--sBar_width', "70px");
+    });
+    $(".main_logo_sidebar").hide();
+  });
+  var tmpAnimation = 0;
+  var element = $("#sidebar_collapse_icon");
+  tmpAnimation = tmpAnimation + 180;
+
+  $({ degrees: tmpAnimation - 180 }).animate({ degrees: tmpAnimation }, {
+    duration: 250,
+    step: function(now) {
+      element.css({
+        transform: 'rotate(' + now + 'deg)'
+      });
+    }
   });
 }
 
