@@ -152,6 +152,22 @@ function StartYourTrip() {
     document.getElementById("footer_main").classList.add("hidden");
   }
 }
+
+
+/* _____________________________________________________________________________
+________________________________________________________________________________ SIDEBAR FUNCTION */
+function collapseSideBar() {
+  
+  
+  
+  /* width change with smooth animation */
+  $(this).click(function() {
+    $("#sidebar_blue").animate({
+      width: "50px",
+    }, 400);
+  });
+}
+
 /* _____________________________________________________________________________
 ________________________________________________________________________________ MAP FUNCTION */
 
