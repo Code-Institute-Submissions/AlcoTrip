@@ -41,8 +41,6 @@ function FindMe() {
   /* test value */
   myTown.value = "Wellingborough";
   myPostCode.value = "NN82DF";
-
-
 }
 /* _____________________________________________________________________________
 ________________________________________________________________________________
@@ -146,8 +144,6 @@ function StartYourTrip() {
     document.getElementById("tickbox_missing").scrollIntoView({ behavior: "smooth" });
   }
   else {
-
-
     document.getElementById("main_page_container").classList.add("hidden");
 
     document.getElementById("map_container").classList.remove("hidden");
@@ -175,7 +171,6 @@ function initMap() {
     position: map.getCenter
   });
 }
-
 
 function closeMap() {
   document.getElementById("main_page_container").classList.remove("hidden");
