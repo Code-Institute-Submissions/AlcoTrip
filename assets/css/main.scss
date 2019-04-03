@@ -379,32 +379,39 @@ input[type="checkbox"] {
 }
 
 //______________________________________________________________________________ SIDEBAR
-$sBar_width: 350px;
-$gMap_width: calc(100% - 350px); // 100% - $sBar_width
+:root {
+
+--sBar_width: 350px;
+--gMap_width: calc(100% - var(--sBar_width)); // 100% - $sBar_width
+
+}
 
 .collapse_sidebar {
-    width: 40px;
-    height: 40px;
+    width: 50px;
     float: right;
-    margin-right: 10px;
-    transition:300ms linear;
+    margin-top: 30px;
+    img {
+        width: 26px;
+        height: 26px;
+    }
 }
 
 .sidebar {
     float: left;
     position: absolute;
     z-index: 1;
-    width: $sBar_width;
+    width: var(--sBar_width);
     min-height: 100%;
     background-color: $primary-color;
 }
 
 .main_logo_sidebar {
+    width: 280px;
+    float: left;
     img {
         display: block;
-        margin: auto;
-        max-width: 40%;
-        float: left;
+        margin-left: 30px;
+        max-width: 60%;
     }
 }
 
@@ -422,7 +429,7 @@ $gMap_width: calc(100% - 350px); // 100% - $sBar_width
 #map {
     margin: 0;
     padding: 0;
-    min-width: $gMap_width;
+    min-width: var(--gMap_width);
     min-height: 100%;
     float: right;
 }

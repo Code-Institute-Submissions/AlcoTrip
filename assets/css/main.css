@@ -330,26 +330,33 @@ input[type="checkbox"] {
   margin-bottom: 20px;
   width: 100%; }
 
+:root {
+  --sBar_width: 350px;
+  --gMap_width: calc(100% - var(--sBar_width)); }
+
 .collapse_sidebar {
-  width: 40px;
-  height: 40px;
+  width: 50px;
   float: right;
-  margin-right: 10px;
-  transition: 300ms linear; }
+  margin-top: 30px; }
+  .collapse_sidebar img {
+    width: 26px;
+    height: 26px; }
 
 .sidebar {
   float: left;
   position: absolute;
   z-index: 1;
-  width: 350px;
+  width: var(--sBar_width);
   min-height: 100%;
   background-color: #2E4A63; }
 
-.main_logo_sidebar img {
-  display: block;
-  margin: auto;
-  max-width: 40%;
+.main_logo_sidebar {
+  width: 280px;
   float: left; }
+  .main_logo_sidebar img {
+    display: block;
+    margin-left: 30px;
+    max-width: 60%; }
 
 .map_main {
   margin: 0px auto;
@@ -363,7 +370,7 @@ input[type="checkbox"] {
 #map {
   margin: 0;
   padding: 0;
-  min-width: calc(100% - 350px);
+  min-width: var(--gMap_width);
   min-height: 100%;
   float: right; }
 
