@@ -22,7 +22,7 @@
     <title>Alco Trip | Visit all places near you!</title>
 </head>
 
-<body onload="myFunction(); initMap()">
+<body onload="myFunction(); initMap();">
 
     <!-- page loader section -->
     <div id="loader"></div>
@@ -68,11 +68,11 @@
                             <div class="form-group">
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <!-- find me button -->
-                                    <button type="button" class="btn btn-primary geoloc_button" onclick="FindMe()">Find Me!</button><span class="hint_mainform"></span>
+                                    <button type="button" class="btn btn-primary geoloc_button" onclick="FindMe();">Find Me!</button><span class="hint_mainform"></span>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <!-- clear fields button -->
-                                    <button type="button" class="btn btn-primary clearfields_button" onclick="Clearfields()">Clear</button>
+                                    <button type="button" class="btn btn-primary clearfields_button" onclick="Clearfields();">Clear</button>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                     </div>
                     <!-- submit button -->
                     <div class="formsubmition">
-                        <button type="button" class="btn btn-primary btn_wide" onclick="StartYourTrip()">Start Trip</button>
+                        <button type="button" class="btn btn-primary btn_wide" onclick="StartYourTrip();">Start Trip</button>
                     </div>
                 </form>
             </div>
@@ -116,13 +116,13 @@
     <!-- map container -->
     <div id="map_container" class="map_main">
         <div id="sidebar_blue" class="sidebar">
-            <div class="logotype">
+            <div id="logotype_sidebar" class="logotype">
                 <a href="index.html" class="main_logo_sidebar"><img id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
             </div>
-            <div class="collapse_sidebar" onclick="collapseSideBar()">
+            <div class="collapse_sidebar" onclick="collapseSideBar();">
                 <img id="sidebar_collapse_icon" src="assets/images/icons/minimize_button.png" alt="minimize sidebar button" style="cursor: pointer;"></img>
             </div>
-            <div class="" onclick="closeMap()"></div>
+            <div class="" onclick="closeMap();"></div>
         </div>
         <div id="map"></div>
     </div>
