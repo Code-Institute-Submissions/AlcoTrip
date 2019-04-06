@@ -158,14 +158,15 @@ function StartYourTrip() {
 ________________________________________________________________________________ SIDEBAR FUNCTION */
 function collapseSideBar() {
   let toggle_q = document.getElementById("sidebar_blue").clientWidth;
-  
+  var tmpAnimation = 0;
+  var element = $("#sidebar_collapse_icon");
+
   if (toggle_q === 360) {
+
     $("#logotype_sidebar").hide(0, "swing");
     document.documentElement.style
       .setProperty("--sBar_width", "70px");
 
-    var tmpAnimation = 0;
-    var element = $("#sidebar_collapse_icon");
     tmpAnimation = tmpAnimation - 180;
     $({ degrees: tmpAnimation - 180 }).animate({ degrees: tmpAnimation }, {
       duration: 300,
@@ -180,10 +181,6 @@ function collapseSideBar() {
 
     document.documentElement.style
       .setProperty("--sBar_width", "360px");
-    $("#logotype_sidebar").show(200, "swing");
-
-    var tmpAnimation = 0;
-    var element = $("#sidebar_collapse_icon");
     tmpAnimation = tmpAnimation - 0;
     $({ degrees: tmpAnimation + 180 }).animate({ degrees: tmpAnimation }, {
       duration: 300,

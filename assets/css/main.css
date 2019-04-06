@@ -347,7 +347,6 @@ input[type="checkbox"] {
 .sidebar {
   float: left;
   position: absolute;
-  z-index: 1;
   width: var(--sBar_width);
   min-height: 100%;
   background-color: #2E4A63;
