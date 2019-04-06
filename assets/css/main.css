@@ -378,7 +378,9 @@ input[type="checkbox"] {
   padding: 0;
   min-width: var(--gMap_width);
   min-height: 100%;
-  float: right; }
+  float: right;
+  transition-timing-function: ease-in-out;
+  transition: 0.4s; }
 
 footer {
   margin-bottom: 20px;
