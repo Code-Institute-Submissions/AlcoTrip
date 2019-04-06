@@ -54,13 +54,13 @@
                         <!-- town adn postcode fields -->
                         <div class="town_postcode">
                             <div class="form-group">
-                                <h3 class="lead lead-edit bold1" for="mainbox_city">Enter your town</h3>
+                                <label class="lead lead-edit bold1" for="mainbox_city">Enter your town</label>
                                 <span class="hint_mainform"></span>
                                 <input type="text" class="form-control upper" id="mainbox_city" placeholder="LONDON">
                                 <small id="town_missing" class="form-text hidden">*Please provide a valid town name.</small>
                             </div>
                             <div class="form-group">
-                                <h3 class="lead lead-edit bold1" for="mainbox_postcode">Enter your postcode</h3>
+                                <label class="lead lead-edit bold1" for="mainbox_postcode">Enter your postcode</label>
                                 <input type="text" class="form-control upper" id="mainbox_postcode" placeholder="WC2N 5DU">
                                 <small id="postcode_missing" class="form-text hidden">*Please provide a valid postcode.</small>
                             </div>
@@ -83,7 +83,7 @@
             <div class="separate_line1"></div>
             <!-- search options CLUBS PUBS BARS -->
             <div class="row">
-                <form role="form">
+                <form>
                     <div class="search_options">
                         <h3 class="lead bold1">What are you looking for tonight?</h3>
                         <small id="tickbox_missing" class="form-text hidden">*Please tick any of tick boxes.</small>
@@ -112,21 +112,47 @@
             </div>
         </div>
     </div>
-
+    
     <!-- map container -->
     <div id="map_container" class="map_main">
+        <!-- side bar container -->
         <div id="sidebar_blue" class="sidebar">
+            <!-- minimize icon container-->
+            <div class="collapse_sidebar" onclick="collapseSideBar();">
+                <img id="sidebar_collapse_icon" src="assets/images/icons/minimize_button.png" alt="minimize sidebar button" style="cursor: pointer;">
+                <lable class="hint_s_style">hide</lable>
+            </div>
+            <!-- logotype container -->
             <div id="logotype_sidebar" class="logotype">
                 <a href="index.html" class="main_logo_sidebar"><img id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
             </div>
-            <div class="collapse_sidebar" onclick="collapseSideBar();">
-                <img id="sidebar_collapse_icon" src="assets/images/icons/minimize_button.png" alt="minimize sidebar button" style="cursor: pointer;"></img>
+
+            <!-- main controls contianer -->
+            <div class="controls">
+                <h4 class="">Your location:</h4>
+                <span>Gdansk</span>
             </div>
-            <div class="" onclick="closeMap();"></div>
+            <!-- go back to main page button -->
+            <div class="" onclick="closeMap();">
+                <h2 class="">close map button</h2>
+            </div>
+            <!-- side bar footer container -->
+            <div class="map_footer">
+                <div class="row">
+                    <!-- white separate line -->
+                    <div class="separate_line1"></div>
+                    <!-- copyright area -->
+                    <div class="col-md-12">
+                        <div class="copyrights">
+                            <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div id="map"></div>
     </div>
-
     <!-- footer section -->
     <footer id="footer_main" class="hidden">
         <div class="row">
@@ -145,8 +171,6 @@
     <!-- jquery and bootstrap scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- personal scripts -->
-    <script src="assets/js/script.js"></script>
-
+    <script src="./assets/js/script.js"></script>
 </body>
-
 </html>
