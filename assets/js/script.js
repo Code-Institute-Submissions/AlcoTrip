@@ -176,6 +176,8 @@ function collapseSideBar() {
         });
       }
     });
+    $("#hint_show").show(100);
+    $("#hint_hide").hide(100);
   }
   else if (toggle_q === 70) {
 
@@ -190,6 +192,8 @@ function collapseSideBar() {
         });
       }
     });
+    $("#hint_show").hide(100);
+    $("#hint_hide").show(100);
   }
 }
 
