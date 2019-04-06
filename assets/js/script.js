@@ -157,43 +157,58 @@ function StartYourTrip() {
 /* _____________________________________________________________________________
 ________________________________________________________________________________ SIDEBAR FUNCTION */
 function collapseSideBar() {
-  /* width change with smooth animation */
-  $(this).click(function() {
-    $("#sidebar_blue").animate({
-      width: "70px",
-    }, 300);
-    let sidebar_var = document.documentElement;
-     sidebar_var.addEventListener("mousemove", e => {
-      sidebar_var.style.setProperty('--sBar_width', "70px");
-    });
-    $(".main_logo_sidebar").hide();
-  });
-  var tmpAnimation = 0;
-  var element = $("#sidebar_collapse_icon");
-  tmpAnimation = tmpAnimation + 180;
+  let toggle_q = document.getElementById("sidebar_blue").clientWidth;
+  
+  if (toggle_q === 360) {
+    $("#logotype_sidebar").hide(0, "swing");
+    document.documentElement.style
+      .setProperty("--sBar_width", "70px");
 
-  $({ degrees: tmpAnimation - 180 }).animate({ degrees: tmpAnimation }, {
-    duration: 250,
-    step: function(now) {
-      element.css({
-        transform: 'rotate(' + now + 'deg)'
-      });
-    }
-  });
+    var tmpAnimation = 0;
+    var element = $("#sidebar_collapse_icon");
+    tmpAnimation = tmpAnimation - 180;
+    $({ degrees: tmpAnimation - 180 }).animate({ degrees: tmpAnimation }, {
+      duration: 300,
+      step: function(now) {
+        element.css({
+          transform: 'rotate(' + now + 'deg)'
+        });
+      }
+    });
+  }
+  else if (toggle_q === 70) {
+
+    document.documentElement.style
+      .setProperty("--sBar_width", "360px");
+    $("#logotype_sidebar").show(200, "swing");
+
+    var tmpAnimation = 0;
+    var element = $("#sidebar_collapse_icon");
+    tmpAnimation = tmpAnimation - 0;
+    $({ degrees: tmpAnimation + 180 }).animate({ degrees: tmpAnimation }, {
+      duration: 300,
+      step: function(now) {
+        element.css({
+          transform: 'rotate(' + now + 'deg)'
+        });
+      }
+    });
+  }
 }
+
 
 /* _____________________________________________________________________________
 ________________________________________________________________________________ MAP FUNCTION */
 
 function initMap() {
-  let myLat = 51.509865
-  let myLong = -0.118092
+  let myLat = 54.372158
+  let myLong = 18.638306
 
   // The location of Uluru
   var uluru = { lat: myLat, lng: myLong };
   // The map, centered at Uluru
   var map = new google.maps.Map(
-    document.getElementById('map'), { zoom: 15, center: uluru });
+    document.getElementById('map'), { zoom: 10, center: uluru });
   // The marker, positioned at Uluru
   var marker = new google.maps.Marker({ position: uluru, map: map });
 
