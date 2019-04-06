@@ -399,7 +399,6 @@ input[type="checkbox"] {
 
 .sidebar {
     float: left;
-    position: absolute;
     z-index: 1;
     width: var(--sBar_width);
     min-height: 100%;
@@ -443,6 +442,7 @@ input[type="checkbox"] {
 
 
 //______________________________________________________________________________ FOOTER
+
 footer {
     margin-bottom: 20px;
     text-align: center;
@@ -451,3 +451,10 @@ footer {
 .copyrights {
     @extend %basic_margin;
 }
+
+.sidebar_footer {
+    text-align: center;
+    left: 0;
+    bottom: 0;
+}
+

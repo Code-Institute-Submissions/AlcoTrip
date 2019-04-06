@@ -354,7 +354,6 @@ input[type="checkbox"] {
 
 .sidebar {
   float: left;
-  position: absolute;
   z-index: 1;
   width: var(--sBar_width);
   min-height: 100%;
@@ -393,5 +392,10 @@ input[type="checkbox"] {
 footer {
   margin-bottom: 20px;
   text-align: center; }
+
+.sidebar_footer {
+  text-align: center;
+  left: 0;
+  bottom: 0; }
 
 /*# sourceMappingURL=main.css.map */
