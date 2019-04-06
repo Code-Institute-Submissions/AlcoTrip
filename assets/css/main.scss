@@ -379,7 +379,7 @@ input[type="checkbox"] {
 }
 
 //______________________________________________________________________________ SIDEBAR
-:root {
+:sidebar_var {
 
 --sBar_width: 350px;
 --gMap_width: calc(100% - var(--sBar_width)); // 100% - $sBar_width

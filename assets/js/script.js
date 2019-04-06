@@ -162,9 +162,9 @@ function collapseSideBar() {
     $("#sidebar_blue").animate({
       width: "70px",
     }, 300);
-    let root = document.documentElement;
-    root.addEventListener("mousemove", e => {
-      root.style.setProperty('--sBar_width', "70px");
+    let sidebar_var = document.documentElement;
+     sidebar_var.addEventListener("mousemove", e => {
+      sidebar_var.style.setProperty('--sBar_width', "70px");
     });
     $(".main_logo_sidebar").hide();
   });
