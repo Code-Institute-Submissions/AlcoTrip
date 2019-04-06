@@ -68,6 +68,14 @@
 .font_space {
   margin-left: 20px; }
 
+/*______________________________________________________________________________ hint & info text styles */
+.hint_s_style {
+  color: #fff;
+  font-family: Roboto, san-serif;
+  font-size: 10px;
+  font-weight: 100;
+  letter-spacing: 2px; }
+
 .auto-margin, .separate_line, .separate_line1, .main-title, .town_postcode, .formsubmition, .search_options, .copyrights {
   margin: auto;
   width: 80%; }
@@ -347,6 +355,7 @@ input[type="checkbox"] {
 .sidebar {
   float: left;
   position: absolute;
+  z-index: 1;
   width: var(--sBar_width);
   min-height: 100%;
   background-color: #2E4A63;
