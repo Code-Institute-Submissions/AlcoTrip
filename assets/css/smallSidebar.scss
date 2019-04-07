@@ -1,0 +1,27 @@
+.small_sidebar_main {}
+
+.little_icons {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    .little_iClubs {}
+    .little_iPubs {}
+    .little_iBars {}
+}
+
+.bottom_exit {
+    .exit_sSidebar {
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        padding: 0;
+        left: 18px;
+        bottom: 20px;
+        position: fixed;
+        float: right;
+        .close_map {
+            img {}
+        }
+    }
+}
