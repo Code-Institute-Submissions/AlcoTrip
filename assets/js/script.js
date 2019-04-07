@@ -163,7 +163,6 @@ function collapseSideBar() {
 
   if (toggle_q === 360) {
 
-    $("#logotype_sidebar").hide(0, "swing");
     document.documentElement.style
       .setProperty("--sBar_width", "70px");
 
@@ -176,8 +175,11 @@ function collapseSideBar() {
         });
       }
     });
-    $("#hint_show").show(100);
-    $("#hint_hide").hide(100);
+    document.getElementById("hint_show").classList.remove("hidden");
+    document.getElementById("hint_hide").classList.add("hidden");
+    document.getElementById("logotype_sidebar").classList.add("hidden");
+    document.getElementById("main_sidebar").classList.add("hidden");
+
   }
   else if (toggle_q === 70) {
 
@@ -192,10 +194,16 @@ function collapseSideBar() {
         });
       }
     });
-    $("#hint_show").hide(100);
-    $("#hint_hide").show(100);
+    document.getElementById("hint_show").classList.add("hidden");
+    document.getElementById("hint_hide").classList.remove("hidden");
+    document.getElementById("logotype_sidebar").classList.remove("hidden");
+    document.getElementById("main_sidebar").classList.remove("hidden");
   }
 }
+
+/* _____________________________________________________________________________
+________________________________________________________________________________ CHANGE BUTTON COLOR ON HOVER FUNCTION */
+
 
 
 /* _____________________________________________________________________________

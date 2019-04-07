@@ -76,7 +76,7 @@
   font-weight: 100;
   letter-spacing: 2px; }
 
-.auto-margin, .separate_line, .separate_line1, .main-title, .town_postcode, .formsubmition, .search_options, .copyrights {
+.auto-margin, .separate_line, .separate_line1, .separate_line2, .main-title, .town_postcode, .formsubmition, .search_options, .copyrights {
   margin: auto;
   width: 80%; }
 
@@ -96,9 +96,15 @@ body,
   right: 0;
   height: 100%;
   width: 100%;
-  min-height: 100%;
   color: #fff;
   background-color: #2E4A63; }
+
+.col-lg-12,
+.col-xs-12,
+.col-sm-6,
+.col-md-6,
+.col-lg-6 {
+  padding: 0; }
 
 h1 {
   font-size: 2.2em; }
@@ -129,6 +135,9 @@ a:hover {
   color: #ffb400;
   text-decoration: none; }
 
+.no-padding {
+  padding: 0; }
+
 .separate_line {
   background-color: #fff;
   height: 1px;
@@ -137,6 +146,12 @@ a:hover {
 
 .separate_line1 {
   background-color: #fff;
+  height: 1px;
+  margin-top: 40px;
+  margin-bottom: 30px; }
+
+.separate_line2 {
+  background-color: #ffb400;
   height: 1px;
   margin-top: 40px;
   margin-bottom: 30px; }
@@ -200,7 +215,7 @@ a:hover {
   margin-right: auto;
   max-width: 40%; }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 768px) {
   .main_logo img {
     max-width: 60%; } }
 @media screen and (max-width: 400px) {
@@ -239,7 +254,6 @@ a:hover {
 
 .geoloc_button {
   margin-top: 10px;
-  margin-left: -14px;
   float: left;
   border: 2px solid #ffb400; }
 
@@ -251,12 +265,10 @@ a:hover {
 .clearfields_button {
   float: right;
   margin-top: 10px;
-  margin-right: -14px;
   border: 2px solid #ffffff; }
 
 .clearfields_button:hover {
   margin-top: 10px;
-  margin-left: -14px;
   color: #fff;
   background: #670000;
   border-color: #670000; }
@@ -264,20 +276,16 @@ a:hover {
 @media screen and (max-width: 768px) {
   .clearfields_button {
     float: left;
-    margin-top: 20px;
-    margin-left: -14px; }
+    margin-top: 20px; }
 
   .clearfields_button:hover {
     margin-top: 20px;
-    margin-left: -14px;
     color: #fff;
     background: #670000;
     border-color: #670000; } }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .geoloc_button {
-    margin-top: 10px;
-    margin-left: -14px;
-    float: left;
+    margin-top: 20px;
     width: 100%;
     border: 2px solid #ffb400; }
 
@@ -288,15 +296,12 @@ a:hover {
     width: 100%; }
 
   .clearfields_button {
-    float: right;
-    margin-top: 10px;
-    margin-right: -14px;
+    margin-top: 20px;
     border: 2px solid #ffffff;
     width: 100%; }
 
   .clearfields_button:hover {
-    margin-top: 10px;
-    margin-left: -14px;
+    margin-top: 20px;
     color: #fff;
     background: #670000;
     border-color: #670000;
@@ -311,12 +316,10 @@ input[type="checkbox"] {
 .clearcheck_button {
   float: right;
   margin-top: -45px;
-  margin-right: -14px;
   border: 2px solid #ffffff !important; }
 
 .clearcheck_button:hover {
   margin-top: -45px;
-  margin-left: -14px;
   color: #fff;
   background: #670000 !important;
   border-color: #670000 !important; }
@@ -324,15 +327,24 @@ input[type="checkbox"] {
 @media screen and (max-width: 768px) {
   .clearcheck_button {
     float: left;
-    margin-top: 20px;
-    margin-left: -14px; }
+    margin-top: 20px; }
 
   .clearcheck_button:hover {
     margin-top: 20px;
-    margin-left: -14px;
     color: #fff;
     background: #670000 !important;
     border-color: #670000 !important; } }
+@media screen and (max-width: 480px) {
+  .clearcheck_button {
+    margin-top: 20px;
+    width: 100%;
+    border: 2px solid #ffb400; }
+
+  .clearcheck_button:hover {
+    color: #ffffff;
+    background-color: #ffb400;
+    border: 2px solid #ffb400;
+    width: 100%; } }
 .btn_wide {
   margin-top: 40px;
   margin-bottom: 20px;

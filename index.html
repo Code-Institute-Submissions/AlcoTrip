@@ -29,7 +29,7 @@
     <div style="display:none" id="page_loader" class="animate-bottom"></div>
     <div id="whole_page"></div>
     <!-- page loader section end -->
-    <div id="main_page_container" class="hidden">
+    <div id="main_page_container" class="">
         <!-- header with logotype -->
         <header class="container">
             <div class="row">
@@ -112,40 +112,51 @@
             </div>
         </div>
     </div>
-    
+
     <!-- map container -->
-    <div id="map_container" class="map_main">
+    <div id="map_container" class="hidden">
+        <!--class="map_main"-->
         <!-- side bar container -->
         <div id="sidebar_blue" class="sidebar">
             <!-- minimize icon container-->
-            <div class="collapse_sidebar" onclick="collapseSideBar();">
-                <img id="sidebar_collapse_icon" src="assets/images/icons/minimize_button.png" alt="minimize sidebar button" style="cursor: pointer;">
+            <div class="collapse_sidebar" onclick="collapseSideBar();" style="cursor: pointer;">
+                <img id="sidebar_collapse_icon" src="assets/images/icons/minimize_button.png" alt="minimize sidebar button">
                 <lable id="hint_hide" class="hint_s_style">hide</lable>
-                <lable id="hint_show" class="hint_s_style">show</lable>
+                <lable id="hint_show" class="hint_s_style hidden">show</lable>
             </div>
             <!-- logotype container -->
             <div id="logotype_sidebar" class="logotype">
                 <a href="index.html" class="main_logo_sidebar"><img id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
             </div>
-
-            <!-- main controls contianer -->
-            <div class="controls">
-                <h4 class="">Your location:</h4>
-                <span>Gdansk</span>
-            </div>
-            <!-- go back to main page button -->
-            <div class="" onclick="closeMap();">
-                <h2 class="">close map button</h2>
-            </div>
-            <!-- side bar footer container -->
-            <div class="sidebar_footer">
-                <div class="row">
-                    <!-- white separate line -->
-                    <div class="separate_line1"></div>
-                    <!-- copyright area -->
-                    <div class="col-md-12">
-                        <div class="copyrights">
-                            <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
+            <!-- main side bar container / hide & show -->
+            <div class="row">
+                <div id="main_sidebar">
+                    <!-- main controls contianer -->
+                    <div class="row">
+                        <div class="controls">
+                            <h4 class="">Your location:</h4>
+                            <span>Gdansk</span>
+                        </div>
+                    </div>
+                    <!-- go back to main page button -->
+                    <div class="row">
+                        <div class="" onclick="closeMap();">
+                            <h2 class="">close map button</h2>
+                        </div>
+                    </div>
+                    <!-- side bar footer container -->
+                    <div class="row">
+                        <div class="sidebar_footer">
+                            <div class="row">
+                                <!-- white separate line -->
+                                <div class="separate_line2"></div>
+                                <!-- copyright area -->
+                                <div class="col-md-12">
+                                    <div class="copyrights">
+                                        <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -154,7 +165,7 @@
         <div id="map"></div>
     </div>
     <!-- footer section -->
-    <footer id="footer_main" class="hidden">
+    <footer id="footer_main" class="">
         <div class="row">
             <!-- white separate line -->
             <div class="separate_line1"></div>
@@ -173,4 +184,5 @@
     <!-- personal scripts -->
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
