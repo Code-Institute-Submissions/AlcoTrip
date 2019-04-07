@@ -120,8 +120,8 @@
             <!-- minimize icon container-->
             <div class="collapse_sidebar" onclick="collapseSideBar();" style="cursor: pointer;">
                 <img id="sidebar_collapse_icon" src="assets/images/icons/minimize_button.png" alt="minimize sidebar button">
-                <lable id="hint_hide" class="hint_s_style">hide</lable>
-                <lable id="hint_show" class="hint_s_style hidden">show</lable>
+                <label id="hint_hide" class="hint_s_style">hide</label>
+                <label id="hint_show" class="hint_s_style hidden">show</label>
             </div>
             <!-- logotype container -->
             <div id="logotype_sidebar" class="logotype">
@@ -157,13 +157,25 @@
             <!-- main little sidebar container -->
             <div class="small_sidebar_main">
                 <div class="little_icons">
-                    <div class="little_iClubs"></div>
-                    <div class="little_iPubs"></div>
-                    <div class="little_iBars"></div>
+                    <div class="little_iClubs">
+                        <img id="iClubs_marker" src="assets/images/icons/marker.svg" alt="Clubs_marker">
+                        <label id="hint_clubs" class="hint_s_style">Clubs</label>
+                        <span class="tiptext">Tooltip text</span>
+                    </div>
+                    <div class="little_iPubs">
+                        <img id="iPubs_marker" src="assets/images/icons/marker.svg" alt="Pubs_marker">
+                        <label id="hint_pubs" class="hint_s_style">Pubs</label>
+                        <span class="tiptext">Tooltip text</span>
+                    </div>
+                    <div class="little_iBars">
+                        <img id="iBars_marker" src="assets/images/icons/marker.svg" alt="Bars_marker">
+                        <label id="hint_bars" class="hint_s_style">Bars</label>
+                        <span class="tiptext">Tooltip text</span>
+                    </div>
                 </div>
                 <div class="bottom_exit">
                     <div class="exit_sSidebar">
-                        <img id="exit_icon" class="close_map" src="assets/images/icons//close.svg" alt="exit icon/small sidebar" onclick="closeMap();" style="cursor: pointer;"></img>
+                        <img id="exit_icon" class="close_map" src="assets/images/icons/close.svg" alt="exit icon/small sidebar" onclick="closeMap();" style="cursor: pointer;">
                     </div>
                 </div>
             </div>
