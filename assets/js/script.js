@@ -179,6 +179,7 @@ function collapseSideBar() {
     document.getElementById("hint_hide").classList.add("hidden");
     document.getElementById("logotype_sidebar").classList.add("hidden");
     document.getElementById("main_sidebar").classList.add("hidden");
+    document.getElementById("ssb_icons").classList.remove("hidden");
 
   }
   else if (toggle_q === 70) {
@@ -198,6 +199,7 @@ function collapseSideBar() {
     document.getElementById("hint_hide").classList.remove("hidden");
     document.getElementById("logotype_sidebar").classList.remove("hidden");
     document.getElementById("main_sidebar").classList.remove("hidden");
+    document.getElementById("ssb_icons").classList.add("hidden");
   }
 }
 
