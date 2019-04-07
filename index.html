@@ -29,7 +29,7 @@
     <div style="display:none" id="page_loader" class="animate-bottom"></div>
     <div id="whole_page"></div>
     <!-- page loader section end -->
-    <div id="main_page_container" class="">
+    <div id="main_page_container" class="hidden">
         <!-- header with logotype -->
         <header class="container">
             <div class="row">
@@ -112,9 +112,8 @@
             </div>
         </div>
     </div>
-
     <!-- map container -->
-    <div id="map_container" class="hidden">
+    <div id="map_container" class="map_main">
         <!--class="map_main"-->
         <!-- side bar container -->
         <div id="sidebar_blue" class="sidebar">
@@ -128,7 +127,7 @@
             <div id="logotype_sidebar" class="logotype">
                 <a href="index.html" class="main_logo_sidebar"><img id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
             </div>
-            <!-- main side bar container / hide & show -->
+            <!-- main sidebar container -->
             <div class="row">
                 <div id="main_sidebar">
                     <!-- main controls contianer -->
@@ -136,12 +135,6 @@
                         <div class="controls">
                             <h4 class="">Your location:</h4>
                             <span>Gdansk</span>
-                        </div>
-                    </div>
-                    <!-- go back to main page button -->
-                    <div class="row">
-                        <div class="" onclick="closeMap();">
-                            <h2 class="">close map button</h2>
                         </div>
                     </div>
                     <!-- side bar footer container -->
@@ -161,11 +154,24 @@
                     </div>
                 </div>
             </div>
+            <!-- main little sidebar container -->
+            <div class="small_sidebar_main">
+                <div class="little_icons">
+                    <div class="little_iClubs"></div>
+                    <div class="little_iPubs"></div>
+                    <div class="little_iBars"></div>
+                </div>
+                <div class="bottom_exit">
+                    <div class="exit_sSidebar">
+                        <img id="exit_icon" class="close_map" src="assets/images/icons//close.svg" alt="exit icon/small sidebar" onclick="closeMap();" style="cursor: pointer;"></img>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="map"></div>
     </div>
     <!-- footer section -->
-    <footer id="footer_main" class="">
+    <footer id="footer_main" class="hidden">
         <div class="row">
             <!-- white separate line -->
             <div class="separate_line1"></div>
