@@ -76,6 +76,22 @@
   font-weight: 100;
   letter-spacing: 2px; }
 
+.little_icons {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0; }
+
+.bottom_exit .exit_sSidebar {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  left: 18px;
+  bottom: 20px;
+  position: fixed;
+  float: right; }
+
 .auto-margin, .separate_line, .separate_line1, .separate_line2, .main-title, .town_postcode, .formsubmition, .search_options, .copyrights {
   margin: auto;
   width: 80%; }
