@@ -41,6 +41,7 @@ function FindMe() {
   /* test value */
   myTown.value = "Wellingborough";
   myPostCode.value = "NN82DF";
+
 }
 /* _____________________________________________________________________________
 ________________________________________________________________________________
@@ -204,9 +205,15 @@ function collapseSideBar() {
 }
 
 /* _____________________________________________________________________________
-________________________________________________________________________________ CHANGE BUTTON COLOR ON HOVER FUNCTION */
+________________________________________________________________________________ TURN OFF OR ON MARKERS */
+function MarkerOnOff() {
 
+  let marker_red = document.getElementById("marker_red");
+  let marker_green = document.getElementById("marker_green");
+  let marker_orange = document.getElementById("marker_orange");
+  let marker_blue = document.getElementById("marker_blue");
 
+}
 
 /* _____________________________________________________________________________
 ________________________________________________________________________________ MAP FUNCTION */
@@ -221,7 +228,7 @@ function initMap() {
   var map = new google.maps.Map(
     document.getElementById('map'), { zoom: 10, center: uluru });
   // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({ position: uluru, map: map });
+  var marker = new google.maps.Marker({ position: uluru, map: map, /*icon: "assets/images/icons/marker_red.png",*/ });
 
   var marker = new google.maps.Marker({
     position: map.getCenter

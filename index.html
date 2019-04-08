@@ -123,59 +123,65 @@
                 <label id="hint_hide" class="hint_s_style">hide</label>
                 <label id="hint_show" class="hint_s_style hidden">show</label>
             </div>
-            <!-- logotype container -->
-            <div id="logotype_sidebar" class="logotype">
-                <a href="index.html" class="main_logo_sidebar"><img id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
-            </div>
-            <!-- main sidebar container -->
-            <div class="row">
-                <div id="main_sidebar">
-                    <!-- main controls contianer -->
-                    <div class="row">
-                        <div class="controls">
-                            <h4 class="">Your location:</h4>
-                            <span>Gdansk</span>
+            <!-- full sidebar -->
+            <div class="sidebar">
+                <!-- main little sidebar container -->
+                <div id="ssb_icons" class="small_sidebar_main">
+                    <div class="little_icons">
+                        <div id="red_marker" class="little_iPosition" onclick="MarkerOnOff();">
+                            <img id="iPosition_marker" src="assets/images/icons/marker_red.png" alt="Position_marker">
+                            <label id="hint_position" class="hint_s_style">Me</label>
+                            <span class="tiptext">Tooltip text</span>
+                        </div>
+                        <div class="little_iClubs" onclick="MarkerOnOff();">
+                            <img id="iClubs_marker" src="assets/images/icons/marker_green.png" alt="Clubs_marker">
+                            <label id="hint_clubs" class="hint_s_style">Clubs</label>
+                            <span class="tiptext">Tooltip text</span>
+                        </div>
+                        <div class="little_iPubs" onclick="MarkerOnOff();">
+                            <img id="iPubs_marker" src="assets/images/icons/marker_orange.png" alt="Pubs_marker">
+                            <label id="hint_pubs" class="hint_s_style">Pubs</label>
+                            <span class="tiptext">Tooltip text</span>
+                        </div>
+                        <div class="little_iBars" onclick="MarkerOnOff();">
+                            <img id="iBars_marker" src="assets/images/icons/marker_blue.png" alt="Bars_marker">
+                            <label id="hint_bars" class="hint_s_style">Bars</label>
+                            <span class="tiptext">Tooltip text</span>
                         </div>
                     </div>
-                    <!-- side bar footer container -->
-                    <div class="row">
-                        <div class="sidebar_footer">
-                            <div class="row">
-                                <!-- white separate line -->
-                                <div class="separate_line2"></div>
-                                <!-- copyright area -->
-                                <div class="col-md-12">
-                                    <div class="copyrights">
-                                        <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
+                    <div class="download_button">
+                        <img id="download" src="assets/images/icons/download.png" alt="download button">
+                        <label id="hint_bars" class="hint_s_style">Save</label>
+                        <span class="tiptext">Tooltip text</span>
+                    </div>
+                    <div class="bottom_exit">
+                        <div class="exit_sSidebar">
+                            <img id="exit_icon" class="close_map" src="assets/images/icons/close.svg" alt="exit icon/small sidebar" onclick="closeMap();" style="cursor: pointer;">
+                        </div>
+                    </div>
+                </div>
+                <!-- main sidebar container -->
+                <div class="row">
+                    <div id="main_sidebar">
+                        <!-- logotype container -->
+                        <div id="logotype_sidebar" class="logotype">
+                            <a href="index.html" class="main_logo_sidebar"><img id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
+                        </div>
+                        <!-- side bar footer container -->
+                        <div class="row">
+                            <div class="sidebar_footer">
+                                <div class="row">
+                                    <!-- white separate line -->
+                                    <div class="separate_line2"></div>
+                                    <!-- copyright area -->
+                                    <div class="col-md-12">
+                                        <div class="copyrights">
+                                            <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- main little sidebar container -->
-            <div id="ssb_icons" class="small_sidebar_main">
-                <div class="little_icons">
-                    <div class="little_iClubs">
-                        <img id="iClubs_marker" src="assets/images/icons/marker.svg" alt="Clubs_marker">
-                        <label id="hint_clubs" class="hint_s_style">Clubs</label>
-                        <span class="tiptext">Tooltip text</span>
-                    </div>
-                    <div class="little_iPubs">
-                        <img id="iPubs_marker" src="assets/images/icons/marker.svg" alt="Pubs_marker">
-                        <label id="hint_pubs" class="hint_s_style">Pubs</label>
-                        <span class="tiptext">Tooltip text</span>
-                    </div>
-                    <div class="little_iBars">
-                        <img id="iBars_marker" src="assets/images/icons/marker.svg" alt="Bars_marker">
-                        <label id="hint_bars" class="hint_s_style">Bars</label>
-                        <span class="tiptext">Tooltip text</span>
-                    </div>
-                </div>
-                <div class="bottom_exit">
-                    <div class="exit_sSidebar">
-                        <img id="exit_icon" class="close_map" src="assets/images/icons/close.svg" alt="exit icon/small sidebar" onclick="closeMap();" style="cursor: pointer;">
                     </div>
                 </div>
             </div>

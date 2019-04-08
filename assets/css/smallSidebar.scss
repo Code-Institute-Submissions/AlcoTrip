@@ -1,11 +1,17 @@
-%marker_stylye {
+%m_little_stylye {
     width: 40px;
     height: 50px;
     padding: 0;
     text-align: center;
-    margin: 40px 0 0 12px;
-
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 13px;
 }
+
+%marker_stylye {
+    width: 24px;
+}
+
 
 .tiptext {
     visibility: hidden;
@@ -19,35 +25,67 @@
         width: 100%;
         height: 100%;
     }
+    .little_iPosition {
+        @extend %m_little_stylye;
+        img {
+            @extend %marker_stylye;
+        }
+    }
     .little_iClubs {
-        @extend %marker_stylye;
-
-    }
-
-    .little_iPubs {
-        @extend %marker_stylye;
-    }
-
-    .little_iBars {
-        @extend %marker_stylye;
-    }
-
-    .bottom_exit {
-        .exit_sSidebar {
-            .close_map {
-                width: 30px;
-                height: 40px;
-                margin: 0;
-                padding: 0;
-                bottom: 20px;
-                left: 20px;
-                position: absolute;
-                img {
-                    width: 30px;
-                    height: 30px;
-                }
-            }
+        @extend %m_little_stylye;
+        img {
+            @extend %marker_stylye;
         }
     }
 
+    .little_iPubs {
+        @extend %m_little_stylye;
+        img {
+            @extend %marker_stylye;
+        }
+    }
+
+    .little_iBars {
+        @extend %m_little_stylye;
+        img {
+            @extend %marker_stylye;
+        }
+    }
+}
+
+
+.side_line {
+    background-color: #fff;
+    height: 1px;
+    @extend %basic_margin;
+}
+
+.download_button {
+    @extend %m_little_stylye;
+    position: absolute;
+    bottom: 60px;
+    img {
+        @extend %marker_stylye;
+    }
+}
+
+
+
+
+.bottom_exit {
+    .exit_sSidebar {
+        .close_map {
+            width: 30px;
+            height: 40px;
+            margin: 0;
+            padding: 0;
+            bottom: 20px;
+            left: 18px;
+            position: absolute;
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
 }
