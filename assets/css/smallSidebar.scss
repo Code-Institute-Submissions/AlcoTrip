@@ -1,3 +1,9 @@
+//______________________________________________________________________________ CLASSES and VARIABLES
+$primary-color: #2E4A63;
+$secondary-color: #ffb400;
+$primary-font: #ffffff;
+$secondary-font: #000000;
+
 %m_little_stylye {
     width: 40px;
     height: 50px;
@@ -12,10 +18,21 @@
     width: 24px;
 }
 
-
-.tiptext {
+%tiptext_style {
+    width: 160px;
+    color: $primary-color;
+    background-color: #ffffff;
+    border: 2px solid $primary-color;
+    border-radius: 0px 25px 25px 0px;
+    padding: 5px 0;
+    margin-left: 47px;
+    margin-top: 8px;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
     visibility: hidden;
 }
+
 
 .small_sidebar_main {
     width: 100%;
@@ -30,29 +47,39 @@
         img {
             @extend %marker_stylye;
         }
+        .tiptext {
+            @extend %tiptext_style;
+        }
     }
     .little_iClubs {
         @extend %m_little_stylye;
         img {
             @extend %marker_stylye;
         }
+        .tiptext {
+            @extend %tiptext_style;
+        }
     }
-
     .little_iPubs {
         @extend %m_little_stylye;
         img {
             @extend %marker_stylye;
         }
+        .tiptext {
+            @extend %tiptext_style;
+        }
     }
-
     .little_iBars {
         @extend %m_little_stylye;
         img {
             @extend %marker_stylye;
         }
+        .tiptext {
+            @extend %tiptext_style;
+        }
     }
-}
 
+}
 
 .side_line {
     background-color: #fff;
@@ -67,10 +94,11 @@
     img {
         @extend %marker_stylye;
     }
+    .tiptext {
+        @extend %tiptext_style;
+    }
+
 }
-
-
-
 
 .bottom_exit {
     .exit_sSidebar {
@@ -88,4 +116,24 @@
             }
         }
     }
+}
+
+.little_iPosition:hover .tiptext {
+    visibility: visible;
+}
+
+.little_iClubs:hover .tiptext {
+    visibility: visible;
+}
+
+.little_iPubs:hover .tiptext {
+    visibility: visible;
+}
+
+.little_iBars:hover .tiptext {
+    visibility: visible;
+}
+
+.download_button:hover .tiptext {
+    visibility: visible;
 }

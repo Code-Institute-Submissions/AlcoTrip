@@ -88,7 +88,18 @@
 .small_sidebar_main .little_iPosition img, .small_sidebar_main .little_iClubs img, .small_sidebar_main .little_iPubs img, .small_sidebar_main .little_iBars img, .download_button img {
   width: 24px; }
 
-.tiptext {
+.small_sidebar_main .little_iPosition .tiptext, .small_sidebar_main .little_iClubs .tiptext, .small_sidebar_main .little_iPubs .tiptext, .small_sidebar_main .little_iBars .tiptext, .download_button .tiptext {
+  width: 160px;
+  color: #2E4A63;
+  background-color: #ffffff;
+  border: 2px solid #2E4A63;
+  border-radius: 0px 25px 25px 0px;
+  padding: 5px 0;
+  margin-left: 47px;
+  margin-top: 8px;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
   visibility: hidden; }
 
 .small_sidebar_main {
@@ -118,6 +129,21 @@
   .bottom_exit .exit_sSidebar .close_map img {
     width: 30px;
     height: 30px; }
+
+.little_iPosition:hover .tiptext {
+  visibility: visible; }
+
+.little_iClubs:hover .tiptext {
+  visibility: visible; }
+
+.little_iPubs:hover .tiptext {
+  visibility: visible; }
+
+.little_iBars:hover .tiptext {
+  visibility: visible; }
+
+.download_button:hover .tiptext {
+  visibility: visible; }
 
 .side_line, .auto-margin, .separate_line, .separate_line1, .separate_line2, .main-title, .town_postcode, .formsubmition, .search_options, .copyrights {
   margin: auto;
