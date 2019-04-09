@@ -212,6 +212,8 @@ function MarkerOnOff() {
   let marker_green = document.getElementById("marker_green");
   let marker_orange = document.getElementById("marker_orange");
   let marker_blue = document.getElementById("marker_blue");
+  
+  
 
 }
 
@@ -241,4 +243,9 @@ function closeMap() {
   document.getElementById("map_container").classList.add("hidden");
 
   document.getElementById("footer_main").classList.remove("hidden");
+}
+
+
+function downloadMe(){
+  alert("Your AlcoTrip map has been saved.");
 }
