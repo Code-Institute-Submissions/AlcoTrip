@@ -4,14 +4,15 @@ $secondary-color: #ffb400;
 $primary-font: #ffffff;
 $secondary-font: #000000;
 
+//______________________________________________________________________________ STYLE - 768px[+]
 %m_little_stylye {
-    width: 40px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     padding: 0;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
-    margin-left: 13px;
+    margin-left: 2px;
 }
 
 %marker_stylye {
@@ -25,7 +26,7 @@ $secondary-font: #000000;
     border: 2px solid $primary-color;
     border-radius: 0px 25px 25px 0px;
     padding: 5px 0;
-    margin-left: 47px;
+    margin-left: 48px;
     margin-top: 8px;
     text-align: center;
     position: absolute;
@@ -58,6 +59,15 @@ $secondary-font: #000000;
         }
     }
 
+}
+
+#hint_position,
+#hint_clubs,
+#hint_pubs,
+#hint_bars,
+#hint_download {
+    width: 100%;
+    display: inline-block;
 }
 
 .side_line {
@@ -97,42 +107,27 @@ $secondary-font: #000000;
     }
 }
 
-.little_iPosition:hover .tiptext_h {
-    visibility: visible;
-}
-
-.little_iClubs:hover .tiptext_h {
-    visibility: visible;
-}
-
-.little_iPubs:hover .tiptext_h {
-    visibility: visible;
-}
-
-.little_iBars:hover .tiptext_h {
-    visibility: visible;
-}
-
+.little_iPosition:hover .tiptext_h,
+.little_iClubs:hover .tiptext_h,
+.little_iPubs:hover .tiptext_h,
+.little_iBars:hover .tiptext_h,
 .download_button:hover .tiptext_h {
     visibility: visible;
 }
 
-.little_iPosition:hover .tiptext_s {
-    visibility: visible;
-}
-
-.little_iClubs:hover .tiptext_s {
-    visibility: visible;
-}
-
-.little_iPubs:hover .tiptext_s {
-    visibility: visible;
-}
-
+.little_iPosition:hover .tiptext_s,
+.little_iClubs:hover .tiptext_s,
+.little_iPubs:hover .tiptext_s,
 .little_iBars:hover .tiptext_s {
     visibility: visible;
 }
 
-.download_button:hover .tiptext_s {
+.download_button:hover .tiptext {
     visibility: visible;
+}
+
+
+//______________________________________________________________________________ STYLE - 768px[-]
+@media screen and (max-width: 768px) {
+    //______________________________________________________________________________ SIDEBAR
 }

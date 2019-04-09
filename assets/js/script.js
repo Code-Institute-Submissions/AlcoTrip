@@ -208,12 +208,46 @@ function collapseSideBar() {
 ________________________________________________________________________________ TURN OFF OR ON MARKERS */
 function MarkerOnOff() {
 
-  let marker_red = document.getElementById("marker_red");
-  let marker_green = document.getElementById("marker_green");
-  let marker_orange = document.getElementById("marker_orange");
-  let marker_blue = document.getElementById("marker_blue");
-  
-  
+  $("#red_marker").click(function() {
+    if ($(this).children("span").hasClass("hidden")) {
+      $(this).children("span.tiptext_s").removeClass("hidden");
+      $(this).children("img").attr("src", "assets/images/icons/marker_off.png");
+    }
+    else if ($(this).children("span").hasClass("tiptext_s")) {
+      $(this).children("span.tiptext_s").addClass("hidden");
+      $(this).children("img").attr("src", "assets/images/icons/marker_red.png");
+    }
+  });
+  $("#green_marker").click(function() {
+    if ($(this).children("span").hasClass("hidden")) {
+      $(this).children("span.tiptext_s").removeClass("hidden");
+      $(this).children("img").attr("src", "assets/images/icons/marker_off.png");
+    }
+    else if ($(this).children("span").hasClass("tiptext_s")) {
+      $(this).children("span.tiptext_s").addClass("hidden");
+      $(this).children("img").attr("src", "assets/images/icons/marker_green.png");
+    }
+  });
+  $("#orange_marker").click(function() {
+    if ($(this).children("span").hasClass("hidden")) {
+      $(this).children("span.tiptext_s").removeClass("hidden");
+      $(this).children("img").attr("src", "assets/images/icons/marker_off.png");
+    }
+    else if ($(this).children("span").hasClass("tiptext_s")) {
+      $(this).children("span.tiptext_s").addClass("hidden");
+      $(this).children("img").attr("src", "assets/images/icons/marker_orange.png");
+    }
+  });
+  $("#blue_marker").click(function() {
+    if ($(this).children("span").hasClass("hidden")) {
+      $(this).children("span.tiptext_s").removeClass("hidden");
+      $(this).children("img").attr("src", "assets/images/icons/marker_off.png");
+    }
+    else if ($(this).children("span").hasClass("tiptext_s")) {
+      $(this).children("span.tiptext_s").addClass("hidden");
+      $(this).children("img").attr("src", "assets/images/icons/marker_blue.png");
+    }
+  });
 
 }
 
@@ -246,6 +280,6 @@ function closeMap() {
 }
 
 
-function downloadMe(){
+function downloadMe() {
   alert("Your AlcoTrip map has been saved.");
 }
