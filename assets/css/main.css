@@ -76,7 +76,10 @@
   font-weight: 100;
   letter-spacing: 2px; }
 
-.small_sidebar_main .little_iPosition, .small_sidebar_main .little_iClubs, .small_sidebar_main .little_iPubs, .small_sidebar_main .little_iBars, .download_button {
+.small_sidebar_main .little_iPosition,
+.small_sidebar_main .little_iClubs,
+.small_sidebar_main .little_iPubs,
+.small_sidebar_main .little_iBars, .download_button {
   width: 40px;
   height: 50px;
   padding: 0;
@@ -85,10 +88,19 @@
   margin-bottom: 30px;
   margin-left: 13px; }
 
-.small_sidebar_main .little_iPosition img, .small_sidebar_main .little_iClubs img, .small_sidebar_main .little_iPubs img, .small_sidebar_main .little_iBars img, .download_button img {
+.small_sidebar_main .little_iPosition img,
+.small_sidebar_main .little_iClubs img,
+.small_sidebar_main .little_iPubs img,
+.small_sidebar_main .little_iBars img, .download_button img {
   width: 24px; }
 
-.small_sidebar_main .little_iPosition .tiptext, .small_sidebar_main .little_iClubs .tiptext, .small_sidebar_main .little_iPubs .tiptext, .small_sidebar_main .little_iBars .tiptext, .download_button .tiptext {
+.small_sidebar_main .little_iPosition .tiptext_h,
+.small_sidebar_main .little_iClubs .tiptext_h,
+.small_sidebar_main .little_iPubs .tiptext_h,
+.small_sidebar_main .little_iBars .tiptext_h, .small_sidebar_main .little_iPosition .tiptext_s,
+.small_sidebar_main .little_iClubs .tiptext_s,
+.small_sidebar_main .little_iPubs .tiptext_s,
+.small_sidebar_main .little_iBars .tiptext_s, .download_button .tiptext {
   width: 160px;
   color: #2E4A63;
   background-color: #ffffff;
@@ -130,19 +142,34 @@
     width: 30px;
     height: 30px; }
 
-.little_iPosition:hover .tiptext {
+.little_iPosition:hover .tiptext_h {
   visibility: visible; }
 
-.little_iClubs:hover .tiptext {
+.little_iClubs:hover .tiptext_h {
   visibility: visible; }
 
-.little_iPubs:hover .tiptext {
+.little_iPubs:hover .tiptext_h {
   visibility: visible; }
 
-.little_iBars:hover .tiptext {
+.little_iBars:hover .tiptext_h {
   visibility: visible; }
 
-.download_button:hover .tiptext {
+.download_button:hover .tiptext_h {
+  visibility: visible; }
+
+.little_iPosition:hover .tiptext_s {
+  visibility: visible; }
+
+.little_iClubs:hover .tiptext_s {
+  visibility: visible; }
+
+.little_iPubs:hover .tiptext_s {
+  visibility: visible; }
+
+.little_iBars:hover .tiptext_s {
+  visibility: visible; }
+
+.download_button:hover .tiptext_s {
   visibility: visible; }
 
 .side_line, .auto-margin, .separate_line, .separate_line1, .separate_line2, .main-title, .town_postcode, .formsubmition, .search_options, .copyrights {
