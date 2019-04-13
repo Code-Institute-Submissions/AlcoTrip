@@ -92,6 +92,8 @@ ________________________________________________________________________________
 This function validate main form and checks, if any tick box has been ticked */
 function StartYourTrip() {
 
+  initMap();
+
   /* main form variables */
   let myTown = document.getElementById("mainbox_city").value;
   let myPostCode = document.getElementById("mainbox_postcode").value;
@@ -163,7 +165,6 @@ function collapseSideBar() {
   var element = $("#sidebar_collapse_icon");
 
   if (toggle_q === 360) {
-
     document.documentElement.style
       .setProperty("--sBar_width", "70px");
 

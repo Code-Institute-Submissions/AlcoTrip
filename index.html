@@ -167,37 +167,48 @@
                 <!-- main sidebar container -->
                 <div class="">
                     <div id="main_sidebar">
-                        <!-- side bar footer container -->
-                        <div>
-                            <img id="iPosition_marker" src="assets/images/icons/marker_red.png" alt="Position_marker">
+                        <!-- markers on wide sidebar -->
+                        <div class="marker_wide_sidebar">
+                            <div class="marker_style_wide">
+                                <img id="iPosition_marker" src="assets/images/icons/marker_red.png" alt="Position_marker">
+                                <div class="slider_container">
+                                    <div class="range_info_container">
+                                        <label for="" class="range_info">Change Distance</label>
+                                        <label for="" class="range_number">120<span class="distance_class" >Miles</span></label>
+                                    </div>
+                                    <input type="range" class="slider">
+                                </div>
+                                <label class="marker_name">Me</label>
+                            </div>
                         </div>
-                        <div>
+                        <div class="marker_style_wide">
                             <img id="iClubs_marker" src="assets/images/icons/marker_green.png" alt="Clubs_marker">
                         </div>
-                        <div>
+                        <div class="marker_style_wide">
                             <img id="iPubs_marker" src="assets/images/icons/marker_orange.png" alt="Pubs_marker">
                         </div>
-                        <div>
+                        <div class="marker_style_wide">
                             <img id="iBars_marker" src="assets/images/icons/marker_blue.png" alt="Bars_marker">
                         </div>
+                    </div>
+                    <!-- side bar footer container -->
+                    <div class="sidebar_footer">
                         <!-- white separate line -->
-                        <div class="sidebar_footer">
-                            <div class="separate_line2"></div>
-                            <!-- logotype container -->
-                            <div id="logotype_sidebar" class="logotype">
-                                <a href="index.html" class="logo_sidebar"><img id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
-                            </div>
-                            <!-- copyright area -->
-                            <div class="copyrights">
-                                <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
-                            </div>
+                        <div class="separate_line2"></div>
+                        <!-- logotype container -->
+                        <div id="logotype_sidebar" class="logotype">
+                            <div class="logo_sidebar"><img id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo" onclick="closeMap();" style="cursor:pointer;"></div>
                         </div>
-
+                        <!-- copyright area -->
+                        <div class="copyrights">
+                            <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="map"></div>
+    </div>
+    <div id="map"></div>
     </div>
     <!-- footer section -->
     <footer id="footer_main" class="hidden">

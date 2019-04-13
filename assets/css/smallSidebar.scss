@@ -5,7 +5,7 @@ $primary-font: #ffffff;
 $secondary-font: #000000;
 
 //______________________________________________________________________________ STYLE - 768px[+]
-%m_little_stylye {
+%m_little_style {
     width: 60px;
     height: 60px;
     padding: 0;
@@ -15,7 +15,7 @@ $secondary-font: #000000;
     margin-left: 2px;
 }
 
-%marker_stylye {
+%marker_style {
     width: 24px;
 }
 
@@ -47,9 +47,9 @@ $secondary-font: #000000;
     .little_iClubs,
     .little_iPubs,
     .little_iBars {
-        @extend %m_little_stylye;
+        @extend %m_little_style;
         img {
-            @extend %marker_stylye;
+            @extend %marker_style;
         }
         .tiptext_h {
             @extend %tiptext_style;
@@ -77,11 +77,11 @@ $secondary-font: #000000;
 }
 
 .download_button {
-    @extend %m_little_stylye;
+    @extend %m_little_style;
     position: absolute;
     bottom: 60px;
     img {
-        @extend %marker_stylye;
+        @extend %marker_style;
     }
     .tiptext {
         @extend %tiptext_style;

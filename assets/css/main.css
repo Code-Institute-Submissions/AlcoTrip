@@ -69,12 +69,12 @@
   margin-left: 20px; }
 
 /*______________________________________________________________________________ hint & info text styles */
-.hint_s_style {
+.hint_s_style, .marker_style_wide .slider_container .range_info_container .range_info, .marker_style_wide .slider_container .range_info_container .range_number {
   color: #fff;
   font-family: Roboto, san-serif;
-  font-size: 10px;
-  font-weight: 100;
-  letter-spacing: 2px; }
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.8px; }
 
 .small_sidebar_main .little_iPosition,
 .small_sidebar_main .little_iClubs,
@@ -166,7 +166,7 @@
 .download_button:hover .tiptext {
   visibility: visible; }
 
-.side_line, .auto-margin, .separate_line, .separate_line1, .separate_line2, .main-title, .town_postcode, .formsubmition, .search_options, .copyrights {
+.side_line, .auto-margin, .separate_line, .separate_line1, .main-title, .town_postcode, .formsubmition, .search_options, .separate_line2, .copyrights {
   margin: auto;
   width: 80%; }
 
@@ -236,12 +236,6 @@ a:hover {
 
 .separate_line1 {
   background-color: #fff;
-  height: 1px;
-  margin-top: 40px;
-  margin-bottom: 30px; }
-
-.separate_line2 {
-  background-color: #ffb400;
   height: 1px;
   margin-top: 40px;
   margin-bottom: 30px; }
@@ -463,15 +457,99 @@ input[type="checkbox"] {
   transition-timing-function: ease-in-out;
   transition: 0.4s; }
 
-.main_logo_sidebar {
-  width: 280px;
+.marker_style_wide {
+  width: 340px;
+  height: 60px;
+  padding: 0;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 2px; }
+
+.marker_style_wide img {
+  display: inline-block;
+  width: 24px;
+  margin-left: 18px;
   float: left; }
-  .main_logo_sidebar img {
-    display: block;
-    margin-left: 30px;
-    max-width: 60%;
-    transition-timing-function: ease-in-out;
-    transition: 0.4s; }
+.marker_style_wide .slider_container {
+  float: right;
+  width: 280px; }
+  .marker_style_wide .slider_container .range_info_container {
+    width: 210px;
+    margin-bottom: 30px; }
+    .marker_style_wide .slider_container .range_info_container .range_info {
+      float: left;
+      display: inline-block;
+      font-size: 14px; }
+    .marker_style_wide .slider_container .range_info_container .range_number {
+      float: right;
+      display: inline-block;
+      color: #ffb400;
+      font-size: 14px; }
+      .marker_style_wide .slider_container .range_info_container .range_number .distance_class {
+        margin-left: 6px; }
+
+.slider {
+  -webkit-appearance: none;
+  max-width: 240px;
+  height: 5px;
+  background: #ffffff;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-radius: 50px; }
+
+.slider:hover {
+  opacity: 1; }
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #ffb400;
+  cursor: pointer;
+  border-radius: 50%; }
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #ffb400;
+  cursor: pointer;
+  border-radius: 50%; }
+
+.marker_name {
+  width: 100%;
+  display: inline-block;
+  color: #fff;
+  font-family: Roboto, san-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  margin-left: 21px; }
+
+.sidebar_footer {
+  width: 360px;
+  bottom: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  position: absolute; }
+
+.separate_line2 {
+  background-color: #ffb400;
+  height: 1px;
+  margin-top: 40px;
+  margin-bottom: 5px; }
+
+.logotype {
+  width: 360px;
+  display: block; }
+  .logotype .logo_sidebar {
+    width: 100%; }
+    .logotype .logo_sidebar img {
+      display: block;
+      max-width: 40%;
+      margin: 0 auto; }
 
 .map_main {
   margin: 0px auto;
@@ -494,10 +572,5 @@ input[type="checkbox"] {
 footer {
   margin-bottom: 20px;
   text-align: center; }
-
-.sidebar_footer {
-  text-align: center;
-  left: 0;
-  bottom: 0; }
 
 /*# sourceMappingURL=main.css.map */
