@@ -429,6 +429,12 @@ input[type="checkbox"] {
     margin-left: 2px;
 }
 
+%inf_class {
+    float: left;
+    display: inline-block;
+    @extend .hint_s_style;
+    font-size: 14px;
+}
 
 .marker_style_wide {
     @extend %m_little_style1;
@@ -462,22 +468,33 @@ input[type="checkbox"] {
             width: 240px;
             margin-bottom: 30px;
             .range_info {
-                float: left;
-                display: inline-block;
-                @extend .hint_s_style;
-                font-size: 14px;
+                @extend %inf_class;
             }
             .range_number {
+                @extend %inf_class;
                 float: right;
-                display: inline-block;
-                @extend .hint_s_style;
                 color: $secondary-color;
-                font-size: 14px;
                 .distance_class {
                     margin-left: 6px;
                 }
             }
+        }
+    }
+    .inf_container {
+        margin-top: 4px;
+        float: right;
+        width: 280px;
+        h3{
+            margin: 0 0 4px;
+        }
+        .town_info {
+            @extend %inf_class;
+            width: 100%;
+        }
 
+        .postcode_info {
+            @extend %inf_class;
+            width: 100%;
         }
     }
 

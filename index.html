@@ -168,12 +168,15 @@
                 <div class="">
                     <div id="main_sidebar">
                         <!-- markers on wide sidebar -->
-
-                        <div class="marker_wide_sidebar">
-                            <div class="marker_style_wide">
-                                <div class="marker">
-                                    <img id="iPosition_marker" src="assets/images/icons/marker_red.png" alt="Position_marker">
-                                    <label class="marker_name">Me</label>
+                        <div class="marker_style_wide">
+                            <div class="marker">
+                                <img id="iPosition_marker" src="assets/images/icons/marker_red.png" alt="Position_marker">
+                                <label class="marker_name">Me</label>
+                            </div>
+                            <div id="slider" class="inf_container">
+                                <div class="inf_container">
+                                    <h3 class="town_info">Wellingborough</h3>
+                                    <h3 for="" class="postcode_info">NN8 2DF</h3>
                                 </div>
                             </div>
                         </div>
@@ -182,10 +185,10 @@
                                 <img id="iClubs_marker" src="assets/images/icons/marker_green.png" alt="Clubs_marker">
                                 <label class="marker_name">Clubs</label>
                             </div>
-                            <div class="slider_container">
+                            <div id="slider" class="slider_container">
                                 <div class="range_info_container">
                                     <label for="" class="range_info">Change Distance</label>
-                                    <label for="" class="range_number">120<span class="distance_class" >Km</span></label>
+                                    <label for="" class="range_number">120<span class="distance_class" >Miles</span></label>
                                 </div>
                                 <input type="range" class="slider">
                             </div>
@@ -195,10 +198,10 @@
                                 <img id="iPubs_marker" src="assets/images/icons/marker_orange.png" alt="Pubs_marker">
                                 <label class="marker_name">Pubs</label>
                             </div>
-                            <div class="slider_container">
+                            <div id="slider" class="slider_container">
                                 <div class="range_info_container">
                                     <label for="" class="range_info">Change Distance</label>
-                                    <label for="" class="range_number">120<span class="distance_class" >Km</span></label>
+                                    <label for="" class="range_number">120<span class="distance_class" >Miles</span></label>
                                 </div>
                                 <input type="range" class="slider">
                             </div>
@@ -208,10 +211,10 @@
                                 <img id="iBars_marker" src="assets/images/icons/marker_blue.png" alt="Bars_marker">
                                 <label class="marker_name">Bars</label>
                             </div>
-                            <div class="slider_container">
+                            <div id="slider" class="slider_container">
                                 <div class="range_info_container">
                                     <label for="" class="range_info">Change Distance</label>
-                                    <label for="" class="range_number">120<span class="distance_class" >Km</span></label>
+                                    <label for="" class="range_number">120<span class="distance_class" >Miles</span></label>
                                 </div>
                                 <input type="range" class="slider">
                             </div>
@@ -220,13 +223,13 @@
                     <!-- side bar footer container -->
                     <div class="sidebar_footer">
                         <!-- white separate line -->
-                        <div class="separate_line2"></div>
+                        <div id="sidebar_separate_line" class="separate_line2"></div>
                         <!-- logotype container -->
                         <div id="logotype_sidebar" class="logotype">
                             <div class="logo_sidebar"><img id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo" onclick="closeMap();" style="cursor:pointer;"></div>
                         </div>
                         <!-- copyright area -->
-                        <div class="copyrights">
+                        <div id="sidebar_copyrights" class="copyrights">
                             <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
                         </div>
                     </div>

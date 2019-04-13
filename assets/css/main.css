@@ -69,7 +69,7 @@
   margin-left: 20px; }
 
 /*______________________________________________________________________________ hint & info text styles */
-.hint_s_style, .marker_style_wide .slider_container .range_info_container .range_info, .marker_style_wide .slider_container .range_info_container .range_number {
+.hint_s_style, .marker_style_wide .slider_container .range_info_container .range_info, .marker_style_wide .slider_container .range_info_container .range_number, .marker_style_wide .inf_container .town_info, .marker_style_wide .inf_container .postcode_info {
   color: #fff;
   font-family: Roboto, san-serif;
   font-size: 12px;
@@ -465,6 +465,11 @@ input[type="checkbox"] {
   margin-bottom: 30px;
   margin-left: 2px; }
 
+.marker_style_wide .slider_container .range_info_container .range_info, .marker_style_wide .slider_container .range_info_container .range_number, .marker_style_wide .inf_container .town_info, .marker_style_wide .inf_container .postcode_info {
+  float: left;
+  display: inline-block;
+  font-size: 14px; }
+
 .marker_style_wide .marker {
   display: inline-block;
   float: left;
@@ -491,17 +496,21 @@ input[type="checkbox"] {
   .marker_style_wide .slider_container .range_info_container {
     width: 240px;
     margin-bottom: 30px; }
-    .marker_style_wide .slider_container .range_info_container .range_info {
-      float: left;
-      display: inline-block;
-      font-size: 14px; }
     .marker_style_wide .slider_container .range_info_container .range_number {
       float: right;
-      display: inline-block;
-      color: #ffb400;
-      font-size: 14px; }
+      color: #ffb400; }
       .marker_style_wide .slider_container .range_info_container .range_number .distance_class {
         margin-left: 6px; }
+.marker_style_wide .inf_container {
+  margin-top: 4px;
+  float: right;
+  width: 280px; }
+  .marker_style_wide .inf_container h3 {
+    margin: 0 0 4px; }
+  .marker_style_wide .inf_container .town_info {
+    width: 100%; }
+  .marker_style_wide .inf_container .postcode_info {
+    width: 100%; }
 
 .slider {
   -webkit-appearance: none;

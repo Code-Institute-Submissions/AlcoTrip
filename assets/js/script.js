@@ -179,9 +179,12 @@ function collapseSideBar() {
     });
     document.getElementById("hint_show").classList.remove("hidden");
     document.getElementById("hint_hide").classList.add("hidden");
-    document.getElementById("logotype_sidebar").classList.add("hidden");
     document.getElementById("main_sidebar").classList.add("hidden");
     document.getElementById("ssb_icons").classList.remove("hidden");
+    $("#slider").fadeTo(150, 0);
+    $("#sidebar_separate_line").fadeTo(150, 0);
+    $("#logotype_sidebar").fadeTo(150, 0);
+    $("#sidebar_copyrights").fadeTo(150, 0);
 
   }
   else if (toggle_q === 70) {
@@ -199,9 +202,12 @@ function collapseSideBar() {
     });
     document.getElementById("hint_show").classList.add("hidden");
     document.getElementById("hint_hide").classList.remove("hidden");
-    document.getElementById("logotype_sidebar").classList.remove("hidden");
     document.getElementById("main_sidebar").classList.remove("hidden");
     document.getElementById("ssb_icons").classList.add("hidden");
+    $("#slider").fadeTo(150, 1);
+    $("#sidebar_separate_line").fadeTo(150, 1);
+    $("#logotype_sidebar").fadeTo(150, 1);
+    $("#sidebar_copyrights").fadeTo(150, 1);
   }
 }
 
