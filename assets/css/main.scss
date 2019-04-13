@@ -432,6 +432,22 @@ input[type="checkbox"] {
 
 .marker_style_wide {
     @extend %m_little_style1;
+    .marker {
+        display: inline-block;
+        float: left;
+        width: 60px;
+        .marker_name {
+            width: 100%;
+            display: inline-block;
+            color: #fff;
+            font-family: Roboto, san-serif;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.8px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
     img {
         display: inline-block;
         width: 24px;
@@ -439,6 +455,7 @@ input[type="checkbox"] {
         float: left;
     }
     .slider_container {
+        margin-top: 8px;
         float: right;
         width: 280px;
         .range_info_container {
@@ -498,17 +515,6 @@ input[type="checkbox"] {
     background: $secondary-color;
     cursor: pointer;
     border-radius: 50%;
-}
-
-.marker_name {
-    width: 100%;
-    display: inline-block;
-    color: #fff;
-    font-family: Roboto, san-serif;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.8px;
-    margin-left: 21px;
 }
 
 .sidebar_footer {
