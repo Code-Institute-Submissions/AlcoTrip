@@ -458,7 +458,7 @@ input[type="checkbox"] {
   transition: 0.4s; }
 
 .marker_style_wide {
-  width: 340px;
+  width: 358px;
   height: 60px;
   padding: 0;
   margin-top: 30px;
@@ -489,7 +489,7 @@ input[type="checkbox"] {
   float: right;
   width: 280px; }
   .marker_style_wide .slider_container .range_info_container {
-    width: 210px;
+    width: 240px;
     margin-bottom: 30px; }
     .marker_style_wide .slider_container .range_info_container .range_info {
       float: left;
