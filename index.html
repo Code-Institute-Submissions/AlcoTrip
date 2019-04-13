@@ -22,14 +22,14 @@
     <title>Alco Trip | Visit all places near you!</title>
 </head>
 
-<body onload="myFunction(); initMap();">
+<body onload="myFunction();">
 
     <!-- page loader section -->
     <div id="loader"></div>
     <div style="display:none" id="page_loader" class="animate-bottom"></div>
     <div id="whole_page"></div>
     <!-- page loader section end -->
-    <div id="main_page_container" class="">
+    <div id="main_page_container" class="hidden">
         <!-- header with logotype -->
         <header class="container">
             <div class="row">
@@ -113,7 +113,7 @@
         </div>
     </div>
     <!-- map container -->
-    <div id="map_container" class="hidden">
+    <div id="map_container" class="map_main">
         <!--class="map_main"-->
         <!-- side bar container -->
         <div id="sidebar_blue" class="sidebar">
@@ -129,32 +129,32 @@
                 <div id="ssb_icons" class="small_sidebar_main">
                     <div class="little_icons" style="cursor: pointer">
                         <div id="red_marker" class="little_iPosition" onclick="MarkerOnOff();">
-                            <span class="tiptext_h">Hide My location</span>
-                            <span class="tiptext_s hidden">Show My location</span>
+                            <span class="tiptext_h">Hide My Location</span>
+                            <span class="tiptext_s hidden">Show My Location</span>
                             <img id="iPosition_marker" src="assets/images/icons/marker_red.png" alt="Position_marker">
                             <label id="hint_position" class="hint_s_style">Me</label>
                         </div>
                         <div id="green_marker" class="little_iClubs" onclick="MarkerOnOff();">
-                            <span class="tiptext_h">Hide clubs</span>
-                            <span class="tiptext_s hidden">Show clubs</span>
+                            <span class="tiptext_h">Hide Clubs</span>
+                            <span class="tiptext_s hidden">Show Clubs</span>
                             <img id="iClubs_marker" src="assets/images/icons/marker_green.png" alt="Clubs_marker">
                             <label id="hint_clubs" class="hint_s_style">Clubs</label>
                         </div>
                         <div id="orange_marker" class="little_iPubs" onclick="MarkerOnOff();">
-                            <span class="tiptext_h">Hide pubs</span>
-                            <span class="tiptext_s hidden">Show pubs</span>
+                            <span class="tiptext_h">Hide Pubs</span>
+                            <span class="tiptext_s hidden">Show Pubs</span>
                             <img id="iPubs_marker" src="assets/images/icons/marker_orange.png" alt="Pubs_marker">
                             <label id="hint_pubs" class="hint_s_style">Pubs</label>
                         </div>
                         <div id="blue_marker" class="little_iBars" onclick="MarkerOnOff();">
-                            <span class="tiptext_h">Hide bars</span>
-                            <span class="tiptext_s hidden">Show bars</span>
+                            <span class="tiptext_h">Hide Bars</span>
+                            <span class="tiptext_s hidden">Show Bars</span>
                             <img id="iBars_marker" src="assets/images/icons/marker_blue.png" alt="Bars_marker">
                             <label id="hint_bars" class="hint_s_style">Bars</label>
                         </div>
                     </div>
                     <div class="download_button" onclick="downloadMe();">
-                        <span class="tiptext">Download AlcoTrip</span>
+                        <span class="tiptext">Download Your Trip</span>
                         <img id="download" src="assets/images/icons/download.png" alt="download button">
                         <label id="hint_download" class="hint_s_style">Save</label>
                     </div>
@@ -165,27 +165,34 @@
                     </div>
                 </div>
                 <!-- main sidebar container -->
-                <div class="row">
+                <div class="">
                     <div id="main_sidebar">
-                        <!-- logotype container -->
-                        <div id="logotype_sidebar" class="logotype">
-                            <a href="index.html" class="main_logo_sidebar"><img id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
-                        </div>
                         <!-- side bar footer container -->
-                        <div class="row">
-                            <div class="sidebar_footer">
-                                <div class="row">
-                                    <!-- white separate line -->
-                                    <div class="separate_line2"></div>
-                                    <!-- copyright area -->
-                                    <div class="col-md-12">
-                                        <div class="copyrights">
-                                            <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div>
+                            <img id="iPosition_marker" src="assets/images/icons/marker_red.png" alt="Position_marker">
+                        </div>
+                        <div>
+                            <img id="iClubs_marker" src="assets/images/icons/marker_green.png" alt="Clubs_marker">
+                        </div>
+                        <div>
+                            <img id="iPubs_marker" src="assets/images/icons/marker_orange.png" alt="Pubs_marker">
+                        </div>
+                        <div>
+                            <img id="iBars_marker" src="assets/images/icons/marker_blue.png" alt="Bars_marker">
+                        </div>
+                        <!-- white separate line -->
+                        <div class="sidebar_footer">
+                            <div class="separate_line2"></div>
+                            <!-- logotype container -->
+                            <div id="logotype_sidebar" class="logotype">
+                                <a href="index.html" class="logo_sidebar"><img id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
+                            </div>
+                            <!-- copyright area -->
+                            <div class="copyrights">
+                                <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -193,7 +200,7 @@
         <div id="map"></div>
     </div>
     <!-- footer section -->
-    <footer id="footer_main" class="">
+    <footer id="footer_main" class="hidden">
         <div class="row">
             <!-- white separate line -->
             <div class="separate_line1"></div>
