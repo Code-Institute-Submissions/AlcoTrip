@@ -170,7 +170,7 @@
   margin: auto;
   width: 80%; }
 
-.form-control, .btn {
+.form-control, .btn, .slider, .slider::-webkit-slider-thumb {
   box-shadow: 0px 4px 0px #303030 !important; }
 
 .auto-margin {
@@ -541,6 +541,15 @@ input[type="checkbox"] {
   background: #ffb400;
   cursor: pointer;
   border-radius: 50%; }
+
+.clearrange_button {
+  margin-right: 38px;
+  float: right; }
+
+.clearrange_button:hover {
+  color: #ffffff;
+  background-color: #670000;
+  border-color: #670000; }
 
 .sidebar_footer {
   width: 360px;
