@@ -190,7 +190,7 @@
                                     <label for="" class="range_info">Change Distance</label>
                                     <label for="" class="range_number">120<span class="distance_class" >Miles</span></label>
                                 </div>
-                                <input type="range" class="slider">
+                                <input id="clubs_dis_range" type="range" class="slider" value="50">
                             </div>
                         </div>
                         <div class="marker_style_wide">
@@ -203,7 +203,7 @@
                                     <label for="" class="range_info">Change Distance</label>
                                     <label for="" class="range_number">120<span class="distance_class" >Miles</span></label>
                                 </div>
-                                <input type="range" class="slider">
+                                <input id="pubs_dis_range" type="range" class="slider" value="50">
                             </div>
                         </div>
                         <div class="marker_style_wide">
@@ -216,8 +216,11 @@
                                     <label for="" class="range_info">Change Distance</label>
                                     <label for="" class="range_number">120<span class="distance_class" >Miles</span></label>
                                 </div>
-                                <input type="range" class="slider">
+                                <input id="bars_dis_range" type="range" class="slider" value="50">
                             </div>
+                        </div>
+                        <div class="range_options">
+                            <button class="btn btn-primary clearrange_button" onclick="clearRadius();">Clear</button>
                         </div>
                     </div>
                     <!-- side bar footer container -->
