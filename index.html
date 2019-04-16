@@ -173,6 +173,7 @@
                 </div>
                 <!-- main sidebar container -->
                 <div class="">
+                    <!-- main sidebar container for markers and range sliders / reset button -->
                     <div id="main_sidebar">
                         <!-- markers on wide sidebar -->
                         <div class="marker_style_wide">
@@ -195,7 +196,7 @@
                             <div id="slider" class="slider_container">
                                 <div class="range_info_container">
                                     <label for="" class="range_info">Change Distance</label>
-                                    <label  id="clubs_disatnce" for="" class="range_number">50<span class="distance_class">Miles</span></label>
+                                    <label  id="clubs_disatnce" for="" class="range_number">50<span class="distance_class">&nbsp;Miles</span></label>
                                 </div>
                                 <input id="clubs_dis_range" type="range" class="slider" min="0" max="100" value="50">
                             </div>
@@ -208,7 +209,7 @@
                             <div id="slider" class="slider_container">
                                 <div class="range_info_container">
                                     <label for="" class="range_info">Change Distance</label>
-                                    <label  id="pubs_disatnce" for="" class="range_number">50<span class="distance_class">Miles</span></label>
+                                    <label  id="pubs_disatnce" for="" class="range_number">50<span class="distance_class">&nbsp;Miles</span></label>
                                 </div>
                                 <input id="pubs_dis_range" type="range" class="slider" min="0" max="100" value="50">
                             </div>
@@ -221,7 +222,7 @@
                             <div id="slider" class="slider_container">
                                 <div class="range_info_container">
                                     <label for="" class="range_info">Change Distance</label>
-                                    <label  id="bars_disatnce"  for="" class="range_number">50<span class="distance_class">Miles</span></label>
+                                    <label  id="bars_disatnce"  for="" class="range_number">50<span class="distance_class">&nbsp;Miles</span></label>
                                 </div>
                                 <input id="bars_dis_range" type="range" class="slider" min="0" max="100" value="50">
                             </div>
@@ -230,6 +231,14 @@
                             <button class="btn btn-primary clearrange_button" onclick="resetRadius();">Reset</button>
                         </div>
                     </div>
+                    <!-- result container for all locations -->
+                    <div id="results_sidebar">
+                        
+                        <div class="clubs_results"></div>
+                        <div class="pubs_results"></div>
+                        <div class="bar_results"></div>
+                    </div>
+                    
                     <!-- side bar footer container -->
                     <div class="sidebar_footer">
                         <!-- white separate line -->
