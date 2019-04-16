@@ -534,6 +534,7 @@ input[type="checkbox"] {
     background: $secondary-color;
     cursor: pointer;
     border-radius: 50%;
+    @extend %shadow_effect;
 }
 
 
