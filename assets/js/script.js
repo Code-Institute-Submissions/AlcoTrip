@@ -293,11 +293,15 @@ function closeMap() {
   document.getElementById("footer_main").classList.remove("hidden");
 }
 
-
+/*______________________________________________________________________________
+________________________________________________________________________________ RESTE SLIDERS VALUE TO DEFAULT - 50 MILES */
 function resetRadius() {
   $("#clubs_dis_range").val("50");
+  $("#clubs_disatnce").html($("#clubs_dis_range").val() + "&nbsp;" + "Miles");
   $("#pubs_dis_range").val("50");
+  $("#pubs_disatnce").html($("#pubs_dis_range").val() + "&nbsp;" + "Miles");
   $("#bars_dis_range").val("50");
+  $("#bars_disatnce").html($("#bars_dis_range").val() + "&nbsp;" + "Miles");
 }
 
 
@@ -305,14 +309,18 @@ function downloadMe() {
   alert("Your AlcoTrip map has been saved.");
 }
 
-$(document).on('input change', '#clubs_dis_range', function() {
-    $('#clubs_disatnce').html( $(this).val() + " Miles");
+
+
+/*______________________________________________________________________________
+________________________________________________________________________________ SIDEBAR SLIDER LISTINERS */
+$(document).on("input change", "#clubs_dis_range", function() {
+  $("#clubs_disatnce").html($(this).val() + "&nbsp;" + "Miles");
 });
 
-$(document).on('input change', '#pubs_dis_range', function() {
-    $('#pubs_disatnce').html( $(this).val() + " Miles");
+$(document).on('input change', "#pubs_dis_range", function() {
+  $("#pubs_disatnce").html($(this).val() + "&nbsp;" + "Miles");
 });
 
-$(document).on('input change', '#bars_dis_range', function() {
-    $('#bars_disatnce').html( $(this).val() + " Miles");
+$(document).on('input change', "#bars_dis_range", function() {
+  $("#bars_disatnce").html($(this).val() + "&nbsp;" + "Miles");
 });
