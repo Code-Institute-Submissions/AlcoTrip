@@ -185,11 +185,11 @@ function collapseSideBar() {
     $("#sidebar_separate_line").fadeTo(150, 0);
     $("#logotype_sidebar").fadeTo(150, 0);
     $("#sidebar_copyrights").fadeTo(150, 0,
-    function (){
-    document.getElementById("sidebar_separate_line").classList.add("hidden");
-    document.getElementById("logotype_sidebar").classList.add("hidden");
-    document.getElementById("sidebar_copyrights").classList.add("hidden");
-    }
+      function() {
+        document.getElementById("sidebar_separate_line").classList.add("hidden");
+        document.getElementById("logotype_sidebar").classList.add("hidden");
+        document.getElementById("sidebar_copyrights").classList.add("hidden");
+      }
     );
   }
   else if (toggle_q === 70) {
@@ -293,11 +293,26 @@ function closeMap() {
   document.getElementById("footer_main").classList.remove("hidden");
 }
 
-function clearRadius() {
 
+function resetRadius() {
+  $("#clubs_dis_range").val("50");
+  $("#pubs_dis_range").val("50");
+  $("#bars_dis_range").val("50");
 }
 
 
 function downloadMe() {
   alert("Your AlcoTrip map has been saved.");
 }
+
+$(document).on('input change', '#clubs_dis_range', function() {
+    $('#clubs_disatnce').html( $(this).val() + " Miles");
+});
+
+$(document).on('input change', '#pubs_dis_range', function() {
+    $('#pubs_disatnce').html( $(this).val() + " Miles");
+});
+
+$(document).on('input change', '#bars_dis_range', function() {
+    $('#bars_disatnce').html( $(this).val() + " Miles");
+});
