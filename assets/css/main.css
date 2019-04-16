@@ -170,7 +170,7 @@
   margin: auto;
   width: 80%; }
 
-.form-control, .btn, .slider, .slider::-webkit-slider-thumb, .slider::-moz-range-thumb {
+.form-control, .btn, .slider, .slider::-webkit-slider-thumb, .slider::-moz-range-thumb, .clearrange_button {
   box-shadow: 0px 4px 0px #303030 !important; }
 
 .auto-margin {

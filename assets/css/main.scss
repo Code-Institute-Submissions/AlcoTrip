@@ -541,6 +541,7 @@ input[type="checkbox"] {
 .clearrange_button {
     margin-right: 38px;
     float: right;
+    @extend %shadow_effect;
 }
 
 .clearrange_button:hover {
