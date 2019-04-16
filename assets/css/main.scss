@@ -465,7 +465,7 @@ input[type="checkbox"] {
         float: right;
         width: 280px;
         .range_info_container {
-            width: 240px;
+            width: 258px;
             margin-bottom: 30px;
             .range_info {
                 @extend %inf_class;
@@ -474,9 +474,7 @@ input[type="checkbox"] {
                 @extend %inf_class;
                 float: right;
                 color: $secondary-color;
-                .distance_class {
-                    margin-left: 6px;
-                }
+                .distance_class {}
             }
         }
     }
@@ -502,7 +500,7 @@ input[type="checkbox"] {
 
 .slider {
     -webkit-appearance: none;
-    max-width: 240px;
+    max-width: 258px;
     height: 5px;
     background: #ffffff;
     outline: none;
@@ -539,7 +537,7 @@ input[type="checkbox"] {
 
 
 .clearrange_button {
-    margin-right: 38px;
+    margin-right: 22px;
     float: right;
     @extend %shadow_effect;
 }
@@ -564,7 +562,8 @@ input[type="checkbox"] {
     height: 1px;
     margin-top: 40px;
     margin-bottom: 5px;
-    @extend %basic_margin;
+    width: 89%;
+    margin-left: 17px;
 }
 
 .logotype {
