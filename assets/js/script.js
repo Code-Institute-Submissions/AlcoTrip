@@ -296,7 +296,7 @@ function closeMap() {
 /*______________________________________________________________________________
 ________________________________________________________________________________ RESTE SLIDERS VALUE TO DEFAULT - 50 MILES */
 function resetRadius() {
-  $("#clubs_dis_range").val("50");
+  $("#clubs_disatnce").val("50");
   $("#clubs_disatnce").html($("#clubs_dis_range").val() + "&nbsp;" + "Miles");
   $("#pubs_dis_range").val("50");
   $("#pubs_disatnce").html($("#pubs_dis_range").val() + "&nbsp;" + "Miles");

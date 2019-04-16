@@ -13,10 +13,6 @@ $tertiary-color: #670000;
     width: 80%;
 }
 
-%shadow_effect {
-    box-shadow: 0px 4px 0px #303030!important;
-}
-
 .auto-margin {
     @extend %basic_margin;
     margin-bottom: 20px;
@@ -219,7 +215,7 @@ a:hover {
 }
 
 .form-control {
-    @extend %shadow_effect;
+    box-shadow: 0px 4px 0px #303030;
 }
 
 
@@ -249,7 +245,7 @@ a:hover {
 .btn {
     float: left;
     width: 150px;
-    @extend %shadow_effect;
+    box-shadow: 0px 4px 0px #303030;
 }
 
 .btn-primary {
@@ -508,7 +504,7 @@ input[type="checkbox"] {
     -webkit-transition: .2s;
     transition: opacity .2s;
     border-radius: 50px;
-    @extend %shadow_effect;
+    box-shadow: 0px 4px 0px #303030;
 }
 
 .slider:hover {
@@ -523,7 +519,7 @@ input[type="checkbox"] {
     background: $secondary-color;
     cursor: pointer;
     border-radius: 50%;
-    @extend %shadow_effect;
+    box-shadow: 0px 4px 0px #303030;
 }
 
 .slider::-moz-range-thumb {
@@ -532,14 +528,14 @@ input[type="checkbox"] {
     background: $secondary-color;
     cursor: pointer;
     border-radius: 50%;
-    @extend %shadow_effect;
+    box-shadow: 0px 4px 0px #303030;
 }
 
 
 .clearrange_button {
     margin-right: 22px;
     float: right;
-    @extend %shadow_effect;
+    box-shadow: 0px 4px 0px #303030;
 }
 
 .clearrange_button:hover {
