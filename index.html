@@ -18,6 +18,13 @@
     <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
     <!-- fav icon -->
     <link rel="shortcut icon" href="assets/images/favicon_aclotrip.png" type="image/x-icon">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+
     <!-- website browser title -->
     <title>Alco Trip | Visit all places near you!</title>
 </head>
@@ -188,9 +195,9 @@
                             <div id="slider" class="slider_container">
                                 <div class="range_info_container">
                                     <label for="" class="range_info">Change Distance</label>
-                                    <label for="" class="range_number">120<span class="distance_class" >Miles</span></label>
+                                    <label  id="clubs_disatnce" for="" class="range_number">50<span class="distance_class">Miles</span></label>
                                 </div>
-                                <input id="clubs_dis_range" type="range" class="slider" value="50">
+                                <input id="clubs_dis_range" type="range" class="slider" min="0" max="100" value="50">
                             </div>
                         </div>
                         <div class="marker_style_wide">
@@ -201,9 +208,9 @@
                             <div id="slider" class="slider_container">
                                 <div class="range_info_container">
                                     <label for="" class="range_info">Change Distance</label>
-                                    <label for="" class="range_number">120<span class="distance_class" >Miles</span></label>
+                                    <label  id="pubs_disatnce" for="" class="range_number">50<span class="distance_class">Miles</span></label>
                                 </div>
-                                <input id="pubs_dis_range" type="range" class="slider" value="50">
+                                <input id="pubs_dis_range" type="range" class="slider" min="0" max="100" value="50">
                             </div>
                         </div>
                         <div class="marker_style_wide">
@@ -214,13 +221,13 @@
                             <div id="slider" class="slider_container">
                                 <div class="range_info_container">
                                     <label for="" class="range_info">Change Distance</label>
-                                    <label for="" class="range_number">120<span class="distance_class" >Miles</span></label>
+                                    <label  id="bars_disatnce"  for="" class="range_number">50<span class="distance_class">Miles</span></label>
                                 </div>
-                                <input id="bars_dis_range" type="range" class="slider" value="50">
+                                <input id="bars_dis_range" type="range" class="slider" min="0" max="100" value="50">
                             </div>
                         </div>
                         <div class="range_options">
-                            <button class="btn btn-primary clearrange_button" onclick="clearRadius();">Clear</button>
+                            <button class="btn btn-primary clearrange_button" onclick="resetRadius();">Reset</button>
                         </div>
                     </div>
                     <!-- side bar footer container -->
