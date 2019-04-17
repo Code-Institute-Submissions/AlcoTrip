@@ -296,12 +296,12 @@ function closeMap() {
 /*______________________________________________________________________________
 ________________________________________________________________________________ RESTE SLIDERS VALUE TO DEFAULT - 50 MILES */
 function resetRadius() {
-  $("#clubs_disatnce").val("50");
-  $("#clubs_disatnce").html($("#clubs_dis_range").val() + "&nbsp;" + "Miles");
+  $("#clubs_dis_range").val("50");
+  $("#clubs_distance").html($("#clubs_dis_range").val() + "&nbsp;" + "Miles");
   $("#pubs_dis_range").val("50");
-  $("#pubs_disatnce").html($("#pubs_dis_range").val() + "&nbsp;" + "Miles");
+  $("#pubs_distance").html($("#pubs_dis_range").val() + "&nbsp;" + "Miles");
   $("#bars_dis_range").val("50");
-  $("#bars_disatnce").html($("#bars_dis_range").val() + "&nbsp;" + "Miles");
+  $("#bars_distance").html($("#bars_dis_range").val() + "&nbsp;" + "Miles");
 }
 
 
@@ -314,13 +314,13 @@ function downloadMe() {
 /*______________________________________________________________________________
 ________________________________________________________________________________ SIDEBAR SLIDER LISTINERS */
 $(document).on("input change", "#clubs_dis_range", function() {
-  $("#clubs_disatnce").html($(this).val() + "&nbsp;" + "Miles");
+  $("#clubs_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
 
 $(document).on('input change', "#pubs_dis_range", function() {
-  $("#pubs_disatnce").html($(this).val() + "&nbsp;" + "Miles");
+  $("#pubs_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
 
 $(document).on('input change', "#bars_dis_range", function() {
-  $("#bars_disatnce").html($(this).val() + "&nbsp;" + "Miles");
+  $("#bars_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
