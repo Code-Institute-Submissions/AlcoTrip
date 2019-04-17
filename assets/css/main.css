@@ -76,6 +76,9 @@
   font-weight: 400;
   letter-spacing: 0.8px; }
 
+.result_title {
+  font-size: 14px; }
+
 .small_sidebar_main .little_iPosition,
 .small_sidebar_main .little_iClubs,
 .small_sidebar_main .little_iPubs,
@@ -543,6 +546,10 @@ input[type="checkbox"] {
   cursor: pointer;
   border-radius: 50%;
   box-shadow: 0px 4px 0px #303030; }
+
+.range_options {
+  width: 100%;
+  height: 100px; }
 
 .clearrange_button {
   margin-right: 22px;
