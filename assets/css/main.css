@@ -562,6 +562,7 @@ input[type="checkbox"] {
   border-color: #670000; }
 
 .second_sidebar {
+  margin-top: 14px;
   width: 100%;
   text-align: left;
   float: right; }
@@ -583,7 +584,7 @@ input[type="checkbox"] {
 .clubs_results,
 .pubs_results,
 .bars_results {
-  margin-left: 76px;
+  margin-left: 60px;
   width: 50%;
   margin-bottom: 20px; }
 
