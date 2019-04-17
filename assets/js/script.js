@@ -138,7 +138,7 @@ function StartYourTrip() {
   }
 
   if (!myTown) {
-    document.getElementById("town_missing").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("follow_town").scrollIntoView({ behavior: "smooth" });
   }
   else if (!myPostCode) {
     document.getElementById("postcode_missing").scrollIntoView({ behavior: "smooth" });
