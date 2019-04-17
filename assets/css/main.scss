@@ -601,7 +601,6 @@ input[type="checkbox"] {
 .result_value {
     @extend .hint_s_style;
     font-size: 16px;
-    color: $secondary-color;
 }
 
 .clubs_results,
@@ -616,7 +615,7 @@ input[type="checkbox"] {
     text-align: left;
     display: inline-block;
     vertical-align: -1.5px;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 
