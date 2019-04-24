@@ -29,7 +29,7 @@
     <div style="display:none" id="page_loader" class="animate-bottom"></div>
     <div id="whole_page"></div>
     <!-- page loader section end -->
-    <div id="main_page_container" class="hidden">
+    <div id="main_page_container" class=""><!-- hidden only to work with map page-->
         <!-- header with logotype -->
         <header class="container">
             <div class="row">
@@ -113,7 +113,7 @@
         </div>
     </div>
     <!-- map container -->
-    <div id="map_container" class="map_main">
+    <div id="map_container" class="hidden"><!-- these container class need to be hidden-->
         <!--class="map_main"-->
         <!-- side bar container -->
         <div id="sidebar_blue" class="sidebar">
@@ -126,7 +126,7 @@
             <!-- full sidebar -->
             <div class="sidebar">
                 <!-- main little sidebar container -->
-                <div id="ssb_icons" class="small_sidebar_main">
+                <div id="ssb_icons" class="small_sidebar_main hidden"><!-- hidden class removed to work with wide sidebar-->
                     <div class="little_icons" style="cursor: pointer">
                         <div id="red_marker" class="little_iPosition" onclick="MarkerOnOff();">
                             <span class="tiptext_h">Hide My Location</span>
@@ -167,7 +167,7 @@
                 <!-- main sidebar container -->
                 <div class="">
                     <!-- main sidebar container for markers and range sliders / reset button -->
-                    <div id="main_sidebar">
+                    <div id="main_sidebar" class=""><!-- add hidden class to work on small sidebar -->
                         <!-- markers on wide sidebar -->
                         <div class="marker_style_wide">
                             <div class="marker">
@@ -264,7 +264,7 @@
         <div id="map"></div>
     </div>
     <!-- footer section -->
-    <footer id="footer_main" class="hidden">
+    <footer id="footer_main" class=""><!-- hidden only to work with map page-->
         <div class="row">
             <!-- white separate line -->
             <div class="separate_line1"></div>
