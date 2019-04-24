@@ -271,8 +271,8 @@ function MarkerOnOff() {
 ________________________________________________________________________________ MAP FUNCTION */
 
 function initMap() {
-  let myLat = 54.372158
-  let myLong = 18.638306
+  let myLat = 52.30273
+  let myLong = -0.69446
 
   // The location of Uluru
   var uluru = { lat: myLat, lng: myLong };
