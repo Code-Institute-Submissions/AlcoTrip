@@ -2,7 +2,7 @@
 let loader;
 
 function myFunction() {
-  loader = setTimeout(showPage, 1000);
+  loader = setTimeout(showPage(), 1000);
 }
 
 function showPage() {
@@ -32,16 +32,58 @@ function FindMe() {
   /* tick boxes */
   document.getElementById("tickbox_missing").classList.add("hidden");
   document.getElementById("tickbox_missing").classList.remove("text-muted1");
+  initMap();
+  /* _____________________________________________________________________________
+________________________________________________________________________________ MAP FUNCTION */
 
-  /* geo localization to find user location via clicking on "FindMe" button */
-  let myTown = document.getElementById("mainbox_city");
-  let myPostCode = document.getElementById("mainbox_postcode");
+  var map, infoWindow;
+
+  function initMap() {
+
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: -34.397, lng: 150.644 },
+      zoom: 10
+    });
+    infoWindow = new google.maps.InfoWindow;
+
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        let myloc = { lat: -34.304, lng: 150.533 };
+        let marker = new google.maps.Marker({ position: myloc, map: map, /*icon: "assets/images/icons/marker_red.png",*/ });
+        /* geo localization to find user location via clicking on "FindMe" button */
+        let myTown = document.getElementById("mainbox_city");
+        let myPostCode = document.getElementById("mainbox_postcode");
+        myTown = "Wellingborough";
+        myPostCode = "NN8 2DF";
 
 
-  /* test value */
-  myTown.value = "Wellingborough";
-  myPostCode.value = "NN82DF";
+        infoWindow.setPosition(pos);
+        /*infoWindow.setContent('Location found.');*/
+        infoWindow.open(map);
+        map.setCenter(pos);
 
+      }, function() {
+        handleLocationError(true, infoWindow, map.getCenter());
+      });
+    }
+    else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infoWindow, map.getCenter());
+    }
+  }
+
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+      'Error: The Geolocation service failed.' :
+      'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.open(map);
+  }
 }
 /* _____________________________________________________________________________
 ________________________________________________________________________________
@@ -91,8 +133,6 @@ ________________________________________________________________________________
 ________________________________________________________________________________ main from - tix boxes, checking function
 This function validate main form and checks, if any tick box has been ticked */
 function StartYourTrip() {
-
-  initMap();
 
   /* main form variables */
   let myTown = document.getElementById("mainbox_city").value;
@@ -267,25 +307,6 @@ function MarkerOnOff() {
 
 }
 
-/* _____________________________________________________________________________
-________________________________________________________________________________ MAP FUNCTION */
-
-function initMap() {
-  let myLat = 52.30273
-  let myLong = -0.69446
-
-  // The location of Uluru
-  var uluru = { lat: myLat, lng: myLong };
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-    document.getElementById('map'), { zoom: 10, center: uluru });
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({ position: uluru, map: map, /*icon: "assets/images/icons/marker_red.png",*/ });
-
-  var marker = new google.maps.Marker({
-    position: map.getCenter
-  });
-}
 
 function closeMap() {
   document.getElementById("main_page_container").classList.remove("hidden");
