@@ -2,7 +2,7 @@
 let loader;
 
 function myFunction() {
-  loader = setTimeout(showPage(), 1000);
+  loader = setTimeout(showPage(), 3000);
 }
 
 function showPage() {
