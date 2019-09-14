@@ -202,14 +202,23 @@ a:hover {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        max-width: 40%;
+        max-width: 300px;
     }
 }
+
+@media screen and (max-width: 1024px) {
+    .main_logo {
+        img {
+            max-width: 300px;
+        }
+    }
+}
+
 
 @media screen and (max-width: 768px) {
     .main_logo {
         img {
-            max-width: 60%;
+            max-width: 250px;
         }
     }
 }
@@ -217,9 +226,18 @@ a:hover {
 @media screen and (max-width: 400px) {
     .main_logo {
         img {
-            max-width: 70%;
+            max-width: 200px;
         }
     }
+}
+    
+@media screen and (max-width: 300px) {
+    .main_logo {
+        img {
+            max-width: 150px;
+        }
+    }
+    
 }
 
 
