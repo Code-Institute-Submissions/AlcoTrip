@@ -230,14 +230,14 @@ a:hover {
         }
     }
 }
-    
+
 @media screen and (max-width: 300px) {
     .main_logo {
         img {
             max-width: 150px;
         }
     }
-    
+
 }
 
 
@@ -582,7 +582,14 @@ input[type="checkbox"] {
 }
 
 
-//______________________________________________________________________________ RESET BUTTON
+//______________________________________________________________________________ APPLY & RESET BUTTON
+.applyrange_button {
+    margin-right: 22px;
+    float: right;
+    box-shadow: 0px 4px 0px #303030;
+}
+
+
 .clearrange_button {
     margin-right: 22px;
     float: right;
