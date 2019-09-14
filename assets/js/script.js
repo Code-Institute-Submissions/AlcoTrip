@@ -36,7 +36,7 @@ function FindMe() {
   /* _____________________________________________________________________________
 ________________________________________________________________________________ MAP FUNCTION */
 
-  var map, infoWindow;
+  let map, infoWindow;
 
   function initMap() {
 
@@ -201,8 +201,8 @@ function StartYourTrip() {
 ________________________________________________________________________________ SIDEBAR FUNCTION */
 function collapseSideBar() {
   let toggle_q = document.getElementById("sidebar_blue").clientWidth;
-  var tmpAnimation = 0;
-  var element = $("#sidebar_collapse_icon");
+  let tmpAnimation = 0;
+  let element = $("#sidebar_collapse_icon");
 
   if (toggle_q === 360) {
     document.documentElement.style
