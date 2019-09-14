@@ -224,7 +224,6 @@ function collapseSideBar() {
     $("#slider").fadeTo(150, 0);
     $("#sidebar_separate_line").fadeTo(150, 0);
     $("#logotype_sidebar").fadeTo(150, 0);
-    $("#results_sidebar").fadeTo(100, 0);
     $("#sidebar_copyrights").fadeTo(150, 0,
       function() {
         document.getElementById("sidebar_separate_line").classList.add("hidden");
@@ -256,7 +255,6 @@ function collapseSideBar() {
     $("#slider").fadeTo(200, 1);
     $("#sidebar_separate_line").fadeTo(200, 1);
     $("#logotype_sidebar").fadeTo(200, 1);
-    $("#results_sidebar").fadeTo(250, 1);
     $("#sidebar_copyrights").fadeTo(200, 1);
   }
 }
