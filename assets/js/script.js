@@ -1,4 +1,7 @@
 /* _____________________________________________________________________________  page loader function */
+
+/* global $ , google , navigator */
+
 let loader;
 
 function myFunction() {
@@ -32,7 +35,15 @@ function FindMe() {
   /* tick boxes */
   document.getElementById("tickbox_missing").classList.add("hidden");
   document.getElementById("tickbox_missing").classList.remove("text-muted1");
+  
+        let myTown = document.getElementById("mainbox_city");
+        let myPostCode = document.getElementById("mainbox_postcode");
+        
+  myTown.value = "wellingborough";
+  myPostCode.value = "nn82df";
+  
   initMap();
+  
   /* _____________________________________________________________________________
 ________________________________________________________________________________ MAP FUNCTION */
 
@@ -56,12 +67,7 @@ ________________________________________________________________________________
         let myloc = { lat: -34.304, lng: 150.533 };
         let marker = new google.maps.Marker({ position: myloc, map: map, /*icon: "assets/images/icons/marker_red.png",*/ });
         /* geo localization to find user location via clicking on "FindMe" button */
-        let myTown = document.getElementById("mainbox_city");
-        let myPostCode = document.getElementById("mainbox_postcode");
-        myTown = "Wellingborough";
-        myPostCode = "NN8 2DF";
-
-
+        
         infoWindow.setPosition(pos);
         /*infoWindow.setContent('Location found.');*/
         infoWindow.open(map);
@@ -113,15 +119,15 @@ ________________________________________________________________________________
 This function is clearing Twon and Postcode filed in main form, on main page */
 function ClearCheckboxes() {
   let chck_clubs = document.getElementById("clubs_check");
-  if (chck_clubs.checked = true) {
+  if (chck_clubs.checked == true) {
     chck_clubs.click();
   }
   let chck_pubs = document.getElementById("pubs_check");
-  if (chck_pubs.checked = true) {
+  if (chck_pubs.checked == true) {
     chck_pubs.click();
   }
   let chck_bars = document.getElementById("bars_check");
-  if (chck_bars.checked = true) {
+  if (chck_bars.checked == true) {
     chck_bars.click();
   }
   /* tick boxes */
