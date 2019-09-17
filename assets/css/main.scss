@@ -301,7 +301,6 @@ a:hover {
 //______________________________________________________________________________ GEO LOCALIZATION AND CLEAR BUTTON
 .geoloc_button {
     margin-top: 10px;
-    float: left;
     border: 2px solid $secondary-color;
 }
 
@@ -312,7 +311,6 @@ a:hover {
 }
 
 .clearfields_button {
-    float: right;
     margin-top: 10px;
     border: 2px solid $primary-font;
 
@@ -325,9 +323,14 @@ a:hover {
     border-color: $tertiary-color;
 }
 
-@media screen and (max-width: 767px) {
+@media (min-width: 768px){
+    .geoloc_button {
+        float: right;
+    }
+}
+
+@media (max-width: 767px) {
     .clearfields_button {
-        float: left;
         margin-top: 20px;
     }
     .clearfields_button:hover {
@@ -338,7 +341,7 @@ a:hover {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
     .geoloc_button {
         margin-top: 20px;
         width: 100%;
@@ -347,6 +350,7 @@ a:hover {
 
     .geoloc_button:hover {
         color: $primary-font;
+        float: left;
         background-color: $secondary-color;
         border: 2px solid $secondary-color;
         width: 100%;
@@ -582,7 +586,7 @@ input[type="checkbox"] {
 }
 
 
-//______________________________________________________________________________ APPLY & RESET BUTTON
+//______________________________________________________________________________ RESET BUTTON
 .applyrange_button {
     margin-right: 22px;
     float: right;
@@ -591,8 +595,8 @@ input[type="checkbox"] {
 
 
 .clearrange_button {
-    margin-left: 22px;
-    float: left;
+    margin-right: 22px;
+    float: right;
     box-shadow: 0px 4px 0px #303030;
 }
 

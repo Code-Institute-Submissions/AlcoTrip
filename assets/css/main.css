@@ -348,7 +348,6 @@ a:hover {
 
 .geoloc_button {
   margin-top: 10px;
-  float: left;
   border: 2px solid #ffb400; }
 
 .geoloc_button:hover {
@@ -357,7 +356,6 @@ a:hover {
   border: 2px solid #ffb400; }
 
 .clearfields_button {
-  float: right;
   margin-top: 10px;
   border: 2px solid #ffffff; }
 
@@ -367,9 +365,11 @@ a:hover {
   background: #670000;
   border-color: #670000; }
 
-@media screen and (max-width: 767px) {
+@media (min-width: 768px) {
+  .geoloc_button {
+    float: right; } }
+@media (max-width: 767px) {
   .clearfields_button {
-    float: left;
     margin-top: 20px; }
 
   .clearfields_button:hover {
@@ -377,7 +377,7 @@ a:hover {
     color: #fff;
     background: #670000;
     border-color: #670000; } }
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
   .geoloc_button {
     margin-top: 20px;
     width: 100%;
@@ -385,6 +385,7 @@ a:hover {
 
   .geoloc_button:hover {
     color: #ffffff;
+    float: left;
     background-color: #ffb400;
     border: 2px solid #ffb400;
     width: 100%; }
@@ -563,8 +564,8 @@ input[type="checkbox"] {
   box-shadow: 0px 4px 0px #303030; }
 
 .clearrange_button {
-  margin-left: 22px;
-  float: left;
+  margin-right: 22px;
+  float: right;
   box-shadow: 0px 4px 0px #303030; }
 
 .clearrange_button:hover {
