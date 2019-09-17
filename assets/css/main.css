@@ -328,8 +328,9 @@ a:hover {
   color: #fff; }
 
 .text-muted1 {
+  font-size: 14px;
   color: #fff;
-  border-bottom: 1px solid #f00; }
+  border-bottom: 2px solid #f00; }
 
 .btn {
   float: left;
@@ -347,7 +348,7 @@ a:hover {
   border-color: #ffb400; }
 
 .missing_e {
-  border: 2px solid #ccc; }
+  border: 2px solid #f00; }
 
 .geoloc_button {
   margin-top: 10px;

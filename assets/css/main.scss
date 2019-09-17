@@ -246,8 +246,9 @@ a:hover {
 }
 
 .text-muted1 {
+    font-size: 14px;
     color: #fff;
-    border-bottom: 1px solid #f00;
+    border-bottom: 2px solid #f00;
 }
 
 // TOWN AND POSTCODE FIELDS
@@ -280,7 +281,7 @@ a:hover {
 
 // BUTTON ERROR CLASS
 .missing_e {
-    border: 2px solid #ccc;
+    border: 2px solid #f00;
 }
 
 
