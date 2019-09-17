@@ -346,6 +346,9 @@ a:hover {
   background-color: #ffb400;
   border-color: #ffb400; }
 
+.missing_e {
+  border: 2px solid #ccc; }
+
 .geoloc_button {
   margin-top: 10px;
   border: 2px solid #ffb400; }
@@ -444,6 +447,9 @@ input[type="checkbox"] {
   margin-top: 40px;
   margin-bottom: 20px;
   width: 100%; }
+
+.btn_wide:hover {
+  color: #ffffff; }
 
 :root {
   --sBar_width: 360px;

@@ -144,6 +144,7 @@ a:hover {
 }
 
 /* Add animation to "page content" */
+
 .animate-bottom {
     position: relative;
     -webkit-animation-name: animatebottom;
@@ -277,6 +278,13 @@ a:hover {
     border-color: $secondary-color;
 }
 
+// BUTTON ERROR CLASS
+.missing_e {
+    border: 2px solid #ccc;
+}
+
+
+
 // GEO LOCALIZATION AND CLEAR BUTTON
 .geoloc_button {
     margin-top: 10px;
@@ -302,7 +310,7 @@ a:hover {
     border-color: $tertiary-color;
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
     .geoloc_button {
         float: right;
     }
@@ -406,6 +414,10 @@ input[type="checkbox"] {
     margin-top: 40px;
     margin-bottom: 20px;
     width: 100%;
+}
+
+.btn_wide:hover {
+    color: $primary-font;
 }
 
 // WIDE SIDEBAR
