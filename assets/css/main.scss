@@ -30,8 +30,9 @@ body,
     right: 0;
     height: 100%;
     width: 100%;
+    min-width: 100%;
     color: #fff;
-    background-color: $primary-color
+    background-color: $primary-color;
 }
 
 .col-lg-12,
@@ -88,7 +89,7 @@ a:hover {
 .separate_line {
     background-color: #fff;
     height: 1px;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 40px;
     @extend %basic_margin;
 }
@@ -366,27 +367,32 @@ a:hover {
 }
 
 .search_options {
-    margin-top: 10px;
     ul {
+        margin-top: 40px;
         list-style: none;
         padding: 0;
         li {
             margin-top: 20px;
         }
+        label {
+            display: flex;
+            align-items: center;
+        }
     }
-    
-// CHECKBOX MAIN STYLE
+
+    // CHECKBOX MAIN STYLE
     .styled-checkbox {
         position: absolute; // take it out of document flow
         opacity: 0; // hide it
         &+label {
+            align-items: bottom;
             position: relative;
             cursor: pointer;
             padding: 0;
         } // Box.
         &+label:before {
             content: '';
-            margin-right: 15px;
+            margin-right: 20px;
             display: inline-block;
             vertical-align: text-top;
             width: 20px;
@@ -416,7 +422,7 @@ a:hover {
             content: '';
             position: absolute;
             left: 5px;
-            top: 9px;
+            top: 14px;
             background: white;
             width: 2px;
             height: 2px;
@@ -429,6 +435,7 @@ a:hover {
             transform: rotate(45deg);
         }
     }
+
 }
 
 .clearcheck_button {
@@ -476,6 +483,7 @@ a:hover {
     margin-top: 40px;
     margin-bottom: 20px;
     width: 100%;
+    border: 2px solid #fff;
 }
 
 .btn_wide:hover {
