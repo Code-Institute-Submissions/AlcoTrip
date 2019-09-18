@@ -118,15 +118,16 @@ ________________________________________________________________________________
 ________________________________________________________________________________ checkboxes - clear fields function
 This function is clearing Twon and Postcode filed in main form, on main page */
 function ClearCheckboxes() {
-  let chck_clubs = document.getElementById("clubs_check");
+  
+  let chck_clubs = document.getElementById("styled-checkbox-1");
   if (chck_clubs.checked == true) {
     chck_clubs.click();
   }
-  let chck_pubs = document.getElementById("pubs_check");
+  let chck_pubs = document.getElementById("styled-checkbox-2");
   if (chck_pubs.checked == true) {
     chck_pubs.click();
   }
-  let chck_bars = document.getElementById("bars_check");
+  let chck_bars = document.getElementById("styled-checkbox-3");
   if (chck_bars.checked == true) {
     chck_bars.click();
   }
@@ -148,7 +149,7 @@ function StartYourTrip() {
   if (!myTown) {
     document.getElementById("town_missing").classList.remove("hidden");
     document.getElementById("town_missing").classList.add("text-muted");
-    document.getElementById("mainbox_city").style.border = "1px solid #f00";
+    document.getElementById("mainbox_city").classList.add("missing_e");
   }
   else {
     document.getElementById("town_missing").classList.add("hidden");
@@ -160,7 +161,7 @@ function StartYourTrip() {
   if (!myPostCode) {
     document.getElementById("postcode_missing").classList.remove("hidden");
     document.getElementById("postcode_missing").classList.add("text-muted");
-    document.getElementById("mainbox_postcode").style.border = "1px solid #f00";
+    document.getElementById("mainbox_postcode").classList.add("missing_e");
   }
   else {
     document.getElementById("postcode_missing").classList.add("hidden");
@@ -267,6 +268,15 @@ function collapseSideBar() {
 /* _____________________________________________________________________________
 ________________________________________________________________________________ TURN OFF OR ON MARKERS */
 function MarkerOnOff() {
+  
+  
+/* if .red marker then
+  e.prevent deafauk
+  let id = this.id;
+  
+  
+
+*/
 
   $("#red_marker").click(function() {
     if ($(this).children("span").hasClass("hidden")) {
