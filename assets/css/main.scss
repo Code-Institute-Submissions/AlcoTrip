@@ -365,10 +365,41 @@ a:hover {
     vertical-align: middle;
 }
 
+
+// CHECKBOX BUTTONS
 input[type="checkbox"] {
-    margin: 20px 0 0;
-    vertical-align: 4px;
+    display: none;
 }
+
+
+
+
+
+.search_options {
+    label:before {
+        content: '';
+        margin-right: 15px;
+        display: inline-block;
+        vertical-align: text-top;
+        width: 20px;
+        height: 20px;
+        background: white;
+    }
+    &+label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    &:focus+label:before {
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+    }
+
+}
+
+
+
+
 
 .clearcheck_button {
     float: right;
@@ -419,9 +450,7 @@ input[type="checkbox"] {
 
 .btn_wide:hover {
     color: $primary-font;
-}
-
-// WIDE SIDEBAR
+} // WIDE SIDEBAR
 // ICONS AND CALCULATIONS
 :root {
 
@@ -465,9 +494,7 @@ input[type="checkbox"] {
     display: inline-block;
     @extend .hint_s_style;
     font-size: 14px;
-}
-
-// MARKERS
+} // MARKERS
 .marker_style_wide {
     @extend %m_little_style1;
     .marker {
@@ -528,9 +555,7 @@ input[type="checkbox"] {
         }
     }
 
-}
-
-// SLIDERS
+} // SLIDERS
 .slider {
     -webkit-appearance: none;
     max-width: 258px;
@@ -571,10 +596,7 @@ input[type="checkbox"] {
 .range_options {
     width: 100%;
     height: 40px;
-}
-
-
-// APPLY AND RESET BUTTON
+} // APPLY AND RESET BUTTON
 .applyrange_button {
     margin-right: 22px;
     float: right;
@@ -592,9 +614,7 @@ input[type="checkbox"] {
     color: $primary-font;
     background-color: $tertiary-color;
     border-color: $tertiary-color;
-}
-
-// RESULTS
+} // RESULTS
 .second_sidebar {
     margin-top: 14px;
     width: 100%;
@@ -633,10 +653,7 @@ input[type="checkbox"] {
     display: inline-block;
     vertical-align: -1.5px;
     margin-left: 10px;
-}
-
-
-// FOOTER
+} // FOOTER
 .sidebar_footer {
     width: 360px;
     bottom: 0;
@@ -665,9 +682,7 @@ input[type="checkbox"] {
             margin: 0 auto;
         }
     }
-}
-
-// MAP
+} // MAP
 // MAP
 .map_main {
     margin: 0px auto;
@@ -687,9 +702,7 @@ input[type="checkbox"] {
     float: right;
     transition-timing-function: ease-in-out;
     transition: 0.4s;
-}
-
-// FOOTER - MAIN PAGE
+} // FOOTER - MAIN PAGE
 footer {
     margin-bottom: 20px;
     text-align: center;

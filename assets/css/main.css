@@ -409,8 +409,18 @@ a:hover {
   vertical-align: middle; }
 
 input[type="checkbox"] {
-  margin: 20px 0 0;
-  vertical-align: 4px; }
+  display: none; }
+
+.search_options label:before {
+  content: '';
+  margin-right: 15px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 20px;
+  height: 20px;
+  background: white; }
+.search_options:focus + label:before {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12); }
 
 .clearcheck_button {
   float: right;
