@@ -84,11 +84,11 @@
             <div class="separate_line1"></div>
             <!-- search options CLUBS PUBS BARS -->
             <div class="row">
-                <form>
-                    <div class="search_options">
-                        <h3 class="lead bold1">What are you looking for tonight?</h3>
-                        <small id="tickbox_missing" class="form-text hidden">*Please tick any of tick boxes.</small>
-                        <div class="form-check">
+                <div class="search_options">
+                    <h3 class="lead bold1">What are you looking for tonight?</h3>
+                    <small id="tickbox_missing" class="form-text hidden">*Please tick any of tick boxes.</small>
+
+                    <!-- div class="form-check">
                             <input type="checkbox" class="custom-check-input" value="" id="clubs_check">
                             <label class="lead bold1 font_space" for="clubs_check">Clubs</label>
                         </div>
@@ -99,17 +99,33 @@
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" value="" id="bars_check">
                             <label class="lead bold1 font_space" for="bars_check">Bars</label>
-                        </div>
-                        <div class="col-lg-12">
-                            <!-- clear checkboxes button -->
-                            <button type="button" class="btn btn-primary clearcheck_button" onclick="ClearCheckboxes();">Clear</button>
-                        </div>
+                        </div>-->
+
+                    <ul class="">
+                        <li>
+                            <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+                            <label for="styled-checkbox-1">Clubs</label>
+                        </li>
+                        <li>
+                            <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
+                            <label for="styled-checkbox-2">Bars</label>
+                        </li>
+                        <li>
+                            <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value3">
+                            <label for="styled-checkbox-3">Pubs</label>
+                        </li>
+                    </ul>
+
+
+                    <div class="col-lg-12">
+                        <!-- clear checkboxes button -->
+                        <button type="button" class="btn btn-primary clearcheck_button" onclick="ClearCheckboxes();">Clear</button>
                     </div>
-                    <!-- submit button -->
-                    <div class="formsubmition">
-                        <button type="button" class="btn btn-primary btn_wide" onclick="StartYourTrip();">Start Trip</button>
-                    </div>
-                </form>
+                </div>
+                <!-- submit button -->
+                <div class="formsubmition">
+                    <button type="button" class="btn btn-primary btn_wide" onclick="StartYourTrip();">Start Trip</button>
+                </div>
             </div>
         </div>
     </div>

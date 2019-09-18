@@ -408,19 +408,50 @@ a:hover {
 .search_options {
   vertical-align: middle; }
 
-input[type="checkbox"] {
-  display: none; }
-
-.search_options label:before {
-  content: '';
-  margin-right: 15px;
-  display: inline-block;
-  vertical-align: text-top;
-  width: 20px;
-  height: 20px;
-  background: white; }
-.search_options:focus + label:before {
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12); }
+.search_options {
+  margin-top: 10px; }
+  .search_options ul {
+    list-style: none;
+    padding: 0; }
+    .search_options ul li {
+      margin-top: 20px; }
+  .search_options .styled-checkbox {
+    position: absolute;
+    opacity: 0; }
+    .search_options .styled-checkbox + label {
+      position: relative;
+      cursor: pointer;
+      padding: 0; }
+    .search_options .styled-checkbox + label:before {
+      content: '';
+      margin-right: 15px;
+      display: inline-block;
+      vertical-align: text-top;
+      width: 20px;
+      height: 20px;
+      background: white; }
+    .search_options .styled-checkbox:hover + label:before {
+      background: #ffb400; }
+    .search_options .styled-checkbox:focus + label:before {
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12); }
+    .search_options .styled-checkbox:checked + label:before {
+      background: #ffb400; }
+    .search_options .styled-checkbox:disabled + label {
+      color: #b8b8b8;
+      cursor: auto; }
+    .search_options .styled-checkbox:disabled + label:before {
+      box-shadow: none;
+      background: #ddd; }
+    .search_options .styled-checkbox:checked + label:after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 9px;
+      background: white;
+      width: 2px;
+      height: 2px;
+      box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+      transform: rotate(45deg); }
 
 .clearcheck_button {
   float: right;
