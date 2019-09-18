@@ -238,7 +238,7 @@ a:hover {
 .separate_line1 {
   background-color: #fff;
   height: 1px;
-  margin-top: 40px;
+  margin-top: 50px;
   margin-bottom: 30px; }
 
 #loader {
@@ -360,6 +360,15 @@ a:hover {
   background-color: #ffb400;
   border: 2px solid #ffb400; }
 
+.selectall_button {
+  margin-top: 10px;
+  border: 2px solid #ffb400; }
+
+.selectall_button:hover {
+  color: #ffffff;
+  background-color: #ffb400;
+  border: 2px solid #ffb400; }
+
 .clearfields_button {
   margin-top: 10px;
   border: 2px solid #ffffff; }
@@ -372,6 +381,9 @@ a:hover {
 
 @media (min-width: 768px) {
   .geoloc_button {
+    float: right; }
+
+  .selectall_button {
     float: right; } }
 @media (max-width: 767px) {
   .clearfields_button {
@@ -405,7 +417,22 @@ a:hover {
     color: #fff;
     background: #670000;
     border-color: #670000;
+    width: 100%; }
+
+  .selectall_button {
+    margin-top: 20px;
+    width: 100%;
+    border: 2px solid #ffb400; }
+
+  .selectall_button:hover {
+    color: #ffffff;
+    float: left;
+    background-color: #ffb400;
+    border: 2px solid #ffb400;
     width: 100%; } }
+.c_boxes {
+  margin-bottom: 40px; }
+
 .search_options {
   vertical-align: middle; }
 
@@ -625,8 +652,7 @@ a:hover {
 
 .clearrange_button:hover {
   color: #ffffff;
-  background-color: #670000;
-  border-color: #670000; }
+  background-color: #670000; }
 
 .second_sidebar {
   margin-top: 14px;

@@ -97,7 +97,7 @@ a:hover {
 .separate_line1 {
     background-color: #fff;
     height: 1px;
-    margin-top: 40px;
+    margin-top: 50px;
     margin-bottom: 30px;
     @extend %basic_margin;
 }
@@ -299,6 +299,17 @@ a:hover {
     border: 2px solid $secondary-color;
 }
 
+.selectall_button {
+    margin-top: 10px;
+    border: 2px solid $secondary-color;
+}
+
+.selectall_button:hover {
+    color: $primary-font;
+    background-color: $secondary-color;
+    border: 2px solid $secondary-color;
+}
+
 .clearfields_button {
     margin-top: 10px;
     border: 2px solid $primary-font;
@@ -314,6 +325,9 @@ a:hover {
 
 @media (min-width: 768px) {
     .geoloc_button {
+        float: right;
+    }
+    .selectall_button {
         float: right;
     }
 }
@@ -336,7 +350,7 @@ a:hover {
         width: 100%;
         border: 2px solid $secondary-color;
     }
-
+    
     .geoloc_button:hover {
         color: $primary-font;
         float: left;
@@ -358,9 +372,28 @@ a:hover {
         border-color: $tertiary-color;
         width: 100%;
     }
+        
+    .selectall_button {
+        margin-top: 20px;
+        width: 100%;
+        border: 2px solid $secondary-color;
+    }
+    
+    .selectall_button:hover {
+        color: $primary-font;
+        float: left;
+        background-color: $secondary-color;
+        border: 2px solid $secondary-color;
+        width: 100%;
+    }
 }
 
 // SEARCH OPTIONS
+
+.c_boxes {
+    margin-bottom: 40px;
+}
+
 .search_options {
     @extend %basic_margin;
     vertical-align: middle;
@@ -650,7 +683,6 @@ a:hover {
 .clearrange_button:hover {
     color: $primary-font;
     background-color: $tertiary-color;
-    border-color: $tertiary-color;
 } // RESULTS
 .second_sidebar {
     margin-top: 14px;
