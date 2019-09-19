@@ -285,8 +285,6 @@ a:hover {
     border: 2px solid #f00;
 }
 
-
-
 // GEO LOCALIZATION AND CLEAR BUTTON
 .geoloc_button {
     margin-top: 10px;
@@ -350,7 +348,7 @@ a:hover {
         width: 100%;
         border: 2px solid $secondary-color;
     }
-    
+
     .geoloc_button:hover {
         color: $primary-font;
         float: left;
@@ -372,13 +370,13 @@ a:hover {
         border-color: $tertiary-color;
         width: 100%;
     }
-        
+
     .selectall_button {
         margin-top: 20px;
         width: 100%;
         border: 2px solid $secondary-color;
     }
-    
+
     .selectall_button:hover {
         color: $primary-font;
         float: left;
@@ -389,7 +387,6 @@ a:hover {
 }
 
 // SEARCH OPTIONS
-
 .c_boxes {
     margin-bottom: 40px;
 }
@@ -411,9 +408,7 @@ a:hover {
             display: flex;
             align-items: center;
         }
-    }
-
-    // CHECKBOX MAIN STYLE
+    } // CHECKBOX MAIN STYLE
     .styled-checkbox {
         position: absolute; // take it out of document flow
         opacity: 0; // hide it
