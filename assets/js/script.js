@@ -24,10 +24,6 @@ function FindMe() {
   document.getElementById("main_form").reset();
 
   /* remove input fields error messages */
-  /* town field */
-  document.getElementById("town_missing").classList.add("hidden");
-  document.getElementById("town_missing").classList.remove("text-muted");
-  document.getElementById("mainbox_city").style.border = "1px solid #ccc";
   /* postcode field */
   document.getElementById("postcode_missing").classList.add("hidden");
   document.getElementById("postcode_missing").classList.remove("text-muted");
@@ -35,15 +31,11 @@ function FindMe() {
   /* tick boxes */
   document.getElementById("tickbox_missing").classList.add("hidden");
   document.getElementById("tickbox_missing").classList.remove("text-muted1");
-  
-        let myTown = document.getElementById("mainbox_city");
-        let myPostCode = document.getElementById("mainbox_postcode");
-        
-  myTown.value = "wellingborough";
-  myPostCode.value = "nn82df";
-  
+
+  let myPostCode = document.getElementById("mainbox_postcode");
+
   initMap();
-  
+
   /* _____________________________________________________________________________
 ________________________________________________________________________________ MAP FUNCTION */
 
@@ -67,7 +59,7 @@ ________________________________________________________________________________
         let myloc = { lat: -34.304, lng: 150.533 };
         let marker = new google.maps.Marker({ position: myloc, map: map, /*icon: "assets/images/icons/marker_red.png",*/ });
         /* geo localization to find user location via clicking on "FindMe" button */
-        
+
         infoWindow.setPosition(pos);
         /*infoWindow.setContent('Location found.');*/
         infoWindow.open(map);
@@ -96,17 +88,12 @@ ________________________________________________________________________________
 ________________________________________________________________________________ main from - clear fields function
 This function is clearing Twon and Postcode filed in main form, on main page */
 function Clearfields() {
-  let myTown = document.getElementById("mainbox_city");
+
   let myPostCode = document.getElementById("mainbox_postcode");
 
-  myTown.value = "";
   myPostCode.value = "";
 
   /* remove input fields error messages */
-  /* town field */
-  document.getElementById("town_missing").classList.add("hidden");
-  document.getElementById("town_missing").classList.remove("text-muted");
-  document.getElementById("mainbox_city").style.border = "1px solid #ccc";
   /* postcode field */
   document.getElementById("postcode_missing").classList.add("hidden");
   document.getElementById("postcode_missing").classList.remove("text-muted");
@@ -118,7 +105,7 @@ ________________________________________________________________________________
 ________________________________________________________________________________ checkboxes - clear fields function
 This function is clearing Twon and Postcode filed in main form, on main page */
 function ClearCheckboxes() {
-  
+
   let chck_clubs = document.getElementById("styled-checkbox-1");
   if (chck_clubs.checked == true) {
     chck_clubs.click();
@@ -142,20 +129,7 @@ This function validate main form and checks, if any tick box has been ticked */
 function StartYourTrip() {
 
   /* main form variables */
-  let myTown = document.getElementById("mainbox_city").value;
   let myPostCode = document.getElementById("mainbox_postcode").value;
-
-  /* check if Town input box is empty */
-  if (!myTown) {
-    document.getElementById("town_missing").classList.remove("hidden");
-    document.getElementById("town_missing").classList.add("text-muted");
-    document.getElementById("mainbox_city").classList.add("missing_e");
-  }
-  else {
-    document.getElementById("town_missing").classList.add("hidden");
-    document.getElementById("town_missing").classList.remove("text-muted");
-    document.getElementById("mainbox_city").style.border = "1px solid #ccc";
-  }
 
   /* check if Post Code input box is empty */
   if (!myPostCode) {
@@ -184,10 +158,7 @@ function StartYourTrip() {
     document.getElementById("tickbox_missing").classList.remove("text-muted1");
   }
 
-  if (!myTown) {
-    document.getElementById("follow_town").scrollIntoView({ behavior: "smooth" });
-  }
-  else if (!myPostCode) {
+  if (!myPostCode) {
     document.getElementById("postcode_missing").scrollIntoView({ behavior: "smooth" });
   }
   else if (!clubs_tick.checked && !pubs_tick.checked && !bars_tick.checked) {
@@ -268,15 +239,15 @@ function collapseSideBar() {
 /* _____________________________________________________________________________
 ________________________________________________________________________________ TURN OFF OR ON MARKERS */
 function MarkerOnOff() {
-  
-  
-/* if .red marker then
-  e.prevent deafauk
-  let id = this.id;
-  
-  
 
-*/
+
+  /* if .red marker then
+    e.prevent deafauk
+    let id = this.id;
+    
+    
+
+  */
 
   $("#red_marker").click(function() {
     if ($(this).children("span").hasClass("hidden")) {
