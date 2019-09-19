@@ -53,13 +53,7 @@
                 <div class="row">
                     <form id="main_form">
                         <!-- town adn postcode fields -->
-                        <div class="town_postcode">
-                            <div class="form-group">
-                                <label class="lead lead-edit bold1" for="mainbox_city">Enter your town</label>
-                                <span class="hint_mainform"></span>
-                                <input type="text" class="form-control upper" id="mainbox_city" placeholder="LONDON">
-                                <small id="town_missing" class="form-text hidden">*Please provide a valid town name.</small>
-                            </div>
+                        <div class="postcode">
                             <div class="form-group">
                                 <label class="lead lead-edit bold1" for="mainbox_postcode">Enter your postcode</label>
                                 <input type="text" class="form-control upper" id="mainbox_postcode" placeholder="WC2N 5DU">
@@ -87,25 +81,31 @@
                 <div class="search_options">
                     <h3 class="lead bold1">What are you looking for tonight?</h3>
                     <small id="tickbox_missing" class="form-text hidden">*Please tick any of tick boxes.</small>
-                    <ul class="lead">
-                        <li>
-                            <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
-                            <label for="styled-checkbox-1">Clubs</label>
-                        </li>
-                        <li>
-                            <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
-                            <label for="styled-checkbox-2">Bars</label>
-                        </li>
-                        <li>
-                            <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value3">
-                            <label for="styled-checkbox-3">Pubs</label>
-                        </li>
-                    </ul>
-
-
-                    <div class="col-lg-12">
-                        <!-- clear checkboxes button -->
-                        <button type="button" class="btn btn-primary clearcheck_button" onclick="ClearCheckboxes();">Clear</button>
+                    <div class="c_boxes">
+                        <ul class="lead lead-edit bold1">
+                            <li>
+                                <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+                                <label for="styled-checkbox-1">Clubs</label>
+                            </li>
+                            <li>
+                                <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
+                                <label for="styled-checkbox-2">Bars</label>
+                            </li>
+                            <li>
+                                <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value3">
+                                <label for="styled-checkbox-3">Pubs</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                            <!-- clear fields button -->
+                            <button type="button" class="btn btn-primary clearfields_button" onclick="ClearCheckboxes();">Clear</button>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                            <!-- clear checkboxes button -->
+                            <button type="button" class="btn btn-primary selectall_button" onclick="SelectAllChecboxes();">Select All</button>
+                        </div>
                     </div>
                 </div>
                 <!-- submit button -->
@@ -194,8 +194,8 @@
                             </div>
                             <div id="slider_c" class="slider_container">
                                 <div class="range_info_container">
-                                    <label for="#" class="range_info">Change Distance</label>
-                                    <label id="clubs_distance" for="#" class="range_number">50<span class="distance_class">&nbsp;Miles</span></label>
+                                    <label for="slider_c" class="range_info">Change Distance</label>
+                                    <label id="clubs_distance" for="clubs_distance" class="range_number">50<span class="distance_class">&nbsp;Miles</span></label>
                                 </div>
                                 <input id="clubs_dis_range" type="range" class="slider" min="0" max="100" value="50">
                             </div>
@@ -207,8 +207,8 @@
                             </div>
                             <div id="slider_p" class="slider_container">
                                 <div class="range_info_container">
-                                    <label for="#" class="range_info">Change Distance</label>
-                                    <label id="pubs_distance" for="#" class="range_number">50<span class="distance_class">&nbsp;Miles</span></label>
+                                    <label for="slider_p" class="range_info">Change Distance</label>
+                                    <label id="pubs_distance" for="pubs_distance" class="range_number">50<span class="distance_class">&nbsp;Miles</span></label>
                                 </div>
                                 <input id="pubs_dis_range" type="range" class="slider" min="0" max="100" value="50">
                             </div>
@@ -220,8 +220,8 @@
                             </div>
                             <div id="slider_b" class="slider_container">
                                 <div class="range_info_container">
-                                    <label for="#" class="range_info">Change Distance</label>
-                                    <label id="bars_distance" for="#" class="range_number">50<span class="distance_class">&nbsp;Miles</span></label>
+                                    <label for="slider_b" class="range_info">Change Distance</label>
+                                    <label id="bars_distance" for="bars_distance" class="range_number">50<span class="distance_class">&nbsp;Miles</span></label>
                                 </div>
                                 <input id="bars_dis_range" type="range" class="slider" min="0" max="100" value="50">
                             </div>
@@ -241,7 +241,7 @@
                         </div>
                         <!-- copyright area -->
                         <div id="sidebar_copyrights" class="copyrights">
-                            <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
+                            <p class="lead p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
                         </div>
                     </div>
                 </div>
