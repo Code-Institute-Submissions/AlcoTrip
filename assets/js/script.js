@@ -144,9 +144,9 @@ function StartYourTrip() {
   }
 
   /* check if any of tick boxes has been clicked 'checked' */
-  let clubs_tick = document.getElementById("clubs_check");
-  let pubs_tick = document.getElementById("pubs_check");
-  let bars_tick = document.getElementById("bars_check");
+  let clubs_tick = document.getElementById("styled-checkbox-1");
+  let pubs_tick = document.getElementById("styled-checkbox-2");
+  let bars_tick = document.getElementById("styled-checkbox-3");
 
   /* if any of tick boxes is empty show allert comment*/
   if (!clubs_tick.checked && !pubs_tick.checked && !bars_tick.checked) {
@@ -245,7 +245,6 @@ function MarkerOnOff() {
     e.prevent deafauk
     let id = this.id;
     
-    
 
   */
 
@@ -295,9 +294,7 @@ function MarkerOnOff() {
 
 function closeMap() {
   document.getElementById("main_page_container").classList.remove("hidden");
-
   document.getElementById("map_container").classList.add("hidden");
-
   document.getElementById("footer_main").classList.remove("hidden");
 }
 
@@ -312,11 +309,9 @@ function resetRadius() {
   $("#bars_distance").html($("#bars_dis_range").val() + "&nbsp;" + "Miles");
 }
 
-
 function downloadMe() {
   alert("Your AlcoTrip map has been saved.");
 }
-
 
 
 /*______________________________________________________________________________
