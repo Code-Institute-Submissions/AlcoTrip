@@ -169,7 +169,7 @@
 .download_button:hover .tiptext {
   visibility: visible; }
 
-.side_line, .auto-margin, .separate_line, .separate_line1, .main-title, .town_postcode, .formsubmition, .search_options, .copyrights {
+.side_line, .auto-margin, .separate_line, .separate_line1, .main-title, .postcode, .formsubmition, .search_options, .copyrights {
   margin: auto;
   width: 80%; }
 
