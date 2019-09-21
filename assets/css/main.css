@@ -351,6 +351,9 @@ a:hover {
 .missing_e {
   border: 2px solid #f00; }
 
+.border_clear {
+  border: 1px solid #ccc; }
+
 .geoloc_button {
   margin-top: 10px;
   border: 2px solid #ffb400; }
