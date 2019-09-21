@@ -20,13 +20,13 @@ function FindMe() {
   $("#main_form").trigger("reset");
 
   // remove input fields error messages
-  //  postcode field
-  $("#postcode_missing").addClass("hidden");
-  $("#postcode_missing").removeClass("text-muted");
-  $("#mainbox_postcode").css("border", "1px solid #ccc");
-  // tick boxes
-  $("#tickbox_missing").addClass("hidden");
-  $("#tickbox_missing").removeClass("text-muted1");
+  $("#mainbox_postcode").removeClass("missing_e");
+  $("#postcode_error").addClass("hidden");
+
+
+
+
+
 
   let myPostCode = $("#mainbox_postcode");
   myPostCode.val("your postcode");
@@ -80,15 +80,13 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 // Clear postcode field and remove error message
 function ClearPostcode() {
   $("#mainbox_postcode").val('');
-  $("#postcode_missing").addClass("hidden");
-  $("#postcode_missing").removeClass("text-muted");
-  $("#mainbox_postcode").css("border", "1px solid #ccc");
+  $("#mainbox_postcode").removeClass("missing_e");
+  $("#postcode_error").addClass("hidden");
 }
 
 // Clear all checboxes and hidden error message
 function ClearCheckboxes() {
   $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
-
   // clear errors
   $("#tickbox_missing").addClass("hidden");
   $("#tickbox_missing").removeClass("text-muted1");
@@ -97,13 +95,10 @@ function ClearCheckboxes() {
 // Select all checboxes and clear hidden error message
 function SelectAll() {
   $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", true);
-
   // clear errors
   $("#tickbox_missing").addClass("hidden");
   $("#tickbox_missing").removeClass("text-muted1");
 }
-
-
 
 
 
@@ -112,16 +107,27 @@ function StartYourTrip() {
 
   let myPostCode = $("#mainbox_postcode").val();
 
-  console.log(myPostCode);
+  if (myPostCode == "") {
+    $("#mainbox_postcode").addClass("missing_e");
+    $("#postcode_error").removeClass("hidden");
+  }
+  else {
 
 
 
-  $("#main_page_container").addClass("hidden");
-  $("#footer_main").addClass("hidden");
-  $("#map_container").removeClass("hidden");
-  $("#map_container").addClass("map_main");
 
 
+
+
+
+
+
+
+    // Go to Map
+    $("#main_page_container, #footer_main").addClass("hidden");
+    $("#map_container").addClass("map_main");
+    $("#map_container").removeClass("hidden");
+  }
 }
 
 
