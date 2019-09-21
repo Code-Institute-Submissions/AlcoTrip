@@ -99,22 +99,19 @@ function Clearfields() {
 // This function is clearing Twon and Postcode filed in main form, on main page
 function ClearCheckboxes() {
 
-  let chck_clubs = document.getElementById("styled-checkbox-1");
-  if (chck_clubs.checked == true) {
-    chck_clubs.click();
-  }
-  let chck_pubs = document.getElementById("styled-checkbox-2");
-  if (chck_pubs.checked == true) {
-    chck_pubs.click();
-  }
-  let chck_bars = document.getElementById("styled-checkbox-3");
-  if (chck_bars.checked == true) {
-    chck_bars.click();
-  }
+  $("#styled-checkbox-1").prop("checked", false);
+  $("#styled-checkbox-2").prop("checked", false);
+  $("#styled-checkbox-3").prop("checked", false);
+
   // tick boxes
   document.getElementById("tickbox_missing").classList.add("hidden");
   document.getElementById("tickbox_missing").classList.remove("text-muted1");
 }
+
+
+
+
+
 // main from - tix boxes, checking function
 // This function validate main form and checks, if any tick box has been ticked
 function StartYourTrip() {
@@ -150,7 +147,7 @@ function StartYourTrip() {
   }
 
   if (!myPostCode) {
-    
+
     document.getElementById("postcode_missing").scrollIntoView({ behavior: "smooth" });
   }
   else if (!clubs_tick.checked && !pubs_tick.checked && !bars_tick.checked) {
@@ -234,7 +231,7 @@ function MarkerOnOff() {
   // if .red marker then
   // e.prevent deafauk
   // let id = this.id;
-    
+
 
 
 
