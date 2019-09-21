@@ -95,27 +95,35 @@ function Clearfields() {
   document.getElementById("mainbox_postcode").style.border = "1px solid #ccc";
 
 }
-// checkboxes - clear fields function
-// This function is clearing Twon and Postcode filed in main form, on main page
+
+
+
+
+
+// Clear all checboxes and hidden error message
 function ClearCheckboxes() {
 
   $("#styled-checkbox-1").prop("checked", false);
   $("#styled-checkbox-2").prop("checked", false);
   $("#styled-checkbox-3").prop("checked", false);
-
-  // tick boxes
-  document.getElementById("tickbox_missing").classList.add("hidden");
-  document.getElementById("tickbox_missing").classList.remove("text-muted1");
+  // clear errors
+  $("#tickbox_missing").addClass("hidden");
+  $("#tickbox_missing").removeClass("text-muted1");
 }
 
+// Select all checboxes and clear hidden error message
 function SelectAll() {
   $("#styled-checkbox-1").prop("checked", true);
   $("#styled-checkbox-2").prop("checked", true);
   $("#styled-checkbox-3").prop("checked", true);
-  // tick boxes
-  document.getElementById("tickbox_missing").classList.add("hidden");
-  document.getElementById("tickbox_missing").classList.remove("text-muted1");
+  // clear errors
+  $("#tickbox_missing").addClass("hidden");
+  $("#tickbox_missing").removeClass("text-muted1");
 }
+
+
+
+
 
 
 
