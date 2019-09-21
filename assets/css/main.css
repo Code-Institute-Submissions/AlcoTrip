@@ -221,6 +221,12 @@ h5 {
 p {
   font-size: 1.2em; }
 
+.main_wrap {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle; }
+
 .hidden {
   visibility: hidden; }
 
