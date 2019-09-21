@@ -121,54 +121,51 @@ function SelectAll() {
 function StartYourTrip() {
 
   // main form variables
-  let myPostCode = document.getElementById("mainbox_postcode").value;
+  let myPostCode = $("#mainbox_postcode").val;
 
   // check if Post Code input box is empty
   if (!myPostCode) {
-    document.getElementById("postcode_missing").classList.remove("hidden");
-    document.getElementById("postcode_missing").classList.add("text-muted");
-    document.getElementById("mainbox_postcode").classList.add("missing_e");
+    $("#postcode_missing").removeClass("hidden");
+    $("#postcode_missing").addClass("text-muted");
+    $("#mainbox_postcode").addClass("missing_e");
   }
   else {
-    document.getElementById("postcode_missing").classList.add("hidden");
-    document.getElementById("postcode_missing").classList.remove("text-muted");
-    document.getElementById("mainbox_postcode").style.border = "1px solid #ccc";
+    $("#postcode_missing").addClass("hidden");
+    $("#postcode_missing").removeClass("text-muted");
+    $("#mainbox_postcode").css("border", "1px solid #ccc");
   }
 
   // check if any of tick boxes has been clicked 'checked'
-  let clubs_tick = document.getElementById("styled-checkbox-1");
+  let clubs_tick = ("styled-checkbox-1");
   let pubs_tick = document.getElementById("styled-checkbox-2");
   let bars_tick = document.getElementById("styled-checkbox-3");
 
   // if any of tick boxes is empty show allert comment
   if (!clubs_tick.checked && !pubs_tick.checked && !bars_tick.checked) {
-    document.getElementById("tickbox_missing").classList.remove("hidden");
-    document.getElementById("tickbox_missing").classList.add("text-muted1");
+    $("#tickbox_missing").removeClass("hidden");
+    $("#tickbox_missing").addClass("text-muted1");
   }
   else {
-    document.getElementById("tickbox_missing").classList.add("hidden");
-    document.getElementById("tickbox_missing").classList.remove("text-muted1");
+    $("#tickbox_missing").addClass("hidden");
+    $("#tickbox_missing").removeClass("text-muted1");
   }
 
   if (!myPostCode) {
-
-    document.getElementById("postcode_missing").scrollIntoView({ behavior: "smooth" });
+    $("#postcode_missing").scrollIntoView({ behavior: "smooth" });
   }
   else if (!clubs_tick.checked && !pubs_tick.checked && !bars_tick.checked) {
-    document.getElementById("tickbox_missing").scrollIntoView({ behavior: "smooth" });
+    $("#tickbox_missing").scrollIntoView({ behavior: "smooth" });
   }
   else {
-    document.getElementById("main_page_container").classList.add("hidden");
-
-    document.getElementById("map_container").classList.remove("hidden");
-    document.getElementById("map_container").classList.add("map_main");
-
-    document.getElementById("footer_main").classList.add("hidden");
+    $("#main_page_container").addClass("hidden");
+    $("#map_container").removeClass("hidden");
+    $("#map_container").addClass("map_main");
+    $("#footer_main").addClass("hidden");
   }
 }
 
 
-// SIDEBAR FUNCTION
+// Collaspe or expand sidebar
 function collapseSideBar() {
   let toggle_q = document.getElementById("sidebar_blue").clientWidth;
   let tmpAnimation = 0;
@@ -187,18 +184,18 @@ function collapseSideBar() {
         });
       }
     });
-    document.getElementById("hint_show").classList.remove("hidden");
-    document.getElementById("hint_hide").classList.add("hidden");
-    document.getElementById("main_sidebar").classList.add("hidden");
-    document.getElementById("ssb_icons").classList.remove("hidden");
+    $("#hint_show").removeClass("hidden");
+    $("#hint_hide").addClass("hidden");
+    $("#main_sidebar").addClass("hidden");
+    $("#ssb_icons").removeClass("hidden");
     $("#slider").fadeTo(150, 0);
     $("#sidebar_separate_line").fadeTo(150, 0);
     $("#logotype_sidebar").fadeTo(150, 0);
     $("#sidebar_copyrights").fadeTo(150, 0,
       function() {
-        document.getElementById("sidebar_separate_line").classList.add("hidden");
-        document.getElementById("logotype_sidebar").classList.add("hidden");
-        document.getElementById("sidebar_copyrights").classList.add("hidden");
+        $("#sidebar_separate_line").addClass("hidden");
+        $("#logotype_sidebar").addClass("hidden");
+        $("#sidebar_copyrights").addClass("hidden");
       }
     );
   }
@@ -215,13 +212,13 @@ function collapseSideBar() {
         });
       }
     });
-    document.getElementById("hint_show").classList.add("hidden");
-    document.getElementById("hint_hide").classList.remove("hidden");
-    document.getElementById("main_sidebar").classList.remove("hidden");
-    document.getElementById("ssb_icons").classList.add("hidden");
-    document.getElementById("sidebar_separate_line").classList.remove("hidden");
-    document.getElementById("logotype_sidebar").classList.remove("hidden");
-    document.getElementById("sidebar_copyrights").classList.remove("hidden");
+    $("#hint_show").addClass("hidden");
+    $("#hint_hide").removeClass("hidden");
+    $("#main_sidebar").removeClass("hidden");
+    $("#ssb_icons").addClass("hidden");
+    $("#sidebar_separate_line").removeClass("hidden");
+    $("#logotype_sidebar").removeClass("hidden");
+    $("#sidebar_copyrights").removeClass("hidden");
     $("#slider").fadeTo(200, 1);
     $("#sidebar_separate_line").fadeTo(200, 1);
     $("#logotype_sidebar").fadeTo(200, 1);
@@ -282,14 +279,18 @@ function MarkerOnOff() {
 
 }
 
-
+// Close map function ( red corss - button )
 function closeMap() {
-  document.getElementById("main_page_container").classList.remove("hidden");
-  document.getElementById("map_container").classList.add("hidden");
-  document.getElementById("footer_main").classList.remove("hidden");
+  $("#mainbox_postcode").val('');
+  $("#styled-checkbox-1").prop("checked", false);
+  $("#styled-checkbox-2").prop("checked", false);
+  $("#styled-checkbox-3").prop("checked", false);
+  $("#main_page_container").removeClass("hidden");
+  $("#map_container").addClass("hidden");
+  $("#footer_main").removeClass("hidden");
 }
 
-// RESTE SLIDERS VALUE TO DEFAULT - 50 MILES
+// Reset sliders to "50 Miles" - value
 function resetRadius() {
   $("#clubs_dis_range").val("50");
   $("#clubs_distance").html($("#clubs_dis_range").val() + "&nbsp;" + "Miles");
@@ -299,20 +300,18 @@ function resetRadius() {
   $("#bars_distance").html($("#bars_dis_range").val() + "&nbsp;" + "Miles");
 }
 
+// Download page view
 function downloadMe() {
   alert("Your AlcoTrip map has been saved.");
 }
 
-
-// SIDEBAR SLIDER LISTINERS
+// Sidebar sliders - listeners
 $(document).on("input change", "#clubs_dis_range", function() {
   $("#clubs_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
-
 $(document).on('input change', "#pubs_dis_range", function() {
   $("#pubs_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
-
 $(document).on('input change', "#bars_dis_range", function() {
   $("#bars_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
