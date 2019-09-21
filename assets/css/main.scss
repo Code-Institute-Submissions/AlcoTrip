@@ -391,9 +391,6 @@ a:hover {
 }
 
 // SEARCH OPTIONS
-.c_boxes {
-    margin-bottom: 40px;
-}
 
 .search_options {
     @extend %basic_margin;
@@ -402,7 +399,8 @@ a:hover {
 
 .search_options {
     ul {
-        margin-top: 40px;
+        margin-top: 20px;
+        margin-bottom: 20px;
         list-style: none;
         padding: 0;
         li {

@@ -14,6 +14,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- standard links to bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+    <script src="sweetalert2.all.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <!-- link to my personal css file -->
     <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
     <!-- fav icon -->
@@ -58,7 +61,7 @@
                             <div class="form-group">
                                 <label class="lead lead-edit bold1" for="mainbox_postcode">Enter your postcode</label>
                                 <input type="text" class="form-control upper" id="mainbox_postcode" placeholder="WC2N 5DU">
-                                <small id="postcode_error" class="form-text hidden">*Please provide a valid postcode.</small>
+                                <small id="postcode_error" class="form-text message_e hidden">*Please provide a valid postcode.</small>
                             </div>
                             <!-- geo-localizator -->
                             <div class="form-group">
@@ -81,7 +84,6 @@
             <div class="row">
                 <div class="search_options">
                     <h3 class="lead bold1">What are you looking for tonight?</h3>
-                    <small id="tickbox_missing" class="form-text hidden">*Please tick any of tick boxes.</small>
                     <div class="c_boxes">
                         <ul class="lead lead-edit bold1">
                             <li>
@@ -98,6 +100,7 @@
                             </li>
                         </ul>
                     </div>
+                    <small id="tickbox_missing" class="form-text message_e hidden">*Please choose any of tick boxes.</small>
                     <div class="form-group">
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                             <!-- clear fields button -->

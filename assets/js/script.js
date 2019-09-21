@@ -23,13 +23,7 @@ function FindMe() {
   $("#mainbox_postcode").removeClass("missing_e");
   $("#postcode_error").addClass("hidden");
 
-
-
-
-
-
-  let myPostCode = $("#mainbox_postcode");
-  myPostCode.val("your postcode");
+  let postcode_box = $("#mainbox_postcode");
 
   // MAP FUNCTION
 
@@ -65,6 +59,10 @@ function FindMe() {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
+
+  let postcode = "your postcode";
+  postcode_box.val(postcode);
+
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -74,8 +72,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     'Error: Your browser doesn\'t support geolocation.');
   infoWindow.open(map);
 }
-
-
 
 // Clear postcode field and remove error message
 function ClearPostcode() {
@@ -89,7 +85,7 @@ function ClearCheckboxes() {
   $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
   // clear errors
   $("#tickbox_missing").addClass("hidden");
-  $("#tickbox_missing").removeClass("text-muted1");
+  $(".c_boxes").removeClass("missing_e");
 }
 
 // Select all checboxes and clear hidden error message
@@ -100,42 +96,33 @@ function SelectAll() {
   $("#tickbox_missing").removeClass("text-muted1");
 }
 
-
-
 // Check all required fields and start trip
 function StartYourTrip() {
 
   let myPostCode = $("#mainbox_postcode").val();
+  let checked_clubs = $("#styled-checkbox-1").prop("checked");
+  let checked_pubs = $("#styled-checkbox-2").prop("checked");
+  let checked_bars = $("#styled-checkbox-3").prop("checked");
 
   if (myPostCode == "") {
     $("#mainbox_postcode").addClass("missing_e");
     $("#postcode_error").removeClass("hidden");
   }
+  else if (checked_clubs == false && checked_pubs == false && checked_bars == false) {
+    $("#tickbox_missing").removeClass("hidden");
+    $(".c_boxes").addClass("missing_e");
+  }
   else {
-
-
-
-
-
-
-
-
-
-
-
     // Go to Map
-    $("#main_page_container, #footer_main").addClass("hidden");
+    $("#main_page_container, #footer_main, #tickbox_missing").addClass("hidden");
     $("#map_container").addClass("map_main");
     $("#map_container").removeClass("hidden");
+
+    $(".c_boxes").removeClass("missing_e");
+    $("#mainbox_postcode").val("");
+    $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
   }
 }
-
-
-
-
-
-
-
 
 // Collaspe or expand sidebar
 function collapseSideBar() {
@@ -248,8 +235,6 @@ function MarkerOnOff() {
 
 // Close map function ( red corss - button )
 function closeMap() {
-  $("#mainbox_postcode").val("");
-  $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
   $("#main_page_container").removeClass("hidden");
   $("#map_container").addClass("hidden");
   $("#footer_main").removeClass("hidden");
@@ -280,3 +265,5 @@ $(document).on('input change', "#pubs_dis_range", function() {
 $(document).on('input change', "#bars_dis_range", function() {
   $("#bars_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
+
+// Checkbox listeners

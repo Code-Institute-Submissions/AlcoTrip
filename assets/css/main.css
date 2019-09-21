@@ -45,6 +45,12 @@
   margin-left: 5vw;
   text-align: right; }
 
+.message_e {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 1px; }
+
 /*______________________________________________________________________________ bold styles */
 .bold1 {
   font-weight: 500; }
@@ -433,14 +439,12 @@ a:hover {
     background-color: #ffb400;
     border: 2px solid #ffb400;
     width: 100%; } }
-.c_boxes {
-  margin-bottom: 40px; }
-
 .search_options {
   vertical-align: middle; }
 
 .search_options ul {
-  margin-top: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   list-style: none;
   padding: 0; }
   .search_options ul li {
