@@ -1,4 +1,4 @@
-/* _____________________________________________________________________________  page loader function */
+//page loader function
 
 /* global $ , google , navigator */
 
@@ -13,22 +13,20 @@ function showPage() {
   document.getElementById("page_loader").style.display = "block";
   document.getElementById("whole_page").style.display = "none";
 }
-/* _____________________________________________________________________________
-________________________________________________________________________________
-________________________________________________________________________________ main form - find me localization function
-This function is clearing all fields if any value exist in fields
-Function also using geo location script to get User - town name and postcode */
+// main form - find me localization function
+// This function is clearing all fields if any value exist in fields
+// Function also using geo location script to get User - town name and postcode
 function FindMe() {
 
-  /* clear user form fields */
+  // clear user form fields
   document.getElementById("main_form").reset();
 
-  /* remove input fields error messages */
-  /* postcode field */
+  // remove input fields error messages
+  //  postcode field
   document.getElementById("postcode_missing").classList.add("hidden");
   document.getElementById("postcode_missing").classList.remove("text-muted");
   document.getElementById("mainbox_postcode").style.border = "1px solid #ccc";
-  /* tick boxes */
+  // tick boxes
   document.getElementById("tickbox_missing").classList.add("hidden");
   document.getElementById("tickbox_missing").classList.remove("text-muted1");
 
@@ -36,8 +34,7 @@ function FindMe() {
 
   initMap();
 
-  /* _____________________________________________________________________________
-________________________________________________________________________________ MAP FUNCTION */
+  // MAP FUNCTION
 
   let map, infoWindow;
 
@@ -58,10 +55,10 @@ ________________________________________________________________________________
         };
         let myloc = { lat: -34.304, lng: 150.533 };
         let marker = new google.maps.Marker({ position: myloc, map: map, /*icon: "assets/images/icons/marker_red.png",*/ });
-        /* geo localization to find user location via clicking on "FindMe" button */
+        // geo localization to find user location via clicking on "FindMe" button 
 
         infoWindow.setPosition(pos);
-        /*infoWindow.setContent('Location found.');*/
+        // infoWindow.setContent('Location found.');
         infoWindow.open(map);
         map.setCenter(pos);
 
@@ -83,27 +80,23 @@ ________________________________________________________________________________
     infoWindow.open(map);
   }
 }
-/* _____________________________________________________________________________
-________________________________________________________________________________
-________________________________________________________________________________ main from - clear fields function
-This function is clearing Twon and Postcode filed in main form, on main page */
+// main from - clear fields function
+// This function is clearing Twon and Postcode filed in main form, on main page
 function Clearfields() {
 
   let myPostCode = document.getElementById("mainbox_postcode");
 
   myPostCode.value = "";
 
-  /* remove input fields error messages */
-  /* postcode field */
+  // remove input fields error messages
+  // postcode field
   document.getElementById("postcode_missing").classList.add("hidden");
   document.getElementById("postcode_missing").classList.remove("text-muted");
   document.getElementById("mainbox_postcode").style.border = "1px solid #ccc";
 
 }
-/* _____________________________________________________________________________
-________________________________________________________________________________
-________________________________________________________________________________ checkboxes - clear fields function
-This function is clearing Twon and Postcode filed in main form, on main page */
+// checkboxes - clear fields function
+// This function is clearing Twon and Postcode filed in main form, on main page
 function ClearCheckboxes() {
 
   let chck_clubs = document.getElementById("styled-checkbox-1");
@@ -118,20 +111,18 @@ function ClearCheckboxes() {
   if (chck_bars.checked == true) {
     chck_bars.click();
   }
-  /* tick boxes */
+  // tick boxes
   document.getElementById("tickbox_missing").classList.add("hidden");
   document.getElementById("tickbox_missing").classList.remove("text-muted1");
 }
-/* _____________________________________________________________________________
-________________________________________________________________________________
-________________________________________________________________________________ main from - tix boxes, checking function
-This function validate main form and checks, if any tick box has been ticked */
+// main from - tix boxes, checking function
+// This function validate main form and checks, if any tick box has been ticked
 function StartYourTrip() {
 
-  /* main form variables */
+  // main form variables
   let myPostCode = document.getElementById("mainbox_postcode").value;
 
-  /* check if Post Code input box is empty */
+  // check if Post Code input box is empty
   if (!myPostCode) {
     document.getElementById("postcode_missing").classList.remove("hidden");
     document.getElementById("postcode_missing").classList.add("text-muted");
@@ -143,12 +134,12 @@ function StartYourTrip() {
     document.getElementById("mainbox_postcode").style.border = "1px solid #ccc";
   }
 
-  /* check if any of tick boxes has been clicked 'checked' */
+  // check if any of tick boxes has been clicked 'checked'
   let clubs_tick = document.getElementById("styled-checkbox-1");
   let pubs_tick = document.getElementById("styled-checkbox-2");
   let bars_tick = document.getElementById("styled-checkbox-3");
 
-  /* if any of tick boxes is empty show allert comment*/
+  // if any of tick boxes is empty show allert comment
   if (!clubs_tick.checked && !pubs_tick.checked && !bars_tick.checked) {
     document.getElementById("tickbox_missing").classList.remove("hidden");
     document.getElementById("tickbox_missing").classList.add("text-muted1");
@@ -176,8 +167,7 @@ function StartYourTrip() {
 }
 
 
-/* _____________________________________________________________________________
-________________________________________________________________________________ SIDEBAR FUNCTION */
+// SIDEBAR FUNCTION
 function collapseSideBar() {
   let toggle_q = document.getElementById("sidebar_blue").clientWidth;
   let tmpAnimation = 0;
@@ -237,17 +227,16 @@ function collapseSideBar() {
     $("#sidebar_copyrights").fadeTo(200, 1);
   }
 }
-/* _____________________________________________________________________________
-________________________________________________________________________________ TURN OFF OR ON MARKERS */
+// TURN OFF OR ON MARKERS
 function MarkerOnOff() {
 
 
-  /* if .red marker then
-    e.prevent deafauk
-    let id = this.id;
+  // if .red marker then
+  // e.prevent deafauk
+  // let id = this.id;
     
 
-  */
+
 
   $("#red_marker").click(function() {
     if ($(this).children("span").hasClass("hidden")) {
@@ -299,8 +288,7 @@ function closeMap() {
   document.getElementById("footer_main").classList.remove("hidden");
 }
 
-/*______________________________________________________________________________
-________________________________________________________________________________ RESTE SLIDERS VALUE TO DEFAULT - 50 MILES */
+// RESTE SLIDERS VALUE TO DEFAULT - 50 MILES
 function resetRadius() {
   $("#clubs_dis_range").val("50");
   $("#clubs_distance").html($("#clubs_dis_range").val() + "&nbsp;" + "Miles");
@@ -315,8 +303,7 @@ function downloadMe() {
 }
 
 
-/*______________________________________________________________________________
-________________________________________________________________________________ SIDEBAR SLIDER LISTINERS */
+// SIDEBAR SLIDER LISTINERS
 $(document).on("input change", "#clubs_dis_range", function() {
   $("#clubs_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
