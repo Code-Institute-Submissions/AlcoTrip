@@ -27,253 +27,254 @@
 
 <body onload="myFunction()">
 
-<div class="main_wrap">    
-    <!-- page loader section -->
-    <div id="loader"></div>
-    <div style="display:none" id="page_loader" class="animate-bottom"></div>
-    <div id="whole_page"></div>
-    <!-- page loader section end -->
-    <div id="main_page_container">
-        <!-- hidden only to work with map page-->
-        <!-- header with logotype -->
-        <header class="container">
-            <div class="row">
-                <a href="index.html" class="main_logo"><img src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
-                <div class="main-title">
-                    <h1 class="hidden">Alco Trip</h1>
-                    <h2>
-                        Find all Pubs, Bars, Disco Clubs near You! It's so simple, isn't it ?
-                    </h2>
-                    <h3 id="follow_town" class="lead">1. Enter Your postcode or simply click on 'Find Me' button to locate yourself.<br>2. Choose what you're looking for today and let's start your trip!
-                    </h3>
+    <div class="main_wrap">
+        <!-- page loader section -->
+        <div id="loader"></div>
+        <div style="display:none" id="page_loader" class="animate-bottom"></div>
+        <div id="whole_page"></div>
+        <!-- page loader section end -->
+        <div id="main_page_container">
+            <!-- hidden only to work with map page-->
+            <!-- header with logotype -->
+            <header class="container">
+                <div class="row">
+                    <a href="index.html" class="main_logo"><img src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
+                    <div class="main-title">
+                        <h1 class="hidden">Alco Trip</h1>
+                        <h2>
+                            Find all Pubs, Bars, Disco Clubs near You! It's so simple, isn't it ?
+                        </h2>
+                        <h3 id="follow_town" class="lead">1. Enter Your postcode or simply click on 'Find Me' button to locate yourself.<br>2. Choose what you're looking for today and let's start your trip!
+                        </h3>
+                    </div>
+                    <!-- white separate line -->
+                    <div id="postcode_missing"></div>
+                    <div class="separate_line"></div>
+                </div>
+            </header>
+            <!-- section with input boxes and check boxes to retrive data for google maps-->
+            <div class="container">
+                <div class="row">
+                    <div class="row">
+                        <form id="main_form">
+                            <!-- town adn postcode fields -->
+                            <div class="postcode">
+                                <div class="form-group">
+                                    <label class="lead lead-edit bold1" for="mainbox_postcode">Enter your postcode</label>
+                                    <input type="text" class="form-control upper" id="mainbox_postcode" placeholder="WC2N 5DU">
+                                    <small id="postcode_error" class="form-text message_e hidden">*Please provide a valid postcode.</small>
+                                </div>
+                                <!-- geo-localizator -->
+                                <div class="form-group">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <!-- clear fields button -->
+                                        <button type="button" class="btn btn-primary clearfields_button" onclick="ClearPostcode()">Clear</button>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <!-- find me button -->
+                                        <button type="button" class="btn btn-primary geoloc_button" onclick="FindMe()">Find Me!</button><span class="hint_mainform"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <!-- white separate line -->
-                <div id="postcode_missing"></div>
-                <div class="separate_line"></div>
-            </div>
-        </header>
-        <!-- section with input boxes and check boxes to retrive data for google maps-->
-        <div class="container">
-            <div class="row">
+                <div class="separate_line1"></div>
+                <div id="tickbox_missing_err"></div>
+                <!-- search options CLUBS PUBS BARS -->
                 <div class="row">
-                    <form id="main_form">
-                        <!-- town adn postcode fields -->
-                        <div class="postcode">
-                            <div class="form-group">
-                                <label class="lead lead-edit bold1" for="mainbox_postcode">Enter your postcode</label>
-                                <input type="text" class="form-control upper" id="mainbox_postcode" placeholder="WC2N 5DU">
-                                <small id="postcode_error" class="form-text message_e hidden">*Please provide a valid postcode.</small>
+                    <div class="search_options">
+                        <h3 class="lead bold1">What are you looking for tonight?</h3>
+                        <div class="c_boxes">
+                            <ul class="lead lead-edit bold1">
+                                <li>
+                                    <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+                                    <label for="styled-checkbox-1">Clubs</label>
+                                </li>
+                                <li>
+                                    <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
+                                    <label for="styled-checkbox-2">Bars</label>
+                                </li>
+                                <li>
+                                    <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value3">
+                                    <label for="styled-checkbox-3">Pubs</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <small id="tickbox_missing" class="form-text message_e hidden">*Please choose any of tick boxes.</small>
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <!-- clear fields button -->
+                                <button type="button" class="btn btn-primary clearfields_button" onclick="ClearCheckboxes()">Clear</button>
                             </div>
-                            <!-- geo-localizator -->
-                            <div class="form-group">
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                    <!-- clear fields button -->
-                                    <button type="button" class="btn btn-primary clearfields_button" onclick="ClearPostcode()">Clear</button>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                    <!-- find me button -->
-                                    <button type="button" class="btn btn-primary geoloc_button" onclick="FindMe()">Find Me!</button><span class="hint_mainform"></span>
-                                </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <!-- clear checkboxes button -->
+                                <button type="button" class="btn btn-primary selectall_button" onclick="SelectAll()">Select All</button>
                             </div>
                         </div>
-                    </form>
+                    </div>
+                    <!-- submit button -->
+                    <div class="formsubmition">
+                        <button type="button" class="btn btn-primary btn_wide" onclick="StartYourTrip()">Start Trip</button>
+                    </div>
                 </div>
             </div>
-            <!-- white separate line -->
-            <div class="separate_line1"></div>
-            <!-- search options CLUBS PUBS BARS -->
+        </div>
+        <!-- map container -->
+        <div id="map_container" class="hidden">
+            <!-- these container class need to be hidden-->
+            <!--class="map_main"-->
+            <!-- side bar container -->
+            <div id="sidebar_blue" class="sidebar">
+                <!-- minimize icon container-->
+                <div class="collapse_sidebar" onclick="collapseSideBar();" style="cursor: pointer;">
+                    <img id="sidebar_collapse_icon" src="assets/images/icons/minimize_button.png" alt="minimize sidebar button">
+                    <label id="hint_hide" class="hint_s_style">hide</label>
+                    <label id="hint_show" class="hint_s_style hidden">show</label>
+                </div>
+                <!-- full sidebar -->
+                <div class="sidebar">
+                    <!-- main little sidebar container -->
+                    <div id="ssb_icons" class="small_sidebar_main hidden">
+                        <!-- hidden class removed to work with wide sidebar-->
+                        <div class="little_icons" style="cursor: pointer">
+                            <div id="red_marker" class="little_iPosition" onclick="MarkerOnOff()">
+                                <span class="tiptext_h">Hide My Location</span>
+                                <span class="tiptext_s hidden">Show My Location</span>
+                                <img id="iPosition_marker" src="assets/images/icons/marker_red.png" alt="Position_marker">
+                                <label id="hint_position" class="hint_s_style">Me</label>
+                            </div>
+                            <div id="green_marker" class="little_iClubs" onclick="MarkerOnOff()">
+                                <span class="tiptext_h">Hide Clubs</span>
+                                <span class="tiptext_s hidden">Show Clubs</span>
+                                <img id="iClubs_marker" src="assets/images/icons/marker_green.png" alt="Clubs_marker">
+                                <label id="hint_clubs" class="hint_s_style">Clubs</label>
+                            </div>
+                            <div id="orange_marker" class="little_iPubs" onclick="MarkerOnOff()">
+                                <span class="tiptext_h">Hide Pubs</span>
+                                <span class="tiptext_s hidden">Show Pubs</span>
+                                <img id="iPubs_marker" src="assets/images/icons/marker_orange.png" alt="Pubs_marker">
+                                <label id="hint_pubs" class="hint_s_style">Pubs</label>
+                            </div>
+                            <div id="blue_marker" class="little_iBars" onclick="MarkerOnOff()">
+                                <span class="tiptext_h">Hide Bars</span>
+                                <span class="tiptext_s hidden">Show Bars</span>
+                                <img id="iBars_marker" src="assets/images/icons/marker_blue.png" alt="Bars_marker">
+                                <label id="hint_bars" class="hint_s_style">Bars</label>
+                            </div>
+                        </div>
+                        <div class="download_button" onclick="downloadMe()">
+                            <span class="tiptext">Download Your Trip</span>
+                            <img id="download" src="assets/images/icons/download.png" alt="download button">
+                            <label id="hint_download" class="hint_s_style">Save</label>
+                        </div>
+                        <div class="bottom_exit">
+                            <div class="exit_sSidebar">
+                                <img id="exit_icon" class="close_map" src="assets/images/icons/close.svg" alt="exit icon/small sidebar" onclick="closeMap();" style="cursor: pointer;">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- main sidebar container -->
+                    <div class="">
+                        <!-- main sidebar container for markers and range sliders / reset button -->
+                        <div id="main_sidebar" class="">
+                            <!-- add hidden class to work on small sidebar -->
+                            <!-- markers on wide sidebar -->
+                            <div class="marker_style_wide">
+                                <div class="marker">
+                                    <img id="iPosition_marker_w" src="assets/images/icons/marker_red.png" alt="Position_marker">
+                                    <label class="marker_name">Me</label>
+                                </div>
+                                <div id="slider" class="inf_container">
+                                    <div class="inf_container">
+                                        <h3 class="town_info">Wellingborough</h3>
+                                        <h3 class="postcode_info">NN8 2DF</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="marker_style_wide">
+                                <div class="marker">
+                                    <img id="iClubs_marker_w" src="assets/images/icons/marker_green.png" alt="Clubs_marker">
+                                    <label class="marker_name">Clubs</label>
+                                </div>
+                                <div id="slider_c" class="slider_container">
+                                    <div class="range_info_container">
+                                        <label class="range_info">Change Distance</label>
+                                        <label id="clubs_distance" class="range_number">50<span class="distance_class">&nbsp;Miles</span></label>
+                                    </div>
+                                    <input id="clubs_dis_range" type="range" class="slider" min="0" max="100" value="50">
+                                </div>
+                            </div>
+                            <div class="marker_style_wide">
+                                <div class="marker">
+                                    <img id="iPubs_marker_w" src="assets/images/icons/marker_orange.png" alt="Pubs_marker">
+                                    <label class="marker_name">Pubs</label>
+                                </div>
+                                <div id="slider_p" class="slider_container">
+                                    <div class="range_info_container">
+                                        <label class="range_info">Change Distance</label>
+                                        <label id="pubs_distance" class="range_number">50<span class="distance_class">&nbsp;Miles</span></label>
+                                    </div>
+                                    <input id="pubs_dis_range" type="range" class="slider" min="0" max="100" value="50">
+                                </div>
+                            </div>
+                            <div class="marker_style_wide">
+                                <div class="marker">
+                                    <img id="iBars_marker_w" src="assets/images/icons/marker_blue.png" alt="Bars_marker">
+                                    <label class="marker_name">Bars</label>
+                                </div>
+                                <div id="slider_b" class="slider_container">
+                                    <div class="range_info_container">
+                                        <label class="range_info">Change Distance</label>
+                                        <label id="bars_distance" class="range_number">50<span class="distance_class">&nbsp;Miles</span></label>
+                                    </div>
+                                    <input id="bars_dis_range" type="range" class="slider" min="0" max="100" value="50">
+                                </div>
+                            </div>
+                            <div id="sidebar_buttons" class="range_options">
+                                <button class="btn btn-primary clearrange_button" onclick="resetRadius()">Reset</button>
+                                <button class="btn btn-primary applyrange_button" onclick="applyRadius()">Apply</button>
+                            </div>
+                        </div>
+                        <!-- side bar footer container -->
+                        <div class="sidebar_footer">
+                            <!-- white separate line -->
+                            <div id="sidebar_separate_line" class="separate_line2"></div>
+                            <!-- logotype container -->
+                            <div id="logotype_sidebar" class="logotype">
+                                <div class="logo_sidebar"><img id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo" onclick="closeMap();" style="cursor:pointer;"></div>
+                            </div>
+                            <!-- copyright area -->
+                            <div id="sidebar_copyrights" class="copyrights">
+                                <p class="lead p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="map"></div>
+        </div>
+        <!-- footer section -->
+        <footer id="footer_main" class="">
+            <!-- hidden only to work with map page-->
             <div class="row">
-                <div class="search_options">
-                    <h3 class="lead bold1">What are you looking for tonight?</h3>
-                    <div class="c_boxes">
-                        <ul class="lead lead-edit bold1">
-                            <li>
-                                <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
-                                <label for="styled-checkbox-1">Clubs</label>
-                            </li>
-                            <li>
-                                <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
-                                <label for="styled-checkbox-2">Bars</label>
-                            </li>
-                            <li>
-                                <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value3">
-                                <label for="styled-checkbox-3">Pubs</label>
-                            </li>
-                        </ul>
-                    </div>
-                    <small id="tickbox_missing" class="form-text message_e hidden">*Please choose any of tick boxes.</small>
-                    <div class="form-group">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                            <!-- clear fields button -->
-                            <button type="button" class="btn btn-primary clearfields_button" onclick="ClearCheckboxes()">Clear</button>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                            <!-- clear checkboxes button -->
-                            <button type="button" class="btn btn-primary selectall_button" onclick="SelectAll()">Select All</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- submit button -->
-                <div class="formsubmition">
-                    <button type="button" class="btn btn-primary btn_wide" onclick="StartYourTrip()">Start Trip</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- map container -->
-    <div id="map_container" class="hidden">
-        <!-- these container class need to be hidden-->
-        <!--class="map_main"-->
-        <!-- side bar container -->
-        <div id="sidebar_blue" class="sidebar">
-            <!-- minimize icon container-->
-            <div class="collapse_sidebar" onclick="collapseSideBar();" style="cursor: pointer;">
-                <img id="sidebar_collapse_icon" src="assets/images/icons/minimize_button.png" alt="minimize sidebar button">
-                <label id="hint_hide" class="hint_s_style">hide</label>
-                <label id="hint_show" class="hint_s_style hidden">show</label>
-            </div>
-            <!-- full sidebar -->
-            <div class="sidebar">
-                <!-- main little sidebar container -->
-                <div id="ssb_icons" class="small_sidebar_main hidden">
-                    <!-- hidden class removed to work with wide sidebar-->
-                    <div class="little_icons" style="cursor: pointer">
-                        <div id="red_marker" class="little_iPosition" onclick="MarkerOnOff()">
-                            <span class="tiptext_h">Hide My Location</span>
-                            <span class="tiptext_s hidden">Show My Location</span>
-                            <img id="iPosition_marker" src="assets/images/icons/marker_red.png" alt="Position_marker">
-                            <label id="hint_position" class="hint_s_style">Me</label>
-                        </div>
-                        <div id="green_marker" class="little_iClubs" onclick="MarkerOnOff()">
-                            <span class="tiptext_h">Hide Clubs</span>
-                            <span class="tiptext_s hidden">Show Clubs</span>
-                            <img id="iClubs_marker" src="assets/images/icons/marker_green.png" alt="Clubs_marker">
-                            <label id="hint_clubs" class="hint_s_style">Clubs</label>
-                        </div>
-                        <div id="orange_marker" class="little_iPubs" onclick="MarkerOnOff()">
-                            <span class="tiptext_h">Hide Pubs</span>
-                            <span class="tiptext_s hidden">Show Pubs</span>
-                            <img id="iPubs_marker" src="assets/images/icons/marker_orange.png" alt="Pubs_marker">
-                            <label id="hint_pubs" class="hint_s_style">Pubs</label>
-                        </div>
-                        <div id="blue_marker" class="little_iBars" onclick="MarkerOnOff()">
-                            <span class="tiptext_h">Hide Bars</span>
-                            <span class="tiptext_s hidden">Show Bars</span>
-                            <img id="iBars_marker" src="assets/images/icons/marker_blue.png" alt="Bars_marker">
-                            <label id="hint_bars" class="hint_s_style">Bars</label>
-                        </div>
-                    </div>
-                    <div class="download_button" onclick="downloadMe()">
-                        <span class="tiptext">Download Your Trip</span>
-                        <img id="download" src="assets/images/icons/download.png" alt="download button">
-                        <label id="hint_download" class="hint_s_style">Save</label>
-                    </div>
-                    <div class="bottom_exit">
-                        <div class="exit_sSidebar">
-                            <img id="exit_icon" class="close_map" src="assets/images/icons/close.svg" alt="exit icon/small sidebar" onclick="closeMap();" style="cursor: pointer;">
-                        </div>
-                    </div>
-                </div>
-                <!-- main sidebar container -->
-                <div class="">
-                    <!-- main sidebar container for markers and range sliders / reset button -->
-                    <div id="main_sidebar" class="">
-                        <!-- add hidden class to work on small sidebar -->
-                        <!-- markers on wide sidebar -->
-                        <div class="marker_style_wide">
-                            <div class="marker">
-                                <img id="iPosition_marker_w" src="assets/images/icons/marker_red.png" alt="Position_marker">
-                                <label class="marker_name">Me</label>
-                            </div>
-                            <div id="slider" class="inf_container">
-                                <div class="inf_container">
-                                    <h3 class="town_info">Wellingborough</h3>
-                                    <h3 class="postcode_info">NN8 2DF</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="marker_style_wide">
-                            <div class="marker">
-                                <img id="iClubs_marker_w" src="assets/images/icons/marker_green.png" alt="Clubs_marker">
-                                <label class="marker_name">Clubs</label>
-                            </div>
-                            <div id="slider_c" class="slider_container">
-                                <div class="range_info_container">
-                                    <label class="range_info">Change Distance</label>
-                                    <label id="clubs_distance" class="range_number">50<span class="distance_class">&nbsp;Miles</span></label>
-                                </div>
-                                <input id="clubs_dis_range" type="range" class="slider" min="0" max="100" value="50">
-                            </div>
-                        </div>
-                        <div class="marker_style_wide">
-                            <div class="marker">
-                                <img id="iPubs_marker_w" src="assets/images/icons/marker_orange.png" alt="Pubs_marker">
-                                <label class="marker_name">Pubs</label>
-                            </div>
-                            <div id="slider_p" class="slider_container">
-                                <div class="range_info_container">
-                                    <label class="range_info">Change Distance</label>
-                                    <label id="pubs_distance" class="range_number">50<span class="distance_class">&nbsp;Miles</span></label>
-                                </div>
-                                <input id="pubs_dis_range" type="range" class="slider" min="0" max="100" value="50">
-                            </div>
-                        </div>
-                        <div class="marker_style_wide">
-                            <div class="marker">
-                                <img id="iBars_marker_w" src="assets/images/icons/marker_blue.png" alt="Bars_marker">
-                                <label class="marker_name">Bars</label>
-                            </div>
-                            <div id="slider_b" class="slider_container">
-                                <div class="range_info_container">
-                                    <label class="range_info">Change Distance</label>
-                                    <label id="bars_distance" class="range_number">50<span class="distance_class">&nbsp;Miles</span></label>
-                                </div>
-                                <input id="bars_dis_range" type="range" class="slider" min="0" max="100" value="50">
-                            </div>
-                        </div>
-                        <div id="sidebar_buttons" class="range_options">
-                            <button class="btn btn-primary clearrange_button" onclick="resetRadius()">Reset</button>
-                            <button class="btn btn-primary applyrange_button" onclick="applyRadius()">Apply</button>
-                        </div>
-                    </div>
-                    <!-- side bar footer container -->
-                    <div class="sidebar_footer">
-                        <!-- white separate line -->
-                        <div id="sidebar_separate_line" class="separate_line2"></div>
-                        <!-- logotype container -->
-                        <div id="logotype_sidebar" class="logotype">
-                            <div class="logo_sidebar"><img id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo" onclick="closeMap();" style="cursor:pointer;"></div>
-                        </div>
-                        <!-- copyright area -->
-                        <div id="sidebar_copyrights" class="copyrights">
-                            <p class="lead p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
-                        </div>
+                <!-- white separate line -->
+                <div class="separate_line1"></div>
+                <!-- copyright area -->
+                <div class="col-md-12">
+                    <div class="copyrights">
+                        <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a> - All Rights Reserved</p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="map"></div>
-    </div>
-    <!-- footer section -->
-    <footer id="footer_main" class="">
-        <!-- hidden only to work with map page-->
-        <div class="row">
-            <!-- white separate line -->
-            <div class="separate_line1"></div>
-            <!-- copyright area -->
-            <div class="col-md-12">
-                <div class="copyrights">
-                    <p class="p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a> - All Rights Reserved</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- google maps API with key -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJuhJdmAIHpAnmB8Iz_SfURsbAIsmuSxo&callback=initMap&language=en-UK"></script>
-    <!-- jquery and bootstrap scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- personal scripts -->
-    <script src="./assets/js/script.js"></script>
+        </footer>
+        <!-- google maps API with key -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJuhJdmAIHpAnmB8Iz_SfURsbAIsmuSxo&callback=initMap&language=en-UK"></script>
+        <!-- jquery and bootstrap scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- personal scripts -->
+        <script src="./assets/js/script.js"></script>
     </div>
 </body>
 

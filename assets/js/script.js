@@ -108,10 +108,16 @@ function StartYourTrip() {
   if (myPostCode == "") {
     $("#mainbox_postcode").addClass("missing_e");
     $("#postcode_error").removeClass("hidden");
+    $('html, body').animate({
+      scrollTop: ($('#postcode_missing').offset().top)
+    }, 500);
   }
   else if (checked_clubs == false && checked_pubs == false && checked_bars == false) {
     $("#tickbox_missing").removeClass("hidden");
     $(".c_boxes").addClass("missing_e");
+    $('html, body').animate({
+      scrollTop: ($('#tickbox_missing_err').offset().top)
+    }, 500);
   }
   else {
     // Go to Map
