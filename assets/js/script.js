@@ -108,7 +108,14 @@ function ClearCheckboxes() {
   document.getElementById("tickbox_missing").classList.remove("text-muted1");
 }
 
-
+function SelectAll() {
+  $("#styled-checkbox-1").prop("checked", true);
+  $("#styled-checkbox-2").prop("checked", true);
+  $("#styled-checkbox-3").prop("checked", true);
+  // tick boxes
+  document.getElementById("tickbox_missing").classList.add("hidden");
+  document.getElementById("tickbox_missing").classList.remove("text-muted1");
+}
 
 
 
