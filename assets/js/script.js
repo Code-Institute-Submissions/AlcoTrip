@@ -17,7 +17,7 @@ function showPage() {
 function FindMe() {
 
   // clear user form fields
-  $("#main_form").reset();
+  $("#main_form").trigger("reset");
 
   // remove input fields error messages
   //  postcode field
@@ -29,6 +29,7 @@ function FindMe() {
   $("#tickbox_missing").removeClass("text-muted1");
 
   let myPostCode = $("#mainbox_postcode");
+  myPostCode.val("found");
 
   initMap();
 
@@ -116,7 +117,6 @@ function SelectAll() {
 function StartYourTrip() {
 
   let myPostCode = $("#mainbox_postcode").val();
-
 
   if (!myPostCode) {
     $("#postcode_missing").removeClass("hidden");
