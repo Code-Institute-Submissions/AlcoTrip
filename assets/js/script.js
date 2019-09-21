@@ -1,6 +1,6 @@
 //page loader function
 
-/* global $ , google , navigator */
+/* global $ , google , navigator, global map */
 
 function myFunction() {
   let loader;
@@ -29,56 +29,52 @@ function FindMe() {
   $("#tickbox_missing").removeClass("text-muted1");
 
   let myPostCode = $("#mainbox_postcode");
-  myPostCode.val("found");
-
-  initMap();
+  myPostCode.val("your postcode");
 
   // MAP FUNCTION
 
   let map, infoWindow;
 
-  function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 10
+  });
+  infoWindow = new google.maps.InfoWindow;
 
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: { lat: -34.397, lng: 150.644 },
-      zoom: 10
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      let myloc = { lat: -34.304, lng: 150.533 };
+      let marker = new google.maps.Marker({ position: myloc, map: map, /*icon: "assets/images/icons/marker_red.png",*/ });
+      // geo localization to find user location via clicking on "FindMe" button 
+
+      infoWindow.setPosition(pos);
+      // infoWindow.setContent('Location found.');
+      infoWindow.open(map);
+      map.setCenter(pos);
+
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
     });
-    infoWindow = new google.maps.InfoWindow;
-
-    // Try HTML5 geolocation.
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-        let myloc = { lat: -34.304, lng: 150.533 };
-        let marker = new google.maps.Marker({ position: myloc, map: map, /*icon: "assets/images/icons/marker_red.png",*/ });
-        // geo localization to find user location via clicking on "FindMe" button 
-
-        infoWindow.setPosition(pos);
-        // infoWindow.setContent('Location found.');
-        infoWindow.open(map);
-        map.setCenter(pos);
-
-      }, function() {
-        handleLocationError(true, infoWindow, map.getCenter());
-      });
-    }
-    else {
-      // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
-    }
   }
-
-  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-      'Error: The Geolocation service failed.' :
-      'Error: Your browser doesn\'t support geolocation.');
-    infoWindow.open(map);
+  else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
   }
 }
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+    'Error: The Geolocation service failed.' :
+    'Error: Your browser doesn\'t support geolocation.');
+  infoWindow.open(map);
+}
+
 
 
 // Clear postcode field and remove error message
@@ -91,9 +87,8 @@ function ClearPostcode() {
 
 // Clear all checboxes and hidden error message
 function ClearCheckboxes() {
-  $("#styled-checkbox-1").prop("checked", false);
-  $("#styled-checkbox-2").prop("checked", false);
-  $("#styled-checkbox-3").prop("checked", false);
+  $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
+
   // clear errors
   $("#tickbox_missing").addClass("hidden");
   $("#tickbox_missing").removeClass("text-muted1");
@@ -101,9 +96,8 @@ function ClearCheckboxes() {
 
 // Select all checboxes and clear hidden error message
 function SelectAll() {
-  $("#styled-checkbox-1").prop("checked", true);
-  $("#styled-checkbox-2").prop("checked", true);
-  $("#styled-checkbox-3").prop("checked", true);
+  $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", true);
+
   // clear errors
   $("#tickbox_missing").addClass("hidden");
   $("#tickbox_missing").removeClass("text-muted1");
@@ -118,45 +112,24 @@ function StartYourTrip() {
 
   let myPostCode = $("#mainbox_postcode").val();
 
-  if (!myPostCode) {
-    $("#postcode_missing").removeClass("hidden");
-    $("#postcode_missing").addClass("text-muted");
-    $("#mainbox_postcode").addClass("missing_e");
-  }
-  else {
-    $("#postcode_missing").addClass("hidden");
-    $("#postcode_missing").removeClass("text-muted");
-    $("#mainbox_postcode").css("border", "1px solid #ccc");
-  }
+  console.log(myPostCode);
 
 
-  let clubs_tick = $("#styled-checkbox-1");
-  let pubs_tick = $("#styled-checkbox-2");
-  let bars_tick = $("#styled-checkbox-3");
+
+  $("#main_page_container").addClass("hidden");
+  $("#footer_main").addClass("hidden");
+  $("#map_container").removeClass("hidden");
+  $("#map_container").addClass("map_main");
 
 
-  if (!clubs_tick.checked && !pubs_tick.checked && !bars_tick.checked) {
-    $("#tickbox_missing").removeClass("hidden");
-    $("#tickbox_missing").addClass("text-muted1");
-  }
-  else {
-    $("#tickbox_missing").addClass("hidden");
-    $("#tickbox_missing").removeClass("text-muted1");
-  }
-
-  if (!myPostCode) {
-    $("#postcode_missing").scrollIntoView({ behavior: "smooth" });
-  }
-  else if (!clubs_tick.checked && !pubs_tick.checked && !bars_tick.checked) {
-    $("#tickbox_missing").scrollIntoView({ behavior: "smooth" });
-  }
-  else {
-    $("#main_page_container").addClass("hidden");
-    $("#map_container").removeClass("hidden");
-    $("#map_container").addClass("map_main");
-    $("#footer_main").addClass("hidden");
-  }
 }
+
+
+
+
+
+
+
 
 // Collaspe or expand sidebar
 function collapseSideBar() {
@@ -269,10 +242,8 @@ function MarkerOnOff() {
 
 // Close map function ( red corss - button )
 function closeMap() {
-  $("#mainbox_postcode").val('');
-  $("#styled-checkbox-1").prop("checked", false);
-  $("#styled-checkbox-2").prop("checked", false);
-  $("#styled-checkbox-3").prop("checked", false);
+  $("#mainbox_postcode").val("");
+  $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
   $("#main_page_container").removeClass("hidden");
   $("#map_container").addClass("hidden");
   $("#footer_main").removeClass("hidden");
