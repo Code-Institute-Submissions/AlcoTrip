@@ -159,6 +159,7 @@ function StartYourTrip() {
   }
 
   if (!myPostCode) {
+    
     document.getElementById("postcode_missing").scrollIntoView({ behavior: "smooth" });
   }
   else if (!clubs_tick.checked && !pubs_tick.checked && !bars_tick.checked) {
