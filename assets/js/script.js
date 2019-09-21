@@ -31,7 +31,7 @@ function FindMe() {
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: -34.397, lng: 150.644 },
-    zoom: 10
+    zoom: 15
   });
   infoWindow = new google.maps.InfoWindow;
 
@@ -94,6 +94,7 @@ function SelectAll() {
   // clear errors
   $("#tickbox_missing").addClass("hidden");
   $("#tickbox_missing").removeClass("text-muted1");
+  $(".c_boxes").removeClass("missing_e");
 }
 
 // Check all required fields and start trip
