@@ -2,35 +2,33 @@
 
 /* global $ , google , navigator */
 
-let loader;
-
 function myFunction() {
+  let loader;
   loader = setTimeout(showPage(), 3000);
 }
 
 function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("page_loader").style.display = "block";
-  document.getElementById("whole_page").style.display = "none";
+  $("#loader").css("display", "none");
+  $("#page_loader").css("display", "block");
+  $("#whole_page").css("display", "none");
 }
-// main form - find me localization function
-// This function is clearing all fields if any value exist in fields
-// Function also using geo location script to get User - town name and postcode
+
+// Find user location based on geolocalization from google
 function FindMe() {
 
   // clear user form fields
-  document.getElementById("main_form").reset();
+  $("#main_form").reset();
 
   // remove input fields error messages
   //  postcode field
-  document.getElementById("postcode_missing").classList.add("hidden");
-  document.getElementById("postcode_missing").classList.remove("text-muted");
-  document.getElementById("mainbox_postcode").style.border = "1px solid #ccc";
+  $("#postcode_missing").addClass("hidden");
+  $("#postcode_missing").removeClass("text-muted");
+  $("#mainbox_postcode").css("border", "1px solid #ccc");
   // tick boxes
-  document.getElementById("tickbox_missing").classList.add("hidden");
-  document.getElementById("tickbox_missing").classList.remove("text-muted1");
+  $("#tickbox_missing").addClass("hidden");
+  $("#tickbox_missing").removeClass("text-muted1");
 
-  let myPostCode = document.getElementById("mainbox_postcode");
+  let myPostCode = $("#mainbox_postcode");
 
   initMap();
 
@@ -114,16 +112,12 @@ function SelectAll() {
 
 
 
-
-
-// main from - tix boxes, checking function
-// This function validate main form and checks, if any tick box has been ticked
+// Check all required fields and start trip
 function StartYourTrip() {
 
-  // main form variables
-  let myPostCode = $("#mainbox_postcode").val;
+  let myPostCode = $("#mainbox_postcode").val();
 
-  // check if Post Code input box is empty
+
   if (!myPostCode) {
     $("#postcode_missing").removeClass("hidden");
     $("#postcode_missing").addClass("text-muted");
@@ -135,12 +129,12 @@ function StartYourTrip() {
     $("#mainbox_postcode").css("border", "1px solid #ccc");
   }
 
-  // check if any of tick boxes has been clicked 'checked'
-  let clubs_tick = ("styled-checkbox-1");
-  let pubs_tick = document.getElementById("styled-checkbox-2");
-  let bars_tick = document.getElementById("styled-checkbox-3");
 
-  // if any of tick boxes is empty show allert comment
+  let clubs_tick = $("#styled-checkbox-1");
+  let pubs_tick = $("#styled-checkbox-2");
+  let bars_tick = $("#styled-checkbox-3");
+
+
   if (!clubs_tick.checked && !pubs_tick.checked && !bars_tick.checked) {
     $("#tickbox_missing").removeClass("hidden");
     $("#tickbox_missing").addClass("text-muted1");
@@ -163,7 +157,6 @@ function StartYourTrip() {
     $("#footer_main").addClass("hidden");
   }
 }
-
 
 // Collaspe or expand sidebar
 function collapseSideBar() {
@@ -228,13 +221,9 @@ function collapseSideBar() {
 // TURN OFF OR ON MARKERS
 function MarkerOnOff() {
 
-
   // if .red marker then
   // e.prevent deafauk
   // let id = this.id;
-
-
-
 
   $("#red_marker").click(function() {
     if ($(this).children("span").hasClass("hidden")) {
@@ -276,7 +265,6 @@ function MarkerOnOff() {
       $(this).children("img").attr("src", "assets/images/icons/marker_blue.png");
     }
   });
-
 }
 
 // Close map function ( red corss - button )
