@@ -80,29 +80,18 @@ function FindMe() {
     infoWindow.open(map);
   }
 }
-// main from - clear fields function
-// This function is clearing Twon and Postcode filed in main form, on main page
-function Clearfields() {
 
-  let myPostCode = document.getElementById("mainbox_postcode");
 
-  myPostCode.value = "";
-
-  // remove input fields error messages
-  // postcode field
-  document.getElementById("postcode_missing").classList.add("hidden");
-  document.getElementById("postcode_missing").classList.remove("text-muted");
-  document.getElementById("mainbox_postcode").style.border = "1px solid #ccc";
-
+// Clear postcode field and remove error message
+function ClearPostcode() {
+  $("#mainbox_postcode").val('');
+  $("#postcode_missing").addClass("hidden");
+  $("#postcode_missing").removeClass("text-muted");
+  $("#mainbox_postcode").css("border", "1px solid #ccc");
 }
-
-
-
-
 
 // Clear all checboxes and hidden error message
 function ClearCheckboxes() {
-
   $("#styled-checkbox-1").prop("checked", false);
   $("#styled-checkbox-2").prop("checked", false);
   $("#styled-checkbox-3").prop("checked", false);
