@@ -1,6 +1,6 @@
 //page loader function
 
-/* global $ , google , navigator, global map */
+/* global $ , google , navigator, global map , global swal */
 
 function myFunction() {
   let loader;
@@ -8,9 +8,8 @@ function myFunction() {
 }
 
 function showPage() {
-  $("#loader").css("display", "none");
+  $("#loader, #whole_page").css("display", "none");
   $("#page_loader").css("display", "block");
-  $("#whole_page").css("display", "none");
 }
 
 // Find user location based on geolocalization from google
@@ -149,18 +148,12 @@ function collapseSideBar() {
         });
       }
     });
-    $("#hint_show").removeClass("hidden");
-    $("#hint_hide").addClass("hidden");
-    $("#main_sidebar").addClass("hidden");
-    $("#ssb_icons").removeClass("hidden");
-    $("#slider").fadeTo(150, 0);
-    $("#sidebar_separate_line").fadeTo(150, 0);
-    $("#logotype_sidebar").fadeTo(150, 0);
-    $("#sidebar_copyrights").fadeTo(150, 0,
+
+    $("#hint_hide, #main_sidebar").addClass("hidden");
+    $("#hint_show, #ssb_icons").removeClass("hidden");
+    $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").fadeTo(150, 0,
       function() {
-        $("#sidebar_separate_line").addClass("hidden");
-        $("#logotype_sidebar").addClass("hidden");
-        $("#sidebar_copyrights").addClass("hidden");
+        $("#sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").addClass("hidden");
       }
     );
   }
@@ -177,17 +170,9 @@ function collapseSideBar() {
         });
       }
     });
-    $("#hint_show").addClass("hidden");
-    $("#hint_hide").removeClass("hidden");
-    $("#main_sidebar").removeClass("hidden");
-    $("#ssb_icons").addClass("hidden");
-    $("#sidebar_separate_line").removeClass("hidden");
-    $("#logotype_sidebar").removeClass("hidden");
-    $("#sidebar_copyrights").removeClass("hidden");
-    $("#slider").fadeTo(200, 1);
-    $("#sidebar_separate_line").fadeTo(200, 1);
-    $("#logotype_sidebar").fadeTo(200, 1);
-    $("#sidebar_copyrights").fadeTo(200, 1);
+    $("#hint_show ,#ssb_icons").addClass("hidden");
+    $("#hint_hide, #main_sidebar, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").removeClass("hidden");
+    $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").fadeTo(200, 1);
   }
 }
 // TURN OFF OR ON MARKERS
@@ -257,7 +242,7 @@ function resetRadius() {
 // Download page view
 function downloadMe() {
   alert("Your AlcoTrip map has been saved.");
-  
+
 }
 
 // Sidebar sliders - listeners
