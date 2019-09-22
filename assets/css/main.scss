@@ -644,14 +644,16 @@ a:hover {
         h3 {
             margin: 0 0 4px;
         }
-        .town_info {
+        .your_info {
             @extend %inf_class;
             width: 100%;
+            font-size: 14px;
         }
 
         .postcode_info {
             @extend %inf_class;
             width: 100%;
+            color: $secondary-color;
         }
     }
 

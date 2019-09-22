@@ -59,8 +59,11 @@ function FindMe() {
     handleLocationError(false, infoWindow, map.getCenter());
   }
 
-  let postcode = "your postcode";
+  let postcode = "nn8 2df";
   postcode_box.val(postcode);
+  let youLocation = postcode.toUpperCase();
+
+  $("#postcode_sidebar").text(youLocation);
 
 }
 
@@ -148,10 +151,9 @@ function collapseSideBar() {
         });
       }
     });
-
     $("#hint_hide, #main_sidebar").addClass("hidden");
     $("#hint_show, #ssb_icons").removeClass("hidden");
-    $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").fadeTo(150, 0,
+    $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons").fadeTo(150, 0,
       function() {
         $("#sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").addClass("hidden");
       }
@@ -172,7 +174,7 @@ function collapseSideBar() {
     });
     $("#hint_show ,#ssb_icons").addClass("hidden");
     $("#hint_hide, #main_sidebar, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").removeClass("hidden");
-    $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").fadeTo(200, 1);
+    $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons").fadeTo(200, 1);
   }
 }
 // TURN OFF OR ON MARKERS

@@ -70,7 +70,7 @@
 .font_space {
   margin-left: 20px; }
 
-.hint_s_style, .marker_style_wide .slider_container .range_info_container .range_info, .marker_style_wide .slider_container .range_info_container .range_number, .marker_style_wide .inf_container .town_info, .marker_style_wide .inf_container .postcode_info, .result_value {
+.hint_s_style, .marker_style_wide .slider_container .range_info_container .range_info, .marker_style_wide .slider_container .range_info_container .range_number, .marker_style_wide .inf_container .your_info, .marker_style_wide .inf_container .postcode_info, .result_value {
   color: #fff;
   font-family: Roboto, san-serif;
   font-size: 12px;
@@ -581,7 +581,7 @@ a:hover {
   margin-bottom: 30px;
   margin-left: 2px; }
 
-.marker_style_wide .slider_container .range_info_container .range_info, .marker_style_wide .slider_container .range_info_container .range_number, .marker_style_wide .inf_container .town_info, .marker_style_wide .inf_container .postcode_info {
+.marker_style_wide .slider_container .range_info_container .range_info, .marker_style_wide .slider_container .range_info_container .range_number, .marker_style_wide .inf_container .your_info, .marker_style_wide .inf_container .postcode_info {
   float: left;
   display: inline-block;
   font-size: 14px; }
@@ -621,10 +621,12 @@ a:hover {
   width: 280px; }
   .marker_style_wide .inf_container h3 {
     margin: 0 0 4px; }
-  .marker_style_wide .inf_container .town_info {
-    width: 100%; }
+  .marker_style_wide .inf_container .your_info {
+    width: 100%;
+    font-size: 14px; }
   .marker_style_wide .inf_container .postcode_info {
-    width: 100%; }
+    width: 100%;
+    color: #ffb400; }
 
 .slider {
   -webkit-appearance: none;
