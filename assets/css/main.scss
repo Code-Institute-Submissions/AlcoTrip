@@ -151,7 +151,7 @@ a:hover {
     }
 }
 
-/* Add animation to "page content" */
+// Add animation to "page content"
 
 .animate-bottom {
     position: relative;
@@ -416,16 +416,18 @@ a:hover {
             display: flex;
             align-items: center;
         }
-    } // CHECKBOX MAIN STYLE
+    } 
+    // CHECKBOX MAIN STYLE
     .styled-checkbox {
-        position: absolute; // take it out of document flow
-        opacity: 0; // hide it
+        position: absolute;
+        opacity: 0;
         &+label {
             align-items: bottom;
             position: relative;
             cursor: pointer;
             padding: 0;
-        } // Box.
+        } 
+        // Box.
         &+label:before {
             content: '';
             margin-right: 20px;
@@ -542,7 +544,10 @@ a:hover {
 
 .btn_wide:hover {
     color: $primary-font;
-} // WIDE SIDEBAR
+} 
+
+// WIDE SIDEBAR
+
 // ICONS AND CALCULATIONS
 :root {
 
@@ -586,7 +591,9 @@ a:hover {
     display: inline-block;
     @extend .hint_s_style;
     font-size: 14px;
-} // MARKERS
+} 
+
+// MARKERS
 .marker_style_wide {
     @extend %m_little_style1;
     .marker {
@@ -647,7 +654,9 @@ a:hover {
         }
     }
 
-} // SLIDERS
+} 
+
+// SLIDERS
 .slider {
     -webkit-appearance: none;
     max-width: 258px;
@@ -688,7 +697,9 @@ a:hover {
 .range_options {
     width: 100%;
     height: 40px;
-} // APPLY AND RESET BUTTON
+} 
+
+// APPLY AND RESET BUTTON
 .applyrange_button {
     margin-right: 22px;
     float: right;
@@ -704,7 +715,9 @@ a:hover {
 .clearrange_button:hover {
     color: $primary-font;
     background-color: $tertiary-color;
-} // RESULTS
+} 
+
+// RESULTS
 .second_sidebar {
     margin-top: 14px;
     width: 100%;
@@ -772,7 +785,8 @@ a:hover {
             margin: 0 auto;
         }
     }
-} // MAP
+}
+
 // MAP
 .map_main {
     margin: 0px auto;
@@ -792,7 +806,9 @@ a:hover {
     float: right;
     transition-timing-function: ease-in-out;
     transition: 0.4s;
-} // FOOTER - MAIN PAGE
+}
+
+// FOOTER - MAIN PAGE
 footer {
     margin-bottom: 20px;
     text-align: center;

@@ -1,10 +1,10 @@
-//______________________________________________________________________________ CLASSES and VARIABLES
+// CLASSES and VARIABLES
 $primary-color: #2E4A63;
 $secondary-color: #ffb400;
 $primary-font: #ffffff;
 $secondary-font: #000000;
 
-//______________________________________________________________________________ STYLE - 768px[+]
+// STYLE - 768px[+]
 %m_little_style {
     width: 60px;
     height: 60px;
@@ -127,7 +127,7 @@ $secondary-font: #000000;
 }
 
 
-//______________________________________________________________________________ STYLE - 768px[-]
+// STYLE - 768px[-]
 @media screen and (max-width: 768px) {
-    //______________________________________________________________________________ SIDEBAR
+    // SIDEBAR
 }

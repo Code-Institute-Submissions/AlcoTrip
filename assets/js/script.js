@@ -248,11 +248,9 @@ function closeMap() {
 
 // Reset sliders to "50 Miles" - value
 function resetRadius() {
-  $("#clubs_dis_range").val("50");
+  $("#clubs_dis_range, #pubs_dis_range, #bars_dis_range").val("50");
   $("#clubs_distance").html($("#clubs_dis_range").val() + "&nbsp;" + "Miles");
-  $("#pubs_dis_range").val("50");
   $("#pubs_distance").html($("#pubs_dis_range").val() + "&nbsp;" + "Miles");
-  $("#bars_dis_range").val("50");
   $("#bars_distance").html($("#bars_dis_range").val() + "&nbsp;" + "Miles");
 }
 
