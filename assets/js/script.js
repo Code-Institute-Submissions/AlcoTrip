@@ -257,6 +257,7 @@ function resetRadius() {
 // Download page view
 function downloadMe() {
   alert("Your AlcoTrip map has been saved.");
+  
 }
 
 // Sidebar sliders - listeners

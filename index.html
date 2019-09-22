@@ -26,12 +26,12 @@
 </head>
 
 <body onload="myFunction()">
-
     <!-- page loader section -->
     <div id="loader"></div>
     <div style="display:none" id="page_loader" class="animate-bottom"></div>
     <div id="whole_page"></div>
     <!-- page loader section end -->
+
     <div id="main_page_container">
         <!-- hidden only to work with map page-->
         <!-- header with logotype -->
@@ -163,7 +163,7 @@
                             <label id="hint_bars" class="hint_s_style">Bars</label>
                         </div>
                     </div>
-                    <div class="download_button" onclick="downloadMe()">
+                    <div id="download_map" class="download_button" onclick="downloadMe()">
                         <span class="tiptext">Download Your Trip</span>
                         <img id="download" src="assets/images/icons/download.png" alt="download button">
                         <label id="hint_download" class="hint_s_style">Save</label>
