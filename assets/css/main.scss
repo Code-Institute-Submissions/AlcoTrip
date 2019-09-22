@@ -307,7 +307,7 @@ a:hover {
 }
 
 .geoloc_button:hover {
-    color: $primary-font;
+    color: $secondary-font;
     background-color: $secondary-color;
     border: 2px solid $secondary-color;
 }
@@ -318,7 +318,7 @@ a:hover {
 }
 
 .selectall_button:hover {
-    color: $primary-font;
+    color: $secondary-font;
     background-color: $secondary-color;
     border: 2px solid $secondary-color;
 }
@@ -331,7 +331,7 @@ a:hover {
 
 .clearfields_button:hover {
     margin-top: 10px;
-    color: #fff;
+    color: $primary-font;
     background: $tertiary-color;
     border-color: $tertiary-color;
 }
@@ -365,7 +365,7 @@ a:hover {
     }
 
     .geoloc_button:hover {
-        color: $primary-font;
+        color: $secondary-font;
         float: left;
         background-color: $secondary-color;
         border: 2px solid $secondary-color;
@@ -393,7 +393,7 @@ a:hover {
     }
 
     .selectall_button:hover {
-        color: $primary-font;
+        color: $secondary-font;
         float: left;
         background-color: $secondary-color;
         border: 2px solid $secondary-color;
@@ -456,22 +456,22 @@ a:hover {
         } // Disabled box.
         &:disabled+label:before {
             box-shadow: none;
-            background: #ddd;
+            background: $primary-color;
         } // Checkmark. Could be replaced with an image
         &:checked+label:after {
             content: '';
             position: absolute;
             left: 5px;
             top: 14px;
-            background: white;
+            background: $secondary-font;
             width: 2px;
             height: 2px;
-            box-shadow: 2px 0 0 white,
-            4px 0 0 white,
-            4px -2px 0 white,
-            4px -4px 0 white,
-            4px -6px 0 white,
-            4px -8px 0 white;
+            box-shadow: 2px 0 0 $secondary-font,
+            4px 0 0 $secondary-font,
+            4px -2px 0 $secondary-font,
+            4px -4px 0 $secondary-font,
+            4px -6px 0 $secondary-font,
+            4px -8px 0 $secondary-font;
             transform: rotate(45deg);
         }
 
@@ -481,15 +481,15 @@ a:hover {
                 position: absolute;
                 left: 5px;
                 top: 10px;
-                background: white;
+                background: $secondary-font;
                 width: 2px;
                 height: 2px;
-                box-shadow: 2px 0 0 white,
-                4px 0 0 white,
-                4px -2px 0 white,
-                4px -4px 0 white,
-                4px -6px 0 white,
-                4px -8px 0 white;
+                box-shadow: 2px 0 0 $secondary-font,
+                4px 0 0 $secondary-font,
+                4px -2px 0 $secondary-font,
+                4px -4px 0 $secondary-font,
+                4px -6px 0 $secondary-font,
+                4px -8px 0 $secondary-font;
                 transform: rotate(45deg);
             }
         }
@@ -545,7 +545,7 @@ a:hover {
 }
 
 .btn_wide:hover {
-    color: $primary-font;
+    color: $secondary-font;
 }
 
 // WIDE SIDEBAR

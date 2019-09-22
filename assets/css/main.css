@@ -370,7 +370,7 @@ a:hover {
   border: 2px solid #ffb400; }
 
 .geoloc_button:hover {
-  color: #ffffff;
+  color: #000000;
   background-color: #ffb400;
   border: 2px solid #ffb400; }
 
@@ -379,7 +379,7 @@ a:hover {
   border: 2px solid #ffb400; }
 
 .selectall_button:hover {
-  color: #ffffff;
+  color: #000000;
   background-color: #ffb400;
   border: 2px solid #ffb400; }
 
@@ -389,7 +389,7 @@ a:hover {
 
 .clearfields_button:hover {
   margin-top: 10px;
-  color: #fff;
+  color: #ffffff;
   background: #670000;
   border-color: #670000; }
 
@@ -415,7 +415,7 @@ a:hover {
     border: 2px solid #ffb400; }
 
   .geoloc_button:hover {
-    color: #ffffff;
+    color: #000000;
     float: left;
     background-color: #ffb400;
     border: 2px solid #ffb400;
@@ -439,7 +439,7 @@ a:hover {
     border: 2px solid #ffb400; }
 
   .selectall_button:hover {
-    color: #ffffff;
+    color: #000000;
     float: left;
     background-color: #ffb400;
     border: 2px solid #ffb400;
@@ -486,16 +486,16 @@ a:hover {
     cursor: auto; }
   .search_options .styled-checkbox:disabled + label:before {
     box-shadow: none;
-    background: #ddd; }
+    background: #2E4A63; }
   .search_options .styled-checkbox:checked + label:after {
     content: '';
     position: absolute;
     left: 5px;
     top: 14px;
-    background: white;
+    background: #000000;
     width: 2px;
     height: 2px;
-    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+    box-shadow: 2px 0 0 #000000, 4px 0 0 #000000, 4px -2px 0 #000000, 4px -4px 0 #000000, 4px -6px 0 #000000, 4px -8px 0 #000000;
     transform: rotate(45deg); }
   @media screen and (max-width: 767px) {
     .search_options .styled-checkbox:checked + label:after {
@@ -503,10 +503,10 @@ a:hover {
       position: absolute;
       left: 5px;
       top: 10px;
-      background: white;
+      background: #000000;
       width: 2px;
       height: 2px;
-      box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+      box-shadow: 2px 0 0 #000000, 4px 0 0 #000000, 4px -2px 0 #000000, 4px -4px 0 #000000, 4px -6px 0 #000000, 4px -8px 0 #000000;
       transform: rotate(45deg); } }
 
 .clearcheck_button {
@@ -548,7 +548,7 @@ a:hover {
   border: 2px solid #fff; }
 
 .btn_wide:hover {
-  color: #ffffff; }
+  color: #000000; }
 
 :root {
   --sBar_width: 360px;
