@@ -155,7 +155,6 @@ a:hover {
 }
 
 // Add animation to "page content"
-
 .animate-bottom {
     position: relative;
     -webkit-animation-name: animatebottom;
@@ -273,6 +272,8 @@ a:hover {
 }
 
 .btn {
+    padding: 0px;
+    height: 36px;
     float: left;
     width: 150px;
     box-shadow: 0px 4px 0px #303030;
@@ -419,8 +420,7 @@ a:hover {
             display: flex;
             align-items: center;
         }
-    } 
-    // CHECKBOX MAIN STYLE
+    } // CHECKBOX MAIN STYLE
     .styled-checkbox {
         position: absolute;
         opacity: 0;
@@ -429,8 +429,7 @@ a:hover {
             position: relative;
             cursor: pointer;
             padding: 0;
-        } 
-        // Box.
+        } // Box.
         &+label:before {
             content: '';
             margin-right: 20px;
@@ -547,10 +546,9 @@ a:hover {
 
 .btn_wide:hover {
     color: $primary-font;
-} 
+}
 
 // WIDE SIDEBAR
-
 // ICONS AND CALCULATIONS
 :root {
 
@@ -594,7 +592,7 @@ a:hover {
     display: inline-block;
     @extend .hint_s_style;
     font-size: 14px;
-} 
+}
 
 // MARKERS
 .marker_style_wide {
@@ -657,7 +655,7 @@ a:hover {
         }
     }
 
-} 
+}
 
 // SLIDERS
 .slider {
@@ -699,26 +697,22 @@ a:hover {
 
 .range_options {
     width: 100%;
-    height: 40px;
-} 
-
-// APPLY AND RESET BUTTON
-.applyrange_button {
-    margin-right: 22px;
-    float: right;
-    box-shadow: 0px 4px 0px #303030;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
 }
 
+// APPLY AND RESET BUTTON
+.applyrange_button,
 .clearrange_button {
-    margin-right: 22px;
-    float: right;
     box-shadow: 0px 4px 0px #303030;
 }
 
 .clearrange_button:hover {
     color: $primary-font;
     background-color: $tertiary-color;
-} 
+    border-color: $tertiary-color;
+}
 
 // RESULTS
 .second_sidebar {
