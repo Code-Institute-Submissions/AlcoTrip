@@ -708,6 +708,16 @@ a:hover {
     box-shadow: 0px 4px 0px #303030;
 }
 
+.applyrange_button {
+    margin-right: 10px;
+    box-shadow: 0px 4px 0px #303030;
+}
+
+.clearrange_button {
+    margin-left: 10px;
+    box-shadow: 0px 4px 0px #303030;
+}
+
 .clearrange_button:hover {
     color: $primary-font;
     background-color: $tertiary-color;
