@@ -121,11 +121,10 @@ function StartYourTrip() {
   }
   else {
     // Go to Map
-    $("#main_page_container, #footer_main, #tickbox_missing").addClass("hidden");
+    $("#main_page_container, #postcode_error, #tickbox_missing, #footer_main").addClass("hidden");
     $("#map_container").addClass("map_main");
     $("#map_container").removeClass("hidden");
-
-    $(".c_boxes").removeClass("missing_e");
+    $("#mainbox_postcode, .c_boxes").removeClass("missing_e");
     $("#mainbox_postcode").val("");
     $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
   }
