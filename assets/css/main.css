@@ -89,7 +89,6 @@
   padding: 0;
   text-align: center;
   margin-top: 20px;
-  margin-bottom: 26px;
   margin-left: 2px; }
 
 .small_sidebar_main .little_iPosition img,
@@ -578,7 +577,6 @@ a:hover {
   height: 60px;
   padding: 0;
   margin-top: 20px;
-  margin-bottom: 26px;
   margin-left: 2px; }
 
 .marker_style_wide .slider_container .range_info_container .range_info, .marker_style_wide .slider_container .range_info_container .range_number, .marker_style_wide .inf_container .your_info, .marker_style_wide .inf_container .postcode_info {
@@ -662,6 +660,7 @@ a:hover {
   box-shadow: 0px 4px 0px #303030; }
 
 .range_options {
+  margin-top: 20px;
   width: 100%;
   height: 30px;
   display: flex;
@@ -762,5 +761,41 @@ a:hover {
 footer {
   margin-bottom: 20px;
   text-align: center; }
+
+@media screen and (max-height: 750px) {
+  .sidebar_footer {
+    width: 360px;
+    bottom: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column; }
+
+  .separate_line2 {
+    background-color: #ffb400;
+    height: 1px;
+    margin-top: 0px;
+    margin-bottom: 25px;
+    width: 90%;
+    margin-left: 17px; }
+
+  .logotype {
+    width: 360px;
+    display: block; }
+    .logotype .logo_sidebar {
+      width: 100%; }
+      .logotype .logo_sidebar img {
+        margin: 0px;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0px;
+        left: 18px;
+        width: 100px; }
+
+  .lead {
+    margin-bottom: 10px; } }
 
 /*# sourceMappingURL=main.css.map */

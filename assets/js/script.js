@@ -1,6 +1,6 @@
 //page loader function
 
-/* global $ , google , navigator, global map , global swal */
+/* global $ , google , navigator, global map, pos*/
 
 function myFunction() {
   let loader;
@@ -17,12 +17,9 @@ function FindMe() {
 
   // clear user form fields
   $("#main_form").trigger("reset");
-
   // remove input fields error messages
   $("#mainbox_postcode").removeClass("missing_e");
   $("#postcode_error").addClass("hidden");
-
-  let postcode_box = $("#mainbox_postcode");
 
   // MAP FUNCTION
 
@@ -42,7 +39,7 @@ function FindMe() {
         lng: position.coords.longitude
       };
       let myloc = { lat: -34.304, lng: 150.533 };
-      let marker = new google.maps.Marker({ position: myloc, map: map, /*icon: "assets/images/icons/marker_red.png",*/ });
+      let marker = new google.maps.Marker({ position: myloc, map: map, icon: "assets/images/icons/marker_red.png", });
       // geo localization to find user location via clicking on "FindMe" button 
 
       infoWindow.setPosition(pos);
@@ -59,11 +56,7 @@ function FindMe() {
     handleLocationError(false, infoWindow, map.getCenter());
   }
 
-  let postcode = "nn8 2df";
-  postcode_box.val(postcode);
-  let youLocation = postcode.toUpperCase();
-
-  $("#postcode_sidebar").text(youLocation);
+  $("#mainbox_postcode").val("your postcode");
 
 }
 
@@ -74,6 +67,11 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     'Error: Your browser doesn\'t support geolocation.');
   infoWindow.open(map);
 }
+
+
+
+
+
 
 // Clear postcode field and remove error message
 function ClearPostcode() {
@@ -130,6 +128,11 @@ function StartYourTrip() {
     $("#mainbox_postcode").val("");
     $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
   }
+
+
+  let postcode_box = $("#mainbox_postcode");
+  let your_location = postcode_box.val();
+  $("#postcode_sidebar").text(your_location);
 }
 
 // Collaspe or expand sidebar
@@ -183,6 +186,17 @@ function MarkerOnOff() {
   // if .red marker then
   // e.prevent deafauk
   // let id = this.id;
+
+  let my_id = $(this)
+
+
+  if ($(this) == my_id) {
+
+  }
+  else {
+
+  }
+
 
   $("#red_marker").click(function() {
     if ($(this).children("span").hasClass("hidden")) {
