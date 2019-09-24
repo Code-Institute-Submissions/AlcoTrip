@@ -15,36 +15,28 @@ function showPage() {
 // Find user location based on geolocalization from google
 function FindMe() {
 
-  // clear user form fields
   $("#main_form").trigger("reset");
-  // remove input fields error messages
   $("#mainbox_postcode").removeClass("missing_e");
   $("#postcode_error").addClass("hidden");
 
-  // MAP FUNCTION
-
   let map, infoWindow;
+  let myloc = { lat: 52.295327, lng: -0.690965 };
 
   map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: -34.397, lng: 150.644 },
+    center: myloc,
     zoom: 15
   });
   infoWindow = new google.maps.InfoWindow;
 
-  // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
+        myloc
       };
-      let myloc = { lat: 52.295327, lng: -0.690965 };
       let my_loc_marker = "./assets/images/icons/marker_red.png";
       let marker = new google.maps.Marker({ position: myloc, map: map, icon: my_loc_marker });
-      // geo localization to find user location via clicking on "FindMe" button 
 
       infoWindow.setPosition(pos);
-      // infoWindow.setContent('Location found.');
       infoWindow.open(map);
       map.setCenter(pos);
 
@@ -53,7 +45,6 @@ function FindMe() {
     });
   }
   else {
-    // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
 
@@ -68,11 +59,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     'Error: Your browser doesn\'t support geolocation.');
   infoWindow.open(map);
 }
-
-
-
-
-
 
 // Clear postcode field and remove error message
 function ClearPostcode() {
@@ -165,11 +151,9 @@ function collapseSideBar() {
 
     let browser_heigth = $(window).height();
     if (browser_heigth <= 750) {
-      $(".collapse_sidebar").css("margin-right", "20px");
       $("#logotype_sidebar").addClass("hidden");
     }
     else {
-      $(".collapse_sidebar").css("margin-right", "0px");
       $("#logotype_sidebar").removeClass("hidden");
     }
 
@@ -198,7 +182,6 @@ function collapseSideBar() {
     $("#logotype_sidebar").addClass("hidden");
   }
   else {
-    $(".collapse_sidebar").css("margin-left", "0px");
     $("#logotype_sidebar").removeClass("hidden");
   }
 
