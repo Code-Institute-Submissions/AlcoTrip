@@ -1,6 +1,6 @@
 //page loader function
 
-/* global $ , google , navigator, global map, pos*/
+/* global $ , google , navigator, global map, pos, global Swal*/
 
 function myFunction() {
   let loader;
@@ -135,7 +135,6 @@ function StartYourTrip() {
   $("#postcode_sidebar").text(your_location);
 }
 
-// Collaspe or expand sidebar
 // Collaspe or expand sidebar
 function collapseSideBar() {
   let toggle_q = document.getElementById("sidebar_blue").clientWidth;
@@ -280,8 +279,14 @@ function resetRadius() {
 
 // Download page view
 function downloadMe() {
-  alert("Your AlcoTrip map has been saved.");
-
+  Swal.fire({
+    position: 'center',
+    type: 'success',
+    title: 'Your AlcoTrip has been saved',
+    text: 'check your "downloads" folder',
+    showConfirmButton: false,
+    timer: 3000
+  });
 }
 
 // Sidebar sliders - listeners
@@ -294,5 +299,3 @@ $(document).on('input change', "#pubs_dis_range", function() {
 $(document).on('input change', "#bars_dis_range", function() {
   $("#bars_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
-
-// Checkbox listeners
