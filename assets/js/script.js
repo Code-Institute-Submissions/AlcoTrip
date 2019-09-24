@@ -128,64 +128,120 @@ function collapseSideBar() {
   let tmpAnimation = 0;
   let element = $("#sidebar_collapse_icon");
 
-  if (toggle_q === 360) {
-    document.documentElement.style
-      .setProperty("--sBar_width", "70px");
 
-    tmpAnimation = tmpAnimation - 180;
-    $({ degrees: tmpAnimation - 180 }).animate({ degrees: tmpAnimation }, {
-      duration: 300,
-      step: function(now) {
-        element.css({
-          transform: 'rotate(' + now + 'deg)'
-        });
+  switch (toggle_q) {
+    case 360:
+      document.documentElement.style
+        .setProperty("--sBar_width", "70px");
+      tmpAnimation = tmpAnimation - 180;
+      $({ degrees: tmpAnimation - 180 }).animate({ degrees: tmpAnimation }, {
+        duration: 300,
+        step: function(now) {
+          element.css({
+            transform: 'rotate(' + now + 'deg)'
+          });
+        }
+      });
+      $("#hint_hide, #main_sidebar, #sidebar_logo_top").addClass("hidden");
+      $("#hint_show, #ssb_icons").removeClass("hidden");
+      $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(150, 0,
+        function() {
+          $("#sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").addClass("hidden");
+        }
+      );
+      let browser_heigth = $(window).height();
+      if (browser_heigth <= 750) {
+        $("#logotype_sidebar").addClass("hidden");
       }
-    });
-    $("#hint_hide, #main_sidebar, #sidebar_logo_top").addClass("hidden");
-    $("#hint_show, #ssb_icons").removeClass("hidden");
-    $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(150, 0,
-      function() {
-        $("#sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").addClass("hidden");
+      else {
+        $("#logotype_sidebar").removeClass("hidden");
       }
-    );
+      break;
 
-    let browser_heigth = $(window).height();
-    if (browser_heigth <= 750) {
-      $("#logotype_sidebar").addClass("hidden");
-    }
-    else {
-      $("#logotype_sidebar").removeClass("hidden");
-    }
-
-  }
-  else if (toggle_q === 70) {
-
-    document.documentElement.style
-      .setProperty("--sBar_width", "360px");
-    tmpAnimation = tmpAnimation - 0;
-    $({ degrees: tmpAnimation + 180 }).animate({ degrees: tmpAnimation }, {
-      duration: 300,
-      step: function(now) {
-        element.css({
-          transform: 'rotate(' + now + 'deg)'
-        });
+    case 320:
+      document.documentElement.style
+        .setProperty("--sBar_width", "60px");
+      tmpAnimation = tmpAnimation - 180;
+      $({ degrees: tmpAnimation - 180 }).animate({ degrees: tmpAnimation }, {
+        duration: 300,
+        step: function(now) {
+          element.css({
+            transform: 'rotate(' + now + 'deg)'
+          });
+        }
+      });
+      $("#hint_hide, #main_sidebar, #sidebar_logo_top").addClass("hidden");
+      $("#hint_show, #ssb_icons").removeClass("hidden");
+      $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(150, 0,
+        function() {
+          $("#sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").addClass("hidden");
+        }
+      );
+      if (browser_heigth <= 750) {
+        $("#logotype_sidebar").addClass("hidden");
       }
-    });
-    $("#hint_show ,#ssb_icons").addClass("hidden");
-    $("#hint_hide, #main_sidebar, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_logo_top").removeClass("hidden");
-    $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(150, 1);
-  }
+      else {
+        $("#logotype_sidebar").removeClass("hidden");
+      }
+      break;
 
-  let browser_heigth = $(window).height();
-  if (browser_heigth <= 750) {
-    $(".collapse_sidebar").css("margin-left", "20px");
-    $("#logotype_sidebar").addClass("hidden");
-  }
-  else {
-    $("#logotype_sidebar").removeClass("hidden");
-  }
+    case 70:
+      document.documentElement.style
+        .setProperty("--sBar_width", "360px");
+      tmpAnimation = tmpAnimation - 0;
+      $({ degrees: tmpAnimation + 180 }).animate({ degrees: tmpAnimation }, {
+        duration: 300,
+        step: function(now) {
+          element.css({
+            transform: 'rotate(' + now + 'deg)'
+          });
+        }
+      });
+      $("#hint_show ,#ssb_icons").addClass("hidden");
+      $("#hint_hide, #main_sidebar, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_logo_top").removeClass("hidden");
+      $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(150, 1);
 
+      if (browser_heigth <= 750) {
+        $(".collapse_sidebar").css("margin-left", "20px");
+        $("#logotype_sidebar").addClass("hidden");
+      }
+      else {
+        $("#logotype_sidebar").removeClass("hidden");
+      }
+      break;
+
+    case 60:
+      document.documentElement.style
+        .setProperty("--sBar_width", "320px");
+      tmpAnimation = tmpAnimation - 0;
+      $({ degrees: tmpAnimation + 180 }).animate({ degrees: tmpAnimation }, {
+        duration: 300,
+        step: function(now) {
+          element.css({
+            transform: 'rotate(' + now + 'deg)'
+          });
+        }
+      });
+      $("#hint_show ,#ssb_icons").addClass("hidden");
+      $("#hint_hide, #main_sidebar, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_logo_top").removeClass("hidden");
+      $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(150, 1);
+
+      if (browser_heigth <= 750) {
+        $(".collapse_sidebar").css("margin-left", "20px");
+        $("#logotype_sidebar").addClass("hidden");
+      }
+      else {
+        $("#logotype_sidebar").removeClass("hidden");
+      }
+      break;
+    default:
+  }
 }
+
+
+
+
+
 // TURN OFF OR ON MARKERS
 function MarkerOnOff() {
 
