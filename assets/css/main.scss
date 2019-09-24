@@ -878,5 +878,14 @@ footer {
     .lead {
         margin-bottom: 10px;
     }
+    .collapse_sidebar {
+        margin-right: 20px;
+    }
+}
 
+@media screen and (max-width: 320px) {
+    :root {
+        --sBar_width: 320px;
+        --gMap_width: calc(100% - var(--sBar_width)); // 100% - $sBar_width
+    }
 }

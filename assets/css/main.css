@@ -805,6 +805,13 @@ footer {
     display: none; }
 
   .lead {
-    margin-bottom: 10px; } }
+    margin-bottom: 10px; }
+
+  .collapse_sidebar {
+    margin-right: 20px; } }
+@media screen and (max-width: 320px) {
+  :root {
+    --sBar_width: 320px;
+    --gMap_width: calc(100% - var(--sBar_width)); } }
 
 /*# sourceMappingURL=main.css.map */
