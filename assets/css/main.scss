@@ -556,6 +556,23 @@ a:hover {
     --gMap_width: calc(100% - var(--sBar_width)); // 100% - $sBar_width
 }
 
+.top_logo_line {
+    display: block;
+}
+
+.logotype_top {
+    visibility: hidden;
+    display: none;
+    .logo_sidebar_img {
+        height: 20px;
+        img {
+            display: block;
+            max-width: 30%;
+            margin-left: 16px;
+        }
+    }
+
+}
 
 .collapse_sidebar {
     width: 50px;
@@ -772,7 +789,6 @@ a:hover {
 .sidebar_footer {
     width: 360px;
     bottom: 0;
-    margin-bottom: 20px;
     text-align: center;
     position: absolute;
 }
@@ -830,10 +846,18 @@ footer {
 }
 
 @media screen and (max-height: 750px) {
+    .top_logo_line {
+        display: flex;
+        justify-content: space-around;
+    }
+    .logotype_top {
+        visibility: visible;
+        display: block;
+    }
     .sidebar_footer {
         width: 360px;
         bottom: 0;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         text-align: center;
         position: absolute;
         display: flex;
@@ -843,26 +867,13 @@ footer {
         background-color: $secondary-color;
         height: 1px;
         margin-top: 0px;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         width: 90%;
         margin-left: 17px;
     }
     .logotype {
-        width: 360px;
-        display: block;
-        .logo_sidebar {
-            width: 100%;
-            img {
-                margin: 0px;
-                position: fixed;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                top: 0px;
-                left: 18px;
-                width: 100px;
-            }
-        }
+        visibility: hidden;
+        display: none;
     }
     .lead {
         margin-bottom: 10px;

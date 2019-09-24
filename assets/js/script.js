@@ -136,6 +136,7 @@ function StartYourTrip() {
 }
 
 // Collaspe or expand sidebar
+// Collaspe or expand sidebar
 function collapseSideBar() {
   let toggle_q = document.getElementById("sidebar_blue").clientWidth;
   let tmpAnimation = 0;
@@ -154,13 +155,24 @@ function collapseSideBar() {
         });
       }
     });
-    $("#hint_hide, #main_sidebar").addClass("hidden");
+    $("#hint_hide, #main_sidebar, #sidebar_logo_top").addClass("hidden");
     $("#hint_show, #ssb_icons").removeClass("hidden");
-    $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons").fadeTo(150, 0,
+    $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(150, 0,
       function() {
         $("#sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").addClass("hidden");
       }
     );
+
+    let browser_heigth = $(window).height();
+    if (browser_heigth <= 750) {
+      $(".collapse_sidebar").css("margin-right", "20px");
+      $("#logotype_sidebar").addClass("hidden");
+    }
+    else {
+      $(".collapse_sidebar").css("margin-right", "0px");
+      $("#logotype_sidebar").removeClass("hidden");
+    }
+
   }
   else if (toggle_q === 70) {
 
@@ -176,9 +188,20 @@ function collapseSideBar() {
       }
     });
     $("#hint_show ,#ssb_icons").addClass("hidden");
-    $("#hint_hide, #main_sidebar, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").removeClass("hidden");
-    $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons").fadeTo(200, 1);
+    $("#hint_hide, #main_sidebar, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_logo_top").removeClass("hidden");
+    $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(150, 1);
   }
+
+  let browser_heigth = $(window).height();
+  if (browser_heigth <= 750) {
+    $(".collapse_sidebar").css("margin-left", "20px");
+    $("#logotype_sidebar").addClass("hidden");
+  }
+  else {
+    $(".collapse_sidebar").css("margin-left", "0px");
+    $("#logotype_sidebar").removeClass("hidden");
+  }
+
 }
 // TURN OFF OR ON MARKERS
 function MarkerOnOff() {

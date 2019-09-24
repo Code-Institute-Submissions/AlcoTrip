@@ -126,11 +126,17 @@
         <!--class="map_main"-->
         <!-- side bar container -->
         <div id="sidebar_blue" class="sidebar">
-            <!-- minimize icon container-->
-            <div class="collapse_sidebar" onclick="collapseSideBar();" style="cursor: pointer;">
-                <img id="sidebar_collapse_icon" src="assets/images/icons/minimize_button.png" alt="minimize sidebar button">
-                <label id="hint_hide" class="hint_s_style">hide</label>
-                <label id="hint_show" class="hint_s_style hidden">show</label>
+            <div class="top_logo_line">
+                <!--left corner - logotype-->
+                <div id="logotype_sidebar_top" class="logotype_top">
+                    <div class="logo_sidebar_img"><img id="sidebar_logo_top" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo" onclick="closeMap();" style="cursor:pointer;"></div>
+                </div>
+                <!-- minimize icon container-->
+                <div class="collapse_sidebar" onclick="collapseSideBar();" style="cursor: pointer;">
+                    <img id="sidebar_collapse_icon" src="assets/images/icons/minimize_button.png" alt="minimize sidebar button">
+                    <label id="hint_hide" class="hint_s_style">hide</label>
+                    <label id="hint_show" class="hint_s_style hidden">show</label>
+                </div>
             </div>
             <!-- full sidebar -->
             <div class="sidebar">
