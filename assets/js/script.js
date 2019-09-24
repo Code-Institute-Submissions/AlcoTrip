@@ -38,8 +38,9 @@ function FindMe() {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-      let myloc = { lat: -34.304, lng: 150.533 };
-      let marker = new google.maps.Marker({ position: myloc, map: map, icon: "assets/images/icons/marker_red.png", });
+      let myloc = { lat: 52.295327, lng: -0.690965 };
+      let my_loc_marker = "./assets/images/icons/marker_red.png";
+      let marker = new google.maps.Marker({ position: myloc, map: map, icon: my_loc_marker });
       // geo localization to find user location via clicking on "FindMe" button 
 
       infoWindow.setPosition(pos);
