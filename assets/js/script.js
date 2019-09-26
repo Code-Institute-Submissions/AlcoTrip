@@ -1,6 +1,5 @@
 //page loader function
-
-/* global $ , google , navigator, global map, pos, global Swal*/
+/* global $ , google , navigator, global map, pos, global Swal, browser_height, mymap, L, club_radius, createMarker, service, infowindow, jsPDF */
 
 function myFunction() {
   let loader;
@@ -12,85 +11,22 @@ function showPage() {
   $("#page_loader").css("display", "block");
 }
 
-// Find user location based on geolocalization from google
-function FindMe() {
-
-  $("#main_form").trigger("reset");
-  $("#mainbox_postcode").removeClass("missing_e");
-  $("#postcode_error").addClass("hidden");
-
-  let map, infoWindow;
-  let myloc = { lat: 52.295327, lng: -0.690965 };
-
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: myloc,
-    zoom: 15
-  });
-  infoWindow = new google.maps.InfoWindow;
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        myloc
-      };
-      let my_loc_marker = "./assets/images/icons/marker_red.png";
-      let marker = new google.maps.Marker({ position: myloc, map: map, icon: my_loc_marker });
-
-      infoWindow.setPosition(pos);
-      infoWindow.open(map);
-      map.setCenter(pos);
-
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
-  }
-  else {
-    handleLocationError(false, infoWindow, map.getCenter());
-  }
-
-  $("#mainbox_postcode").val("your postcode");
-
-}
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-    'Error: The Geolocation service failed.' :
-    'Error: Your browser doesn\'t support geolocation.');
-  infoWindow.open(map);
-}
-
-// Clear postcode field and remove error message
-function ClearPostcode() {
-  $("#mainbox_postcode").val('');
-  $("#mainbox_postcode").removeClass("missing_e");
-  $("#postcode_error").addClass("hidden");
-}
-
-// Clear all checboxes and hidden error message
-function ClearCheckboxes() {
-  $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
-  // clear errors
-  $("#tickbox_missing").addClass("hidden");
-  $(".c_boxes").removeClass("missing_e");
-}
-
-// Select all checboxes and clear hidden error message
-function SelectAll() {
-  $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", true);
-  // clear errors
-  $("#tickbox_missing").addClass("hidden");
-  $("#tickbox_missing").removeClass("text-muted1");
-  $(".c_boxes").removeClass("missing_e");
-}
-
 // Check all required fields and start trip
 function StartYourTrip() {
 
-  let myPostCode = $("#mainbox_postcode").val();
-  let checked_clubs = $("#styled-checkbox-1").prop("checked");
-  let checked_pubs = $("#styled-checkbox-2").prop("checked");
-  let checked_bars = $("#styled-checkbox-3").prop("checked");
+  CheckErrors();
+  CheckSpaces();
+
+}
+
+
+function CheckErrors() {
+  let myPostCode, checked_clubs, checked_bars, checked_pubs;
+
+  myPostCode = $("#mainbox_postcode").val();
+  checked_clubs = $("#styled-checkbox-1").prop("checked");
+  checked_bars = $("#styled-checkbox-3").prop("checked");
+  checked_pubs = $("#styled-checkbox-2").prop("checked");
 
   if (myPostCode == "") {
     $("#mainbox_postcode").addClass("missing_e");
@@ -115,21 +51,66 @@ function StartYourTrip() {
     $("#mainbox_postcode").val("");
     $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
   }
-
-
-  let postcode_box = $("#mainbox_postcode");
-  let your_location = postcode_box.val();
-  $("#postcode_sidebar").text(your_location);
 }
 
+
+
+function CheckSpaces() {
+
+
+  let myPostCode = $("#mainbox_postcode").val();
+  console.log(myPostCode);
+  if (!myPostCode) {
+    myPostCode = "nothing";
+  }
+
+
+  $('#postcode_sidebar').html(myPostCode);
+
+
+}
+
+// Find user location based on geolocalization from google
+$('#findme').click(function initMap() {
+
+
+  $("#mainbox_postcode").removeClass("missing_e");
+  $("#postcode_error").addClass("hidden");
+
+
+});
+
+
+// Clear postcode field and remove error message
+function ClearPostcode() {
+  $("#mainbox_postcode").val('');
+  $("#mainbox_postcode").removeClass("missing_e");
+  $("#postcode_error").addClass("hidden");
+}
+// Clear all checboxes and hidden error message
+function ClearCheckboxes() {
+  $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
+  // clear errors
+  $("#tickbox_missing").addClass("hidden");
+  $(".c_boxes").removeClass("missing_e");
+}
+// Select all checboxes and clear hidden error message
+function SelectAll() {
+  $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", true);
+  // clear errors
+  $("#tickbox_missing").addClass("hidden");
+  $("#tickbox_missing").removeClass("text-muted1");
+  $(".c_boxes").removeClass("missing_e");
+}
 // Collaspe or expand sidebar
 function collapseSideBar() {
   let toggle_q = document.getElementById("sidebar_blue").clientWidth;
   let tmpAnimation = 0;
   let element = $("#sidebar_collapse_icon");
-
+  let browser_height = $(window).height();
 
   switch (toggle_q) {
+    // when wide sidebar is 360px width
     case 360:
       document.documentElement.style
         .setProperty("--sBar_width", "70px");
@@ -144,13 +125,12 @@ function collapseSideBar() {
       });
       $("#hint_hide, #main_sidebar, #sidebar_logo_top").addClass("hidden");
       $("#hint_show, #ssb_icons").removeClass("hidden");
-      $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(150, 0,
+      $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(250, 0,
         function() {
           $("#sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").addClass("hidden");
         }
       );
-      let browser_heigth = $(window).height();
-      if (browser_heigth <= 750) {
+      if (browser_height <= 750) {
         $("#logotype_sidebar").addClass("hidden");
       }
       else {
@@ -158,9 +138,11 @@ function collapseSideBar() {
       }
       break;
 
+
+      // when wide sidebar is 320px width
     case 320:
       document.documentElement.style
-        .setProperty("--sBar_width", "60px");
+        .setProperty("--sBar_width", "68px");
       tmpAnimation = tmpAnimation - 180;
       $({ degrees: tmpAnimation - 180 }).animate({ degrees: tmpAnimation }, {
         duration: 300,
@@ -172,19 +154,20 @@ function collapseSideBar() {
       });
       $("#hint_hide, #main_sidebar, #sidebar_logo_top").addClass("hidden");
       $("#hint_show, #ssb_icons").removeClass("hidden");
-      $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(150, 0,
+      $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(250, 0,
         function() {
           $("#sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").addClass("hidden");
         }
       );
-      if (browser_heigth <= 750) {
+      if (browser_height <= 750) {
+        $(".collapse_sidebar").css("margin-left", "0px");
         $("#logotype_sidebar").addClass("hidden");
       }
       else {
         $("#logotype_sidebar").removeClass("hidden");
       }
       break;
-
+      // when little sidebar is 70px width
     case 70:
       document.documentElement.style
         .setProperty("--sBar_width", "360px");
@@ -197,11 +180,9 @@ function collapseSideBar() {
           });
         }
       });
-      $("#hint_show ,#ssb_icons").addClass("hidden");
-      $("#hint_hide, #main_sidebar, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_logo_top").removeClass("hidden");
-      $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(150, 1);
 
-      if (browser_heigth <= 750) {
+
+      if (browser_height <= 750) {
         $(".collapse_sidebar").css("margin-left", "20px");
         $("#logotype_sidebar").addClass("hidden");
       }
@@ -209,8 +190,9 @@ function collapseSideBar() {
         $("#logotype_sidebar").removeClass("hidden");
       }
       break;
+      // when little sidebar is 68px width
 
-    case 60:
+    case 68:
       document.documentElement.style
         .setProperty("--sBar_width", "320px");
       tmpAnimation = tmpAnimation - 0;
@@ -224,40 +206,27 @@ function collapseSideBar() {
       });
       $("#hint_show ,#ssb_icons").addClass("hidden");
       $("#hint_hide, #main_sidebar, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_logo_top").removeClass("hidden");
-      $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(150, 1);
-
-      if (browser_heigth <= 750) {
+      $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(250, 1);
+      if (browser_height <= 750) {
         $(".collapse_sidebar").css("margin-left", "20px");
         $("#logotype_sidebar").addClass("hidden");
       }
-      else {
-        $("#logotype_sidebar").removeClass("hidden");
-      }
+      else {}
       break;
     default:
   }
 }
 
 
-
+function clear() {
+  $("#hint_show ,#ssb_icons").addClass("hidden");
+  $("#hint_hide, #main_sidebar, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_logo_top").removeClass("hidden");
+  $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(250, 1);
+}
 
 
 // TURN OFF OR ON MARKERS
 function MarkerOnOff() {
-
-  // if .red marker then
-  // e.prevent deafauk
-  // let id = this.id;
-
-  let my_id = $(this)
-
-
-  if ($(this) == my_id) {
-
-  }
-  else {
-
-  }
 
 
   $("#red_marker").click(function() {
@@ -270,37 +239,9 @@ function MarkerOnOff() {
       $(this).children("img").attr("src", "assets/images/icons/marker_red.png");
     }
   });
-  $("#green_marker").click(function() {
-    if ($(this).children("span").hasClass("hidden")) {
-      $(this).children("span.tiptext_s").removeClass("hidden");
-      $(this).children("img").attr("src", "assets/images/icons/marker_off.png");
-    }
-    else if ($(this).children("span").hasClass("tiptext_s")) {
-      $(this).children("span.tiptext_s").addClass("hidden");
-      $(this).children("img").attr("src", "assets/images/icons/marker_green.png");
-    }
-  });
-  $("#orange_marker").click(function() {
-    if ($(this).children("span").hasClass("hidden")) {
-      $(this).children("span.tiptext_s").removeClass("hidden");
-      $(this).children("img").attr("src", "assets/images/icons/marker_off.png");
-    }
-    else if ($(this).children("span").hasClass("tiptext_s")) {
-      $(this).children("span.tiptext_s").addClass("hidden");
-      $(this).children("img").attr("src", "assets/images/icons/marker_orange.png");
-    }
-  });
-  $("#blue_marker").click(function() {
-    if ($(this).children("span").hasClass("hidden")) {
-      $(this).children("span.tiptext_s").removeClass("hidden");
-      $(this).children("img").attr("src", "assets/images/icons/marker_off.png");
-    }
-    else if ($(this).children("span").hasClass("tiptext_s")) {
-      $(this).children("span.tiptext_s").addClass("hidden");
-      $(this).children("img").attr("src", "assets/images/icons/marker_blue.png");
-    }
-  });
 }
+
+
 
 // Close map function ( red corss - button )
 function closeMap() {
@@ -308,7 +249,6 @@ function closeMap() {
   $("#map_container").addClass("hidden");
   $("#footer_main").removeClass("hidden");
 }
-
 // Reset sliders to "50 Miles" - value
 function resetRadius() {
   $("#clubs_dis_range, #pubs_dis_range, #bars_dis_range").val("50");
@@ -317,18 +257,20 @@ function resetRadius() {
   $("#bars_distance").html($("#bars_dis_range").val() + "&nbsp;" + "Miles");
 }
 
-// Download page view
+
 function downloadMe() {
+  // download as pdf function
+
+  // when downloaded show allert box
   Swal.fire({
     position: 'center',
     type: 'success',
     title: 'Your AlcoTrip has been saved',
     text: 'check your "downloads" folder',
     showConfirmButton: false,
-    timer: 3000
+    timer: 2500
   });
 }
-
 // Sidebar sliders - listeners
 $(document).on("input change", "#clubs_dis_range", function() {
   $("#clubs_distance").html($(this).val() + "&nbsp;" + "Miles");

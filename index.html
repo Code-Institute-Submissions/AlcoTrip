@@ -3,25 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- my meta tags -->
     <meta name="description" content="Single page application for 2nd Milestone Project - Code Inistitute, Full Stack Developer Course">
     <meta name="keywords" content="alcohol, trip, pub, bar, disco, friends, town, place, postcode, party, drink, night, happiness, visiting">
     <meta name="author" content="Karol Sliwka">
     <meta name="copyright" content="Karol Sliwka, hello@abovewave.co.uk">
     <meta name="robots" content="index,follow" />
-    <!-- end of my meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- standard links to bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
-    <script src="sweetalert2.all.min.js"></script>
-    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-    <!-- link to my personal css file -->
     <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
-    <!-- fav icon -->
     <link rel="shortcut icon" href="assets/images/favicon_aclotrip.png" type="image/x-icon">
-    <!-- website browser title -->
     <title>Alco Trip | Visit all places near you!</title>
 </head>
 
@@ -71,7 +62,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                     <!-- find me button -->
-                                    <button type="button" class="btn btn-primary geoloc_button" onclick="FindMe()">Find Me!</button><span class="hint_mainform"></span>
+                                    <button type="button" id="findme" class="btn btn-primary geoloc_button">Find Me!</button><span class="hint_mainform"></span>
                                 </div>
                             </div>
                         </div>
@@ -274,13 +265,9 @@
             </div>
         </div>
     </footer>
-    <!-- google maps API with key -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJuhJdmAIHpAnmB8Iz_SfURsbAIsmuSxo&callback=initMap&language=en-UK"></script>
-    <!-- jquery and bootstrap scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Sweet allert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <!-- personal scripts -->
     <script src="./assets/js/script.js"></script>
 </body>
 
