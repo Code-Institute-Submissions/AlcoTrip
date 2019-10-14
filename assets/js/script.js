@@ -2,8 +2,7 @@
 /* global $ , google , navigator, global map, pos, global Swal, browser_height, mymap, L, club_radius, createMarker, service, infowindow, jsPDF, myPostCode, checked_clubs, checked_bars, checked_pubs */
 
 function myFunction() {
-  let loader;
-  loader = setTimeout(showPage(), 3000);
+  let loader = setTimeout(showPage(), 3000);
 }
 
 
@@ -52,7 +51,10 @@ $('#start_trip_button').click(function() {
 
   // passing value from postcode field to h3 selector
   let myPostcode = $("#mainbox_postcode").val();
-  $("#postcode_sidebar").html(String(myPostcode.toUpperCase()));
+  myPostcode = myPostcode.replace(/\s/g, "");
+  myPostcode = String(myPostcode.toUpperCase());
+
+  $("#postcode_sidebar").html(myPostcode);
 
 });
 
@@ -238,7 +240,7 @@ $('#exit_icon').click(function() {
 
 
 // Reset sliders to "50 Miles" - value
-$('#reset_sliders').ckick(function() {
+$('#reset_sliders').click(function() {
   $("#clubs_dis_range, #pubs_dis_range, #bars_dis_range").val("50");
   $("#clubs_distance").html($("#clubs_dis_range").val() + "&nbsp;" + "Miles");
   $("#pubs_distance").html($("#pubs_dis_range").val() + "&nbsp;" + "Miles");
@@ -266,9 +268,9 @@ $('#download').click(function() {
 $(document).on("input change", "#clubs_dis_range", function() {
   $("#clubs_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
-$(document).on('input change', "#pubs_dis_range", function() {
+$(document).on("input change", "#pubs_dis_range", function() {
   $("#pubs_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
-$(document).on('input change', "#bars_dis_range", function() {
+$(document).on("input change", "#bars_dis_range", function() {
   $("#bars_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
