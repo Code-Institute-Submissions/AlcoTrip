@@ -1,27 +1,25 @@
 //page loader function
-/* global $ , google , navigator, global map, pos, global Swal, browser_height, mymap, L, club_radius, createMarker, service, infowindow, jsPDF */
+/* global $ , google , navigator, global map, pos, global Swal, browser_height, mymap, L, club_radius, createMarker, service, infowindow, jsPDF, myPostCode, checked_clubs, checked_bars, checked_pubs */
 
 function myFunction() {
   let loader;
   loader = setTimeout(showPage(), 3000);
 }
 
+
+
 function showPage() {
   $("#loader, #whole_page").css("display", "none");
   $("#page_loader").css("display", "block");
 }
 
-// Check all required fields and start trip
+
+
+// Check all required fields,
+// pass the postcode value to H3 on map page and start trip.
 
 $('#start_trip_button').click(function() {
 
-  CheckErrors();
-  CheckSpaces();
-
-});
-
-
-function CheckErrors() {
   let myPostCode, checked_clubs, checked_bars, checked_pubs;
 
   myPostCode = $("#mainbox_postcode").val();
@@ -29,7 +27,7 @@ function CheckErrors() {
   checked_bars = $("#styled-checkbox-3").prop("checked");
   checked_pubs = $("#styled-checkbox-2").prop("checked");
 
-  if (myPostCode == "") {
+  if (myPostCode === "") {
     $("#mainbox_postcode").addClass("missing_e");
     $("#postcode_error").removeClass("hidden");
     $('html, body').animate({
@@ -49,19 +47,16 @@ function CheckErrors() {
     $("#map_container").addClass("map_main");
     $("#map_container").removeClass("hidden");
     $("#mainbox_postcode, .c_boxes").removeClass("missing_e");
-    $("#mainbox_postcode").val("");
     $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
   }
-}
 
-function CheckSpaces() {
+  // passing value from postcode field to h3 selector
+  let myPostcode = $("#mainbox_postcode").val();
+  $("#postcode_sidebar").html(String(myPostcode.toUpperCase()));
+
+});
 
 
-  let myPostCode = $('#mainbox_postcode');
-  let resultPostcode = myPostCode.val();
-  $('#start_trip_button').val(resultPostcode);
-
-}
 
 // Find user location based on geolocalization from google
 $('#findme_button').click(function() {
@@ -69,10 +64,7 @@ $('#findme_button').click(function() {
 
   $("#mainbox_postcode").removeClass("missing_e");
   $("#postcode_error").addClass("hidden");
-
   $("#mainbox_postcode").val('something');
-
-  let myPostCode = $('#mainbox_postcode');
 
 
 });
@@ -89,6 +81,7 @@ $('#clear_postcode').click(function() {
 });
 
 
+
 // Clear all checboxes and hidden error message
 $('#unselect_all_checkbox').click(function() {
   $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
@@ -96,6 +89,8 @@ $('#unselect_all_checkbox').click(function() {
   $("#tickbox_missing").addClass("hidden");
   $(".c_boxes").removeClass("missing_e");
 });
+
+
 
 // Select all checboxes and clear hidden error message
 $('#select_all_checkbox').click(function() {
@@ -105,6 +100,8 @@ $('#select_all_checkbox').click(function() {
   $("#tickbox_missing").removeClass("text-muted1");
   $(".c_boxes").removeClass("missing_e");
 });
+
+
 
 // Collaspe or expand sidebar
 $('#sidebar_collapse_icon').click(function() {
@@ -222,6 +219,7 @@ $('#sidebar_collapse_icon').click(function() {
 });
 
 
+
 $('#').click(function() {
   $("#hint_show ,#ssb_icons").addClass("hidden");
   $("#hint_hide, #main_sidebar, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_logo_top").removeClass("hidden");
@@ -232,10 +230,12 @@ $('#').click(function() {
 
 // Close map function ( red corss - button )
 $('#exit_icon').click(function() {
-  $("#main_page_container").removeClass("hidden");
-  $("#map_container").addClass("hidden");
-  $("#footer_main").removeClass("hidden");
+  $('#main_page_container').removeClass('hidden');
+  $('#map_container').addClass('hidden');
+  $('#footer_main').removeClass('hidden');
 });
+
+
 
 // Reset sliders to "50 Miles" - value
 $('#reset_sliders').ckick(function() {
@@ -246,9 +246,9 @@ $('#reset_sliders').ckick(function() {
 });
 
 
+
 $('#download').click(function() {
   // download as pdf function
-
   // when downloaded show allert box
   Swal.fire({
     position: 'center',
@@ -259,6 +259,8 @@ $('#download').click(function() {
     timer: 2500
   });
 });
+
+
 
 // Sidebar sliders - listeners
 $(document).on("input change", "#clubs_dis_range", function() {
