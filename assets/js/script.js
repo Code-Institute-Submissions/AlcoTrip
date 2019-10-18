@@ -53,7 +53,6 @@ $('#start_trip_button').click(function() {
   let myPostcode = $("#mainbox_postcode").val();
   myPostcode = myPostcode.replace(/\s/g, "");
   myPostcode = String(myPostcode.toUpperCase());
-
   $("#postcode_sidebar").html(myPostcode);
 
 });
@@ -220,16 +219,6 @@ $('#sidebar_collapse_icon').click(function() {
   }
 });
 
-
-
-$('#').click(function() {
-  $("#hint_show ,#ssb_icons").addClass("hidden");
-  $("#hint_hide, #main_sidebar, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_logo_top").removeClass("hidden");
-  $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(250, 1);
-});
-
-
-
 // Close map function ( red corss - button )
 $('#exit_icon').click(function() {
   $('#main_page_container').removeClass('hidden');
@@ -240,8 +229,8 @@ $('#exit_icon').click(function() {
 
 
 // Reset sliders to "50 Miles" - value
-$('#reset_sliders').click(function() {
-  $("#clubs_dis_range, #pubs_dis_range, #bars_dis_range").val("50");
+$("#reset_sliders").click(function() {
+  $("#clubs_dis_range, #pubs_dis_range, #bars_dis_range").val(50);
   $("#clubs_distance").html($("#clubs_dis_range").val() + "&nbsp;" + "Miles");
   $("#pubs_distance").html($("#pubs_dis_range").val() + "&nbsp;" + "Miles");
   $("#bars_distance").html($("#bars_dis_range").val() + "&nbsp;" + "Miles");
