@@ -88,7 +88,7 @@ $('#select_all_checkbox').click(function() {
 });
 
 // Close map function ( red corss - button )
-$('#exit_icon').click(function() {
+$('#exit_icon, #sidebar_logo').click(function() {
   $('#main_page_container').removeClass('hidden');
   $('#map_container').addClass('hidden');
   $('#footer_main').removeClass('hidden');
