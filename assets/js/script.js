@@ -63,13 +63,6 @@ $('#findme_button').click(function() {
 
 });
 
-// Clear postcode field and remove error message
-$('#clear_postcode').click(function() {
-  $("#mainbox_postcode").val('');
-  $("#mainbox_postcode").removeClass("missing_e");
-  $("#postcode_error").addClass("hidden");
-});
-
 // Clear all checboxes and hidden error message
 $('#unselect_all_checkbox').click(function() {
   $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
