@@ -1,5 +1,22 @@
 //page loader function
-/* global $ */
+/* global $, browser_height */
+
+function hideElements() {
+    $("#hint_hide, #main_sidebar, #sidebar_logo_top").addClass("hidden");
+    $("#hint_show, #ssb_icons").removeClass("hidden");
+    $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(250, 0,
+        function() {
+            $("#sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").addClass("hidden");
+        }
+    );
+    if (browser_height <= 750) {
+        $(".collapse_sidebar").css("margin-left", "0px");
+        $("#logotype_sidebar").addClass("hidden");
+    }
+    else {
+        $("#logotype_sidebar").removeClass("hidden");
+    }
+}
 
 
 // Collaspe or expand sidebar
@@ -22,19 +39,7 @@ $('#sidebar_collapse_icon').click(function() {
                     });
                 }
             });
-            $("#hint_hide, #main_sidebar, #sidebar_logo_top").addClass("hidden");
-            $("#hint_show, #ssb_icons").removeClass("hidden");
-            $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(250, 0,
-                function() {
-                    $("#sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").addClass("hidden");
-                }
-            );
-            if (browser_height <= 750) {
-                $("#logotype_sidebar").addClass("hidden");
-            }
-            else {
-                $("#logotype_sidebar").removeClass("hidden");
-            }
+            hideElements()
             break;
             // when wide sidebar is 320px width
         case 320:
@@ -49,20 +54,7 @@ $('#sidebar_collapse_icon').click(function() {
                     });
                 }
             });
-            $("#hint_hide, #main_sidebar, #sidebar_logo_top").addClass("hidden");
-            $("#hint_show, #ssb_icons").removeClass("hidden");
-            $("#slider, #sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights, #sidebar_buttons, #sidebar_logo_top").fadeTo(250, 0,
-                function() {
-                    $("#sidebar_separate_line, #logotype_sidebar, #sidebar_copyrights").addClass("hidden");
-                }
-            );
-            if (browser_height <= 750) {
-                $(".collapse_sidebar").css("margin-left", "0px");
-                $("#logotype_sidebar").addClass("hidden");
-            }
-            else {
-                $("#logotype_sidebar").removeClass("hidden");
-            }
+            hideElements();
             break;
             // when little sidebar is 70px width
         case 70:
