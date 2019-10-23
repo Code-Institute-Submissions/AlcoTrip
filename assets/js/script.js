@@ -1,5 +1,6 @@
 //page loader function
 /* global $, global Swal */
+/* global L, map, L.marker , myLat, myLong*/
 
 function myFunction() {
   let loader = setTimeout(showPage(), 3000);
@@ -9,6 +10,32 @@ function showPage() {
   $("#loader, #whole_page").css("display", "none");
   $("#page_loader").css("display", "block");
 }
+
+// Find user location based on geolocalization from google
+$('#findme_button').click(function() {
+  $("#mainbox_postcode").removeClass("missing_e");
+  $("#postcode_error").addClass("hidden");
+  let g_location = "your postcode";
+  $("#mainbox_postcode").val(g_location);
+});
+
+// Clear all checboxes and hidden error message
+$('#unselect_all_checkbox').click(function() {
+  $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
+  // clear errors
+  $("#tickbox_missing").addClass("hidden");
+  $(".c_boxes").removeClass("missing_e");
+});
+
+// Select all checboxes and clear hidden error message
+$('#select_all_checkbox').click(function() {
+  $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", true);
+  // clear errors
+  $("#tickbox_missing").addClass("hidden");
+  $("#tickbox_missing").removeClass("text-muted1");
+  $(".c_boxes").removeClass("missing_e");
+});
+
 
 // Check all required fields,
 // pass the postcode value to H3 on map page and start trip.
@@ -51,41 +78,71 @@ $('#start_trip_button').click(function() {
   myPostcode = String(myPostcode.toUpperCase());
   $("#postcode_sidebar").html(myPostcode);
 
-});
 
-// Find user location based on geolocalization from google
-$('#findme_button').click(function() {
-
-  $("#mainbox_postcode").removeClass("missing_e");
-  $("#postcode_error").addClass("hidden");
-  let g_location = "your postcode";
-  $("#mainbox_postcode").val(g_location);
+  InitilizeMap();
 
 });
 
-// Clear all checboxes and hidden error message
-$('#unselect_all_checkbox').click(function() {
-  $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
-  // clear errors
-  $("#tickbox_missing").addClass("hidden");
-  $(".c_boxes").removeClass("missing_e");
-});
 
-// Select all checboxes and clear hidden error message
-$('#select_all_checkbox').click(function() {
-  $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", true);
-  // clear errors
-  $("#tickbox_missing").addClass("hidden");
-  $("#tickbox_missing").removeClass("text-muted1");
-  $(".c_boxes").removeClass("missing_e");
-});
 
-// Close map function ( red corss - button )
-$('#exit_icon, #sidebar_logo').click(function() {
-  $('#main_page_container').removeClass('hidden');
-  $('#map_container').addClass('hidden');
-  $('#footer_main').removeClass('hidden');
-  $("#mainbox_postcode").val("");
+function InitilizeMap() {
+  let myLat = 51.509865;
+  let myLong = -0.118092;
+
+  let map = L.map('map', {
+    center: [
+      [myLat, myLong]
+    ],
+    scrollWheelZoom: false,
+    inertia: true,
+    inertiaDeceleration: 2000
+  });
+  map.setView([myLat, myLong], 10);
+
+  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://mapbox.com">Mapbox</a>',
+    maxZoom: 15,
+    id: 'superpikar.n28afi10',
+    accessToken: 'pk.eyJ1Ijoic3VwZXJwaWthciIsImEiOiI0MGE3NGQ2OWNkMzkyMzFlMzE4OWU5Yjk0ZmYzMGMwOCJ9.3bGFHjoSXB8yVA3KeQoOIw'
+  }).addTo(map);
+
+  $('#locate-position').on('click', function() {
+    map.locate({ setView: true, maxZoom: 15 });
+  });
+
+  function onLocationFound(e) {
+    var radius = e.accuracy / 2;
+    L.marker(e.latlng).addTo(map)
+      .on('click', function() {
+        confirm("are you sure?");
+      });
+    //.bindPopup("You are within " + radius + " meters from this point").openPopup();
+    L.circle(e.latlng, radius).addTo(map);
+  }
+
+  map.on('locationfound', onLocationFound);
+
+  function onLocationError(e) {
+    alert(e.message);
+  }
+  map.on('locationerror', onLocationError);
+
+
+  L.marker([myLat, myLong]).addTo(map)
+    .bindPopup('I am here  !')
+    .openPopup();
+}
+
+
+// Sidebar sliders - listeners
+$(document).on("input change", "#clubs_dis_range", function() {
+  $("#clubs_distance").html($(this).val() + "&nbsp;" + "Miles");
+});
+$(document).on("input change", "#pubs_dis_range", function() {
+  $("#pubs_distance").html($(this).val() + "&nbsp;" + "Miles");
+});
+$(document).on("input change", "#bars_dis_range", function() {
+  $("#bars_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
 
 // Reset sliders to "50 Miles" - value
@@ -95,6 +152,15 @@ $("#reset_sliders").click(function() {
   $("#pubs_distance").html($("#pubs_dis_range").val() + "&nbsp;" + "Miles");
   $("#bars_distance").html($("#bars_dis_range").val() + "&nbsp;" + "Miles");
 });
+
+
+// Apply sliders changes when accepted
+$('#apply_sliders').click(function() {
+  let clubs_range = $('#clubs_dis_range').val();
+  let pubs_range = $('#pubs_dis_range').val();
+  let bars_range = $('#bars_dis_range').val();
+});
+
 
 $('#download').click(function() {
   // download as pdf function
@@ -109,13 +175,10 @@ $('#download').click(function() {
   });
 });
 
-// Sidebar sliders - listeners
-$(document).on("input change", "#clubs_dis_range", function() {
-  $("#clubs_distance").html($(this).val() + "&nbsp;" + "Miles");
-});
-$(document).on("input change", "#pubs_dis_range", function() {
-  $("#pubs_distance").html($(this).val() + "&nbsp;" + "Miles");
-});
-$(document).on("input change", "#bars_dis_range", function() {
-  $("#bars_distance").html($(this).val() + "&nbsp;" + "Miles");
+// Close map function ( red corss - button )
+$('#exit_icon, #sidebar_logo').click(function() {
+  $('#main_page_container').removeClass('hidden');
+  $('#map_container').addClass('hidden');
+  $('#footer_main').removeClass('hidden');
+  $("#mainbox_postcode").val("");
 });
