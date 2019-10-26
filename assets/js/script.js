@@ -78,6 +78,7 @@ $('#start_trip_button').click(function() {
         event.preventDefault();
         $.get(encodeURI("https://api.postcodes.io/postcodes/" + myPostcode))
             .done(function(data) {
+
                 let postcodeValidation = data.status;
                 console.log(postcodeValidation);
 
@@ -97,18 +98,35 @@ $('#start_trip_button').click(function() {
                             // new map
                             map = new google.maps.Map(document.getElementById('map'), {
                                 center: myLocation,
-                                zoom: 14
+                                zoom: 15
                             });
 
-                            let markerCurrntPos = './assets/images/icons/marker_currentPos.png'
+                            // all markers
+                            let markerCurrntPos, markerClubsPos, markerPubsPos, markerBarsPos;
+
+                            markerCurrntPos = './assets/images/icons/marker_currentPos.png';
+                            markerClubsPos = './assets/images/icons/marker_ClubsPos.png';
+                            markerPubsPos = './assets/images/icons/marker_PubsPos.png';
+                            markerBarsPos = './assets/images/icons/marker_BarsPos.png';
+
 
                             // marker based on current posistion
                             let yourPosition = new google.maps.Marker({
                                 position: myLocation,
-                                icon: markerCurrntPos,
+                                // icon: markerCurrntPos,
+                                animation: google.maps.Animation.DROP,
                                 map: map,
                             });
 
+
+                            function toggleBounce() {
+                                if (yourPosition.getAnimation() !== null) {
+                                    yourPosition.setAnimation(null);
+                                }
+                                else {
+                                    yourPosition.setAnimation(google.maps.Animation.BOUNCE);
+                                }
+                            }
 
 
 
