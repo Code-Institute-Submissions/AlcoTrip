@@ -1,6 +1,8 @@
 //page loader function
-/* global $, global Swal, myPostcode, myLat, myLong */
-/* global L,  map, L.marker */
+/* global $, global Swal, google, navigator, myLat, myLong */
+/* global xLat, global xLong*/
+let myLat, myLong;
+
 
 function myFunction() {
   let loader = setTimeout(showPage(), 3000);
@@ -80,65 +82,28 @@ $('#start_trip_button').click(function() {
   myPostcode = String(myPostcode.toUpperCase());
   $("#postcode_sidebar").html(myPostcode);
 
+
+  let map;
+
   event.preventDefault();
   $.get(encodeURI("https://api.postcodes.io/postcodes/" + myPostcode))
     .done(function(data) {
       myLat = data.result['latitude'];
       myLong = data.result['longitude'];
+
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: myLat, lng: myLong },
+        zoom: 13
+      });
+
+      let marker = new google.maps.Marker({
+        position: { lat: myLat, lng: myLong },
+        map: map,
+      });
+
     });
-
-
-  InitilizeMap();
-
 });
 
-
-
-function InitilizeMap() {
-
-  let map = L.map('map', {
-    center: [
-      [myLat, myLong]
-    ],
-    scrollWheelZoom: false,
-    inertia: true,
-    inertiaDeceleration: 2000
-  });
-  map.setView([myLat, myLong], 10);
-
-  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://mapbox.com">Mapbox</a>',
-    maxZoom: 15,
-    id: 'superpikar.n28afi10',
-    accessToken: 'pk.eyJ1Ijoic3VwZXJwaWthciIsImEiOiI0MGE3NGQ2OWNkMzkyMzFlMzE4OWU5Yjk0ZmYzMGMwOCJ9.3bGFHjoSXB8yVA3KeQoOIw'
-  }).addTo(map);
-
-  $('#locate-position').on('click', function() {
-    map.locate({ setView: true, maxZoom: 15 });
-  });
-
-  function onLocationFound(e) {
-    var radius = e.accuracy / 2;
-    L.marker(e.latlng).addTo(map)
-      .on('click', function() {
-        confirm("are you sure?");
-      });
-    //.bindPopup("You are within " + radius + " meters from this point").openPopup();
-    L.circle(e.latlng, radius).addTo(map);
-  }
-
-  map.on('locationfound', onLocationFound);
-
-  function onLocationError(e) {
-    alert(e.message);
-  }
-  map.on('locationerror', onLocationError);
-
-
-  L.marker([myLat, myLong]).addTo(map)
-    .bindPopup('I am here  !')
-    .openPopup();
-}
 
 
 // Sidebar sliders - listeners
@@ -160,14 +125,12 @@ $("#reset_sliders").click(function() {
   $("#bars_distance").html($("#bars_dis_range").val() + "&nbsp;" + "Miles");
 });
 
-
 // Apply sliders changes when accepted
 $('#apply_sliders').click(function() {
   let clubs_range = $('#clubs_dis_range').val();
   let pubs_range = $('#pubs_dis_range').val();
   let bars_range = $('#bars_dis_range').val();
 });
-
 
 $('#download').click(function() {
   // download as pdf function
