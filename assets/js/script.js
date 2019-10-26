@@ -91,16 +91,28 @@ $('#start_trip_button').click(function() {
                             myLat = data.result['latitude'];
                             myLong = data.result['longitude'];
 
-                            let myLocation = { lat: myLat, lng: myLong }
+                            // current position from postcode - main variable
+                            let myLocation = { lat: myLat, lng: myLong };
+
+                            // new map
                             map = new google.maps.Map(document.getElementById('map'), {
                                 center: myLocation,
                                 zoom: 14
                             });
+
+                            let markerCurrntPos = './assets/images/icons/marker_currentPos.png'
+
+                            // marker based on current posistion
                             let yourPosition = new google.maps.Marker({
                                 position: myLocation,
+                                icon: markerCurrntPos,
                                 map: map,
-                                title: 'Hello World!'
                             });
+
+
+
+
+
 
 
                         });
