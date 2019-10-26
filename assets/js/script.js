@@ -1,6 +1,6 @@
 //page loader function
-/* global $, global Swal*/
-/* global L,  map, L.marker , myLat, myLong*/
+/* global $, global Swal, myPostcode, myLat, myLong */
+/* global L,  map, L.marker */
 
 function myFunction() {
   let loader = setTimeout(showPage(), 3000);
@@ -12,18 +12,7 @@ function showPage() {
 }
 
 // Find user location based on geolocalization from google
-$('#findme_button').click(function(event) {
-  event.preventDefault();
-  var fullResult = $("#follow_town").hide();
-  var postcode = 'NN82DF'
-  $.get(encodeURI("https://api.postcodes.io/postcodes/" + postcode))
-    .done(function(data) {
-      fullResult.html(JSON.stringify(data, null, 4)).show();
-      $("#follow_town").val(data[0].admin_district);
-    })
-    .fail(function(error) {
-      fullResult.html(JSON.stringify(error.responseJSON, null, 4)).slideDown();
-    });
+$('#findme_button').click(function() {
 
   /* $("#mainbox_postcode").removeClass("missing_e");
   $("#postcode_error").addClass("hidden");
@@ -90,6 +79,13 @@ $('#start_trip_button').click(function() {
   myPostcode = myPostcode.replace(/\s/g, "");
   myPostcode = String(myPostcode.toUpperCase());
   $("#postcode_sidebar").html(myPostcode);
+
+  event.preventDefault();
+  $.get(encodeURI("https://api.postcodes.io/postcodes/" + myPostcode))
+    .done(function(data) {
+      myLat = data.result['latitude'];
+      myLong = data.result['longitude'];
+    });
 
 
   InitilizeMap();
