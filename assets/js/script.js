@@ -1,5 +1,5 @@
 //page loader function
-/* global $, global Swal, google, navigator, myLat, myLong, postcodeValidation */
+/* global $, global Swal, google, navigator, myLat, myLong, postcodeValidation, barsRadius, createMarker, markers */
 /* global xLat, global xLong*/
 let myLat, myLong;
 
@@ -96,10 +96,17 @@ $('#start_trip_button').click(function() {
                             let myLocation = { lat: myLat, lng: myLong };
 
                             // new map
-                            map = new google.maps.Map(document.getElementById('map'), {
+
+                            let mapOptions = {
+                                zoom: 15,
+                                maxZoom: 18,
+                                minZoom: 10,
                                 center: myLocation,
-                                zoom: 15
-                            });
+                                mapTypeId: 'roadmap'
+                            };
+                            let map = new google.maps.Map(document.getElementById('map'),
+                                mapOptions);
+
 
                             // all markers
                             let markerCurrntPos, markerClubsPos, markerPubsPos, markerBarsPos;
@@ -117,8 +124,7 @@ $('#start_trip_button').click(function() {
                                 animation: google.maps.Animation.DROP,
                                 map: map,
                             });
-
-
+                            // bounced drop down for current position marker
                             function toggleBounce() {
                                 if (yourPosition.getAnimation() !== null) {
                                     yourPosition.setAnimation(null);
@@ -127,10 +133,6 @@ $('#start_trip_button').click(function() {
                                     yourPosition.setAnimation(google.maps.Animation.BOUNCE);
                                 }
                             }
-
-
-
-
 
 
                         });
