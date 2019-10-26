@@ -1,6 +1,6 @@
 //page loader function
-/* global $, global Swal */
-/* global L, map, L.marker , myLat, myLong*/
+/* global $, global Swal*/
+/* global L,  map, L.marker , myLat, myLong*/
 
 function myFunction() {
   let loader = setTimeout(showPage(), 3000);
@@ -12,11 +12,24 @@ function showPage() {
 }
 
 // Find user location based on geolocalization from google
-$('#findme_button').click(function() {
-  $("#mainbox_postcode").removeClass("missing_e");
+$('#findme_button').click(function(event) {
+  event.preventDefault();
+  var fullResult = $("#follow_town").hide();
+  var postcode = 'NN82DF'
+  $.get(encodeURI("https://api.postcodes.io/postcodes/" + postcode))
+    .done(function(data) {
+      fullResult.html(JSON.stringify(data, null, 4)).show();
+      $("#follow_town").val(data[0].admin_district);
+    })
+    .fail(function(error) {
+      fullResult.html(JSON.stringify(error.responseJSON, null, 4)).slideDown();
+    });
+
+  /* $("#mainbox_postcode").removeClass("missing_e");
   $("#postcode_error").addClass("hidden");
   let g_location = "your postcode";
-  $("#mainbox_postcode").val(g_location);
+  $("#mainbox_postcode").val(g_location);*/
+
 });
 
 // Clear all checboxes and hidden error message
@@ -86,8 +99,6 @@ $('#start_trip_button').click(function() {
 
 
 function InitilizeMap() {
-  let myLat = 51.509865;
-  let myLong = -0.118092;
 
   let map = L.map('map', {
     center: [
