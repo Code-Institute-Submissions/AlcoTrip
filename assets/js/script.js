@@ -1,5 +1,5 @@
 //page loader function
-/* global $, global Swal, google, navigator, myLat, myLong, postcodeValidation, barsRadius, createMarker, markers */
+/* global $, global Swal, google, navigator, myLat, myLong, postcodeValidation, barsRadius, createMarker, markers, setMapOnAll */
 /* global xLat, global xLong*/
 let myLat, myLong;
 
@@ -85,7 +85,14 @@ $('#start_trip_button').click(function() {
                 if (postcodeValidation) {
 
                     $("#postcode_sidebar").html(myPostcode);
+
+
+                    // Variables
                     let map;
+                    let markers = [];
+
+
+
                     event.preventDefault();
                     $.get(encodeURI("https://api.postcodes.io/postcodes/" + myPostcode))
                         .done(function(data) {
@@ -104,26 +111,20 @@ $('#start_trip_button').click(function() {
                                 center: myLocation,
                                 mapTypeId: 'roadmap'
                             };
-                            let map = new google.maps.Map(document.getElementById('map'),
+                            map = new google.maps.Map(document.getElementById('map'),
                                 mapOptions);
 
 
                             // all markers
                             let markerCurrntPos, markerClubsPos, markerPubsPos, markerBarsPos;
 
-                            markerCurrntPos = './assets/images/icons/marker_currentPos.png';
-                            markerClubsPos = './assets/images/icons/marker_ClubsPos.png';
-                            markerPubsPos = './assets/images/icons/marker_PubsPos.png';
-                            markerBarsPos = './assets/images/icons/marker_BarsPos.png';
-
-
-                            // marker based on current posistion
+                            // create current position marker
                             let yourPosition = new google.maps.Marker({
                                 position: myLocation,
-                                // icon: markerCurrntPos,
                                 animation: google.maps.Animation.DROP,
                                 map: map,
                             });
+
                             // bounced drop down for current position marker
                             function toggleBounce() {
                                 if (yourPosition.getAnimation() !== null) {
@@ -133,7 +134,6 @@ $('#start_trip_button').click(function() {
                                     yourPosition.setAnimation(google.maps.Animation.BOUNCE);
                                 }
                             }
-
 
                         });
                     // Go to Map
