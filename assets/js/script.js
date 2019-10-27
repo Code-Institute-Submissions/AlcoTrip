@@ -76,11 +76,12 @@ $('#start_trip_button').click(function() {
 
         //postcode validation
         event.preventDefault();
-        $.get(encodeURI("https://api.postcodes.io/postcodes/" + myPostcode))
+        $.get(encodeURI("https://api.postcodes.io/postcodes/" + myPostcode + "/validate"))
             .done(function(data) {
 
-                let postcodeValidation = data.status;
+                let postcodeValidation = data['result'];
                 console.log(postcodeValidation);
+
 
                 if (postcodeValidation) {
 
@@ -89,7 +90,6 @@ $('#start_trip_button').click(function() {
 
                     // Variables
                     let map;
-                    let markers = [];
 
 
 
@@ -135,6 +135,23 @@ $('#start_trip_button').click(function() {
                                 }
                             }
 
+                            const placeService = new google.maps.places.PlacesService(map);
+
+                            const request = {
+                                query: 'japan',
+                                fields: ['place_id'],
+                            };
+
+                            placeService.findPlaceFromQuery(request, (results, status) => {
+                                if (status == google.maps.places.PlacesServiceStatus.OK) {
+
+                                    results.forEach((item) => {
+                                        console.log(item);
+                                        // place_id, name, formatted_address, geometry.location, icon
+                                    });
+                                }
+                            });
+
                         });
                     // Go to Map
                     $("#main_page_container, #postcode_error, #tickbox_missing, #footer_main").addClass("hidden");
@@ -142,6 +159,9 @@ $('#start_trip_button').click(function() {
                     $("#map_container").removeClass("hidden");
                     $("#mainbox_postcode, .c_boxes").removeClass("missing_e");
                     $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
+                }
+                else {
+                    alert("somwthong is wrong!")
                 }
             });
     }
