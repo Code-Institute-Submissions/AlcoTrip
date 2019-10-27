@@ -1,8 +1,7 @@
 //page loader function
-/* global $, global Swal, google, navigator, myLat, myLong, postcodeValidation, barsRadius, createMarker, markers, setMapOnAll */
-/* global xLat, global xLong*/
+/* global $, global Swal, google, navigator, myLat, myLong, postcodeValidation, barsRadius, createMarker, markers, setMapOnAll, geolocResult*/
+/* global, gLat, gLong */
 let myLat, myLong;
-
 
 function myFunction() {
     let loader = setTimeout(showPage(), 3000);
@@ -12,17 +11,19 @@ function showPage() {
     $("#loader, #whole_page").css("display", "none");
     $("#page_loader").css("display", "block");
 }
-
 // Find user location based on geolocalization from google
 $('#findme_button').click(function() {
 
-    /* $("#mainbox_postcode").removeClass("missing_e");
-    $("#postcode_error").addClass("hidden");
-    let g_location = "your postcode";
-    $("#mainbox_postcode").val(g_location);*/
+    let geolocLong = '';
+    let geolocLat = '';
 
+    event.preventDefault();
+    $.get(encodeURI("https://api.postcodes.io / postcodes ? lon = " + geolocLong + " & lat = " + geolocLat))
+        .done(function(data) {
+            let geolocPostcode = data.result[0]['postcode'];
+            $("#mainbox_postcode").val(geolocPostcode);
+        });
 });
-
 // Clear all checboxes and hidden error message
 $('#unselect_all_checkbox').click(function() {
     $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
@@ -30,7 +31,6 @@ $('#unselect_all_checkbox').click(function() {
     $("#tickbox_missing").addClass("hidden");
     $(".c_boxes").removeClass("missing_e");
 });
-
 // Select all checboxes and clear hidden error message
 $('#select_all_checkbox').click(function() {
     $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", true);
@@ -39,11 +39,8 @@ $('#select_all_checkbox').click(function() {
     $("#tickbox_missing").removeClass("text-muted1");
     $(".c_boxes").removeClass("missing_e");
 });
-
-
 // Check all required fields,
 // pass the postcode value to H3 on map page and start trip.
-
 $('#start_trip_button').click(function() {
 
     let myPostCode, checked_clubs, checked_bars, checked_pubs;
@@ -54,7 +51,7 @@ $('#start_trip_button').click(function() {
     checked_pubs = $("#styled-checkbox-2").prop("checked");
 
     if (myPostCode == "") {
-        mainPostcodeError()
+        mainPostcodeError();
     }
     else if (checked_clubs == false && checked_pubs == false && checked_bars == false) {
         $("#tickbox_missing").removeClass("hidden");
@@ -76,18 +73,11 @@ $('#start_trip_button').click(function() {
             .done(function(data) {
 
                 let postcodeValidation = data['result'];
-                console.log(postcodeValidation);
-
-
                 if (postcodeValidation) {
-
                     $("#postcode_sidebar").html(myPostcode);
-
 
                     // Variables
                     let map;
-
-
 
                     event.preventDefault();
                     $.get(encodeURI("https://api.postcodes.io/postcodes/" + myPostcode))
@@ -99,7 +89,6 @@ $('#start_trip_button').click(function() {
                             let myLocation = { lat: myLat, lng: myLong };
 
                             // new map
-
                             let mapOptions = {
                                 zoom: 15,
                                 maxZoom: 18,
@@ -131,22 +120,20 @@ $('#start_trip_button').click(function() {
                                 }
                             }
 
-                            const placeService = new google.maps.places.PlacesService(map);
+                            /*      const placeService = new google.maps.places.PlacesService(map);
+                                  const request = {
+                                      query: 'japan',
+                                      fields: ['place_id'],
+                                  };
 
-                            const request = {
-                                query: 'japan',
-                                fields: ['place_id'],
-                            };
-
-                            placeService.findPlaceFromQuery(request, (results, status) => {
-                                if (status == google.maps.places.PlacesServiceStatus.OK) {
-
-                                    results.forEach((item) => {
-                                        console.log(item);
-                                        // place_id, name, formatted_address, geometry.location, icon
-                                    });
-                                }
-                            });
+                                  placeService.findPlaceFromQuery(request, (results, status) => {
+                                      if (status == google.maps.places.PlacesServiceStatus.OK) {
+                                          results.forEach((item) => {
+                                              console.log(item);
+                                              // place_id, name, formatted_address, geometry.location, icon
+                                          });
+                                      }
+                                  });*/
 
                         });
                     // Go to Map
@@ -157,15 +144,12 @@ $('#start_trip_button').click(function() {
                     $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
                 }
                 else {
-                    mainPostcodeError()
-                    notValidPostcode()
+                    mainPostcodeError();
+                    notValidPostcode();
                 }
             });
     }
 });
-
-
-
 // Sidebar sliders - listeners
 $(document).on("input change", "#clubs_dis_range", function() {
     $("#clubs_distance").html($(this).val() + "&nbsp;" + "Miles");
@@ -176,7 +160,6 @@ $(document).on("input change", "#pubs_dis_range", function() {
 $(document).on("input change", "#bars_dis_range", function() {
     $("#bars_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
-
 // Reset sliders to "50 Miles" - value
 $("#reset_sliders").click(function() {
     $("#clubs_dis_range, #pubs_dis_range, #bars_dis_range").val(50);
@@ -184,14 +167,13 @@ $("#reset_sliders").click(function() {
     $("#pubs_distance").html($("#pubs_dis_range").val() + "&nbsp;" + "Miles");
     $("#bars_distance").html($("#bars_dis_range").val() + "&nbsp;" + "Miles");
 });
-
 // Apply sliders changes when accepted
 $('#apply_sliders').click(function() {
     let clubs_range = $('#clubs_dis_range').val();
     let pubs_range = $('#pubs_dis_range').val();
     let bars_range = $('#bars_dis_range').val();
 });
-
+// donwload trip screenshot 
 $('#download').click(function() {
     // download as pdf function
     // when downloaded show allert box
@@ -204,7 +186,6 @@ $('#download').click(function() {
         timer: 2500
     });
 });
-
 // Close map function ( red corss - button )
 $('#exit_icon, #sidebar_logo').click(function() {
     $('#main_page_container').removeClass('hidden');
@@ -212,7 +193,7 @@ $('#exit_icon, #sidebar_logo').click(function() {
     $('#footer_main').removeClass('hidden');
     $("#mainbox_postcode").val("");
 });
-
+// sweet alert for not valid postcode
 function notValidPostcode() {
     Swal.fire({
         position: 'center',
@@ -223,12 +204,22 @@ function notValidPostcode() {
         timer: 2000
     });
 }
-
-
+// postcode missing or not valid
 function mainPostcodeError() {
     $("#mainbox_postcode").addClass("missing_e");
     $("#postcode_error").removeClass("hidden");
     $('html, body').animate({
         scrollTop: ($('#postcode_missing').offset().top)
     }, 500);
+}
+// sweet alert for geolocation error
+function geolocationError() {
+    Swal.fire({
+        position: 'center',
+        type: 'error',
+        title: 'Error..',
+        text: 'Geolocation is not supported by this browser.',
+        showConfirmButton: false,
+        timer: 2000
+    });
 }
