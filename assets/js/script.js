@@ -14,6 +14,9 @@ function showPage() {
 // Find user location based on geolocalization from google
 $('#findme_button').click(function() {
 
+    $("#mainbox_postcode, .c_boxes").removeClass("missing_e");
+
+
     let geolocLong = -1.069876;
     let geolocLat = 51.6562;
 
@@ -23,6 +26,8 @@ $('#findme_button').click(function() {
             let geolocPostcode = data.result[0]['postcode'];
             $("#mainbox_postcode").val(geolocPostcode);
         });
+
+
 });
 // Clear all checboxes and hidden error message
 $('#unselect_all_checkbox').click(function() {
@@ -178,7 +183,7 @@ $('#download').click(function() {
     // download as pdf function
     // when downloaded show allert box
     Swal.fire({
-        position: 'top-end',
+        position: 'center',
         type: 'success',
         title: 'Your AlcoTrip has been saved',
         text: 'check your "downloads" folder',
@@ -215,7 +220,7 @@ function mainPostcodeError() {
 // sweet alert for geolocation error
 function geolocationError() {
     Swal.fire({
-        position: 'center',
+        position: 'warning',
         type: 'error',
         title: 'Error..',
         text: 'Geolocation is not supported by this browser.',
