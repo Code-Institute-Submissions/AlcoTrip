@@ -14,11 +14,11 @@ function showPage() {
 // Find user location based on geolocalization from google
 $('#findme_button').click(function() {
 
-    let geolocLong = '';
-    let geolocLat = '';
+    let geolocLong = -1.069876;
+    let geolocLat = 51.6562;
 
     event.preventDefault();
-    $.get(encodeURI("https://api.postcodes.io / postcodes ? lon = " + geolocLong + " & lat = " + geolocLat))
+    $.get(encodeURI("https://api.postcodes.io/postcodes?lon=" + geolocLong + "&lat=" + geolocLat))
         .done(function(data) {
             let geolocPostcode = data.result[0]['postcode'];
             $("#mainbox_postcode").val(geolocPostcode);
