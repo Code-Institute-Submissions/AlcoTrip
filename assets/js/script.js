@@ -54,11 +54,7 @@ $('#start_trip_button').click(function() {
     checked_pubs = $("#styled-checkbox-2").prop("checked");
 
     if (myPostCode == "") {
-        $("#mainbox_postcode").addClass("missing_e");
-        $("#postcode_error").removeClass("hidden");
-        $('html, body').animate({
-            scrollTop: ($('#postcode_missing').offset().top)
-        }, 500);
+        mainPostcodeError()
     }
     else if (checked_clubs == false && checked_pubs == false && checked_bars == false) {
         $("#tickbox_missing").removeClass("hidden");
@@ -161,7 +157,8 @@ $('#start_trip_button').click(function() {
                     $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
                 }
                 else {
-                    alert("somwthong is wrong!")
+                    mainPostcodeError()
+                    notValidPostcode()
                 }
             });
     }
@@ -199,7 +196,7 @@ $('#download').click(function() {
     // download as pdf function
     // when downloaded show allert box
     Swal.fire({
-        position: 'center',
+        position: 'top-end',
         type: 'success',
         title: 'Your AlcoTrip has been saved',
         text: 'check your "downloads" folder',
@@ -215,3 +212,23 @@ $('#exit_icon, #sidebar_logo').click(function() {
     $('#footer_main').removeClass('hidden');
     $("#mainbox_postcode").val("");
 });
+
+function notValidPostcode() {
+    Swal.fire({
+        position: 'center',
+        type: 'error',
+        title: 'Oops...',
+        text: 'Please eneter valid postvode.',
+        showConfirmButton: false,
+        timer: 2000
+    });
+}
+
+
+function mainPostcodeError() {
+    $("#mainbox_postcode").addClass("missing_e");
+    $("#postcode_error").removeClass("hidden");
+    $('html, body').animate({
+        scrollTop: ($('#postcode_missing').offset().top)
+    }, 500);
+}
