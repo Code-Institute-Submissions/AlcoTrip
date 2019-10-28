@@ -118,22 +118,13 @@ $('#start_trip_button').click(function() {
                                     yourPosition.setAnimation(google.maps.Animation.BOUNCE);
                                 }
                             }
-
-                            const placeService = new google.maps.places.PlacesService(map);
-                            const request = {
-                                query: 'england',
-                                fields: ['place_id'],
-                                type: 'bar',
-                            };
-
-                            placeService.findPlaceFromQuery(request, (results, status) => {
-                                if (status == google.maps.places.PlacesServiceStatus.OK) {
-                                    results.forEach((item) => {
-                                        console.log(item);
-                                        // place_id, name, formatted_address, geometry.location, icon
-                                    });
-                                }
+                            var pyrmont = { lat: -33.866, lng: 151.196 };
+                            map = new google.maps.Map(document.getElementById('map'), {
+                                center: pyrmont,
+                                zoom: 17
                             });
+
+
 
                         });
                     // Go to Map
