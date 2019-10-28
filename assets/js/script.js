@@ -118,13 +118,6 @@ $('#start_trip_button').click(function() {
                                     yourPosition.setAnimation(google.maps.Animation.BOUNCE);
                                 }
                             }
-                            var pyrmont = { lat: -33.866, lng: 151.196 };
-                            map = new google.maps.Map(document.getElementById('map'), {
-                                center: pyrmont,
-                                zoom: 17
-                            });
-
-
 
                         });
                     // Go to Map
