@@ -119,20 +119,21 @@ $('#start_trip_button').click(function() {
                                 }
                             }
 
-                            /*      const placeService = new google.maps.places.PlacesService(map);
-                                  const request = {
-                                      query: 'japan',
-                                      fields: ['place_id'],
-                                  };
+                            const placeService = new google.maps.places.PlacesService(map);
+                            const request = {
+                                query: 'england',
+                                fields: ['place_id'],
+                                type: 'bar',
+                            };
 
-                                  placeService.findPlaceFromQuery(request, (results, status) => {
-                                      if (status == google.maps.places.PlacesServiceStatus.OK) {
-                                          results.forEach((item) => {
-                                              console.log(item);
-                                              // place_id, name, formatted_address, geometry.location, icon
-                                          });
-                                      }
-                                  });*/
+                            placeService.findPlaceFromQuery(request, (results, status) => {
+                                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                                    results.forEach((item) => {
+                                        console.log(item);
+                                        // place_id, name, formatted_address, geometry.location, icon
+                                    });
+                                }
+                            });
 
                         });
                     // Go to Map
@@ -186,7 +187,7 @@ $('#download').click(function() {
     });
 });
 // Close map function ( red corss - button )
-$('#exit_icon, #sidebar_logo').click(function() {
+$('#exit_icon, #sidebar_logo, #sidebar_logo_top').click(function() {
     $('#main_page_container').removeClass('hidden');
     $('#map_container').addClass('hidden');
     $('#footer_main').removeClass('hidden');
