@@ -26,11 +26,14 @@ They can also use the input field if they want to search for places for another 
  - [x] [Google Maps Geolocation API](https://developers.google.com/maps/documentation/geolocation/intro)
  - [x] [Google Places](https://developers.google.com/places/web-service/intro)
  - [x] [Postcode.io API](https://postcodes.io/)
- - [ ]
- - [ ]
- - [ ] 
- - [ ]
- - [ ]
+ - [x] Tickboxes - Choosing type of location
+ - [x] Sliders - Changing distance range
+ 
+upcoming...
+ - [ ] Share on social media
+ - [ ] Creating accounts - Login
+ - [ ] Adding/Inviting friends to your "AlcoTrip"
+ - [ ] Different map styles
 
 
 ### UX/Design
