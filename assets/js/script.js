@@ -21,6 +21,7 @@ $('#findme_button').click(function() {
             $.get(encodeURI("https://api.postcodes.io/postcodes?lon=" + geolocLong + "&lat=" + geolocLat))
                 .done(function(data) {
                     let geolocPostcode = (data.result[0]['postcode']);
+                    console.log(geolocPostcode);
                     $("#mainbox_postcode").val(geolocPostcode);
                 });
         });
@@ -86,7 +87,7 @@ $('#start_trip_button').click(function() {
 
                             // current position from postcode - main variable
                             let myLocation = { lat: myLat, lng: myLong };
-
+                            let markersArray = [];
                             // new map
                             let mapOptions = {
                                 zoom: 15,
@@ -97,6 +98,7 @@ $('#start_trip_button').click(function() {
                             };
                             map = new google.maps.Map(document.getElementById('map'),
                                 mapOptions);
+
 
 
                             // all markers
