@@ -1,4 +1,4 @@
-# <img src="http://karolsliwka.abovewave.co.uk/favicon.png" style="width:35px;">  AlcoTrip
+# AlcoTrip  <img align="left" width="40" height="40" src="http://karolsliwka.abovewave.co.uk/favicon.png" >
 > Second Milestone Project for [Code Institute](https://codeinstitute.net/) | Full Stack Software Development Diploma\
 > User Centric Frontend Development Milestone Project.
 
