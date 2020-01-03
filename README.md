@@ -23,6 +23,14 @@ They can also use the input field if they want to search for places for another 
 
 ### Features
 
+ - [x] [Google Maps Geolocation API](https://developers.google.com/maps/documentation/geolocation/intro)
+ - [x] [Google Places](https://developers.google.com/places/web-service/intro)
+ - [x] [Postcode.io API](https://postcodes.io/)
+ - [ ]
+ - [ ]
+ - [ ] 
+ - [ ]
+ - [ ]
 
 
 ### UX/Design
@@ -57,3 +65,7 @@ They can also use the input field if they want to search for places for another 
 [AWS Cloud9](https://aws.amazon.com/cloud9/) - A cloud IDE for writing, running, and debugging code
     
 ### Credits / Acknowledgement
+
+### Contact
+
+Created by Karol Sliwka - feel free to contact me by email: <contact@karolsliwka.com>
