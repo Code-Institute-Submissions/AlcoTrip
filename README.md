@@ -17,6 +17,7 @@ They can also use the input field, if they want to search for places with differ
 ## Visiuals
 > Main Page - website main view
 <img src="http://karolsliwka.abovewave.co.uk/MainPage_View.png" style="widt:100%;">
+
 > Result Page - website view with postcode applied
 <img src="http://karolsliwka.abovewave.co.uk/AlcoTrip_Screenshot.png" style="widt:100%;">
 
