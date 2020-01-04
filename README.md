@@ -10,18 +10,18 @@ They can also use the input field, if they want to search for places with differ
 > Friendly and intuitive interface helps users with moving on the page. You can minimize and maxmize sidebar to see the bigger map view.
 > If you decided to share your AlcoTrip with your friends, simply click download button and share!
 
-### Technologies Used
+## Technologies Used
 
  [HTML5](https://en.wikipedia.org/wiki/HTML5) * [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) * [SASS](https://sass-lang.com/) * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) * [jQuery](https://jquery.com/) * [Bootstrap](https://getbootstrap.com/)\
  [Photoshop](https://www.photoshop.com/) * [Google Maps API](https://developers.google.com/maps/documentation/geolocation/intro) * [Google Places API](https://developers.google.com/places/web-service/intro) * [Postcode.io](https://postcodes.io/)
  
-### Visiuals
+## Visiuals
 
 <img src="http://karolsliwka.abovewave.co.uk/AlcoTrip_Screenshot.png" style="widt:100%;">
 
-### Features
+## Features
 
-###### Existing Features
+##### Existing Features
   
 > Main Page
  - [x] Google Geolocation API
@@ -33,25 +33,25 @@ They can also use the input field, if they want to search for places with differ
  - [x] Google Places API
  - [x] Sliders - Changing distance range
  
-###### Features left to improve user experience and website usability
+##### Features left to improve user experience and website usability
  - [ ] Easy share - buttons with auto share links based on user information provided
  - [ ] User accounts - Creating, Loign, Removing
  - [ ] Adding/Inviting friends to your "AlcoTrip"
  - [ ] Different map styles/views
  - [ ] Chat for trip members
 
-### UX/Design
+## UX/Design
 
-##### Main Page
+#### Main Page
 
-##### Result Page
+#### Result Page
 
-### User Stories
+## User Stories
 
 
-### Testing
+## Testing
 
-### Deployment
+## Deployment
 > This website is hosted and deployed from master branch to GitHub Pages.
 > *  How to deployed website on Github Pages.
 
@@ -68,15 +68,15 @@ They can also use the input field, if they want to search for places with differ
     9. Change source from "none" to "master branch", copy created link.
     10. Go back to "Code" tab - paste link into website field and save.
 
-### Created In
+## Created In
 
 [AWS Cloud9](https://aws.amazon.com/cloud9/) - A cloud IDE for writing, running, and debugging code
     
-### Credits / Acknowledgement
+## Credits / Acknowledgement
 
 
 
 
-### Contact
+## Contact
 
 Created by Karol Sliwka - feel free to contact me by email: <contact@karolsliwka.com>
