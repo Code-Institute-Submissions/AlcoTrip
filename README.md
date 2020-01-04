@@ -33,7 +33,7 @@ They can also use the input field, if they want to search for places with differ
  - [x] Google Places API
  - [x] Sliders - Changing distance range
  
-#### Features left to improve user experience and website usability
+#### Upcoming features to improve user experience and website usability
  - [ ] Easy share - buttons with auto share links based on user information provided
  - [ ] User accounts - Creating, Loign, Removing
  - [ ] Adding/Inviting friends to your "AlcoTrip"
