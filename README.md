@@ -30,11 +30,11 @@ They can also use the input field if they want to search for places for another 
  - [x] Sliders - Changing distance range
  
 upcoming...
- - [ ] Share on social media
- - [ ] Creating accounts - Login
+ - [ ] Easy share - buttons with autoshare links bbased on user information provied
+ - [ ] User accounts - Creating, Loign, Removing
  - [ ] Adding/Inviting friends to your "AlcoTrip"
- - [ ] Different map styles
-
+ - [ ] Different map styles/views
+ - [ ] Chat for trip members
 
 ### UX/Design
 
