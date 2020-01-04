@@ -11,7 +11,7 @@ They can also use the input field, if they want to search for places with differ
 > If you decided to share your AlcoTrip with your friends, simply click download button and share!
 
 ## Technologies Used
- [HTML5](https://en.wikipedia.org/wiki/HTML5) * [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) * [SASS](https://sass-lang.com/) * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) * [jQuery](https://jquery.com/) * [Bootstrap](https://getbootstrap.com/)\
+ [HTML5](https://en.wikipedia.org/wiki/HTML5) * [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) * [SASS](https://sass-lang.com/) * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) * [jQuery](https://jquery.com/) * [Bootstrap](https://getbootstrap.com/)\
  [Photoshop](https://www.photoshop.com/) * [Google Maps API](https://developers.google.com/maps/documentation/geolocation/intro) * [Google Places API](https://developers.google.com/places/web-service/intro) * [Postcode.io](https://postcodes.io/)
  
 ## Visiuals
@@ -48,6 +48,21 @@ They can also use the input field, if they want to search for places with differ
 
 
 ## Testing
+Website code was tested by copying link to [Validator](https://validator.w3.org/) - W3C Markup Validation Service.
+ - all the errors have been checked, reviewed and fixed.
+
+This project was mainly tested in Chrome, I've used Chrome Extensions 
+[Viewport Resizer – Responsive Testing Tool](https://chrome.google.com/webstore/detail/viewport-resizer-%E2%80%93-respon/kapnjjcfcncngkadhpmijlkblpibdcgm),
+to check responsiveness of the site, pages layout change, how all page elements are animating on a different screen sizes.
+Based on all checks I've made changes to make all controls more user friendly.
+
+Website responsiveness and elemnt animating also was tested on diferrent browsers such as IE and Safari.
+
+
+
+
+
+Some display issues were found with browsers: IE and Safari, regarding using SASS.
 
 ## Deployment
 > This website is hosted and deployed from master branch to GitHub Pages.
@@ -74,7 +89,7 @@ This project name and logotype was created and designed by Karol Sliwka, all rig
 Information/texts and icons in this project were written and designed by the developer.
 
 Very Special Thanks to:
-* My mentor Simen Daehlin (Code Institute) for his time spend on booked video calls, all supplied materials to learn, help with how to solve issues and support in difficult times.
+* My mentor <span style="color:red">Simen Daehlin</span> (Code Institute) for his time spend on booked video calls, all supplied materials to learn, help with how to solve issues and support in difficult times.
 * My brothers who tested website on their devices, giving advices with website look or how can I improve user experience and usability.
 
 ## Contact
