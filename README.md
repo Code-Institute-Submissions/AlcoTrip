@@ -55,16 +55,23 @@ Logo also has a thunder sign which was created in photoshop. It is a simbolical 
 #### Coloristic
 * Blue tonned background is good for bright and dark screens.
 * I've used two contrasting colors yellow and white. These colors "stands out" from the bakground and they are making design more clear and readable for users.
-* Dark red color has been used for buttons highlightining only to notify users about canceling or reseting values
+* Dark red color has been used for buttons highlightining only to notify users about canceling or reseting values.
 
 #### Font
-* Font I've used is <strong>Roboto</strong>, it's well design, simple and easy to read - [Google Fonts - Roboto](https://fonts.google.com/?query=Roboto)\
-The second replacing font is <strong>San-Serif</strong>
+* I've used is <strong>Roboto</strong>, it's well design, simple and easy to read. [See font](https://fonts.google.com/?query=Roboto)\
+The second replacing font is <strong>San-Serif</strong>.
+* Different font weight was used to manipulate which part of text should be spotted as a first by the user.
 
 #### Buttons and Sliders
-* All buttons and sliders have rounded corners style for a better look. They have a flat not strong shadow to make them more 3D
+* All buttons and sliders have rounded corners style for a better look. They have a flat not strong shadow to make them more 3D.
 
+#### Sidebar
+* Is placed on the left side of the page. It has litte arrows to minimize or maximize the view to see more on the map.
+* Colored marks with names and sliders will help the users to localize and distinguish between premises more specifcally.
 
+#### Map
+* Created with Google Maps API is placed in responsive container. 
+* Red marker with user position is always in page center to help localize.
 
 #### Wireframes
 
@@ -72,9 +79,7 @@ The second replacing font is <strong>San-Serif</strong>
 * Tablets  [view]()
 * Phones   [view]()
 
-
 ## User Stories
-
 
 ## Testing
 Website code was tested by copying link to [Validator](https://validator.w3.org/) - W3C Markup Validation Service.
@@ -88,12 +93,9 @@ to check responsiveness of the site, pages layout change, how all elements are a
 
 Website responsiveness and elemnt animating also was tested on diferrent browsers such as IE and Safari.
 
-
 ##### Main page:
 * Clicking on each element including logotype icon to make sure, all elements works and react correctly.
 * After clicking on "Find Me!" - empty input field should show postcode found via using postcode.io API. 
-
-
 
 Some display issues were found with browsers: IE and Safari, regarding using SASS.
 
