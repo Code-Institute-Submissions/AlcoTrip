@@ -6,7 +6,7 @@
 ## Description
 > The purpouse of this project is to enable users to find nearby clubs, pubs or bars. Organizing travel for yourself or with friends.
 > Users can find their location using the Google interface for geolocation - by clicking "FIND ME"!.\
-They can also use the input field if they want to search for places for another zip code.
+They can also use the input field, if they want to search for places with different postcode.
 > Location selection boxes and distance sliders let you specify the exact search area. 
 > Friendly and intuitive interface helps users with moving on the page. You can minimize and maxmize sidebar to see the bigger map view.
 > If you decided to share your AlcoTrip with your friends, simply click download button and share!
@@ -30,7 +30,7 @@ They can also use the input field if they want to search for places for another 
  - [x] Sliders - Changing distance range
  
 upcoming...
- - [ ] Easy share - buttons with autoshare links bbased on user information provied
+ - [ ] Easy share - buttons with auto share links based on user information provided
  - [ ] User accounts - Creating, Loign, Removing
  - [ ] Adding/Inviting friends to your "AlcoTrip"
  - [ ] Different map styles/views
