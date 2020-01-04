@@ -15,11 +15,13 @@ They can also use the input field, if they want to search for places with differ
  [Photoshop](https://www.photoshop.com/) * [Google Maps API](https://developers.google.com/maps/documentation/geolocation/intro) * [Google Places API](https://developers.google.com/places/web-service/intro) * [Postcode.io](https://postcodes.io/)
  
 ## Visiuals
-* Result Page - website view with postcode applied.
+> Main Page - website main view
+<img src="http://karolsliwka.abovewave.co.uk/MainPage_View.png" style="widt:100%;">
+> Result Page - website view with postcode applied
 <img src="http://karolsliwka.abovewave.co.uk/AlcoTrip_Screenshot.png" style="widt:100%;">
 
 ## Features
-### Existing Features
+#### Existing Features
   
 > Main Page
  - [x] Google Geolocation API
@@ -31,7 +33,7 @@ They can also use the input field, if they want to search for places with differ
  - [x] Google Places API
  - [x] Sliders - Changing distance range
  
-### Features left to improve user experience and website usability
+#### Features left to improve user experience and website usability
  - [ ] Easy share - buttons with auto share links based on user information provided
  - [ ] User accounts - Creating, Loign, Removing
  - [ ] Adding/Inviting friends to your "AlcoTrip"
@@ -40,25 +42,56 @@ They can also use the input field, if they want to search for places with differ
 
 ## UX/Design
 
-#### Main Page
+This project was developed focusing on Desktop and Tablet screens, cause they're mostly skipped in mobile phone era.
+However mobile phone design were carefully considered. Clear and simple design is really effective.
+Users can see all important information from the very begining, also it's giving them easy access to all features.
 
-#### Result Page
+#### Logo and Name
+* Logo was created especialy for this project purpouse. It has two words "Alco" - alcohol and "Trip".\
+Name stands for trip with alcohol.\
+<span style="color:red">( Remember, you can drink alcohol only when you're more than 18 years old! )</span>\
+Logo also has a thunder sign which was created in photoshop. It is a simbolical meaning of shock you can get when you are to drunk.
+
+#### Coloristic
+* Blue tonned background is good for bright and dark screens.
+* I've used two contrasting colors yellow and white. These colors "stands out" from the bakground and they are making design more clear and readable for users.
+* Dark red color has been used for buttons highlightining only to notify users about canceling or reseting values
+
+#### Font
+* Font I've used is <strong>Roboto</strong>, it's well design, simple and easy to read - [Google Fonts - Roboto](https://fonts.google.com/?query=Roboto)\
+The second replacing font is <strong>San-Serif</strong>
+
+#### Buttons and Sliders
+* All buttons and sliders have rounded corners style for a better look. They have a flat not strong shadow to make them more 3D
+
+
+
+#### Wireframes
+
+* Desktops [view]()
+* Tablets  [view]()
+* Phones   [view]()
+
 
 ## User Stories
 
 
 ## Testing
 Website code was tested by copying link to [Validator](https://validator.w3.org/) - W3C Markup Validation Service.
- - all the errors have been checked, reviewed and fixed.
+ - All errors have been checked, reviewed and fixed.
 
-This project was mainly tested in Chrome, I've used Chrome Extensions 
+This project was mainly tested in Chrome.\
+I've used Chrome Extensions 
 [Viewport Resizer – Responsive Testing Tool](https://chrome.google.com/webstore/detail/viewport-resizer-%E2%80%93-respon/kapnjjcfcncngkadhpmijlkblpibdcgm),
-to check responsiveness of the site, pages layout change, how all page elements are animating on a different screen sizes.
-Based on all checks I've made changes to make all controls more user friendly.
+to check responsiveness of the site, pages layout change, how all elements are animating on a different screen sizes.
+ * Based on all checks I've made changes to make navigation, fields, sliders and page layout more user friendly and easy to use to provide better user experience.
 
 Website responsiveness and elemnt animating also was tested on diferrent browsers such as IE and Safari.
 
 
+##### Main page:
+* Clicking on each element including logotype icon to make sure, all elements works and react correctly.
+* After clicking on "Find Me!" - empty input field should show postcode found via using postcode.io API. 
 
 
 
@@ -90,7 +123,7 @@ Information/texts and icons in this project were written and designed by the dev
 
 Very Special Thanks to:
 * My mentor <span style="color:red">Simen Daehlin</span> (Code Institute) for his time spend on booked video calls, all supplied materials to learn, help with how to solve issues and support in difficult times.
-* My brothers who tested website on their devices, giving advices with website look or how can I improve user experience and usability.
+* My brothers <span style="color:green">Tomasz and Maciej</span> who tested website on their devices sucha as Phones, Laptops, giving advices what could be changed in website layout to improve user experience and usability.
 
 ## Contact
 Karol Sliwka - feel free to contact me by email: <contact@karolsliwka.com>
