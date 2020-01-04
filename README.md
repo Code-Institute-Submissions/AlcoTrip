@@ -2,7 +2,6 @@
 > Second Milestone Project for [Code Institute](https://codeinstitute.net/) | Full Stack Software Development Diploma\
 > User Centric Frontend Development Milestone Project.
 
-
 ## Description
 > The purpouse of this project is to enable users to find nearby clubs, pubs or bars. Organizing travel for yourself or with friends.
 > Users can find their location using the Google interface for geolocation - by clicking "FIND ME"!.\
@@ -10,8 +9,6 @@ They can also use the input field, if they want to search for places with differ
 > Location selection boxes and distance sliders let you specify the exact search area. 
 > Friendly and intuitive interface helps users with moving on the page. You can minimize and maxmize sidebar to see the bigger map view.
 > If you decided to share your AlcoTrip with your friends, simply click download button and share!
-
-
 
 ### Technologies Used
 
@@ -23,13 +20,14 @@ They can also use the input field, if they want to search for places with differ
 
 ### Features
 
+* Existing Features
  - [x] [Google Maps Geolocation API](https://developers.google.com/maps/documentation/geolocation/intro)
  - [x] [Google Places](https://developers.google.com/places/web-service/intro)
  - [x] [Postcode.io API](https://postcodes.io/)
  - [x] Tickboxes - Choosing type of location
  - [x] Sliders - Changing distance range
  
-upcoming...
+* Features left to improve user expirience and website usability
  - [ ] Easy share - buttons with auto share links based on user information provided
  - [ ] User accounts - Creating, Loign, Removing
  - [ ] Adding/Inviting friends to your "AlcoTrip"
@@ -61,13 +59,13 @@ upcoming...
     9. Change source from "none" to "master branch", copy created link.
     10. Go back to "Code" tab - paste link into website field and save.
 
-
-
 ### Created In
 
 [AWS Cloud9](https://aws.amazon.com/cloud9/) - A cloud IDE for writing, running, and debugging code
     
 ### Credits / Acknowledgement
+
+
 
 ### Contact
 
