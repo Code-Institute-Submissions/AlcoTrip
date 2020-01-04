@@ -12,22 +12,28 @@ They can also use the input field, if they want to search for places with differ
 
 ### Technologies Used
 
- [HTML5](https://en.wikipedia.org/wiki/HTML5) * [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) * [SASS](https://sass-lang.com/) * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) * [jQuery](https://jquery.com/) * [Bootstrap](https://getbootstrap.com/) * [Photoshop](https://www.photoshop.com/)
-
+ [HTML5](https://en.wikipedia.org/wiki/HTML5) * [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) * [SASS](https://sass-lang.com/) * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) * [jQuery](https://jquery.com/) * [Bootstrap](https://getbootstrap.com/)\
+ [Photoshop](https://www.photoshop.com/) * [Google Maps API](https://developers.google.com/maps/documentation/geolocation/intro) * [Google Places API](https://developers.google.com/places/web-service/intro) * [Postcode.io](https://postcodes.io/)
+ 
 ### Visiuals
 
 <img src="http://karolsliwka.abovewave.co.uk/AlcoTrip_Screenshot.png" style="widt:100%;">
 
 ### Features
 
-* Existing Features
- - [x] [Google Maps Geolocation API](https://developers.google.com/maps/documentation/geolocation/intro)
- - [x] [Google Places](https://developers.google.com/places/web-service/intro)
- - [x] [Postcode.io API](https://postcodes.io/)
+###### Existing Features
+  
+> Main Page
+ - [x] Google Geolocation API
+ - [x] Postcode.io API
  - [x] Tickboxes - Choosing type of location
+
+> Result Page
+ - [x] Google Maps API
+ - [x] Google Places API
  - [x] Sliders - Changing distance range
  
-* Features left to improve user expirience and website usability
+###### Features left to improve user experience and website usability
  - [ ] Easy share - buttons with auto share links based on user information provided
  - [ ] User accounts - Creating, Loign, Removing
  - [ ] Adding/Inviting friends to your "AlcoTrip"
@@ -36,6 +42,9 @@ They can also use the input field, if they want to search for places with differ
 
 ### UX/Design
 
+##### Main Page
+
+##### Result Page
 
 ### User Stories
 
@@ -64,6 +73,7 @@ They can also use the input field, if they want to search for places with differ
 [AWS Cloud9](https://aws.amazon.com/cloud9/) - A cloud IDE for writing, running, and debugging code
     
 ### Credits / Acknowledgement
+
 
 
 
