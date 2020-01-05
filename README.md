@@ -1,5 +1,5 @@
 # AlcoTrip  <img align="left" width="40" height="40" src="http://karolsliwka.abovewave.co.uk/favicon.png" >
-> Second Milestone Project for [Code Institute](https://codeinstitute.net/){:target="_blank"} | Full Stack Software Development Diploma\
+> Second Milestone Project for [Code Institute](https://codeinstitute.net/) | Full Stack Software Development Diploma\
 > User Centric Frontend Development Milestone Project.
 
 ## Description
@@ -11,8 +11,8 @@ They can also use the input field, if they want to search for places with differ
 > If you decided to share your AlcoTrip with your friends, simply click download button and share!
 
 ## Technologies Used
- [HTML5](https://en.wikipedia.org/wiki/HTML5){:target="_blank"} * [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets){:target="_blank"} * [SASS](https://sass-lang.com/){:target="_blank"} * [JavaScript](https://en.wikipedia.org/wiki/JavaScript){:target="_blank"} * [jQuery](https://jquery.com/){:target="_blank"} * [Bootstrap](https://getbootstrap.com/){:target="_blank"}\
- [Photoshop](https://www.photoshop.com/){:target="_blank"} * [Google Maps](https://developers.google.com/maps/documentation/geolocation/intro){:target="_blank"} * [Google Places](https://developers.google.com/places/web-service/intro){:target="_blank"} * [Postcode.io](https://postcodes.io/){:target="_blank"}
+ [HTML5](https://en.wikipedia.org/wiki/HTML5) * [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) * [SASS](https://sass-lang.com/) * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) * [jQuery](https://jquery.com/) * [Bootstrap](https://getbootstrap.com/)\
+ [Photoshop](https://www.photoshop.com/) * [Google Maps](https://developers.google.com/maps/documentation/geolocation/intro) * [Google Places](https://developers.google.com/places/web-service/intro) * [Postcode.io](https://postcodes.io/)
  
 ## Visiuals
 > Main Page - website main view
@@ -59,7 +59,7 @@ Logo also has a thunder sign which was created in photoshop. It is a simbolical 
 * Dark red color has been used for buttons highlightining only to notify users about canceling or reseting values.
 
 #### Font
-* I've used is <strong>Roboto</strong>, it's well design, simple and easy to read. [See font](https://fonts.google.com/?query=Roboto){:target="_blank"}\
+* I've used is <strong>Roboto</strong>, it's well design, simple and easy to read. [See font](https://fonts.google.com/?query=Roboto)\
 The second replacing font is <strong>San-Serif</strong>.
 * Different font weight was used to manipulate which part of text should be spotted as a first by the user.
 
@@ -76,9 +76,9 @@ The second replacing font is <strong>San-Serif</strong>.
 
 #### Wireframes
 
-* Desktops [view](){:target="_blank"}
-* Tablets  [view](){:target="_blank"}
-* Phones   [view](){:target="_blank"}
+* Desktops [view]()
+* Tablets  [view]()
+* Phones   [view]()
 
 ## User Stories
 
@@ -88,12 +88,12 @@ The second replacing font is <strong>San-Serif</strong>.
 
 
 ## Testing
-Website code was tested by copying link to [Validator](https://validator.w3.org/){:target="_blank"} - W3C Markup Validation Service.
+Website code was tested by copying link to [Validator](https://validator.w3.org/) - W3C Markup Validation Service.
  - All errors have been checked, reviewed and fixed.
 
 This project was mainly tested in Chrome.\
 I've used Chrome Extensions 
-[Viewport Resizer – Responsive Testing Tool](https://chrome.google.com/webstore/detail/viewport-resizer-%E2%80%93-respon/kapnjjcfcncngkadhpmijlkblpibdcgm){:target="_blank"},
+[Viewport Resizer – Responsive Testing Tool](https://chrome.google.com/webstore/detail/viewport-resizer-%E2%80%93-respon/kapnjjcfcncngkadhpmijlkblpibdcgm),
 to check responsiveness of the site, pages layout change, how all elements are animating on a different screen sizes.
  * Based on all checks I've made changes to make navigation, fields, sliders and page layout more user friendly and easy to use to provide better user experience.
 
@@ -123,14 +123,14 @@ Some display issues were found with browsers: IE and Safari, regarding using SAS
     10. Go back to "Code" tab - paste link into website field and save.
 
 ## Created In
-[AWS Cloud9](https://aws.amazon.com/cloud9/){:target="_blank"} - A cloud IDE for writing, running, and debugging code
+[AWS Cloud9](https://aws.amazon.com/cloud9/) - A cloud IDE for writing, running, and debugging code
     
 ## Credits / Acknowledgement
 This project name and logotype was created and designed by Karol Sliwka, all rights reserved.\
 Information/texts and icons in this project were written and designed by the developer.
 
 Very Special Thanks to:
-* My mentor <span style="color:red">[Simen Daehlin](https://github.com/Eventyret){:target="_blank"}</span> (Code Institute) for his time spend on booked video calls, all supplied materials to learn, help with how to solve issues and support in difficult times.
+* My mentor <span style="color:red">[Simen Daehlin](https://github.com/Eventyret)</span> (Code Institute) for his time spend on booked video calls, all supplied materials to learn, help with how to solve issues and support in difficult times.
 * My brothers <span style="color:green">Tomasz and Maciej</span> who tested website on their devices sucha as Phones, Laptops, giving advices what could be changed in website layout to improve user experience and usability.
 
 ## Contact
