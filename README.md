@@ -1,4 +1,4 @@
-# AlcoTrip  <img align="left" width="40" height="40" src="http://karolsliwka.abovewave.co.uk/favicon.png" >
+# AlcoTrip  <img align="left" width="40" height="40" src="http://www.abovewave.kylos.pl/aclotrip_project/favicon.png">
 > Second Milestone Project for [Code Institute](https://codeinstitute.net/) | Full Stack Software Development Diploma\
 > User Centric Frontend Development Milestone Project.
 
@@ -11,15 +11,25 @@ They can also use the input field, if they want to search for places with differ
 > If you decided to share your AlcoTrip with your friends, simply click download button and share!
 
 ## Technologies Used
- [HTML5](https://en.wikipedia.org/wiki/HTML5) * [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) * [SASS](https://sass-lang.com/) * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) * [jQuery](https://jquery.com/) * [Bootstrap](https://getbootstrap.com/)\
- [Photoshop](https://www.photoshop.com/) * [Google Maps](https://developers.google.com/maps/documentation/geolocation/intro) * [Google Places](https://developers.google.com/places/web-service/intro) * [Postcode.io](https://postcodes.io/)
+  * [HTML5](https://en.wikipedia.org/wiki/HTML5) 
+  * [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) 
+  * [SASS](https://sass-lang.com/) 
+  * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
+  * [jQuery](https://jquery.com/) 
+  * [Bootstrap](https://getbootstrap.com/) 
+  * [Photoshop CC 2019](https://www.photoshop.com/) 
+  * [Google Maps](https://developers.google.com/maps/documentation/geolocation/intro) 
+  * [Google Places](https://developers.google.com/places/web-service/intro) 
+  * [Google Fonts](https://fonts.google.com/)
+  * [Postcode.io](https://postcodes.io/)
+  * [Tinypng](https://tinypng.com/)
  
 ## Visiuals
 > Main Page - website main view
-<img src="http://karolsliwka.abovewave.co.uk/MainPage_View.png" style="widt:100%;">
+<img src="http://www.abovewave.kylos.pl/aclotrip_project/MainPage_View.png" style="widt:100%;">
 
 > Result Page - website view with postcode applied
-<img src="http://karolsliwka.abovewave.co.uk/AlcoTrip_Screenshot.png" style="widt:100%;">
+<img src="http://www.abovewave.kylos.pl/aclotrip_project/AlcoTrip_Screenshot.png" style="widt:100%;">
 
 ## Features
 #### Existing Features
@@ -82,9 +92,9 @@ The second replacing font is <strong>San-Serif</strong>.
 
 ## User Stories
 
-* Tomasz : ""
-
+* Tomasz : "When I've opened this website I could really get what it's all about.."
 * Maciej : ""
+*
 
 
 ## Testing
@@ -111,7 +121,7 @@ Some display issues were found with browsers: IE and Safari, regarding using SAS
 
     1. Choose the repository you want to deploy.
     2. Clone repository by clicking button on the right side of the link.
-<img src="http://karolsliwka.abovewave.co.uk/clone_rep.png" style="widt:100%;">
+<img src="http://www.abovewave.kylos.pl/aclotrip_project/clone_rep.png" style="widt:100%;">
 
     3. Go to your Repositories.
     4. Click on "Import Repositories" - Paste link in input field.
