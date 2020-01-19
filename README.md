@@ -86,9 +86,9 @@ The second replacing font is <strong>San-Serif</strong>.
 
 #### Wireframes
 
-* Desktops [view]()
-* Tablets  [view]()
-* Phones   [view]()
+* Desktops [view](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_desktop.png){:target="_blank"}
+* Tablets  [view](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_tablet.png){:target="_blank"}
+* Phones   [view](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_phone.png){:target="_blank"}
 
 ## User Stories
 
