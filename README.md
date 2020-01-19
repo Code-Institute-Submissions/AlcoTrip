@@ -31,6 +31,16 @@ They can also use the input field, if they want to search for places with differ
 > Result Page - website view with postcode applied
 <img src="http://www.abovewave.kylos.pl/aclotrip_project/AlcoTrip_Screenshot.png" style="widt:100%;">
 
+
+## User Stories
+
+* Tom : "When I've opened this website I could really get what it's all about.. no information about what you can do on this website, how does it work etc. And that map, standard google map. I love to have possibilty to change or customize view of application I'm usingm, this making my app special and more personlized."
+
+* Maciej : "Ideas like this website are really good! I was wondering, if it's possible to find only pubs or bars near to me without zooming and moving map in google maps all the time.. that's so simple, click find me, choose the type of what you're looking for and that's it! You can also mainpulate sliders, to get the nearest location to yourself. The only issue is you can't really share your trip in easy way with your friends. Screenshot ?! we're living in 20th century, that shoudl be just one click, easy sharing option."
+
+* Ben : "Great colors! Simple and clear design. It will be really good, if there will be chatting option, just simple chat with friends on app, option to invite them to my trip. I'm wondering when this app will be available to download from app store! Can't wait! Awesome!"
+
+
 ## Features
 #### Existing Features
   
@@ -44,7 +54,7 @@ They can also use the input field, if they want to search for places with differ
  - [x] Google Places API
  - [x] Sliders - Changing distance range
  
-#### Upcoming features to improve user experience and website usability
+#### Upcoming features to improve user experience and website usability based on user testing and stories.
  - [ ] Easy share - buttons with auto share links based on user information provided
  - [ ] User accounts - Creating, Loign, Removing
  - [ ] Adding/Inviting friends to your "AlcoTrip"
@@ -86,15 +96,13 @@ The second replacing font is <strong>San-Serif</strong>.
 
 #### Wireframes
 
-* Desktops [view](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_desktop.png){:target="_blank"}
-* Tablets  [view](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_tablet.png){:target="_blank"}
-* Phones   [view](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_phone.png){:target="_blank"}
+I created wireframes in Balsamiq mockups 3. When I've started to creating the project wireframes have been really simple and show only scetch of the project. While making real project I've changed style and I've added more colors, text and pictures to visualize content of the page and sidebar.
 
-## User Stories
+View my wireframes here.
 
-* Tomasz : "When I've opened this website I could really get what it's all about.."
-* Maciej : ""
-*
+* Desktops [view](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_desktop.png)
+* Tablets  [view](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_tablet.png)
+* Phones   [view](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_phone.png)
 
 
 ## Testing
@@ -108,6 +116,15 @@ to check responsiveness of the site, pages layout change, how all elements are a
  * Based on all checks I've made changes to make navigation, fields, sliders and page layout more user friendly and easy to use to provide better user experience.
 
 Website responsiveness and element animating also was tested on diferrent browsers such as IE and Safari.
+
+* 
+*
+*
+*
+*
+*
+* I tried to 
+
 
 ##### Main page:
 * Clicking on each element including logotype icon to make sure, all elements works and react correctly.
