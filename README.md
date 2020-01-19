@@ -124,7 +124,7 @@ Website responsiveness and element animating also was tested on diferrent browse
 * Clicking on each element including logotype icon to make sure, all elements works and react correctly.
 * After clicking on "Find Me!" - empty input field should show postcode found via using postcode.io API. 
 
-##### Mapn page:
+##### Map page:
 * Clickng on arrow hide/show to se if the side bar is minimizing to the left side of website and maximizing back to normal dimensions.
 * Moving sliders to check if they react and is the miles value chanign properly.
 * Clicking on reseting button to resert all the sliders, values and text.
