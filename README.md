@@ -34,12 +34,11 @@ They can also use the input field, if they want to search for places with differ
 
 ## User Stories
 
-* Tom : "When I've opened this website I could really get what it's all about.. no information about what you can do on this website, how does it work etc. And that map, standard google map. I love to have possibilty to change or customize view of application I'm usingm, this making my app special and more personlized."
+* Tom : "When I've opened this website I couldn't really get what it's all about.. no information about what you can do on this website, how does it work etc. And that map, standard google map. I love when I have possibilty to change or customize view of application I'm usingm, this making my app special and more personlized."
 
 * Maciej : "Ideas like this website are really good! I was wondering, if it's possible to find only pubs or bars near to me without zooming and moving map in google maps all the time.. that's so simple, click find me, choose the type of what you're looking for and that's it! You can also mainpulate sliders, to get the nearest location to yourself. The only issue is you can't really share your trip in easy way with your friends. Screenshot ?! we're living in 20th century, that shoudl be just one click, easy sharing option."
 
-* Ben : "Great colors! Simple and clear design. It will be really good, if there will be chatting option, just simple chat with friends on app, option to invite them to my trip. I'm wondering when this app will be available to download from app store! Can't wait! Awesome!"
-
+* Ben : "Great colors! Simple and clear design. It will be good, if there will be chatting option, just simple chat, with friends on app, option to invite them to my trip. I'm wondering when this app will be available to download from app store! Can't wait! Awesome!"
 
 ## Features
 #### Existing Features
