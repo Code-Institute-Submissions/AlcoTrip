@@ -112,22 +112,23 @@ This project was mainly tested in Chrome.\
 I've used Chrome Extensions 
 [Viewport Resizer – Responsive Testing Tool](https://chrome.google.com/webstore/detail/viewport-resizer-%E2%80%93-respon/kapnjjcfcncngkadhpmijlkblpibdcgm),
 to check responsiveness of the site, pages layout change, how all elements are animating on a different screen sizes.
- * Based on all checks I've made changes to make navigation, fields, sliders and page layout more user friendly and easy to use to provide better user experience.
+
+* While doing the project I've created to many lines of jQuery code to control all icons and sliders on sidebar. I've been advised to reduce code and create separate functions and copy them when needed to avoid duplicating the code.
+* After change of user fields on main page I couldn't get postcode value from input field and pass it to the postcode.io. I've started to checking my code, doing all the changes but, I wasn't reading the code carefully, I've missed the line of code which was clearing all my user input fields. After removing this line all code has been check once again and tested using DOM traversing with positive end.
+* Testing design and responsivity of application on my phone and different screen sizes, shows that I needed to change sidebar width. Even when I've tested different widths using browser, it still was wrong on mobile.. I have used bootstrap code to simplify and get correect sidebar width on each device.
+* Based on all checks I've made changes to make navigation, fields, sliders and page layout more user friendly and easy to use to provide better user experience.
 
 Website responsiveness and element animating also was tested on diferrent browsers such as IE and Safari.
-
-* 
-*
-*
-*
-*
-*
-* I tried to 
-
 
 ##### Main page:
 * Clicking on each element including logotype icon to make sure, all elements works and react correctly.
 * After clicking on "Find Me!" - empty input field should show postcode found via using postcode.io API. 
+
+##### Mapn page:
+* Clickng on arrow hide/show to se if the side bar is minimizing to the left side of website and maximizing back to normal dimensions.
+* Moving sliders to check if they react and is the miles value chanign properly.
+* Clicking on reseting button to resert all the sliders, values and text.
+* Clicking apply to se ,if all changed information has been refreshed and map has been call back and refreshed.
 
 Some display issues were found with browsers: IE and Safari, regarding using SASS.
 
