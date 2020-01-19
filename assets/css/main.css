@@ -169,9 +169,8 @@
 .download_button:hover .tiptext {
   visibility: visible; }
 
-.side_line, .auto-margin, .separate_line, .separate_line1, .main-title, .postcode, .formsubmition, .search_options, .copyrights {
-  margin: auto;
-  width: 80%; }
+.side_line, .auto-margin, .separate_line, .separate_line1, .postcode, .formsubmition, .search_options, .copyrights {
+  margin: auto; }
 
 .auto-margin {
   margin-bottom: 20px; }
@@ -240,15 +239,17 @@ a:hover {
 
 .separate_line {
   background-color: #fff;
+  width: 100%;
   height: 1px;
-  margin-top: 40px;
+  margin-top: 30px;
   margin-bottom: 40px; }
 
 .separate_line1 {
   background-color: #fff;
+  width: 100%;
   height: 1px;
-  margin-top: 50px;
-  margin-bottom: 30px; }
+  margin-top: 80px;
+  margin-bottom: 40px; }
 
 #loader {
   position: absolute;
@@ -320,10 +321,6 @@ a:hover {
 @media screen and (max-width: 300px) {
   .main_logo img {
     max-width: 150px; } }
-.main-title {
-  margin-left: auto;
-  margin-right: auto; }
-
 .lead-edit {
   margin-bottom: 10px; }
 
@@ -368,7 +365,6 @@ input[type="search"]::-webkit-search-cancel-button {
   border: 1px solid #ccc; }
 
 .geoloc_button {
-  margin-top: 10px;
   border: 2px solid #ffb400; }
 
 .geoloc_button:hover {
@@ -739,11 +735,10 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .separate_line2 {
   background-color: #ffb400;
+  width: 100%;
   height: 1px;
   margin-top: 40px;
-  margin-bottom: 5px;
-  width: 89%;
-  margin-left: 17px; }
+  margin-bottom: 5px; }
 
 .logotype {
   width: 360px;
