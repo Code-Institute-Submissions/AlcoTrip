@@ -99,9 +99,9 @@ I created wireframes in Balsamiq mockups 3. When I've started to creating the pr
 
 View my wireframes here.
 
-* Desktops [view](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_desktop.png)
-* Tablets  [view](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_tablet.png)
-* Phones   [view](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_phone.png)
+* Desktops [Main Page](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_desktop_main.png) - [Map](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_desktop_map.png)
+* Tablets [Main Page](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_tablet_main.png) - [Map](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_tablet_map.png)
+* Phones [Main Page](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_phone_main.png) - [Map](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_phone_map.png)
 
 
 ## Testing
