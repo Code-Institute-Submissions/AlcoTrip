@@ -157,7 +157,7 @@ This project name and logotype was created and designed by Karol Sliwka, all rig
 Information/texts and icons in this project were written and designed by the developer.
 
 Very Special Thanks to:
-* My mentor <span style="color:red">[Simen Daehlin](https://github.com/Eventyret)</span> (Code Institute) for his time spend on booked video calls, all supplied materials to learn, help with how to solve issues and support in difficult times.
+* My mentor <span style="color:red">[Simen Daehlin](https://dehlin.dev)</span> (Code Institute) for his time spend on booked video calls, all supplied materials to learn, help with how to solve issues and support in difficult times.
 * My brothers <span style="color:green">Tomasz and Maciej</span> who tested website on their devices sucha as Phones, Laptops, giving advices what could be changed in website layout to improve user experience and usability.
 
 ## Contact
