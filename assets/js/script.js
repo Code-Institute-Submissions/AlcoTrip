@@ -106,7 +106,7 @@ $('#start_trip_button').click(function() {
 
 
                             var icon = {
-                                url: 'http://www.abovewave.kylos.pl/aclotrip_project/my_position_serw.png',
+                                url: 'http://www.abovewave.kylos.pl/aclotrip_project/my_position_serw1.png',
                                 scaledSize: new google.maps.Size(140, 105),
                             };
 
