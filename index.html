@@ -27,10 +27,10 @@
         <header class="container">
             <div class="row">
                 <a href="index.html" class="main_logo"><img src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></a>
-                <div class="main-title">
+                <div>
                     <h1 class="hidden">Alco Trip</h1>
                     <h2>Find all Pubs, Bars, Disco Clubs near You! It's so simple, isn't it ?</h2>
-                    <h3 id="follow_town" class="lead">1. Enter Your postcode or simply click on 'Find Me' button to locate yourself.<br>2. Choose what you're looking for today and let's start your trip!</h3>
+                    <h3 id="follow_town" class="lead">1.Enter your postcode or simply click <span class="yellow_color"><strong>find me</strong></span> button to locate yourself.<br>2.Select what you are looking for and start your trip!</h3>
                 </div>
                 <!-- white separate line -->
                 <div id="postcode_missing"></div>
@@ -44,7 +44,7 @@
                     <div class="form-group">
                         <!-- Main title - postcode field label -->
                         <div class="row">
-                            <label class="lead lead-edit bold1" for="mainbox_postcode">Enter your postcode:</label>
+                            <label class="lead lead-edit bold1" for="mainbox_postcode">Enter your postcode</label>
                         </div>
                         <!-- Iput box -->
                         <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 col-xl-9">
@@ -63,7 +63,7 @@
                         <!-- Main form bottom sextion -->
                         <div class="search_options">
                             <!-- Checkboxes main title -->
-                            <h3 class="lead bold1">What are you looking for tonight?</h3>
+                            <h3 class="lead bold1">What are you looking for tonight ?</h3>
                             <!-- Checkboxes container -->
                             <div class="c_boxes">
                                 <!-- List Checkbox -->
@@ -88,15 +88,13 @@
                         </div>
                         <!-- Alert text -->
                         <small id="tickbox_missing" class="form-text message_e hidden">*Please choose any of tick boxes.</small>
-                        <div class="row">
-                            <!-- clear fields button -->
-                            <div class="col">
-                                <button id="unselect_all_checkbox" type="button" class="btn btn-primary clearfields_button">Unselect All</button>
-                            </div>
-                            <!-- clear checkboxes button -->
-                            <div class="col">
-                                <button id="select_all_checkbox" type="button" class="btn btn-primary selectall_button">Select All</button>
-                            </div>
+                        <!-- clear fields button -->
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <button id="unselect_all_checkbox" type="button" class="btn btn-primary clearfields_button">Unselect All</button>
+                        </div>
+                        <!-- clear checkboxes button -->
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <button id="select_all_checkbox" type="button" class="btn btn-primary selectall_button">Select All</button>
                         </div>
                         <!-- Start Trip button -->
                         <div class="formsubmition">
