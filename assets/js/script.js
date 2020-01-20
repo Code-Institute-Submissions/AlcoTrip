@@ -104,8 +104,16 @@ $('#start_trip_button').click(function() {
                             // all markers
                             let markerCurrntPos, markerClubsPos, markerPubsPos, markerBarsPos;
 
+
+                            var icon = {
+                                url: 'http://www.abovewave.kylos.pl/aclotrip_project/my_position_serw.png',
+                                scaledSize: new google.maps.Size(140, 105),
+                            };
+
+
                             // create current position marker
                             let yourPosition = new google.maps.Marker({
+                                icon: icon,
                                 position: myLocation,
                                 animation: google.maps.Animation.DROP,
                                 map: map,
