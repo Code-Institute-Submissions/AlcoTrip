@@ -18,7 +18,6 @@ function hideElements() {
     }
 }
 
-
 // Collaspe or expand sidebar
 $('#sidebar_collapse_icon').click(function() {
     let toggle_q = document.getElementById("sidebar_blue").clientWidth;

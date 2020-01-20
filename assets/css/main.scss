@@ -232,7 +232,10 @@ a:hover {
 }
 
 
-.main-title {}
+.yellow_color {
+    color: #ffb400;
+    white-space: nowrap;
+}
 
 // FORM AND ALL CRITERIA FIELDS
 .lead-edit {
@@ -241,6 +244,18 @@ a:hover {
 
 .form-control {
     box-shadow: 0px 4px 0px #303030;
+}
+
+.form-control:focus {
+    border-color: $secondary-color;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+    background-color: #ffffff !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 input[type="search"]::-webkit-search-cancel-button {
@@ -259,22 +274,17 @@ input[type="search"]::-webkit-search-cancel-button {
     font-size: 14px;
     color: #fff;
     border-bottom: 2px solid #f00;
-}
-
-// TOWN AND POSTCODE FIELDS
+} // TOWN AND POSTCODE FIELDS
 .postcode {
     @extend %basic_margin;
-}
-
-// BUTTON PRIMARY
+} // BUTTON PRIMARY
 .formsubmition {
     @extend %basic_margin;
 }
 
 .btn {
     padding: 0px;
-    height: 36px;
-    float: left;
+    height: 34px;
     width: 150px;
     box-shadow: 0px 4px 0px #303030;
 }
@@ -289,18 +299,14 @@ input[type="search"]::-webkit-search-cancel-button {
     color: #000;
     background-color: $secondary-color;
     border-color: $secondary-color;
-}
-
-// BUTTON ERROR CLASS
+} // BUTTON ERROR CLASS
 .missing_e {
     border: 2px solid #f00;
 }
 
 .border_clear {
     border: 1px solid #ccc;
-}
-
-// GEO LOCALIZATION AND CLEAR BUTTON
+} // GEO LOCALIZATION AND CLEAR BUTTON
 .geoloc_button {
     border: 2px solid $secondary-color;
 }
@@ -398,9 +404,7 @@ input[type="search"]::-webkit-search-cancel-button {
         border: 2px solid $secondary-color;
         width: 100%;
     }
-}
-
-// SEARCH OPTIONS
+} // SEARCH OPTIONS
 .search_options {
     @extend %basic_margin;
     vertical-align: middle;
@@ -545,9 +549,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .btn_wide:hover {
     color: $secondary-font;
-}
-
-// WIDE SIDEBAR
+} // WIDE SIDEBAR
 // ICONS AND CALCULATIONS
 :root {
 
@@ -608,9 +610,7 @@ input[type="search"]::-webkit-search-cancel-button {
     display: inline-block;
     @extend .hint_s_style;
     font-size: 14px;
-}
-
-// MARKERS
+} // MARKERS
 .marker_style_wide {
     @extend %m_little_style1;
     .marker {
@@ -673,9 +673,7 @@ input[type="search"]::-webkit-search-cancel-button {
         }
     }
 
-}
-
-// SLIDERS
+} // SLIDERS
 .slider {
     -webkit-appearance: none;
     max-width: 258px;
@@ -719,9 +717,7 @@ input[type="search"]::-webkit-search-cancel-button {
     height: 30px;
     display: flex;
     justify-content: space-around;
-}
-
-// APPLY AND RESET BUTTON
+} // APPLY AND RESET BUTTON
 .applyrange_button,
 .clearrange_button {
     box-shadow: 0px 4px 0px #303030;
@@ -741,9 +737,7 @@ input[type="search"]::-webkit-search-cancel-button {
     color: $primary-font;
     background-color: $tertiary-color;
     border-color: $tertiary-color;
-}
-
-// RESULTS
+} // RESULTS
 .second_sidebar {
     margin-top: 14px;
     width: 100%;
@@ -782,9 +776,7 @@ input[type="search"]::-webkit-search-cancel-button {
     display: inline-block;
     vertical-align: -1.5px;
     margin-left: 10px;
-}
-
-// FOOTER
+} // FOOTER
 .sidebar_footer {
     width: 360px;
     bottom: 0;
@@ -811,10 +803,7 @@ input[type="search"]::-webkit-search-cancel-button {
             margin: 0 auto;
         }
     }
-}
-
-
-// MAP
+} // MAP
 .map_main {
     margin: 0px auto;
     padding: 0;
@@ -841,9 +830,7 @@ input[type="search"]::-webkit-search-cancel-button {
     height: 50px;
     background-color: #fff;
     font: #000;
-}
-
-// FOOTER - MAIN PAGE
+} // FOOTER - MAIN PAGE
 footer {
     margin-bottom: 20px;
     text-align: center;
