@@ -98,10 +98,11 @@ $('#start_trip_button').click(function() {
                             // all markers
                             let markerCurrntPos, markerClubsPos, markerPubsPos, markerBarsPos;
 
-
+                            //my_position_serw1.png
+                            //new google.maps.Size(140, 105),
                             var icon = {
-                                url: 'http://www.abovewave.kylos.pl/aclotrip_project/my_position_serw1.png',
-                                scaledSize: new google.maps.Size(140, 105),
+                                url: 'http://www.abovewave.kylos.pl/aclotrip_project/marker_mypos_white.png',
+                                scaledSize: new google.maps.Size(40, 64),
                             };
 
 
