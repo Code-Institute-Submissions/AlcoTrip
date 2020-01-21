@@ -251,58 +251,6 @@ a:hover {
   margin-top: 80px;
   margin-bottom: 40px; }
 
-#loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 150px;
-  height: 150px;
-  margin: -75px 0 0 -70px;
-  border: 16px solid #ffffff;
-  border-radius: 50%;
-  border-top: 16px solid #ffb400;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite; }
-
-#whole_page {
-  width: 100%;
-  height: 100%;
-  background-color: #2E4A63; }
-
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg); } }
-@keyframes spin {
-  0% {
-    transform: rotate(0deg); }
-  100% {
-    transform: rotate(360deg); } }
-.animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s; }
-
-@-webkit-keyframes animatebottom {
-  from {
-    bottom: -100px;
-    opacity: 0; }
-  to {
-    bottom: 0px;
-    opacity: 1; } }
-@keyframes animatebottom {
-  from {
-    bottom: -100px;
-    opacity: 0; }
-  to {
-    bottom: 0;
-    opacity: 1; } }
 .main_logo img {
   display: block;
   margin-left: auto;
@@ -355,6 +303,13 @@ input[type="search"]::-webkit-search-cancel-button {
   color: #fff;
   border-bottom: 2px solid #f00; }
 
+.btn-primary.btn_wide:focus, .btn-primary.geoloc_button:focus, .btn-primary.selectall_button:focus, .btn-primary.clearfields_button:focus {
+  color: #000000;
+  border: 2px solid #ffb400;
+  background-color: #ffb400;
+  outline: none;
+  box-shadow: 0px 4px 0px #303030; }
+
 .btn {
   padding: 0px;
   height: 34px;
@@ -385,6 +340,10 @@ input[type="search"]::-webkit-search-cancel-button {
   background-color: #ffb400;
   border: 2px solid #ffb400; }
 
+.btn-primary.geoloc_button:focus {
+  color: #000000;
+  border: 2px solid #ffb400; }
+
 .selectall_button {
   margin-top: 10px;
   border: 2px solid #ffb400; }
@@ -403,6 +362,11 @@ input[type="search"]::-webkit-search-cancel-button {
   color: #ffffff;
   background: #670000;
   border-color: #670000; }
+
+.btn-primary.clearfields_button:focus {
+  color: #ffffff;
+  border-color: #670000;
+  background-color: #670000; }
 
 @media (min-width: 768px) {
   .geoloc_button {
