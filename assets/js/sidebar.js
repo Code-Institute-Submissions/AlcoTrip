@@ -38,7 +38,7 @@ $('#sidebar_collapse_icon').click(function() {
                     });
                 }
             });
-            hideElements()
+            hideElements();
             break;
             // when wide sidebar is 320px width
         case 320:

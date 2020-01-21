@@ -1,16 +1,9 @@
 //page loader function
-/* global $, global Swal, google, navigator, myLat, myLong, postcodeValidation, barsRadius, createMarker, markers, setMapOnAll, geolocResult*/
+/* global $, global Swal, google, navigator, myLat, myLong, postcodeValidation, barsRadius, createMarker, markers, setMapOnAll, geolocResult, service*/
 /* global, gLat, gLong */
 let myLat, myLong;
 
-function myFunction() {
-    let loader = setTimeout(showPage(), 3000);
-}
 
-function showPage() {
-    $("#loader, #whole_page").css("display", "none");
-    $("#page_loader").css("display", "block");
-}
 // Find user location based on geolocalization from google
 $('#findme_button').click(function() {
     $("#mainbox_postcode, .c_boxes").removeClass("missing_e");
@@ -26,6 +19,7 @@ $('#findme_button').click(function() {
                 });
         });
 });
+
 // Clear all checboxes and hidden error message
 $('#unselect_all_checkbox').click(function() {
     $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
@@ -119,6 +113,7 @@ $('#start_trip_button').click(function() {
                                 map: map,
                             });
 
+
                             // bounced drop down for current position marker
                             function toggleBounce() {
                                 if (yourPosition.getAnimation() !== null) {
@@ -128,6 +123,7 @@ $('#start_trip_button').click(function() {
                                     yourPosition.setAnimation(google.maps.Animation.BOUNCE);
                                 }
                             }
+
 
                         });
                     // Go to Map
