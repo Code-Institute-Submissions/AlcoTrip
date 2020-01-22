@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
     <link rel="shortcut icon" href="assets/images/favicon_aclotrip.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Alco Trip | Visit all places near you!</title>
 </head>
@@ -46,11 +44,11 @@
                             <label class="lead lead-edit bold1" for="mainbox_postcode">Enter your postcode</label>
                         </div>
                         <!-- Iput box -->
-                        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                        <div class="col-xl-10 col-lg-10 col-md-9 col-ms-9 col-xs-12">
                             <input type="search" id="mainbox_postcode" class="form-control upper" value="">
                         </div>
                         <!-- find me button -->
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <div class="col-xl-2 col-lg-2 col-md-3 col-ms-3 col-xs-12">
                             <button id="findme_button" type="button" class="btn btn-primary geoloc_button">Find Me!</button>
                         </div>
                         <!-- Error message -->
@@ -88,17 +86,18 @@
                         <!-- Alert text -->
                         <small id="tickbox_missing" class="form-text message_e hidden">*Please choose any of tick boxes.</small>
                         <!-- clear fields button -->
-                        <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="col-md-6">
                             <button id="unselect_all_checkbox" type="button" class="btn btn-primary clearfields_button">Unselect All</button>
                         </div>
                         <!-- clear checkboxes button -->
-                        <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="col-md-6">
                             <button id="select_all_checkbox" type="button" class="btn btn-primary selectall_button">Select All</button>
                         </div>
                         <!-- Start Trip button -->
                         <div class="formsubmition">
                             <button id="start_trip_button" type="button" class="btn btn-primary btn_wide">Start Trip</button>
                         </div>
+
                     </div>
                 </form>
             </div>
@@ -129,7 +128,7 @@
                     <!-- hidden class removed to work with wide sidebar-->
                     <div class="little_icons">
                         <div id="red_marker" class="little_iPosition">
-                            <img id="iPosition_marker" src="assets/images/icons/marker_mypos.png" alt="Position_marker">
+                            <img id="iPosition_marker" src="assets/images/icons/marker_mypos_white_big.png" alt="Position_marker">
                             <label id="hint_position" class="hint_s_style">Me</label>
                         </div>
                         <div id="green_marker" class="little_iClubs">

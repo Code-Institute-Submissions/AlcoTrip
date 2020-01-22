@@ -1,5 +1,5 @@
 //page loader function
-/* global $, global Swal, google, navigator, myLat, myLong, postcodeValidation, barsRadius, createMarker, markers, setMapOnAll, geolocResult, service*/
+/* global $, global Swal, google, createMarker, request, callback, i, place*/
 /* global, gLat, gLong */
 let myLat, myLong;
 
@@ -35,9 +35,15 @@ $('#select_all_checkbox').click(function() {
     $("#tickbox_missing").removeClass("text-muted1");
     $(".c_boxes").removeClass("missing_e");
 });
+
 // Check all required fields,
 // pass the postcode value to H3 on map page and start trip.
-$('#start_trip_button').click(function() {
+$('#start_trip_button').click(function initMap() {
+
+    let service;
+    let infowindow;
+
+    infowindow = new google.maps.InfoWindow();
 
     let myPostCode, checked_clubs, checked_bars, checked_pubs;
 
@@ -78,10 +84,8 @@ $('#start_trip_button').click(function() {
                         .done(function(data) {
                             myLat = data.result['latitude'];
                             myLong = data.result['longitude'];
-
                             // current position from postcode - main variable
                             let myLocation = { lat: myLat, lng: myLong };
-                            let markersArray = [];
                             // new map
                             let mapOptions = {
                                 zoom: 15,
@@ -90,41 +94,79 @@ $('#start_trip_button').click(function() {
                                 center: myLocation,
                                 mapTypeId: 'roadmap'
                             };
+
+                            // MARKERS
+                            let marker_my_pos = {
+                                url: 'https://www.abovewave.kylos.pl/aclotrip_project/marker_mypos_white.png',
+                                scaledSize: new google.maps.Size(40, 64),
+                            };
+                            let marker_clubs_pos = {
+                                url: './assets/images/icons/marker_green.png',
+                                scaledSize: new google.maps.Size(28, 45),
+                            };
+                            let marker_pubs_pos = {
+                                url: './assets/images/icons/marker_orange.png',
+                                scaledSize: new google.maps.Size(28, 45),
+                            };
+                            let marker_bars_pos = {
+                                url: './assets/images/icons/marker_blue.png',
+                                scaledSize: new google.maps.Size(28, 45),
+                            };
+
+                            // CREATING MAP WITH OPTIONS
                             map = new google.maps.Map(document.getElementById('map'),
                                 mapOptions);
 
-
-
-                            // all markers
-                            let markerCurrntPos, markerClubsPos, markerPubsPos, markerBarsPos;
-
-                            //my_position_serw1.png
-                            //new google.maps.Size(140, 105),
-                            var icon = {
-                                url: 'http://www.abovewave.kylos.pl/aclotrip_project/marker_mypos_white.png',
-                                scaledSize: new google.maps.Size(40, 64),
-                            };
-
-
-                            // create current position marker
+                            // CREATE CURRENT POSITION MARKER
                             let yourPosition = new google.maps.Marker({
-                                icon: icon,
+                                icon: marker_my_pos,
                                 position: myLocation,
                                 animation: google.maps.Animation.DROP,
                                 map: map,
                             });
 
+                            //SHOW NAME FOR CURRENT POSITION MARKER IN BOX
+                            google.maps.event.addListener(yourPosition, 'click', function() {
+                                infowindow.setContent("You're here");
+                                infowindow.open(map, this);
+                            });
 
-                            // bounced drop down for current position marker
-                            function toggleBounce() {
-                                if (yourPosition.getAnimation() !== null) {
-                                    yourPosition.setAnimation(null);
+                            // Create the places service.
+                            var service = new google.maps.places.PlacesService(map);
+                            var getNextPage = null;
+                            var moreButton = document.getElementById('more');
+                            moreButton.onclick = function() {
+                                moreButton.disabled = true;
+                                if (getNextPage) getNextPage();
+                            };
+
+                            // Perform a nearby search.
+                            service.nearbySearch({ location: myLocation, radius: 40, type: ['store'] },
+                                function(results, status, pagination) {
+                                    if (status !== 'OK') return;
+
+                                    createMarkers(results);
+                                    moreButton.disabled = !pagination.hasNextPage;
+                                    getNextPage = pagination.hasNextPage && function() {
+                                        pagination.nextPage();
+                                    };
+                                });
+
+
+                            function createMarkers(places) {
+                                let bounds = new google.maps.LatLngBounds();
+                                for (i = 0, place; place = places[i]; i++) {
+                                    var marker = new google.maps.Marker({
+                                        map: map,
+                                        icon: marker_clubs_pos,
+                                        title: place.name,
+                                        position: place.geometry.location
+                                    });
+
+                                    bounds.extend(place.geometry.location);
                                 }
-                                else {
-                                    yourPosition.setAnimation(google.maps.Animation.BOUNCE);
-                                }
+                                map.fitBounds(bounds);
                             }
-
 
                         });
                     // Go to Map

@@ -21,6 +21,7 @@ $tertiary-color: #670000;
 // BASIC CSS STYLE
 html,
 body,
+.continer,
 .row {
     margin: 0 auto;
     padding: 0;
@@ -37,12 +38,39 @@ body,
     flex-direction: column;
 }
 
+.col-xl-12,
+.col-xl-10,
+.col-xl-9,
+.col-xl-6,
+.col-xl-3,
+.col-xl-2,
 .col-lg-12,
-.col-xs-12,
-.col-sm-6,
+.col-lg-10,
+.col-lg-9,
+.col-lg-6,
+.col-lg-3,
+.col-lg-2,
+.col-md-12,
+.col-md-10,
+.col-md-9,
 .col-md-6,
-.col-lg-6 {
+.col-md-3,
+.col-md-2,
+.col-sm-12,
+.col-sm-10,
+.col-sm-9,
+.col-sm-6,
+.col-sm-3,
+.col-sm-2,
+.col-xs-12,
+.col-xs-10,
+.col-xs-9,
+.col-xs-6,
+.col-xs-3,
+.col-xs-2,
+    {
     padding: 0;
+    margin: 0;
 }
 
 h1 {
@@ -329,6 +357,14 @@ input[type="search"]::-webkit-search-cancel-button {
     }
 }
 
+@media (max-width: 550px) {
+    #mainbox_postcode {
+        width: 80%;
+        border: 2px solid $secondary-color;
+    }
+}
+
+
 @media (max-width: 480px) {
     .geoloc_button {
         margin-top: 20px;
@@ -490,6 +526,7 @@ input[type="search"]::-webkit-search-cancel-button {
         background: $tertiary-color!important;
         border-color: $tertiary-color!important;
     }
+    .findme_button {}
 }
 
 @media screen and (max-width: 480px) {
@@ -891,4 +928,11 @@ footer {
         --sBar_width: 320px;
         --gMap_width: calc(100% - var(--sBar_width)); // 100% - $sBar_width
     }
+}
+
+
+
+// google maps additional styles
+.gm-style-iw-d {
+    color: black;
 }
