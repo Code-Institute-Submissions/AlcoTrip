@@ -62,15 +62,13 @@ $("#reset_sliders").click(function() {
     $("#pubs_distance").html($("#pubs_dis_range").val() + "&nbsp;" + "Miles");
     $("#bars_distance").html($("#bars_dis_range").val() + "&nbsp;" + "Miles");
 });
+
 // Apply sliders changes when accepted
 $('#apply_sliders').click(function() {
-    clubs_range = $('#clubs_dis_range').val();
-    let pubs_range = $('#pubs_dis_range').val();
-    let bars_range = $('#bars_dis_range').val();
-
-
     initMap();
 });
+
+
 // donwload trip screenshot 
 $('#download').click(function() {
     // download as pdf function
@@ -134,15 +132,15 @@ function initMap() {
 
     // MARKERS
     const marker_my_pos = {
-        url: 'https://www.abovewave.kylos.pl/aclotrip_project/marker_mypos_white.png',
+        url: './assets/images/icons/marker_mypos_white.png',
         scaledSize: new google.maps.Size(40, 64),
     };
     const marker_clubs_pos = {
-        url: './assets/images/icons/marker_green.png',
+        url: './assets/images/icons/marker_red.png',
         scaledSize: new google.maps.Size(28, 45),
     };
     const marker_pubs_pos = {
-        url: './assets/images/icons/marker_orange.png',
+        url: './assets/images/icons/marker_yellow.png',
         scaledSize: new google.maps.Size(28, 45),
     };
     const marker_bars_pos = {
@@ -182,7 +180,7 @@ function initMap() {
                     $("#postcode_sidebar").html(myPostcode);
 
                     // Variables
-                    $.get(encodeURI("https://api.postcodes.io/postcodes/" + myPostcode))
+                    $.get(encodeURI("https://api.postcodes.io/postcodes/" + "nn82df")) //+ myPostcode))
                         .done(function(data) {
                             myLat = data.result['latitude'];
                             myLong = data.result['longitude'];
@@ -217,19 +215,24 @@ function initMap() {
                                 infowindow.open(map, this);
                             });
 
-                            var request = {
+
+
+
+                            let request = {
                                 location: myLocation,
                                 radius: clubs_range,
-                                query: 'night_club'
+                                query: 'bar' // 'night_club''pub' 'bar'
                             };
+
+
 
                             service = new google.maps.places.PlacesService(map);
                             service.textSearch(request, callback);
 
                             function callback(results, status) {
                                 if (status == google.maps.places.PlacesServiceStatus.OK) {
-                                    for (var i = 0; i < results.length; i++) {
-                                        var place = results[i];
+                                    for (let i = 0; i < results.length; i++) {
+                                        let place = results[i];
                                         createMarker(results[i]);
                                     }
                                 }
@@ -238,7 +241,7 @@ function initMap() {
                             function createMarker(place) {
                                 var marker = new google.maps.Marker({
                                     map: map,
-                                    icon: marker_bars_pos,
+                                    icon: marker_clubs_pos,
                                     animation: google.maps.Animation.Drop,
                                     position: place.geometry.location
                                 });
