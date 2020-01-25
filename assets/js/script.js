@@ -83,6 +83,7 @@ $('#exit_icon, #sidebar_logo, #sidebar_logo_top').click(function() {
     $('#map_container').addClass('hidden');
     $('#footer_main').removeClass('hidden');
     $("#mainbox_postcode").val("");
+    $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
 });
 // sweet alert for not valid postcode
 function notValidPostcode() {
