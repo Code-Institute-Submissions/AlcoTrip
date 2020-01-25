@@ -118,11 +118,11 @@ function geolocationError() {
 }*/
 
 function initMap() {
-    let map, service, infowindow, place, marker, postcodeValidation, myPostcode, myPostCode, checked_clubs, checked_bars, checked_pubs, clubs_range, pubs_range, bars_range;
+    let map, service, infowindow, marker, myLocation, mapOptions, postcodeValidation, myPostcode, myPostCode, checked_clubs, checked_bars, checked_pubs, clubs_range, pubs_range, bars_range;
 
-    clubs_range = ($('#clubs_dis_range').val() * 1.2) * 1000;
-    pubs_range = ($('#pubs_dis_range').val() * 1.2) * 1000;
-    bars_range = ($('#bars_dis_range').val() * 1.2) * 1000;
+    clubs_range = ($('#clubs_dis_range').val() * 1609.344);
+    pubs_range = ($('#pubs_dis_range').val() * 1609.344);
+    bars_range = ($('#bars_dis_range').val() * 1609.344);
 
     // MARKERS
     const marker_my_pos = {
@@ -179,9 +179,9 @@ function initMap() {
                             myLat = data.result['latitude'];
                             myLong = data.result['longitude'];
                             // current position from postcode - main variable
-                            let myLocation = { lat: myLat, lng: myLong };
+                            myLocation = { lat: myLat, lng: myLong };
                             // new map
-                            let mapOptions = {
+                            mapOptions = {
                                 zoom: 10,
                                 maxZoom: 18,
                                 minZoom: 10,
@@ -190,34 +190,14 @@ function initMap() {
                             };
 
                             infowindow = new google.maps.InfoWindow();
+
                             // CREATING MAP WITH OPTIONS
                             map = new google.maps.Map(document.getElementById('map'),
                                 mapOptions);
+
                             // Create the places service.
-                            var service = new google.maps.places.PlacesService(map);
+                            service = new google.maps.places.PlacesService(map);
 
-
-                            // Perform a nearby search.
-                            service.nearbySearch({ location: myLocation, radius: clubs_range, type: ['store'] },
-                                function(results, status) {
-                                    if (status !== 'OK') return;
-                                    createMarkers(results);
-                                });
-
-                            function createMarkers(places) {
-                                var bounds = new google.maps.LatLngBounds();
-                                for (var i = 0, place; place = places[i]; i++) {
-                                    marker = new google.maps.Marker({
-                                        map: map,
-                                        icon: marker_clubs_pos,
-                                        title: place.name,
-                                        position: place.geometry.location
-                                    });
-
-                                    bounds.extend(place.geometry.location);
-                                }
-                                map.fitBounds(bounds);
-                            }
                             // CREATE CURRENT POSITION MARKER
                             let yourPosition = new google.maps.Marker({
                                 icon: marker_my_pos,
@@ -225,12 +205,39 @@ function initMap() {
                                 animation: google.maps.Animation.DROP,
                                 map: map,
                             });
+
                             //SHOW NAME FOR CURRENT POSITION MARKER IN BOX
                             google.maps.event.addListener(yourPosition, 'click', function() {
                                 infowindow.setContent("You're here");
                                 infowindow.open(map, this);
                             });
 
+                            // Perform a nearby search.
+                            service.nearbySearch({ location: myLocation, radius: clubs_range, type: ['night_club'] },
+                                function(results, status) {
+                                    if (status !== 'OK') return;
+                                    createMarkers(results);
+                                });
+
+                            function createMarkers(places) {
+                                var bounds = new google.maps.LatLngBounds();
+                                for (let i = 0, place; place = places[i]; i++) {
+                                    marker = new google.maps.Marker({
+                                        map: map,
+                                        icon: marker_clubs_pos,
+                                        title: place.name,
+                                        animation: google.maps.Animation.DROP,
+                                        position: place.geometry.location
+                                    });
+                                    google.maps.event.addListener(marker, 'click', function() {
+                                        infowindow.setContent(place.name);
+                                        infowindow.open(map, this);
+                                    });
+                                    bounds.extend(place.geometry.location);
+                                }
+                                map.fitBounds(bounds);
+                                map.setCenter(myLocation);
+                            }
                         });
                     // Go to Map
                     $("#main_page_container, #postcode_error, #tickbox_missing, #footer_main").addClass("hidden");
