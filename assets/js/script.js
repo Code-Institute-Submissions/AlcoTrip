@@ -119,40 +119,50 @@ function geolocationError() {
 }*/
 
 function initMap() {
-    let map, service, request_clubs, request_pubs, request_bars, yourPosition, infowindow, marker, myLocation, mapOptions, postcodeValidation, myPostcode, myPostCode, checked_clubs, checked_bars, checked_pubs, clubs_range, pubs_range, bars_range;
+    let map, service, bounds, request_clubs, request_pubs, request_bars, yourPosition, infowindow, marker, myLocation, mapOptions, postcodeValidation, myPostcode, myPostCode, checked_clubs, checked_bars, checked_pubs, clubs_range, pubs_range, bars_range;
 
-    // 
+    // CALUCLATIONS FOR GOOGLE PLACES API - CONVERT MILES TO METERS
     clubs_range = ($('#clubs_dis_range').val() * 1609.344);
     pubs_range = ($('#pubs_dis_range').val() * 1609.344);
     bars_range = ($('#bars_dis_range').val() * 1609.344);
 
-    // 
+    // MY LOCATION MARKER ICON
     const marker_my_pos = {
         url: './assets/images/icons/marker_mypos_white.png',
         scaledSize: new google.maps.Size(40, 64),
     };
 
+    // CLUBS MARKER ICON
     const marker_clubs_pos = {
         url: './assets/images/icons/marker_red.png',
         scaledSize: new google.maps.Size(28, 45),
     };
+
+    // PUBS MARKER ICON
     const marker_pubs_pos = {
         url: './assets/images/icons/marker_yellow.png',
         scaledSize: new google.maps.Size(28, 45),
     };
+
+    // BARS MARKER ICON
     const marker_bars_pos = {
         url: './assets/images/icons/marker_blue.png',
         scaledSize: new google.maps.Size(28, 45),
     };
 
+    // POSTCODE VALUE
     myPostCode = $("#mainbox_postcode").val();
+
+    // CHECKBOXES VALUE FROM MAIN PAGE AS BOOOLEAN
     checked_clubs = $("#styled-checkbox-1").prop("checked");
     checked_bars = $("#styled-checkbox-3").prop("checked");
     checked_pubs = $("#styled-checkbox-2").prop("checked");
 
+    // MAIN STATEMENT - IF POSTCODE IS MISSING SHOW ERROR MESSAGE
     if (myPostCode == "") {
         mainPostcodeError();
     }
+    // CHECK IF ANY CHECKBOX IS TICKED - IF NOT SHOW ERROR MESSAGE
     else if (checked_clubs == false && checked_pubs == false && checked_bars == false) {
         $("#tickbox_missing").removeClass("hidden");
         $(".c_boxes").addClass("missing_e");
@@ -160,30 +170,37 @@ function initMap() {
             scrollTop: ($('#tickbox_missing_err').offset().top)
         }, 500);
     }
+    // IF ALL REQUIERD FIELDS ARE CHECKED AND HAVE VALUES DO THIS CODE
     else {
 
-        // passing value from postcode field to h3 selector
+        // PASS VALUE FROM MAIN PAGE POSTCODE FILED TO H3 SELECTOR IN SIDEBAR
         myPostcode = $("#mainbox_postcode").val();
         myPostcode = myPostcode.replace(/\s/g, "");
         myPostcode = String(myPostcode.toUpperCase());
 
-        //postcode validation
+        // USE POSTCODE.IO TO VALIDAE POSTCDE INFORMATION
         event.preventDefault();
         $.get(encodeURI("https://api.postcodes.io/postcodes/" + myPostcode + "/validate"))
             .done(function(data) {
 
+                // GET THE DATA FROM POSTCODE.IO RESULT 
                 postcodeValidation = data['result'];
+
+                // 
                 if (postcodeValidation) {
                     $("#postcode_sidebar").html(myPostcode);
 
-                    // Variables
+                    // GET LATITUDE AND LONGITUDE FROM POSTCODE.IO
                     $.get(encodeURI("https://api.postcodes.io/postcodes/" + myPostcode))
                         .done(function(data) {
+
+                            // LAT AND LONG VARIABLES
                             myLat = data.result['latitude'];
                             myLong = data.result['longitude'];
-                            // current position from postcode - main variable
+
+                            // CREATE MY LOCATION VARIABLE
                             myLocation = { lat: myLat, lng: myLong };
-                            // new map
+                            // NEW MAP OPTIONS
                             mapOptions = {
                                 zoom: 10,
                                 maxZoom: 18,
@@ -198,10 +215,11 @@ function initMap() {
                             map = new google.maps.Map(document.getElementById('map'),
                                 mapOptions);
 
-                            // Create the places service.
+                            // CREATE GOOGLE PLACES API SERVICE AND BOUNDS
                             service = new google.maps.places.PlacesService(map);
-                            let bounds = new google.maps.LatLngBounds();
-                            // CREATE CURRENT POSITION MARKER
+                            bounds = new google.maps.LatLngBounds();
+
+                            // CREATE CURRENT POSITION MARKER VARIABLE
                             yourPosition = new google.maps.Marker({
                                 icon: marker_my_pos,
                                 position: myLocation,
@@ -215,6 +233,7 @@ function initMap() {
                                 infowindow.open(map, this);
                             });
 
+                            // CLUBS, PUBS AND BARS REQUESTS - VARIABLES
                             request_clubs = {
                                 location: myLocation,
                                 radius: [clubs_range],
@@ -231,25 +250,26 @@ function initMap() {
                                 type: ['bar']
                             };
 
-                            // Perform a nearby search.
+                            // PERFORM A NEARBY SEARACH FOR CLUBS
                             service.nearbySearch(request_clubs,
                                 function(results, status) {
                                     if (status !== 'OK') return;
                                     CreatClubMarkers(results);
                                 });
-                            // Perform a nearby search.
+                            // PERFORM A NEARBY SEARACH FOR PUBS
                             service.nearbySearch(request_pubs,
                                 function(results, status) {
                                     if (status !== 'OK') return;
                                     CreatPubMarkers(results);
                                 });
-                            // Perform a nearby search.
+                            // PERFORM A NEARBY SEARACH FOR BARS
                             service.nearbySearch(request_bars,
                                 function(results, status) {
                                     if (status !== 'OK') return;
                                     CreatBarsMarkers(results);
                                 });
 
+                            // CREATE CLUBS MARKERS
                             function CreatClubMarkers(places) {
                                 for (let i = 0, place; place = places[i]; i++) {
                                     marker = new google.maps.Marker({
@@ -269,6 +289,7 @@ function initMap() {
                                 map.fitBounds(bounds);
                             }
 
+                            // CREATE PUBS MARKERS
                             function CreatPubMarkers(places) {
                                 for (let i = 0, place; place = places[i]; i++) {
                                     marker = new google.maps.Marker({
@@ -288,6 +309,7 @@ function initMap() {
                                 map.fitBounds(bounds);
                             }
 
+                            // CREATE BARS MARKERS
                             function CreatBarsMarkers(places) {
                                 for (let i = 0, place; place = places[i]; i++) {
                                     marker = new google.maps.Marker({
@@ -304,12 +326,12 @@ function initMap() {
                                     bounds.extend(place.geometry.location);
                                 }
 
-
+                                // FIT MAP TO BOUNDS AND CENTER INCLUDING MY LOCATION
                                 bounds.extend(myLocation);
                                 map.fitBounds(bounds);
                             }
                         });
-                    // Go to Map
+                    // GO TO THE MAIN PAGE
                     $("#main_page_container, #postcode_error, #tickbox_missing, #footer_main").addClass("hidden");
                     $("#map_container").addClass("map_main");
                     $("#map_container").removeClass("hidden");
@@ -317,7 +339,9 @@ function initMap() {
                     //$("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
                 }
                 else {
+                    // SHOW POSTCODE ERROR
                     mainPostcodeError();
+                    // SHOW INVALID POSTCODE ERROR
                     notValidPostcode();
                 }
             });
