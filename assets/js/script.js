@@ -119,17 +119,19 @@ function geolocationError() {
 }*/
 
 function initMap() {
-    let map, service, request, yourPosition, infowindow, marker, myLocation, mapOptions, postcodeValidation, myPostcode, myPostCode, checked_clubs, checked_bars, checked_pubs, clubs_range, pubs_range, bars_range;
+    let map, service, request_clubs, request_pubs, request_bars, yourPosition, infowindow, marker, myLocation, mapOptions, postcodeValidation, myPostcode, myPostCode, checked_clubs, checked_bars, checked_pubs, clubs_range, pubs_range, bars_range;
 
+    // 
     clubs_range = ($('#clubs_dis_range').val() * 1609.344);
     pubs_range = ($('#pubs_dis_range').val() * 1609.344);
     bars_range = ($('#bars_dis_range').val() * 1609.344);
 
-    // MARKERS
+    // 
     const marker_my_pos = {
         url: './assets/images/icons/marker_mypos_white.png',
         scaledSize: new google.maps.Size(40, 64),
     };
+
     const marker_clubs_pos = {
         url: './assets/images/icons/marker_red.png',
         scaledSize: new google.maps.Size(28, 45),
@@ -198,7 +200,7 @@ function initMap() {
 
                             // Create the places service.
                             service = new google.maps.places.PlacesService(map);
-
+                            let bounds = new google.maps.LatLngBounds();
                             // CREATE CURRENT POSITION MARKER
                             yourPosition = new google.maps.Marker({
                                 icon: marker_my_pos,
@@ -213,21 +215,42 @@ function initMap() {
                                 infowindow.open(map, this);
                             });
 
-                            request = {
+                            request_clubs = {
                                 location: myLocation,
-                                radius: clubs_range,
+                                radius: [clubs_range],
                                 type: ['night_club']
+                            };
+                            request_pubs = {
+                                location: myLocation,
+                                radius: [pubs_range],
+                                type: ['pub']
+                            };
+                            request_bars = {
+                                location: myLocation,
+                                radius: [bars_range],
+                                type: ['bar']
                             };
 
                             // Perform a nearby search.
-                            service.nearbySearch(request,
+                            service.nearbySearch(request_clubs,
                                 function(results, status) {
                                     if (status !== 'OK') return;
-                                    createMarkers(results);
+                                    CreatClubMarkers(results);
+                                });
+                            // Perform a nearby search.
+                            service.nearbySearch(request_pubs,
+                                function(results, status) {
+                                    if (status !== 'OK') return;
+                                    CreatPubMarkers(results);
+                                });
+                            // Perform a nearby search.
+                            service.nearbySearch(request_bars,
+                                function(results, status) {
+                                    if (status !== 'OK') return;
+                                    CreatBarsMarkers(results);
                                 });
 
-                            function createMarkers(places) {
-                                let bounds = new google.maps.LatLngBounds();
+                            function CreatClubMarkers(places) {
                                 for (let i = 0, place; place = places[i]; i++) {
                                     marker = new google.maps.Marker({
                                         map: map,
@@ -242,6 +265,45 @@ function initMap() {
                                     });
                                     bounds.extend(place.geometry.location);
                                 }
+                                bounds.extend(myLocation);
+                                map.fitBounds(bounds);
+                            }
+
+                            function CreatPubMarkers(places) {
+                                for (let i = 0, place; place = places[i]; i++) {
+                                    marker = new google.maps.Marker({
+                                        map: map,
+                                        icon: marker_pubs_pos,
+                                        title: place.name,
+                                        animation: google.maps.Animation.DROP,
+                                        position: place.geometry.location
+                                    });
+                                    google.maps.event.addListener(marker, 'click', function() {
+                                        infowindow.setContent(place.name);
+                                        infowindow.open(map, this);
+                                    });
+                                    bounds.extend(place.geometry.location);
+                                }
+                                bounds.extend(myLocation);
+                                map.fitBounds(bounds);
+                            }
+
+                            function CreatBarsMarkers(places) {
+                                for (let i = 0, place; place = places[i]; i++) {
+                                    marker = new google.maps.Marker({
+                                        map: map,
+                                        icon: marker_bars_pos,
+                                        title: place.name,
+                                        animation: google.maps.Animation.DROP,
+                                        position: place.geometry.location
+                                    });
+                                    google.maps.event.addListener(marker, 'click', function() {
+                                        infowindow.setContent(place.name);
+                                        infowindow.open(map, this);
+                                    });
+                                    bounds.extend(place.geometry.location);
+                                }
+
 
                                 bounds.extend(myLocation);
                                 map.fitBounds(bounds);
