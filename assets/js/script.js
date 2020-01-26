@@ -119,7 +119,7 @@ function geolocationError() {
 }*/
 
 function initMap() {
-    let map, service, infowindow, marker, myLocation, mapOptions, postcodeValidation, myPostcode, myPostCode, checked_clubs, checked_bars, checked_pubs, clubs_range, pubs_range, bars_range;
+    let map, service, request, yourPosition, infowindow, marker, myLocation, mapOptions, postcodeValidation, myPostcode, myPostCode, checked_clubs, checked_bars, checked_pubs, clubs_range, pubs_range, bars_range;
 
     clubs_range = ($('#clubs_dis_range').val() * 1609.344);
     pubs_range = ($('#pubs_dis_range').val() * 1609.344);
@@ -200,7 +200,7 @@ function initMap() {
                             service = new google.maps.places.PlacesService(map);
 
                             // CREATE CURRENT POSITION MARKER
-                            let yourPosition = new google.maps.Marker({
+                            yourPosition = new google.maps.Marker({
                                 icon: marker_my_pos,
                                 position: myLocation,
                                 animation: google.maps.Animation.DROP,
@@ -213,15 +213,21 @@ function initMap() {
                                 infowindow.open(map, this);
                             });
 
+                            request = {
+                                location: myLocation,
+                                radius: clubs_range,
+                                type: ['night_club']
+                            };
+
                             // Perform a nearby search.
-                            service.nearbySearch({ location: myLocation, radius: clubs_range, type: ['night_club'] },
+                            service.nearbySearch(request,
                                 function(results, status) {
                                     if (status !== 'OK') return;
                                     createMarkers(results);
                                 });
 
                             function createMarkers(places) {
-                                var bounds = new google.maps.LatLngBounds();
+                                let bounds = new google.maps.LatLngBounds();
                                 for (let i = 0, place; place = places[i]; i++) {
                                     marker = new google.maps.Marker({
                                         map: map,
@@ -236,8 +242,9 @@ function initMap() {
                                     });
                                     bounds.extend(place.geometry.location);
                                 }
+
+                                bounds.extend(myLocation);
                                 map.fitBounds(bounds);
-                                map.setCenter(myLocation);
                             }
                         });
                     // Go to Map
