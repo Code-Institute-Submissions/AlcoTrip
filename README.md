@@ -118,6 +118,7 @@ to check responsiveness of the site, pages layout change, how all elements are a
 * Testing design and responsivity of application on my phone and different screen sizes, shows that I needed to change sidebar width. Even when I've tested different widths using browser, it still was wrong on mobile.. I have used bootstrap code to simplify and get correect sidebar width on each device.
 * Based on all checks I've made changes to make navigation, fields, sliders and page layout more user friendly and easy to use to provide better user experience.
 * During testing the google maps places API, I found out that the icons doesn't really look good where displayed together on the map. I've changed the style of markers and they all have been replaced. To decide which colors they should have I've used [color calculator](https://www.sessions.edu/color-calculator/).
+
 Website responsiveness and element animating also was tested on diferrent browsers such as IE and Safari.
 
 ##### Main page:
