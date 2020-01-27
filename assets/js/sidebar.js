@@ -1,5 +1,8 @@
 //page loader function
-/* global $, browser_height */
+/* global $*/
+
+let browser_width = $(window).width();
+let browser_height = $(window).height();
 
 function hideElements() {
     $("#hint_hide, #main_sidebar, #sidebar_logo_top").addClass("hidden");
@@ -19,11 +22,14 @@ function hideElements() {
 }
 
 // Collaspe or expand sidebar
+
 $('#sidebar_collapse_icon').click(function() {
     let toggle_q = document.getElementById("sidebar_blue").clientWidth;
     let tmpAnimation = 0;
     let element = $("#sidebar_collapse_icon");
     let browser_height = $(window).height();
+
+
     switch (toggle_q) {
         // when wide sidebar is 360px width
         case 360:
