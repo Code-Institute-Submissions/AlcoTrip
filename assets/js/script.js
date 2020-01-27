@@ -33,13 +33,12 @@ $('#select_all_checkbox').click(function() {
     $(".c_boxes").removeClass("missing_e");
 });
 
-// Check all required fields,
-// pass the postcode value to H3 on map page and start trip.
+// START BUTTON - MAIN PAGE - RUN MAIN SCRIPT
 $('#start_trip_button').click(function() {
     initMap();
 });
 
-// Sidebar sliders - listeners
+// SIDEBAR SLIDERS - LISTENERS
 $(document).on("input change", "#clubs_dis_range", function() {
     $("#clubs_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
@@ -50,7 +49,7 @@ $(document).on("input change", "#bars_dis_range", function() {
     $("#bars_distance").html($(this).val() + "&nbsp;" + "Miles");
 });
 
-// Reset sliders to "50 Miles" - value
+// RESET SLIDER VALUES
 $("#reset_sliders").click(function() {
     $("#clubs_dis_range, #pubs_dis_range, #bars_dis_range").val("");
     $("#clubs_distance").html($("#clubs_dis_range").val() + "&nbsp;" + "Miles");
@@ -58,12 +57,12 @@ $("#reset_sliders").click(function() {
     $("#bars_distance").html($("#bars_dis_range").val() + "&nbsp;" + "Miles");
 });
 
-// Apply sliders changes when accepted
+// APPLY SLIDERS CHANGE
 $('#apply_sliders').click(function() {
     initMap();
 });
 
-// donwload trip screenshot 
+// DOWNLOAD TRIP BUTTON - DOWNLOAD SCREENSHOT
 $('#download').click(function() {
     // download as pdf function
     // when downloaded show allert box
