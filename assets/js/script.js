@@ -1,7 +1,6 @@
 //page loader function
 /* global $, global Swal, google*/
 /* global, gLat, gLong */
-let myLat, myLong;
 
 // Find user location based on geolocalization from google
 $('#findme_button').click(function() {
@@ -105,21 +104,8 @@ function mainPostcodeError() {
     }, 500);
 }
 
-// sweet alert for geolocation error 
-/*
-function geolocationError() {
-    Swal.fire({
-        position: 'warning',
-        type: 'error',
-        title: 'Error..',
-        text: 'Geolocation is not supported by this browser.',
-        showConfirmButton: false,
-        timer: 2000
-    });
-}*/
-
 function initMap() {
-    let map, service, bounds, request_clubs, request_pubs, request_bars, yourPosition, infowindow, marker, myLocation, mapOptions, postcodeValidation, myPostcode, myPostCode, checked_clubs, checked_bars, checked_pubs, clubs_range, pubs_range, bars_range;
+    let map, myLat, myLong, service, bounds, request_clubs, request_pubs, request_bars, yourPosition, infowindow, marker, myLocation, mapOptions, postcodeValidation, myPostcode, myPostCode, checked_clubs, checked_bars, checked_pubs, clubs_range, pubs_range, bars_range;
 
     // CALUCLATIONS FOR GOOGLE PLACES API - CONVERT MILES TO METERS
     clubs_range = ($('#clubs_dis_range').val() * 1609.344);
@@ -250,25 +236,6 @@ function initMap() {
                                 type: ['bar']
                             };
 
-                            // PERFORM A NEARBY SEARACH FOR CLUBS
-                            service.nearbySearch(request_clubs,
-                                function(results, status) {
-                                    if (status !== 'OK') return;
-                                    CreatClubMarkers(results);
-                                });
-                            // PERFORM A NEARBY SEARACH FOR PUBS
-                            service.nearbySearch(request_pubs,
-                                function(results, status) {
-                                    if (status !== 'OK') return;
-                                    CreatPubMarkers(results);
-                                });
-                            // PERFORM A NEARBY SEARACH FOR BARS
-                            service.nearbySearch(request_bars,
-                                function(results, status) {
-                                    if (status !== 'OK') return;
-                                    CreatBarsMarkers(results);
-                                });
-
                             // CREATE CLUBS MARKERS
                             function CreatClubMarkers(places) {
                                 for (let i = 0, place; place = places[i]; i++) {
@@ -330,6 +297,25 @@ function initMap() {
                                 bounds.extend(myLocation);
                                 map.fitBounds(bounds);
                             }
+
+                            // PERFORM A NEARBY SEARACH FOR CLUBS
+                            service.nearbySearch(request_clubs,
+                                function(results, status) {
+                                    if (status !== 'OK') return;
+                                    CreatClubMarkers(results);
+                                });
+                            // PERFORM A NEARBY SEARACH FOR PUBS
+                            service.nearbySearch(request_pubs,
+                                function(results, status) {
+                                    if (status !== 'OK') return;
+                                    CreatPubMarkers(results);
+                                });
+                            // PERFORM A NEARBY SEARACH FOR BARS
+                            service.nearbySearch(request_bars,
+                                function(results, status) {
+                                    if (status !== 'OK') return;
+                                    CreatBarsMarkers(results);
+                                });
                         });
                     // GO TO THE MAIN PAGE
                     $("#main_page_container, #postcode_error, #tickbox_missing, #footer_main").addClass("hidden");
