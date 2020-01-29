@@ -11,13 +11,13 @@ They can also use the input field, if they want to search for places with differ
 > If you decided to share your AlcoTrip with your friends, simply click download button and share!
 
 ## Technologies Used
-  * [HTML5](https://en.wikipedia.org/wiki/HTML5) 
-  * [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) 
+  * [HTML](https://en.wikipedia.org/wiki/HTML5) 
+  * [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) 
   * [SASS](https://sass-lang.com/) 
   * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) 
   * [jQuery](https://jquery.com/) 
   * [Bootstrap](https://getbootstrap.com/) 
-  * [Photoshop CC 2019](https://www.photoshop.com/) 
+  * [Photoshop](https://www.photoshop.com/) 
   * [Google Maps](https://developers.google.com/maps/documentation/geolocation/intro) 
   * [Google Places](https://developers.google.com/places/web-service/intro) 
   * [Google Fonts](https://fonts.google.com/)
@@ -26,10 +26,10 @@ They can also use the input field, if they want to search for places with differ
  
 ## Visiuals
 > Main Page - website main view
-<img src="http://www.abovewave.kylos.pl/aclotrip_project/MainPage_View.png" style="widt:100%;">
+<img src="https://www.abovewave.kylos.pl/aclotrip_project/MainPage_View.png" style="widt:100%;">
 
 > Result Page - website view with postcode applied
-<img src="http://www.abovewave.kylos.pl/aclotrip_project/AlcoTrip_Screenshot.png" style="widt:100%;">
+<img src="https://www.abovewave.kylos.pl/aclotrip_project/AlcoTrip_Screenshot.png" style="widt:100%;">
 
 
 ## User Stories
@@ -53,7 +53,9 @@ They can also use the input field, if they want to search for places with differ
  - [x] Google Places API
  - [x] Sliders - Changing distance range
  
-#### Upcoming features to improve user experience and website usability based on user testing and stories.
+#### Upcoming features to implement (improving user experience and website usability based on testing ).
+ - [ ] Changing the postcode without going back to main page by clicking on "Your postcode: result" on sidebar
+ - [ ] Changing choice of location searching without goign back to main page
  - [ ] Easy share - buttons with auto share links based on user information provided
  - [ ] User accounts - Creating, Loign, Removing
  - [ ] Adding/Inviting friends to your "AlcoTrip"
@@ -77,6 +79,8 @@ Logo also has a thunder sign which was created in photoshop. It is a simbolical 
 * I've used two contrasting colors yellow and white. These colors "stands out" from the bakground and they are making design more clear and readable for users.
 * Dark red color has been used for buttons highlightining only to notify users about canceling or reseting values.
 
+[Colours used in the project](https://www.abovewave.kylos.pl/aclotrip_project/ColoursUsed.png)
+
 #### Font
 * I've used is <strong>Roboto</strong>, it's well design, simple and easy to read. [See font](https://fonts.google.com/?query=Roboto)\
 The second replacing font is <strong>San-Serif</strong>.
@@ -97,11 +101,7 @@ The second replacing font is <strong>San-Serif</strong>.
 
 I created wireframes in Balsamiq mockups 3. When I've started to creating the project wireframes have been really simple and show only scetch of the project. While making real project I've changed style and I've added more colors, text and pictures to visualize content of the page and sidebar.
 
-View my wireframes here.
-
-* Desktops [Main Page](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_desktop_main.png) - [Map](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_desktop_map.png)
-* Tablets [Main Page](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_tablet_main.png) - [Map](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_tablet_map.png)
-* Phones [Main Page](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_phone_main.png) - [Map](http://www.abovewave.kylos.pl/aclotrip_project/wireframe_phone_map.png)
+You can view my wireframes in wireframs folder as a part of the project materials.
 
 
 ## Testing
