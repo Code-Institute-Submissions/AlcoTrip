@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800");
+@import url('https://fonts.googleapis.com/css?family="Roboto":100,200,300,400,500,600,700,800');
 .m-title-light {
-  font-family: Roboto, san-serif;
+  font-family: "Roboto", san-serif;
   font-size: 24px; }
 
 .m-title-medium {
-  font-family: Roboto, san-serif;
+  font-family: "Roboto", san-serif;
   font-size: 32px; }
 
 .m-title-big {
-  font-family: Roboto, san-serif;
+  font-family: "Roboto", san-serif;
   font-size: 4vw; }
 
 .mtb-space {
@@ -16,7 +16,7 @@
 
 .p-text-light {
   color: #fff;
-  font-family: Roboto, san-serif;
+  font-family: "Roboto", san-serif;
   font-size: 12px;
   font-weight: 100; }
 
@@ -27,15 +27,15 @@
   letter-spacing: 1px; }
 
 .p-text-light2 {
-  font-family: Roboto, san-serif;
+  font-family: "Roboto", san-serif;
   font-size: 16px; }
 
 .p-text-medium {
-  font-family: Roboto, san-serif;
+  font-family: "Roboto", san-serif;
   font-size: 16px; }
 
 .p-text-big {
-  font-family: Roboto, san-serif;
+  font-family: "Roboto", san-serif;
   font-size: 18px; }
 
 .ptm-space {
@@ -72,7 +72,7 @@
 
 .hint_s_style, .marker_style_wide .slider_container .range_info_container .range_info, .marker_style_wide .slider_container .range_info_container .range_number, .marker_style_wide .inf_container .your_info, .marker_style_wide .inf_container .postcode_info, .result_value {
   color: #fff;
-  font-family: Roboto, san-serif;
+  font-family: "Roboto", san-serif;
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.8px; }
@@ -186,43 +186,12 @@ body,
   right: 0;
   height: 100%;
   width: 100%;
-  min-height: 100%;
-  min-width: 100%;
   color: #fff;
   background-color: #2E4A63;
   display: flex;
   flex-direction: column; }
 
-.col-xl-12,
-.col-xl-10,
-.col-xl-9,
-.col-xl-6,
-.col-xl-3,
-.col-xl-2,
-.col-lg-12,
-.col-lg-10,
-.col-lg-9,
-.col-lg-6,
-.col-lg-3,
-.col-lg-2,
-.col-md-12,
-.col-md-10,
-.col-md-9,
-.col-md-6,
-.col-md-3,
-.col-md-2,
-.col-sm-12,
-.col-sm-10,
-.col-sm-9,
-.col-sm-6,
-.col-sm-3,
-.col-sm-2,
-.col-xs-12,
-.col-xs-10,
-.col-xs-9,
-.col-xs-6,
-.col-xs-3,
-.col-xs-2 {
+.col-* {
   padding: 0;
   margin: 0; }
 
@@ -251,7 +220,8 @@ p {
   vertical-align: middle; }
 
 .hidden {
-  visibility: hidden; }
+  visibility: hidden;
+  top: -1000px; }
 
 a {
   color: #fff;
