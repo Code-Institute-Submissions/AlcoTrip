@@ -154,7 +154,7 @@ Some display issues were found with browsers: IE and Safari, regarding using SAS
 [AWS Cloud9](https://aws.amazon.com/cloud9/) - A cloud IDE for writing, running, and debugging code
     
 ## Credits / Acknowledgement
-This project name and logotype was created and designed by Karol Sliwka, all rights reserved.\
+This project, icons, logotype and all other assets were created and designed by Karol Sliwka for educational purposes.\
 Information/texts and icons in this project were written and designed by the developer.
 
 Very Special Thanks to:
