@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family="Roboto":100,200,300,400,500,600,700,800');
+
+// itle style
+.m-title-light {
+    font-family: "Roboto", san-serif;
+    font-size: 24px;
+}
+
+.m-title-medium {
+    font-family: "Roboto", san-serif;
+    font-size: 32px;
+}
+
+.m-title-big {
+    font-family: "Roboto", san-serif;
+    font-size: 4vw
+}
+
+
+.mtb-space {
+    margin-left: 5vw;
+}
+
+
+// paragraphs styles
+.p-text-light {
+    color: #fff;
+    font-family: "Roboto", san-serif;
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.p-text-light1 {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.p-text-light2 {
+    font-family: "Roboto", san-serif;
+    font-size: 16px;
+}
+
+.p-text-medium {
+    font-family: "Roboto", san-serif;
+    font-size: 16px;
+}
+
+.p-text-big {
+    font-family: "Roboto", san-serif;
+    font-size: 18px;
+}
+
+.ptm-space {
+    margin-top: -10px;
+    margin-left: 5vw;
+    text-align: right;
+}
+
+.message_e {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+// bold styles
+.bold1 {
+    font-weight: 500;
+}
+
+
+.bold2 {
+    font-weight: 600;
+}
+
+
+.bold3 {
+    font-weight: 700;
+}
+
+
+.bold4 {
+    font-weight: 800;
+}
+
+// uppercase/lowercase styles
+.upper {
+    text-transform: uppercase;
+}
+
+.lower {
+    text-transform: lowercase;
+}
+
+.font_space {
+    margin-left: 20px;
+
+}
+
+// hint & info text styles
+.hint_s_style {
+    color: #fff;
+    font-family: "Roboto", san-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+}
+
+.result_title {
+    font-size: 14px;
+}
