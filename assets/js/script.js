@@ -1,4 +1,3 @@
-//page loader function
 /* global $, global Swal, google*/
 /* global, gLat, gLong */
 

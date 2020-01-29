@@ -1,5 +1,4 @@
-//page loader function
-/* global $*/
+/* global $ */
 
 let browser_width = $(window).width();
 let browser_height = $(window).height();
@@ -9,17 +8,26 @@ let browser_height = $(window).height();
 
 function hideElements() {
     $('#collapse_icon').html('show');
-    $('#location_result, #slider_c, #slider_p, #slider_b, #sidebar_buttons').addClass('hidden');
+    $('#location_result, #slider_c, #slider_p, #slider_b, #sidebar_buttons,#sidebar_separate_line, #sidebar_logo, #sidebar_copyrights').addClass('hidden');
 }
 
 function showElements() {
     $('#collapse_icon').html('hide');
-    $('#location_result, #slider_c, #slider_p, #slider_b, #sidebar_buttons').RemoveClass('hidden');
+    $('#location_result, #slider_c, #slider_p, #slider_b, #sidebar_buttons,#sidebar_separate_line, #sidebar_logo, #sidebar_copyrights').removeClass('hidden');
 }
+
+
+
+
+
+
+
+
+
 
 // MINIMIZE AND MAXIMIZE SIDEBAR - MAIN FUNCTION 
 $('#sidebar_collapse_icon').click(function() {
-    let toggle_q = document.getElementById("sidebar_blue").clientWidth;
+    let toggle_q = $("#sidebar_blue").width();
     let tmpAnimation = 0;
     let element = $("#sidebar_collapse_icon");
 
@@ -39,6 +47,19 @@ $('#sidebar_collapse_icon').click(function() {
                 }
             });
             hideElements();
+            break;
+        case 70:
+            document.documentElement.style
+                .setProperty("--sBar_width", "360px");
+            $({ degrees: tmpAnimation + 180 }).animate({ degrees: tmpAnimation }, {
+                duration: 300,
+                step: function(now) {
+                    element.css({
+                        transform: 'rotate(' + now + 'deg)'
+                    });
+                }
+            });
+            showElements();
             break;
     }
 });
