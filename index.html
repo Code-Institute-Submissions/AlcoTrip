@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Single page application for 2nd Milestone Project - Code Inistitute, Full Stack Developer Course">
+    <meta name="description" content="Single page application for 2nd Milestone Project - Code Inistitute, Full Stack Developer Course. Project created for educational purposes.">
     <meta name="keywords" content="alco, trip, alcohol, restaurant, pub, bar, club, disco, friends, friend, people, town, near, place, postcode, party, drink, night, happiness, visiting, girls, ladies, boys, gentleman, women">
     <meta name="author" content="Karol Sliwka">
     <meta name="copyright" content="Karol Sliwka, hello@abovewave.co.uk">
@@ -18,7 +18,7 @@
 
 <body>
     <div id="main_page_container">
-        <!-- hidden only to work with map page-->
+        <!-- hidden class only to work with map page-->
         <!-- header with logotype -->
         <header class="container">
             <div class="row">
@@ -66,18 +66,18 @@
                                 <ul class="lead lead-edit bold1">
                                     <!-- Clubs checkbox -->
                                     <li>
-                                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
-                                        <label for="styled-checkbox-1">Clubs</label>
+                                        <input class="styled-checkbox" id="clubs_checkbox" type="checkbox" value="clubs_value">
+                                        <label for="clubs_checkbox">Clubs</label>
                                     </li>
                                     <!-- Bars checkbox -->
                                     <li>
-                                        <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
-                                        <label for="styled-checkbox-2">Pubs</label>
+                                        <input class="styled-checkbox" id="pubs_checkbox" type="checkbox" value="pubs_value">
+                                        <label for="pubs_checkbox">Pubs</label>
                                     </li>
                                     <!-- Pubs checkbox -->
                                     <li>
-                                        <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value3">
-                                        <label for="styled-checkbox-3">Bars</label>
+                                        <input class="styled-checkbox" id="bars_checkbox" type="checkbox" value="bars_value">
+                                        <label for="bars_checkbox">Bars</label>
                                     </li>
                                 </ul>
                             </div>
@@ -111,10 +111,10 @@
             <div class="top_logo_line">
                 <!--left corner - logotype-->
                 <div id="logotype_sidebar_top" class="logotype_top">
-                    <div class="logo_sidebar_img"><img id="sidebar_logo_top" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo" style="cursor:pointer;"></div>
+                    <div class="logo_sidebar_img cursor-style"><img id="sidebar_logo_top" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo"></div>
                 </div>
                 <!-- minimize icon container-->
-                <div class="collapse_sidebar" style="cursor: pointer;">
+                <div class="collapse_sidebar cursor-style">
                     <img id="sidebar_collapse_icon" src="assets/images/icons/minimize_button.png" alt="minimize sidebar button">
                     <label id="collapse_icon" class="hint_s_style">hide</label>
                 </div>
@@ -144,10 +144,10 @@
                     </div>
                     <div id="download" class="download_button">
                         <span class="tiptext">Download Your Trip</span>
-                        <img src="assets/images/icons/download.png" alt="download button" style="cursor: pointer;">
+                        <img class="cursor-style" src="assets/images/icons/download.png" alt="download button">
                         <label id="hint_download" class="hint_s_style">Save</label>
                     </div>
-                    <div class="bottom_exit" style="cursor: pointer;">
+                    <div class="bottom_exit cursor-style">
                         <div class="exit_sSidebar">
                             <img id="exit_icon" class="close_map" src="assets/images/icons/close.svg" alt="exit icon/small sidebar">
                         </div>
@@ -222,7 +222,7 @@
                         <!-- logotype container -->
                         <div id="logotype_sidebar" class="logotype">
                             <div class="logo_sidebar">
-                                <img id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo" style="cursor:pointer;">
+                                <img class="cursor-style" id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo">
                             </div>
                         </div>
                         <!-- copyright area -->
