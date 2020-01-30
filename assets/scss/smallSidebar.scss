@@ -1,10 +1,14 @@
-// CLASSES and VARIABLES
+/* main color variables */
+
 $primary-color: #2E4A63;
 $secondary-color: #ffb400;
 $primary-font: #ffffff;
 $secondary-font: #000000;
 
-// STYLE - 768px[+]
+/* style for 768px wide */
+
+/* inherited variables for extension in classes */
+
 %m_little_style {
     width: 60px;
     height: 60px;
@@ -33,6 +37,7 @@ $secondary-font: #000000;
     visibility: hidden;
 }
 
+/* main sidebar classes */
 
 .small_sidebar_main {
     width: 100%;
@@ -60,33 +65,13 @@ $secondary-font: #000000;
 
 }
 
-#hint_position,
-#hint_clubs,
-#hint_pubs,
-#hint_bars,
-#hint_download {
+#position_label,
+    {
     width: 100%;
     display: inline-block;
 }
 
-.side_line {
-    background-color: #fff;
-    height: 1px;
-    @extend %basic_margin;
-}
-
-.download_button {
-    @extend %m_little_style;
-    position: absolute;
-    bottom: 60px;
-    img {
-        @extend %marker_style;
-    }
-    .tiptext {
-        @extend %tiptext_style;
-    }
-
-}
+/* sidebar closing cross icon */
 
 .bottom_exit {
     .exit_sSidebar {
@@ -104,23 +89,4 @@ $secondary-font: #000000;
             }
         }
     }
-}
-
-.little_iPosition:hover .tiptext_h,
-.little_iClubs:hover .tiptext_h,
-.little_iPubs:hover .tiptext_h,
-.little_iBars:hover .tiptext_h,
-.download_button:hover .tiptext_h {
-    visibility: visible;
-}
-
-.little_iPosition:hover .tiptext_s,
-.little_iClubs:hover .tiptext_s,
-.little_iPubs:hover .tiptext_s,
-.little_iBars:hover .tiptext_s {
-    visibility: visible;
-}
-
-.download_button:hover .tiptext {
-    visibility: visible;
 }
