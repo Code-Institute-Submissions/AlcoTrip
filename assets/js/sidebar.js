@@ -1,19 +1,25 @@
 /* global $ */
 
-let browser_width = $(window).width();
-let browser_height = $(window).height();
+/* browser width and height variables */
+let browserWidth = $(window).width();
+let browserHeight = $(window).height();
 
-//console.log(browser_height);
-//console.log(browser_width);
+console.log(browserHeight);
+console.log(browserWidth);
 
+/**
+ * This function will hide elements on side bar
+ */
 function hideElements() {
     $('#collapse_icon').html('show');
-    $('#location_result, #slider_c, #slider_p, #slider_b, #sidebar_buttons,#sidebar_separate_line, #sidebar_logo, #sidebar_copyrights').addClass('hidden');
+    $('.sidebar_elements').addClass('hidden');
 }
-
+/**
+ * This function will show elements on side bar
+ */
 function showElements() {
     $('#collapse_icon').html('hide');
-    $('#location_result, #slider_c, #slider_p, #slider_b, #sidebar_buttons,#sidebar_separate_line, #sidebar_logo, #sidebar_copyrights').removeClass('hidden');
+    $('.sidebar_elements').removeClass('hidden');
 }
 
 
@@ -24,8 +30,9 @@ function showElements() {
 
 
 
-
-// MINIMIZE AND MAXIMIZE SIDEBAR - MAIN FUNCTION 
+/**
+ * This function will change the size of the sidebar when width point is match
+ */
 $('#sidebar_collapse_icon').click(function() {
     let toggle_q = $("#sidebar_blue").width();
     let tmpAnimation = 0;
@@ -33,7 +40,6 @@ $('#sidebar_collapse_icon').click(function() {
 
 
     switch (toggle_q) {
-        // when wide sidebar is 360px width
         case 360:
             document.documentElement.style
                 .setProperty("--sBar_width", "70px");
