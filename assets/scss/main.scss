@@ -1,7 +1,6 @@
 // IMPORT STYLES
 @import './fontstyles.scss';
 @import './smallSidebar.scss';
-
 // MAIN VARIABLES
 $primary-color: #2E4A63;
 $secondary-color: #ffb400;
@@ -36,13 +35,13 @@ body,
     flex-direction: column;
 }
 
-.col-* {
+.col- {
     padding: 0;
     margin: 0;
 }
 
 h1 {
-    font-size: 2.2em;
+    font-size: 2.25rem;
 }
 
 h2 {
@@ -328,7 +327,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 @media (max-width: 550px) {
     #mainbox_postcode {
-        width: 80%;
+        width: 100%;
         border: 2px solid $secondary-color;
     }
 }
@@ -526,7 +525,7 @@ input[type="search"]::-webkit-search-cancel-button {
 // ICONS AND CALCULATIONS
 :root {
 
-    --sBar_width: 360px;
+    --sBar_width: 360px; //70px small to be show first
     --gMap_width: calc(100% - var(--sBar_width)); // 100% - $sBar_width
 }
 
@@ -902,4 +901,8 @@ footer {
 // google maps additional styles
 .gm-style-iw-d {
     color: black;
+}
+
+.cursor-style {
+    cursor: pointer;
 }

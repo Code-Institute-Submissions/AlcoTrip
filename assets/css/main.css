@@ -1,75 +1,31 @@
+/*import google fonts*/
 @import url('https://fonts.googleapis.com/css?family="Roboto":100,200,300,400,500,600,700,800');
-.m-title-light {
-  font-family: "Roboto", san-serif;
-  font-size: 24px; }
-
-.m-title-medium {
-  font-family: "Roboto", san-serif;
-  font-size: 32px; }
-
-.m-title-big {
-  font-family: "Roboto", san-serif;
-  font-size: 4vw; }
-
-.mtb-space {
-  margin-left: 5vw; }
-
-.p-text-light {
-  color: #fff;
-  font-family: "Roboto", san-serif;
-  font-size: 12px;
-  font-weight: 100; }
-
+/* main paragraph style */
 .p-text-light1 {
   color: #fff;
   font-size: 13px;
   font-weight: 200;
   letter-spacing: 1px; }
 
-.p-text-light2 {
-  font-family: "Roboto", san-serif;
-  font-size: 16px; }
-
-.p-text-medium {
-  font-family: "Roboto", san-serif;
-  font-size: 16px; }
-
-.p-text-big {
-  font-family: "Roboto", san-serif;
-  font-size: 18px; }
-
-.ptm-space {
-  margin-top: -10px;
-  margin-left: 5vw;
-  text-align: right; }
-
+/* error message style */
 .message_e {
   color: #fff;
   font-size: 14px;
   font-weight: 200;
   letter-spacing: 1px; }
 
+/* main font wieght style */
 .bold1 {
   font-weight: 500; }
 
-.bold2 {
-  font-weight: 600; }
-
-.bold3 {
-  font-weight: 700; }
-
-.bold4 {
-  font-weight: 800; }
-
+/* Uppercase and Lowercase styles */
 .upper {
   text-transform: uppercase; }
 
 .lower {
   text-transform: lowercase; }
 
-.font_space {
-  margin-left: 20px; }
-
+/* Sidebar label style - below icon */
 .hint_s_style, .marker_style_wide .slider_container .range_info_container .range_info, .marker_style_wide .slider_container .range_info_container .range_number, .marker_style_wide .inf_container .your_info, .marker_style_wide .inf_container .postcode_info, .result_value {
   color: #fff;
   font-family: "Roboto", san-serif;
@@ -77,13 +33,11 @@
   font-weight: 400;
   letter-spacing: 0.8px; }
 
-.result_title {
-  font-size: 14px; }
-
+/* inherited variables for extension in classes */
 .small_sidebar_main .little_iPosition,
 .small_sidebar_main .little_iClubs,
 .small_sidebar_main .little_iPubs,
-.small_sidebar_main .little_iBars, .download_button {
+.small_sidebar_main .little_iBars {
   width: 60px;
   height: 60px;
   padding: 0;
@@ -94,7 +48,7 @@
 .small_sidebar_main .little_iPosition img,
 .small_sidebar_main .little_iClubs img,
 .small_sidebar_main .little_iPubs img,
-.small_sidebar_main .little_iBars img, .download_button img {
+.small_sidebar_main .little_iBars img {
   width: 24px; }
 
 .small_sidebar_main .little_iPosition .tiptext_h,
@@ -103,7 +57,7 @@
 .small_sidebar_main .little_iBars .tiptext_h, .small_sidebar_main .little_iPosition .tiptext_s,
 .small_sidebar_main .little_iClubs .tiptext_s,
 .small_sidebar_main .little_iPubs .tiptext_s,
-.small_sidebar_main .little_iBars .tiptext_s, .download_button .tiptext {
+.small_sidebar_main .little_iBars .tiptext_s {
   width: 160px;
   color: #2E4A63;
   background-color: #ffffff;
@@ -117,6 +71,7 @@
   z-index: 1;
   visibility: hidden; }
 
+/* main sidebar classes */
 .small_sidebar_main {
   width: 100%;
   height: 100%;
@@ -125,22 +80,11 @@
     width: 100%;
     height: 100%; }
 
-#hint_position,
-#hint_clubs,
-#hint_pubs,
-#hint_bars,
-#hint_download {
+#position_label {
   width: 100%;
   display: inline-block; }
 
-.side_line {
-  background-color: #fff;
-  height: 1px; }
-
-.download_button {
-  position: absolute;
-  bottom: 60px; }
-
+/* sidebar closing cross icon */
 .bottom_exit .exit_sSidebar .close_map {
   width: 30px;
   height: 40px;
@@ -153,23 +97,7 @@
     width: 30px;
     height: 30px; }
 
-.little_iPosition:hover .tiptext_h,
-.little_iClubs:hover .tiptext_h,
-.little_iPubs:hover .tiptext_h,
-.little_iBars:hover .tiptext_h,
-.download_button:hover .tiptext_h {
-  visibility: visible; }
-
-.little_iPosition:hover .tiptext_s,
-.little_iClubs:hover .tiptext_s,
-.little_iPubs:hover .tiptext_s,
-.little_iBars:hover .tiptext_s {
-  visibility: visible; }
-
-.download_button:hover .tiptext {
-  visibility: visible; }
-
-.side_line, .auto-margin, .separate_line, .separate_line1, .postcode, .formsubmition, .search_options, .copyrights {
+.auto-margin, .separate_line, .separate_line1, .postcode, .formsubmition, .search_options, .copyrights {
   margin: auto; }
 
 .auto-margin {
@@ -191,12 +119,12 @@ body,
   display: flex;
   flex-direction: column; }
 
-.col-* {
+.col- {
   padding: 0;
   margin: 0; }
 
 h1 {
-  font-size: 2.2em; }
+  font-size: 2.25rem; }
 
 h2 {
   font-size: 2.0em; }
@@ -382,7 +310,7 @@ input[type="search"]::-webkit-search-cancel-button {
     border-color: #670000; } }
 @media (max-width: 550px) {
   #mainbox_postcode {
-    width: 80%;
+    width: 100%;
     border: 2px solid #ffb400; } }
 @media (max-width: 480px) {
   .geoloc_button {
@@ -821,5 +749,8 @@ footer {
     --gMap_width: calc(100% - var(--sBar_width)); } }
 .gm-style-iw-d {
   color: black; }
+
+.cursor-style {
+  cursor: pointer; }
 
 /*# sourceMappingURL=main.css.map */
