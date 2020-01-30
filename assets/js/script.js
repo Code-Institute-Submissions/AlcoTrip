@@ -18,14 +18,14 @@ $('#findme_button').click(function() {
 
 // Clear all checboxes and hidden error message
 $('#unselect_all_checkbox').click(function() {
-    $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
+    $(".styled-checkbox").prop("checked", false);
     // clear errors
     $("#tickbox_missing").addClass("hidden");
     $(".c_boxes").removeClass("missing_e");
 });
 // Select all checboxes and clear hidden error message
 $('#select_all_checkbox').click(function() {
-    $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", true);
+    $(".styled-checkbox").prop("checked", true);
     // clear errors
     $("#tickbox_missing").addClass("hidden");
     $("#tickbox_missing").removeClass("text-muted1");
@@ -61,19 +61,6 @@ $('#apply_sliders').click(function() {
     initMap();
 });
 
-// DOWNLOAD TRIP BUTTON - DOWNLOAD SCREENSHOT
-$('#download').click(function() {
-    // download as pdf function
-    // when downloaded show allert box
-    Swal.fire({
-        position: 'center',
-        type: 'success',
-        title: 'Your AlcoTrip has been saved',
-        text: 'check your "downloads" folder',
-        showConfirmButton: false,
-        timer: 2500
-    });
-});
 // Close map function ( red corss - button )
 $('#exit_icon, #sidebar_logo, #sidebar_logo_top').click(function() {
     $('#main_page_container').removeClass('hidden');
@@ -138,9 +125,9 @@ function initMap() {
     myPostCode = $("#mainbox_postcode").val();
 
     // CHECKBOXES VALUE FROM MAIN PAGE AS BOOOLEAN
-    checked_clubs = $("#styled-checkbox-1").prop("checked");
-    checked_bars = $("#styled-checkbox-3").prop("checked");
-    checked_pubs = $("#styled-checkbox-2").prop("checked");
+    checked_clubs = $("#clubs_checkbox").prop("checked");
+    checked_bars = $("#pubs_checkbox").prop("checked");
+    checked_pubs = $("#bars_checkbox").prop("checked");
 
     // MAIN STATEMENT - IF POSTCODE IS MISSING SHOW ERROR MESSAGE
     if (myPostCode == "") {
