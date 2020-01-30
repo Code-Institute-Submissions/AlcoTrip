@@ -121,109 +121,79 @@
             </div>
             <!-- full sidebar -->
             <div class="sidebar">
-                <!-- main little sidebar container -->
-                <div id="ssb_icons" class="small_sidebar_main hidden">
-                    <!-- hidden class removed to work with wide sidebar-->
-                    <div class="little_icons">
-                        <div id="red_marker" class="little_iPosition">
-                            <img id="iPosition_marker" src="assets/images/icons/marker_mypos_white_big.png" alt="Position_marker">
-                            <label id="positon_label" class="hint_s_style">Me</label>
+                <!-- main sidebar container -->
+                <div id="main_sidebar" class="">
+                    <!-- add hidden class to work on small sidebar -->
+                    <!-- markers on wide sidebar -->
+                    <div class="marker_style_wide">
+                        <div class="marker">
+                            <img id="iPosition_marker_w" src="assets/images/icons/marker_mypos_white_big.png" alt="my position icon">
+                            <label class="marker_name">Me</label>
                         </div>
-                        <div id="green_marker" class="little_iClubs">
-                            <img id="iClubs_marker" src="assets/images/icons/marker_red.png" alt="Clubs_marker">
-                            <label id="positon_label" class="hint_s_style">Clubs</label>
-                        </div>
-                        <div id="orange_marker" class="little_iPubs">
-                            <img id="iPubs_marker" src="assets/images/icons/marker_yellow.png" alt="Pubs_marker">
-                            <label id="positon_label" class="hint_s_style">Pubs</label>
-                        </div>
-                        <div id="blue_marker" class="little_iBars">
-                            <img id="iBars_marker" src="assets/images/icons/marker_blue.png" alt="Bars_marker">
-                            <label id="positon_label" class="hint_s_style">Bars</label>
+                        <div id="location_result" class="inf_container">
+                            <div class="inf_container">
+                                <h3 class="your_info">Your Postcode :</h3>
+                                <span id="postcode_sidebar" class="postcode_info"></span>
+                            </div>
                         </div>
                     </div>
-                    <div class="bottom_exit cursor-style">
-                        <div class="exit_sSidebar">
-                            <img id="exit_icon" class="close_map" src="assets/images/icons/close.svg" alt="exit icon/small sidebar">
+                    <div class="marker_style_wide">
+                        <div class="marker">
+                            <img id="iClubs_marker_w" src="assets/images/icons/marker_red.png" alt="club marker icon">
+                            <label class="marker_name">Clubs</label>
                         </div>
+                        <div id="slider_c" class="slider_container">
+                            <div class="range_info_container">
+                                <label class="range_info">Change Distance</label>
+                                <label id="clubs_distance" class="range_number">10<span class="distance_class">&nbsp;Miles</span></label>
+                            </div>
+                            <input id="clubs_dis_range" type="range" class="slider" min="0" max="20" value="10.0" step="0.5">
+                        </div>
+                    </div>
+                    <div class="marker_style_wide">
+                        <div class="marker">
+                            <img id="iPubs_marker_w" src="assets/images/icons/marker_yellow.png" alt="pubs marker icon">
+                            <label class="marker_name">Pubs</label>
+                        </div>
+                        <div id="slider_p" class="slider_container">
+                            <div class="range_info_container">
+                                <label class="range_info">Change Distance</label>
+                                <label id="pubs_distance" class="range_number">10<span class="distance_class">&nbsp;Miles</span></label>
+                            </div>
+                            <input id="pubs_dis_range" type="range" class="slider" min="0" max="20" value="10.0" step="0.5">
+                        </div>
+                    </div>
+                    <div class="marker_style_wide">
+                        <div class="marker">
+                            <img id="iBars_marker_w" src="assets/images/icons/marker_blue.png" alt="bars marker icon">
+                            <label class="marker_name">Bars</label>
+                        </div>
+                        <div id="slider_b" class="slider_container">
+                            <div class="range_info_container">
+                                <label class="range_info">Change Distance</label>
+                                <label id="bars_distance" class="range_number">10<span class="distance_class">&nbsp;Miles</span></label>
+                            </div>
+                            <input id="bars_dis_range" type="range" class="slider" min="0" max="20" value="10.0" step="0.5">
+                        </div>
+                    </div>
+                    <div id="sidebar_buttons" class="range_options">
+                        <button id="reset_sliders" class="btn btn-primary clearrange_button">Reset</button>
+                        <button id="apply_sliders" class="btn btn-primary applyrange_button">Apply</button>
                     </div>
                 </div>
-                <!-- main sidebar container -->
-                <div class="">
-                    <!-- main sidebar container for markers and range sliders / reset button -->
-                    <div id="main_sidebar" class="">
-                        <!-- add hidden class to work on small sidebar -->
-                        <!-- markers on wide sidebar -->
-                        <div class="marker_style_wide">
-                            <div class="marker">
-                                <img id="iPosition_marker_w" src="assets/images/icons/marker_mypos_white_big.png" alt="my position icon">
-                                <label class="marker_name">Me</label>
-                            </div>
-                            <div id="location_result" class="inf_container">
-                                <div class="inf_container">
-                                    <h3 class="your_info">Your Postcode :</h3>
-                                    <span id="postcode_sidebar" class="postcode_info"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="marker_style_wide">
-                            <div class="marker">
-                                <img id="iClubs_marker_w" src="assets/images/icons/marker_red.png" alt="club marker icon">
-                                <label class="marker_name">Clubs</label>
-                            </div>
-                            <div id="slider_c" class="slider_container">
-                                <div class="range_info_container">
-                                    <label class="range_info">Change Distance</label>
-                                    <label id="clubs_distance" class="range_number">10<span class="distance_class">&nbsp;Miles</span></label>
-                                </div>
-                                <input id="clubs_dis_range" type="range" class="slider" min="0" max="20" value="10.0" step="0.5">
-                            </div>
-                        </div>
-                        <div class="marker_style_wide">
-                            <div class="marker">
-                                <img id="iPubs_marker_w" src="assets/images/icons/marker_yellow.png" alt="pubs marker icon">
-                                <label class="marker_name">Pubs</label>
-                            </div>
-                            <div id="slider_p" class="slider_container">
-                                <div class="range_info_container">
-                                    <label class="range_info">Change Distance</label>
-                                    <label id="pubs_distance" class="range_number">10<span class="distance_class">&nbsp;Miles</span></label>
-                                </div>
-                                <input id="pubs_dis_range" type="range" class="slider" min="0" max="20" value="10.0" step="0.5">
-                            </div>
-                        </div>
-                        <div class="marker_style_wide">
-                            <div class="marker">
-                                <img id="iBars_marker_w" src="assets/images/icons/marker_blue.png" alt="bars marker icon">
-                                <label class="marker_name">Bars</label>
-                            </div>
-                            <div id="slider_b" class="slider_container">
-                                <div class="range_info_container">
-                                    <label class="range_info">Change Distance</label>
-                                    <label id="bars_distance" class="range_number">10<span class="distance_class">&nbsp;Miles</span></label>
-                                </div>
-                                <input id="bars_dis_range" type="range" class="slider" min="0" max="20" value="10.0" step="0.5">
-                            </div>
-                        </div>
-                        <div id="sidebar_buttons" class="range_options">
-                            <button id="reset_sliders" class="btn btn-primary clearrange_button">Reset</button>
-                            <button id="apply_sliders" class="btn btn-primary applyrange_button">Apply</button>
+                <!-- side bar footer container -->
+                <div class="sidebar_footer">
+                    <!-- white separate line -->
+                    <div id="sidebar_separate_line" class="separate_line2"></div>
+                    <!-- logotype container -->
+                    <div id="logotype_sidebar" class="logotype">
+                        <div class="logo_sidebar">
+                            <img class="cursor-style" id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo">
                         </div>
                     </div>
-                    <!-- side bar footer container -->
-                    <div class="sidebar_footer">
-                        <!-- white separate line -->
-                        <div id="sidebar_separate_line" class="separate_line2"></div>
-                        <!-- logotype container -->
-                        <div id="logotype_sidebar" class="logotype">
-                            <div class="logo_sidebar">
-                                <img class="cursor-style" id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo">
-                            </div>
-                        </div>
-                        <!-- copyright area -->
-                        <div id="sidebar_copyrights" class="copyrights">
-                            <p class="lead p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
-                        </div>
+                    <!-- copyright area -->
+                    <div id="sidebar_copyrights" class="copyrights">
+                        <p class="lead p-text-light1">&copy; 2019 | <a href="http://www.abovewave.co.uk" target="_blank">Abovewave.co.uk</a><br> All Rights Reserved</p>
                     </div>
                 </div>
             </div>
