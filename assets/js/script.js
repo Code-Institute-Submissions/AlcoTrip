@@ -1,8 +1,8 @@
-/* global $, global Swal, google*/
+/* global $, global Swal, google */
 /* global, gLat, gLong */
 
 // Find user location based on geolocalization from google
-$('#findme_button').click(function() {
+$('#findme_button').click(function findMyPostcode() {
     $("#mainbox_postcode, .c_boxes").removeClass("missing_e");
     $.post(encodeURI("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBJuhJdmAIHpAnmB8Iz_SfURsbAIsmuSxo"))
         .done(function(data) {
@@ -10,7 +10,7 @@ $('#findme_button').click(function() {
             let geolocLat = data['location']['lat'];
             $.get(encodeURI("https://api.postcodes.io/postcodes?lon=" + geolocLong + "&lat=" + geolocLat))
                 .done(function(data) {
-                    let geolocPostcode = (data.result[0]['postcode']);
+                    let geolocPostcode = data.result[0]['postcode'];
                     $("#mainbox_postcode").val(geolocPostcode);
                 });
         });
@@ -37,38 +37,6 @@ $('#start_trip_button').click(function() {
     initMap();
 });
 
-// SIDEBAR SLIDERS - LISTENERS
-$(document).on("input change", "#clubs_dis_range", function() {
-    $("#clubs_distance").html($(this).val() + "&nbsp;" + "Miles");
-});
-$(document).on("input change", "#pubs_dis_range", function() {
-    $("#pubs_distance").html($(this).val() + "&nbsp;" + "Miles");
-});
-$(document).on("input change", "#bars_dis_range", function() {
-    $("#bars_distance").html($(this).val() + "&nbsp;" + "Miles");
-});
-
-// RESET SLIDER VALUES
-$("#reset_sliders").click(function() {
-    $("#clubs_dis_range, #pubs_dis_range, #bars_dis_range").val("");
-    $("#clubs_distance").html($("#clubs_dis_range").val() + "&nbsp;" + "Miles");
-    $("#pubs_distance").html($("#pubs_dis_range").val() + "&nbsp;" + "Miles");
-    $("#bars_distance").html($("#bars_dis_range").val() + "&nbsp;" + "Miles");
-});
-
-// APPLY SLIDERS CHANGE
-$('#apply_sliders').click(function() {
-    initMap();
-});
-
-// Close map function ( red corss - button )
-$('#exit_icon, #sidebar_logo, #sidebar_logo_top').click(function() {
-    $('#main_page_container').removeClass('hidden');
-    $('#map_container').addClass('hidden');
-    $('#footer_main').removeClass('hidden');
-    $("#mainbox_postcode").val("");
-    $("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
-});
 // sweet alert for not valid postcode
 function notValidPostcode() {
     Swal.fire({
