@@ -61,8 +61,6 @@ $("#apply_sliders").click(function() {
 $(".go_back").click(function() {
     $(".cross_hide").removeClass("hidden");
     $("#map_container").addClass("hidden");
-    $("#mainbox_postcode").val("");
-    $(".styled-checkbox").prop("checked", false);
     let tmpAnimation = 0;
     let element = $("#sidebar_collapse_icon");
     document.documentElement.style
