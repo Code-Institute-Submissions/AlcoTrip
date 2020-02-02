@@ -12,19 +12,16 @@ console.log(browserWidth);
  */
 function hideElements() {
     $("#collapse_icon").html("show");
-    $(".sidebar_elements").addClass("hidden").fadeOut(400, 0, function() {
-        // Animation complete.
-    });
-    $("#cross").removeClass("hidden").fadeTo(400, 1, "");
+    $(".sidebar_elements").addClass("hidden").fadeOut(600, function() {});
+    $("#cross").removeClass("hidden").fadeIn(600, function() {});
 }
-
 /**
  * This function will show elements on side bar
  */
 function showElements() {
     $("#collapse_icon").html("hide");
-    $(".sidebar_elements").removeClass("hidden").fadeTo(400, 1, "");
-    $("#cross").addClass("hidden").fadeTo(400, 0, "");
+    $(".sidebar_elements").removeClass("hidden").fadeIn(600, function() {});
+    $("#cross").addClass("hidden").fadeOut(600, function() {});
 }
 
 /**

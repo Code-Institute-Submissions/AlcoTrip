@@ -251,6 +251,13 @@ function initMap() {
                                 map.fitBounds(bounds);
                             }
 
+
+                            /**
+                             * .slider({ disabled: true }); function to check which chcecknox was ticked to disable sliders
+                             */
+
+
+
                             // PERFORM A NEARBY SEARACH FOR CLUBS
                             service.nearbySearch(request_clubs,
                                 function(results, status) {
