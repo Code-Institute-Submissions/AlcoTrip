@@ -628,4 +628,7 @@ footer {
 .cursor-style {
   cursor: pointer; }
 
+.missing_e {
+  border: 2px solid red; }
+
 /*# sourceMappingURL=main.css.map */

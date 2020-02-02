@@ -8,7 +8,7 @@ console.log(browserHeight);
 console.log(browserWidth);
 
 /**
- * This function will hide elements on side bar
+ * This function will hide elements on sidebar
  */
 function hideElements() {
     $("#collapse_icon").html("show");
@@ -16,7 +16,7 @@ function hideElements() {
     $("#cross").removeClass("hidden").fadeIn(600, function() {});
 }
 /**
- * This function will show elements on side bar
+ * This function will show elements on sidebar
  */
 function showElements() {
     $("#collapse_icon").html("hide");
