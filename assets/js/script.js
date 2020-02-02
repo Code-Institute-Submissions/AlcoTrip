@@ -94,8 +94,8 @@ function initMap() {
 
     // CHECKBOXES VALUE FROM MAIN PAGE AS BOOOLEAN
     checked_clubs = $("#clubs_checkbox").prop("checked");
-    checked_bars = $("#pubs_checkbox").prop("checked");
-    checked_pubs = $("#bars_checkbox").prop("checked");
+    checked_pubs = $("#pubs_checkbox").prop("checked");
+    checked_bars = $("#bars_checkbox").prop("checked");
 
     // MAIN STATEMENT - IF POSTCODE IS MISSING SHOW ERROR MESSAGE
     if (myPostCode == "") {
@@ -259,23 +259,41 @@ function initMap() {
 
 
                             // PERFORM A NEARBY SEARACH FOR CLUBS
-                            service.nearbySearch(request_clubs,
-                                function(results, status) {
-                                    if (status !== 'OK') return;
-                                    CreatClubMarkers(results);
-                                });
+
+                            if (checked_clubs == true) {
+                                service.nearbySearch(request_clubs,
+                                    function(results, status) {
+                                        if (status !== 'OK') return;
+                                        CreatClubMarkers(results);
+                                    });
+                            }
+                            else {
+                                $("#clubs").css('opacity', '0.3');
+                            }
+
                             // PERFORM A NEARBY SEARACH FOR PUBS
-                            service.nearbySearch(request_pubs,
-                                function(results, status) {
-                                    if (status !== 'OK') return;
-                                    CreatPubMarkers(results);
-                                });
+                            if (checked_pubs == true) {
+                                service.nearbySearch(request_pubs,
+                                    function(results, status) {
+                                        if (status !== 'OK') return;
+                                        CreatPubMarkers(results);
+                                    });
+                            }
+                            else {
+                                $("#pubs").css('opacity', '0.3');
+                            }
+
                             // PERFORM A NEARBY SEARACH FOR BARS
-                            service.nearbySearch(request_bars,
-                                function(results, status) {
-                                    if (status !== 'OK') return;
-                                    CreatBarsMarkers(results);
-                                });
+                            if (checked_bars == true) {
+                                service.nearbySearch(request_bars,
+                                    function(results, status) {
+                                        if (status !== 'OK') return;
+                                        CreatBarsMarkers(results);
+                                    });
+                            }
+                            else {
+                                $("#bars").css('opacity', '0.3');
+                            }
                         });
                     // GO TO THE MAIN PAGE
                     $("#main_page_container, #postcode_error, #tickbox_missing, #footer_main").addClass("hidden");
