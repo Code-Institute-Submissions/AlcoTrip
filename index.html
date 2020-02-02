@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div id="main_page_container">
+    <div id="main_page_container" class="cross_hide">
         <!-- hidden class only to work with map page-->
         <!-- header with logotype -->
         <header class="container">
@@ -44,7 +44,7 @@
                         </div>
                         <!-- Iput box -->
                         <div class="col-xl-10 col-lg-10 col-md-9 col-ms-9 col-xs-12">
-                            <input type="search" id="mainbox_postcode" class="form-control upper" value="">
+                            <input type="search" id="mainbox_postcode" class="form-control upper" value="nn84tj">
                         </div>
                         <!-- find me button -->
                         <div class="col-xl-2 col-lg-2 col-md-3 col-ms-3 col-xs-12">
@@ -105,7 +105,6 @@
     <!-- map container -->
     <div id="map_container" class="hidden">
         <!-- these container class need to be hidden-->
-        <!--class="map_main"-->
         <!-- sidebar container -->
         <div id="sidebar_blue" class="sidebar">
             <div class="top_logo_line">
@@ -147,7 +146,7 @@
                                 <label class="range_info">Change Distance</label>
                                 <label id="clubs_distance" class="range_number">10<span class="distance_class">&nbsp;Miles</span></label>
                             </div>
-                            <input id="clubs_dis_range" type="range" class="slider" min="0" max="20" value="10.0" step="0.5">
+                            <input id="clubs_dis_range" type="range" class="slider" min="0" max="20" value="10" step="0.5">
                         </div>
                     </div>
                     <div class="marker_style_wide">
@@ -160,7 +159,7 @@
                                 <label class="range_info">Change Distance</label>
                                 <label id="pubs_distance" class="range_number">10<span class="distance_class">&nbsp;Miles</span></label>
                             </div>
-                            <input id="pubs_dis_range" type="range" class="slider" min="0" max="20" value="10.0" step="0.5">
+                            <input id="pubs_dis_range" type="range" class="slider" min="0" max="20" value="10" step="0.5">
                         </div>
                     </div>
                     <div class="marker_style_wide">
@@ -173,25 +172,26 @@
                                 <label class="range_info">Change Distance</label>
                                 <label id="bars_distance" class="range_number">10<span class="distance_class">&nbsp;Miles</span></label>
                             </div>
-                            <input id="bars_dis_range" type="range" class="slider" min="0" max="20" value="10.0" step="0.5">
+                            <input id="bars_dis_range" type="range" class="slider" min="0" max="20" value="10" step="0.5">
                         </div>
                     </div>
                     <div id="sidebar_buttons" class="range_options sidebar_elements">
                         <button id="reset_sliders" class="btn btn-primary clearrange_button">Reset</button>
                         <button id="apply_sliders" class="btn btn-primary applyrange_button">Apply</button>
                     </div>
-                    <!--div class="cursor-style">
-                        <div class="">
-                            <img id="" class="" src="assets/images/icons/close.svg" alt="exit icon/small sidebar">
+                    <div id="cross" class="cursor-style go_back">
+                        <div class="cross_sidebar">
+                            <img class="cross_icon" src="assets/images/icons/close.svg" alt="exit icon/small sidebar">
+                            <label class="cross_label">Go Back</label>
                         </div>
-                    </div-->
+                    </div>
                 </div>
                 <!-- side bar footer container -->
                 <div class="sidebar_footer sidebar_elements">
                     <!-- white separate line -->
                     <div id="sidebar_separate_line" class="separate_line2"></div>
                     <!-- logotype container -->
-                    <div id="logotype_sidebar" class="logotype">
+                    <div id="logotype_sidebar" class="logotype go_back">
                         <div class="logo_sidebar">
                             <img class="cursor-style" id="sidebar_logo" src="assets/images/logotype/alcotrip_logotype.png" alt="AlcoTrip Logo">
                         </div>
@@ -206,7 +206,7 @@
         <div id="map"></div>
     </div>
     <!-- footer section -->
-    <footer id="footer_main" class="">
+    <footer id="footer_main" class="cross_hide">
         <!-- hidden only to work with map page-->
         <div class="row">
             <!-- white separate line -->
