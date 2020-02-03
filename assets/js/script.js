@@ -175,17 +175,17 @@ function initMap() {
                             // CLUBS, PUBS AND BARS REQUESTS - VARIABLES
                             request_clubs = {
                                 location: myLocation,
-                                radius: [clubs_range],
+                                radius: clubs_range,
                                 type: ['night_club']
                             };
                             request_pubs = {
                                 location: myLocation,
-                                radius: [pubs_range],
+                                radius: pubs_range,
                                 type: ['pub']
                             };
                             request_bars = {
                                 location: myLocation,
-                                radius: [bars_range],
+                                radius: bars_range,
                                 type: ['bar']
                             };
 
@@ -266,6 +266,8 @@ function initMap() {
                                         if (status !== 'OK') return;
                                         CreatClubMarkers(results);
                                     });
+                                $("#clubs").css('opacity', '1');
+                                $("#clubs_dis_range").removeAttr('disabled');
                             }
                             else {
                                 $("#clubs").css('opacity', '0.3');
@@ -279,6 +281,8 @@ function initMap() {
                                         if (status !== 'OK') return;
                                         CreatPubMarkers(results);
                                     });
+                                $("#pubs").css('opacity', '1');
+                                $("#pubs_dis_range").removeAttr('disabled');
                             }
                             else {
                                 $("#pubs").css('opacity', '0.3');
@@ -292,6 +296,8 @@ function initMap() {
                                         if (status !== 'OK') return;
                                         CreatBarsMarkers(results);
                                     });
+                                $("#bars").css('opacity', '1');
+                                $("#bars_dis_range").removeAttr('disabled');
                             }
                             else {
                                 $("#bars").css('opacity', '0.3');
