@@ -269,6 +269,7 @@ function initMap() {
                             }
                             else {
                                 $("#clubs").css('opacity', '0.3');
+                                $("#clubs_dis_range").attr('disabled', 'true');
                             }
 
                             // PERFORM A NEARBY SEARACH FOR PUBS
@@ -281,6 +282,7 @@ function initMap() {
                             }
                             else {
                                 $("#pubs").css('opacity', '0.3');
+                                $("#pubs_dis_range").attr('disabled', 'true');
                             }
 
                             // PERFORM A NEARBY SEARACH FOR BARS
@@ -293,6 +295,7 @@ function initMap() {
                             }
                             else {
                                 $("#bars").css('opacity', '0.3');
+                                $("#bars_dis_range").attr('disabled', 'true');
                             }
                         });
                     // GO TO THE MAIN PAGE
