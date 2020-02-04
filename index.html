@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div id="main_page_container" class="cross_hide">
+    <div id="main_page_container" class="cross_hide main_hidden">
         <!-- hidden class only to work with map page-->
         <!-- header with logotype -->
         <header class="container">
@@ -43,14 +43,14 @@
                         </div>
                         <!-- Iput box -->
                         <div class="col-xl-10 col-lg-10 col-md-9 col-ms-9 col-xs-12">
-                            <input type="search" id="mainbox_postcode" class="form-control upper" value="">
+                            <input type="search" id="mainbox_postcode" class="form-control upper show_map" value="">
                         </div>
                         <!-- find me button -->
                         <div class="col-xl-2 col-lg-2 col-md-3 col-ms-3 col-xs-12">
                             <button id="findme_button" type="button" class="btn btn-primary geoloc_button">Find Me!</button>
                         </div>
                         <!-- Error message -->
-                        <small id="postcode_error" class="form-text message_e hidden">*Please provide a valid postcode.</small>
+                        <small id="postcode_error" class="form-text message_e main_hidden hidden">*Please provide a valid postcode.</small>
                         <!-- white separate line -->
                         <div class="separate_line1"></div>
                         <!-- Error go up to container -->
@@ -60,7 +60,7 @@
                             <!-- Checkboxes main title -->
                             <h3 class="lead bold1">What are you looking for tonight ?</h3>
                             <!-- Checkboxes container -->
-                            <div class="c_boxes">
+                            <div class="c_boxes show_map">
                                 <!-- List Checkbox -->
                                 <ul class="lead lead-edit bold1">
                                     <!-- Clubs checkbox -->
@@ -82,7 +82,7 @@
                             </div>
                         </div>
                         <!-- Alert text -->
-                        <small id="tickbox_missing" class="form-text message_e hidden">*Please choose any of tick boxes.</small>
+                        <small id="tickbox_missing" class="form-text message_e main_hidden hidden">*Please choose any of tick boxes.</small>
                         <!-- clear fields button -->
                         <div class="col-md-6">
                             <button id="unselect_all_checkbox" type="button" class="btn btn-primary clearfields_button">Unselect All</button>
@@ -211,7 +211,7 @@
         <div id="map"></div>
     </div>
     <!-- footer section -->
-    <footer id="footer_main" class="cross_hide">
+    <footer id="footer_main" class="cross_hide main_hidden">
         <!-- hidden only to work with map page-->
         <div class="row">
             <!-- copyright area -->

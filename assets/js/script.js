@@ -178,12 +178,14 @@ function initMap() {
                  */
                 if (postcodeValidation) {
                     $("#postcode_sidebar").html(myPostcode);
-
-                    // GET LATITUDE AND LONGITUDE FROM POSTCODE.IO
+                    /**
+                     * Get the lattitude and longitude from postcodes.io api, if the find me button wasn't clicked and postcde vale is not empty 
+                     */
                     $.get(encodeURI("https://api.postcodes.io/postcodes/" + myPostcode))
                         .done(function(data) {
-
-                            // LAT AND LONG VARIABLES
+                            /**
+                             * Latitude and Longitude variables from postcodes.io api result table
+                             */
                             myLat = data.result['latitude'];
                             myLong = data.result['longitude'];
                             /**
@@ -369,14 +371,13 @@ function initMap() {
                                 $("#bars_dis_range").attr('disabled', 'true');
                             }
                         });
-                    // GO TO THE MAIN PAGE
                     /**
-                     * If postcode is invalid, make changes
+                     * Chang style of main page to show map page
                      */
-                    $("#main_page_container, #postcode_error, #tickbox_missing, #footer_main").addClass("hidden");
+                    $(".main_hidden").addClass("hidden");
                     $("#map_container").addClass("map_main");
                     $("#map_container").removeClass("hidden");
-                    $("#mainbox_postcode, .c_boxes").removeClass("missing_e");
+                    $("show_map").removeClass("missing_e");
                 }
                 else {
                     /**
