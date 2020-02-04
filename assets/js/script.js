@@ -16,6 +16,7 @@ $('#findme_button').click(function findMyPostcode() {
         });
 });
 
+
 // Clear all checboxes and hidden error message
 $('#unselect_all_checkbox').click(function() {
     $(".styled-checkbox").prop("checked", false);
@@ -56,6 +57,12 @@ function mainPostcodeError() {
         scrollTop: ($('#postcode_missing').offset().top)
     }, 500);
 }
+
+// postcode missing clear classes when clicked on field
+$("#mainbox_postcode").click(function() {
+    $("#mainbox_postcode").removeClass("missing_e");
+    $("#postcode_error").addClass("hidden");
+});
 
 function initMap() {
     let map, myLat, myLong, service, bounds, request_clubs, request_pubs, request_bars, yourPosition, infowindow, marker, myLocation, mapOptions, postcodeValidation, myPostcode, myPostCode, checked_clubs, checked_bars, checked_pubs, clubs_range, pubs_range, bars_range;
