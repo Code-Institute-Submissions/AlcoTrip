@@ -1,44 +1,64 @@
 /* global $, global Swal, google */
 /* global, gLat, gLong */
 
-// Find user location based on geolocalization from google
+/**
+ * This function will collect geolocation data from google api - geolocation (after clicking FindMe button)
+ * It creates two variables for lat and long
+ */
 $('#findme_button').click(function findMyPostcode() {
     $("#mainbox_postcode, .c_boxes").removeClass("missing_e");
     $.post(encodeURI("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBJuhJdmAIHpAnmB8Iz_SfURsbAIsmuSxo"))
         .done(function(data) {
             let geolocLong = data['location']['lng'];
             let geolocLat = data['location']['lat'];
+            /**
+             * This function will use postcodes.io to find postcode from passed variables
+             */
             $.get(encodeURI("https://api.postcodes.io/postcodes?lon=" + geolocLong + "&lat=" + geolocLat))
                 .done(function(data) {
+                    /**
+                     * Collect information from data result table
+                     */
                     let geolocPostcode = data.result[0]['postcode'];
+                    /**
+                     * Passing variable to input box on main page
+                     */
                     $("#mainbox_postcode").val(geolocPostcode);
                 });
         });
 });
-
-
-// Clear all checboxes and hidden error message
+/**
+ * This function will change checkbox property from true to false
+ */
 $('#unselect_all_checkbox').click(function() {
     $(".styled-checkbox").prop("checked", false);
-    // clear errors
+    /**
+     * Hide error message for mainbox postcode input field
+     */
     $("#tickbox_missing").addClass("hidden");
     $(".c_boxes").removeClass("missing_e");
 });
-// Select all checboxes and clear hidden error message
+/**
+ * This function will change checkbox property from false to true
+ */
 $('#select_all_checkbox').click(function() {
     $(".styled-checkbox").prop("checked", true);
-    // clear errors
+    /**
+     * Hide error message for all checkboxes
+     */
     $("#tickbox_missing").addClass("hidden");
     $("#tickbox_missing").removeClass("text-muted1");
     $(".c_boxes").removeClass("missing_e");
 });
-
-// START BUTTON - MAIN PAGE - RUN MAIN SCRIPT
+/**
+ * On click function - run initMap function
+ */
 $('#start_trip_button').click(function() {
     initMap();
 });
-
-// sweet alert for not valid postcode
+/**
+ * This function will show allert popup box when postcode is not valid
+ */
 function notValidPostcode() {
     Swal.fire({
         position: 'center',
@@ -49,7 +69,9 @@ function notValidPostcode() {
         timer: 2000
     });
 }
-// postcode missing or not valid
+/**
+ * This function will show error message below the postcode input field and scroll to the top
+ */
 function mainPostcodeError() {
     $("#mainbox_postcode").addClass("missing_e");
     $("#postcode_error").removeClass("hidden");
@@ -57,58 +79,73 @@ function mainPostcodeError() {
         scrollTop: ($('#postcode_missing').offset().top)
     }, 500);
 }
-
-// postcode missing clear classes when clicked on field
+/**
+ * On click function which will clear error message and style, when postcode input field is clicked
+ */
 $("#mainbox_postcode").click(function() {
     $("#mainbox_postcode").removeClass("missing_e");
     $("#postcode_error").addClass("hidden");
 });
-
+/**
+ * Main function - initilize google maps with google places requests.
+ * This function also changed website style to show map page
+ */
 function initMap() {
     let map, myLat, myLong, service, bounds, request_clubs, request_pubs, request_bars, yourPosition, infowindow, marker, myLocation, mapOptions, postcodeValidation, myPostcode, myPostCode, checked_clubs, checked_bars, checked_pubs, clubs_range, pubs_range, bars_range;
-
-    // CALUCLATIONS FOR GOOGLE PLACES API - CONVERT MILES TO METERS
+    /**
+     * Sidebar range variables - converting miles to meters
+     */
     clubs_range = ($('#clubs_dis_range').val() * 1609.344);
     pubs_range = ($('#pubs_dis_range').val() * 1609.344);
     bars_range = ($('#bars_dis_range').val() * 1609.344);
-
-    // MY LOCATION MARKER ICON
+    /**
+     * My Position marker icon
+     */
     const marker_my_pos = {
         url: './assets/images/icons/marker_mypos_white.png',
         scaledSize: new google.maps.Size(40, 64),
     };
-
-    // CLUBS MARKER ICON
+    /**
+     * Clubs marker icon
+     */
     const marker_clubs_pos = {
         url: './assets/images/icons/marker_red.png',
         scaledSize: new google.maps.Size(28, 45),
     };
-
-    // PUBS MARKER ICON
+    /**
+     * Pubs marker icon
+     */
     const marker_pubs_pos = {
         url: './assets/images/icons/marker_yellow.png',
         scaledSize: new google.maps.Size(28, 45),
     };
-
-    // BARS MARKER ICON
+    /**
+     * Bars marker icon
+     */
     const marker_bars_pos = {
         url: './assets/images/icons/marker_blue.png',
         scaledSize: new google.maps.Size(28, 45),
     };
-
-    // POSTCODE VALUE
+    /**
+     * This variable is collecting value from mainbox postcode - postcode input on main page
+     */
     myPostCode = $("#mainbox_postcode").val();
-
-    // CHECKBOXES VALUE FROM MAIN PAGE AS BOOOLEAN
+    /**
+     * Checkbox variables - value of each checkbox from main page
+     */
     checked_clubs = $("#clubs_checkbox").prop("checked");
     checked_pubs = $("#pubs_checkbox").prop("checked");
     checked_bars = $("#bars_checkbox").prop("checked");
-
-    // MAIN STATEMENT - IF POSTCODE IS MISSING SHOW ERROR MESSAGE
+    /**
+     * If this statmenet is true, run main postcode error function
+     * If myPostcode variable is blank run mainPostcodeError function
+     */
     if (myPostCode == "") {
         mainPostcodeError();
     }
-    // CHECK IF ANY CHECKBOX IS TICKED - IF NOT SHOW ERROR MESSAGE
+    /**
+     * This statement will check, if any of checkboxes has value fals. If value is false, show erorr message and scroll to checkboxes
+     */
     else if (checked_clubs == false && checked_pubs == false && checked_bars == false) {
         $("#tickbox_missing").removeClass("hidden");
         $(".c_boxes").addClass("missing_e");
@@ -116,23 +153,29 @@ function initMap() {
             scrollTop: ($('#tickbox_missing_err').offset().top)
         }, 500);
     }
-    // IF ALL REQUIERD FIELDS ARE CHECKED AND HAVE VALUES DO THIS CODE
+    /**
+     * If all required fields are not empty and all validation is correct run this part of code
+     */
     else {
-
-        // PASS VALUE FROM MAIN PAGE POSTCODE FILED TO H3 SELECTOR IN SIDEBAR
+        /**
+         * This code will pass postcode from postcode input, on main page, remove space and change it to uppercase letters
+         */
         myPostcode = $("#mainbox_postcode").val();
         myPostcode = myPostcode.replace(/\s/g, "");
         myPostcode = String(myPostcode.toUpperCase());
-
-        // USE POSTCODE.IO TO VALIDAE POSTCDE INFORMATION
         event.preventDefault();
+        /**
+         * Check if postcode is valid
+         */
         $.get(encodeURI("https://api.postcodes.io/postcodes/" + myPostcode + "/validate"))
             .done(function(data) {
-
-                // GET THE DATA FROM POSTCODE.IO RESULT 
+                /**
+                 * This value is taking postcode value from postcodes.io api data encoding
+                 */
                 postcodeValidation = data['result'];
-
-                // 
+                /**
+                 * This statement will check, if postcodeValidation variable is empty
+                 */
                 if (postcodeValidation) {
                     $("#postcode_sidebar").html(myPostcode);
 
@@ -143,10 +186,13 @@ function initMap() {
                             // LAT AND LONG VARIABLES
                             myLat = data.result['latitude'];
                             myLong = data.result['longitude'];
-
-                            // CREATE MY LOCATION VARIABLE
+                            /**
+                             * My location variable for google maps
+                             */
                             myLocation = { lat: myLat, lng: myLong };
-                            // NEW MAP OPTIONS
+                            /**
+                             * Create variable for new google maps with my options
+                             */
                             mapOptions = {
                                 zoom: 10,
                                 maxZoom: 18,
@@ -154,49 +200,61 @@ function initMap() {
                                 center: myLocation,
                                 mapTypeId: 'roadmap',
                             };
-
                             infowindow = new google.maps.InfoWindow();
-
-                            // CREATING MAP WITH OPTIONS
+                            /**
+                             * Create maps with options
+                             */
                             map = new google.maps.Map(document.getElementById('map'),
                                 mapOptions);
-
-                            // CREATE GOOGLE PLACES API SERVICE AND BOUNDS
+                            /**
+                             * Create variables for google places api service and bounds
+                             */
                             service = new google.maps.places.PlacesService(map);
                             bounds = new google.maps.LatLngBounds();
-
-                            // CREATE CURRENT POSITION MARKER VARIABLE
+                            /**
+                             * Create your position marker and place it on the map 
+                             */
                             yourPosition = new google.maps.Marker({
                                 icon: marker_my_pos,
                                 position: myLocation,
                                 animation: google.maps.Animation.DROP,
                                 map: map,
                             });
-
-                            //SHOW NAME FOR CURRENT POSITION MARKER IN BOX
+                            /** 
+                             * Listener to show the label with the name for your position while marker clicked
+                             */
                             google.maps.event.addListener(yourPosition, 'click', function() {
                                 infowindow.setContent("You're here");
                                 infowindow.open(map, this);
                             });
-
-                            // CLUBS, PUBS AND BARS REQUESTS - VARIABLES
+                            /**
+                             * Clubs request variable with radius and location type
+                             */
                             request_clubs = {
                                 location: myLocation,
                                 radius: clubs_range,
                                 type: ['night_club']
                             };
+                            /**
+                             * Pubs request variable with radius and location type
+                             */
                             request_pubs = {
                                 location: myLocation,
                                 radius: pubs_range,
                                 type: ['pub']
                             };
+                            /**
+                             * Bars request variable with radius and location type
+                             */
                             request_bars = {
                                 location: myLocation,
                                 radius: bars_range,
                                 type: ['bar']
                             };
-
-                            // CREATE CLUBS MARKERS
+                            /**
+                             * This function will create and add markers for NIGHT CLUBS request on map with fitting bounds
+                             * @param places 
+                             */
                             function CreatClubMarkers(places) {
                                 for (let i = 0, place; place = places[i]; i++) {
                                     marker = new google.maps.Marker({
@@ -215,8 +273,10 @@ function initMap() {
                                 bounds.extend(myLocation);
                                 map.fitBounds(bounds);
                             }
-
-                            // CREATE PUBS MARKERS
+                            /**
+                             * This function will create and add markers for PUBS request on map with fitting bounds
+                             * @param places 
+                             */
                             function CreatPubMarkers(places) {
                                 for (let i = 0, place; place = places[i]; i++) {
                                     marker = new google.maps.Marker({
@@ -235,8 +295,10 @@ function initMap() {
                                 bounds.extend(myLocation);
                                 map.fitBounds(bounds);
                             }
-
-                            // CREATE BARS MARKERS
+                            /**
+                             * This function will create and add markers for BARS request on map with fitting bounds
+                             * @param places 
+                             */
                             function CreatBarsMarkers(places) {
                                 for (let i = 0, place; place = places[i]; i++) {
                                     marker = new google.maps.Marker({
@@ -252,21 +314,15 @@ function initMap() {
                                     });
                                     bounds.extend(place.geometry.location);
                                 }
-
-                                // FIT MAP TO BOUNDS AND CENTER INCLUDING MY LOCATION
+                                /**
+                                 * Fit map to bounds and center map including my location to bounds
+                                 */
                                 bounds.extend(myLocation);
                                 map.fitBounds(bounds);
                             }
-
-
                             /**
-                             * .slider({ disabled: true }); function to check which chcecknox was ticked to disable sliders
+                             * Perform nearby search function for night clubs, if night clubs checkbox value is true
                              */
-
-
-
-                            // PERFORM A NEARBY SEARACH FOR CLUBS
-
                             if (checked_clubs == true) {
                                 service.nearbySearch(request_clubs,
                                     function(results, status) {
@@ -280,8 +336,9 @@ function initMap() {
                                 $("#clubs").css('opacity', '0.3');
                                 $("#clubs_dis_range").attr('disabled', 'true');
                             }
-
-                            // PERFORM A NEARBY SEARACH FOR PUBS
+                            /**
+                             * Perform nearby search function for pubs, if pubs checkbox value is true
+                             */
                             if (checked_pubs == true) {
                                 service.nearbySearch(request_pubs,
                                     function(results, status) {
@@ -295,8 +352,9 @@ function initMap() {
                                 $("#pubs").css('opacity', '0.3');
                                 $("#pubs_dis_range").attr('disabled', 'true');
                             }
-
-                            // PERFORM A NEARBY SEARACH FOR BARS
+                            /**
+                             * Perform nearby search function for bars, if bars checkbox  value is true
+                             */
                             if (checked_bars == true) {
                                 service.nearbySearch(request_bars,
                                     function(results, status) {
@@ -312,16 +370,22 @@ function initMap() {
                             }
                         });
                     // GO TO THE MAIN PAGE
+                    /**
+                     * If postcode is invalid, make changes
+                     */
                     $("#main_page_container, #postcode_error, #tickbox_missing, #footer_main").addClass("hidden");
                     $("#map_container").addClass("map_main");
                     $("#map_container").removeClass("hidden");
                     $("#mainbox_postcode, .c_boxes").removeClass("missing_e");
-                    //$("#styled-checkbox-1 ,#styled-checkbox-2 ,#styled-checkbox-3").prop("checked", false);
                 }
                 else {
-                    // SHOW POSTCODE ERROR
+                    /**
+                     * Run main postcode error function, if postcodeValidation variable is empty
+                     */
                     mainPostcodeError();
-                    // SHOW INVALID POSTCODE ERROR
+                    /**
+                     * Run invalid postcode function, if postcodeValidation variable is empty
+                     */
                     notValidPostcode();
                 }
             });
