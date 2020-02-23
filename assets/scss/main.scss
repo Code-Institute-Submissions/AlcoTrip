@@ -40,7 +40,7 @@ body,
     flex-direction: column;
 }
 
-.col- {
+div[class^="col-"] {
     padding: 0;
     margin: 0;
 }
@@ -814,4 +814,8 @@ footer {
 
 .missing_e {
     border: 2px solid red;
+}
+
+.message_e {
+    flex: left;
 }
