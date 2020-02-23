@@ -41,14 +41,14 @@
                         <!-- Main title - postcode field label -->
                         <div class="row">
                             <label class="lead lead-edit bold1" for="mainbox_postcode">Enter your postcode</label>
-                        </div>
-                        <!-- Iput box -->
-                        <div class="col-xl-10 col-lg-10 col-md-9 col-ms-9 col-xs-12">
-                            <input type="search" id="mainbox_postcode" class="form-control upper show_map" value="">
-                        </div>
-                        <!-- find me button -->
-                        <div class="col-xl-2 col-lg-2 col-md-3 col-ms-3 col-xs-12">
-                            <button id="findme_button" type="button" class="btn btn-primary geoloc_button">Find Me!</button>
+                            <!-- Iput box -->
+                            <div class="col-xl-8 col-lg-8">
+                                <input type="search" id="mainbox_postcode" class="form-control upper show_map" value="">
+                            </div>
+                            <!-- find me button -->
+                            <div class="col-xl-3 col-lg-3">
+                                <button id="findme_button" type="button" class="btn btn-primary geoloc_button">Find Me!</button>
+                            </div>
                         </div>
                         <!-- Error message -->
                         <small id="postcode_error" class="form-text message_e main_hidden hidden">*Please provide a valid postcode.</small>
@@ -84,13 +84,15 @@
                         </div>
                         <!-- Alert text -->
                         <small id="tickbox_missing" class="form-text message_e main_hidden hidden">*Please choose any of tick boxes.</small>
-                        <!-- clear fields button -->
-                        <div class="col-md-6">
-                            <button id="unselect_all_checkbox" type="button" class="btn btn-primary clearfields_button">Unselect All</button>
-                        </div>
-                        <!-- clear checkboxes button -->
-                        <div class="col-md-6">
-                            <button id="select_all_checkbox" type="button" class="btn btn-primary selectall_button">Select All</button>
+                        <div class="main_buttons">
+                            <!-- clear fields button -->
+                            <div class="unselect_button">
+                                <button id="unselect_all_checkbox" type="button" class="btn btn-primary clearfields_button">Unselect All</button>
+                            </div>
+                            <!-- clear checkboxes button -->
+                            <div class="select_button">
+                                <button id="select_all_checkbox" type="button" class="btn btn-primary selectall_button">Select All</button>
+                            </div>
                         </div>
                         <!-- Start Trip button -->
                         <div class="formsubmition">

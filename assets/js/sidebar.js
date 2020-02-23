@@ -1,11 +1,20 @@
-/* global $ */
+/* global $, initMap*/
 
 /* browser width and height variables */
 let browserWidth = $(window).width();
 let browserHeight = $(window).height();
 
+/** 
+ * need to be remove 
+ */
 console.log(browserHeight);
 console.log(browserWidth);
+/**
+ * This function is checking the with of the screen and it will resize the sidebar for good proportions
+ */
+
+
+
 
 /**
  * This function will hide elements on sidebar

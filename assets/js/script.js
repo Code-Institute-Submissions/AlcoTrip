@@ -5,7 +5,7 @@
  * This function will collect geolocation data from google api - geolocation (after clicking FindMe button)
  * It creates two variables for lat and long
  */
-$('#findme_button').click(function findMyPostcode() {
+$("#findme_button").click(function findMyPostcode() {
     $("#mainbox_postcode, .c_boxes").removeClass("missing_e");
     $.post(encodeURI("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBJuhJdmAIHpAnmB8Iz_SfURsbAIsmuSxo"))
         .done(function(data) {
@@ -24,8 +24,11 @@ $('#findme_button').click(function findMyPostcode() {
                      * Passing variable to input box on main page
                      */
                     $("#mainbox_postcode").val(geolocPostcode);
+                    $("#mainbox_postcode").removeClass("missing_e");
+                    $("#postcode_error").addClass("hidden");
                 });
         });
+
 });
 /**
  * This function will change checkbox property from true to false
@@ -50,10 +53,28 @@ $('#select_all_checkbox').click(function() {
     $("#tickbox_missing").removeClass("text-muted1");
     $(".c_boxes").removeClass("missing_e");
 });
+
+
+
+/**
+ * Input filed listener - if input field is empty don't show anything, else seelct all checkboxes and go to map page 
+ */
+$(document).on("keypress", "input", function(e) {
+    if (e.which == 13) {
+        $("#select_all_checkbox").click();
+        initMap();
+    }
+});
+
+$("#myButton").click(function() {
+    alert("Button code executed.");
+});
+
+
 /**
  * On click function - run initMap function
  */
-$('#start_trip_button').click(function() {
+$("#start_trip_button").click(function() {
     initMap();
 });
 /**
@@ -75,8 +96,8 @@ function notValidPostcode() {
 function mainPostcodeError() {
     $("#mainbox_postcode").addClass("missing_e");
     $("#postcode_error").removeClass("hidden");
-    $('html, body').animate({
-        scrollTop: ($('#postcode_missing').offset().top)
+    $("html, body").animate({
+        scrollTop: ($("#postcode_missing").offset().top)
     }, 500);
 }
 /**
@@ -149,8 +170,8 @@ function initMap() {
     else if (checked_clubs == false && checked_pubs == false && checked_bars == false) {
         $("#tickbox_missing").removeClass("hidden");
         $(".c_boxes").addClass("missing_e");
-        $('html, body').animate({
-            scrollTop: ($('#tickbox_missing_err').offset().top)
+        $("html, body").animate({
+            scrollTop: ($("#tickbox_missing_err").offset().top)
         }, 500);
     }
     /**
