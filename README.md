@@ -1,5 +1,4 @@
 # AlcoTrip  <img align="left" width="40" height="40" src="http://www.abovewave.kylos.pl/aclotrip_project/favicon.png">
-> Second Milestone Project for [Code Institute](https://codeinstitute.net/) | Full Stack Software Development Diploma\
 > User Centric Frontend Development Milestone Project.
 
 ## Description
@@ -39,6 +38,15 @@ They can also use the input field, if they want to search for places with differ
 * Maciej : "Ideas like this website are really good! I was wondering, if it's possible to find only pubs or bars near to me without zooming and moving map in google maps all the time.. that's so simple, click find me, choose the type of what you're looking for and that's it! You can also mainpulate sliders, to get the nearest location to yourself. The only issue is you can't really share your trip in easy way with your friends. Screenshot ?! we're living in 20th century, that shoudl be just one click, easy sharing option."
 
 * Ben : "Great colors! Simple and clear design. It will be good, if there will be chatting option, just simple chat, with friends on app, option to invite them to my trip. I'm wondering when this app will be available to download from app store! Can't wait! Awesome!"
+
+* As a user, I would like to be able to decide which location I'm looking for by clicking checkboxes. That will give an opportuinty to create more personal trip plan.
+
+* As a user, I think the website need to have geolocalization, because I am to lazy to type in all does wierd postcodes, if I can simply click one button and it's there!
+
+* As a user, I want to be able to use this single application on all possbile platforms to share my plan with my friends at any time.
+
+* As a user, I would like to be able to change the range independently for individual locations.
+
 
 ## Features
 #### Existing Features
