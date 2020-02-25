@@ -45,7 +45,6 @@
 /* main website style */
 html,
 body,
-.continer,
 .row {
   margin: 0 auto;
   padding: 0;
@@ -60,7 +59,6 @@ body,
   flex-direction: column; }
   html div[class^="col-"],
   body div[class^="col-"],
-  .continer div[class^="col-"],
   .row div[class^="col-"] {
     padding: 0;
     margin: 0; }
@@ -112,8 +110,7 @@ a:hover {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: auto;
-  max-width: 300px; }
+  width: 300px; }
 
 .top_section {
   width: auto;
@@ -557,20 +554,29 @@ footer {
 
   .clearfields_button,
   .selectall_button {
-    width: 100%; } }
-/* style for main page input box and geoloc button for width less than 1200px */
-@media screen and (max-width: 1200px) {
-  .findme {
-    margin-top: 20px;
     width: 100%; }
 
-  .searchbox {
-    width: 100%; }
+  .main_logo img {
+    width: 220px;
+    margin: auto;
+    padding: 0; } }
+/* style for main page input box and geoloc button for width less than 1200px */
+@media screen and (max-width: 1200px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px; }
 
   .main_row {
     display: flex;
     flex-direction: column;
-    margin-top: 10px; } }
+    margin-top: 10px; }
+
+  .searchbox {
+    width: 100%; }
+
+  .findme {
+    margin-top: 20px;
+    width: 100%; } }
 /* footer position for less than 1260 height of window */
 @media screen and (min-height: 1260px) {
   footer {

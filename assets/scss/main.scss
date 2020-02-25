@@ -25,7 +25,6 @@ $tertiary-color: #670000;
 
 html,
 body,
-.continer,
 .row {
     margin: 0 auto;
     padding: 0;
@@ -108,8 +107,7 @@ a:hover {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        height: auto;
-        max-width: 300px;
+        width: 300px;
     }
 }
 
@@ -724,22 +722,31 @@ footer {
     .selectall_button {
         width: 100%;
     }
+    .main_logo img {
+        width: 220px;
+        margin: auto;
+        padding: 0;
+    }
 }
 
 /* style for main page input box and geoloc button for width less than 1200px */
 
 @media screen and (max-width: 1200px) {
-    .findme {
-        margin-top: 20px;
-        width: 100%;
-    }
-    .searchbox {
-        width: 100%;
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
     }
     .main_row {
         display: flex;
         flex-direction: column;
         margin-top: 10px;
+    }
+    .searchbox {
+        width: 100%;
+    }
+    .findme {
+        margin-top: 20px;
+        width: 100%;
     }
 }
 
