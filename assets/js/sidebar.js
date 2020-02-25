@@ -90,37 +90,76 @@ $(".go_back").click(function() {
 /**
  * This function will change the size of the sidebar when width point is match
  */
-$("#sidebar_collapse_icon").click(function() {
-    let toggle_q = $("#sidebar_blue").width();
-    let tmpAnimation = 0;
-    let element = $("#sidebar_collapse_icon");
-    switch (toggle_q) {
-        case 70:
-            document.documentElement.style
-                .setProperty("--sBar_width", "360px");
-            tmpAnimation = tmpAnimation - 180;
-            $({ degrees: tmpAnimation - 180 }).animate({ degrees: tmpAnimation }, {
-                duration: 300,
-                step: function(now) {
-                    element.css({
-                        transform: "rotate(" + now + "deg)"
-                    });
-                }
-            });
-            showElements();
-            break;
-        case 360:
-            document.documentElement.style
-                .setProperty("--sBar_width", "70px");
-            $({ degrees: tmpAnimation + 180 }).animate({ degrees: tmpAnimation }, {
-                duration: 300,
-                step: function(now) {
-                    element.css({
-                        transform: "rotate(" + now + "deg)"
-                    });
-                }
-            });
-            hideElements();
-            break;
-    }
-});
+
+if (browserWidth === 360) {
+    $("#sidebar_collapse_icon").click(function() {
+        let toggle_q = $("#sidebar_blue").width();
+        let tmpAnimation = 0;
+        let element = $("#sidebar_collapse_icon");
+        switch (toggle_q) {
+            case 70:
+                document.documentElement.style
+                    .setProperty("--sBar_width", "360px");
+                tmpAnimation = tmpAnimation - 180;
+                $({ degrees: tmpAnimation - 180 }).animate({ degrees: tmpAnimation }, {
+                    duration: 300,
+                    step: function(now) {
+                        element.css({
+                            transform: "rotate(" + now + "deg)"
+                        });
+                    }
+                });
+                showElements();
+                break;
+            case 360:
+                document.documentElement.style
+                    .setProperty("--sBar_width", "70px");
+                $({ degrees: tmpAnimation + 180 }).animate({ degrees: tmpAnimation }, {
+                    duration: 300,
+                    step: function(now) {
+                        element.css({
+                            transform: "rotate(" + now + "deg)"
+                        });
+                    }
+                });
+                hideElements();
+                break;
+        }
+    });
+}
+else {
+    $("#sidebar_collapse_icon").click(function() {
+        let toggle_q = $("#sidebar_blue").width();
+        let tmpAnimation = 0;
+        let element = $("#sidebar_collapse_icon");
+        switch (toggle_q) {
+            case 70:
+                document.documentElement.style
+                    .setProperty("--sBar_width", "320px");
+                tmpAnimation = tmpAnimation - 180;
+                $({ degrees: tmpAnimation - 180 }).animate({ degrees: tmpAnimation }, {
+                    duration: 300,
+                    step: function(now) {
+                        element.css({
+                            transform: "rotate(" + now + "deg)"
+                        });
+                    }
+                });
+                showElements();
+                break;
+            case 320:
+                document.documentElement.style
+                    .setProperty("--sBar_width", "70px");
+                $({ degrees: tmpAnimation + 180 }).animate({ degrees: tmpAnimation }, {
+                    duration: 300,
+                    step: function(now) {
+                        element.css({
+                            transform: "rotate(" + now + "deg)"
+                        });
+                    }
+                });
+                hideElements();
+                break;
+        }
+    });
+}
