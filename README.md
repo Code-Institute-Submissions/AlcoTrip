@@ -2,12 +2,10 @@
 > User Centric Frontend Development Milestone Project.
 
 ## Description
-> The purpouse of this project is to enable users to find nearby clubs, pubs or bars. Organizing travel for yourself or with friends.
-> Users can find their location using the Google interface for geolocation - by clicking "FIND ME"!.\
-They can also use the input field, if they want to search for places with different postcode.
-> Location selection boxes and distance sliders let you specify the exact search area. 
-> Friendly and intuitive interface helps users with moving on the page. You can minimize and maxmize sidebar to see the bigger map view.
-> If you decided to share your AlcoTrip with your friends, simply click download button and share!
+> This project purpose is to enable users to find nearby clubs, pubs or bars.
+> Organizing travel for yourself or with friends.
+> Everything by searching via different postcodes using postcode.io, google maps, geolocalization and changing searching distance.
+
 
 ## Technologies Used
   * [HTML](https://en.wikipedia.org/wiki/HTML5) 
