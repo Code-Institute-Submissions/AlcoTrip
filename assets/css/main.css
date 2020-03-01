@@ -592,14 +592,26 @@ footer {
   .sidebar_footer .logotype,
   .sidebar_footer img {
     visibility: hidden;
-    height: 0px; } }
+    display: none; } }
 @media screen and (max-height: 568px) {
   .sidebar,
   .main_sidebar_style {
     max-height: 100%; }
 
+  .marker_style_wide {
+    margin-top: 5px; }
+
+  .collapse_sidebar {
+    margin-top: 20px; }
+
+  .range_options {
+    margin-top: 10px; }
+    .range_options .clearrange_button,
+    .range_options .applyrange_button {
+      margin-top: 10px; }
+
   .sidebar_footer {
     visibility: hidden;
-    height: 0px; } }
+    display: none; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -773,7 +773,7 @@ footer {
         .logotype,
         img {
             visibility: hidden;
-            height: 0px;
+            display: none;
         }
     }
 }
@@ -783,8 +783,21 @@ footer {
     .main_sidebar_style {
         max-height: 100%;
     }
+    .marker_style_wide {
+        margin-top: 5px;
+    }
+    .collapse_sidebar {
+        margin-top: 20px;
+    }
+    .range_options {
+        margin-top: 10px;
+        .clearrange_button,
+        .applyrange_button {
+            margin-top: 10px;
+        }
+    }
     .sidebar_footer {
         visibility: hidden;
-        height: 0px;
+        display: none;
     }
 }
