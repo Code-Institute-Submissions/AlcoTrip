@@ -1,4 +1,4 @@
-/* global $, global Swal, google */
+/* global $, Swal, google */
 /* global, gLat, gLong */
 
 /**
