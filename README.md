@@ -110,7 +110,7 @@ I created wireframes in Balsamiq mockups 3. When I've started to creating the pr
 You can view my wireframes in wireframs folder as a part of the project materials.
 
 
-## Testing
+## Testing I
 Website code was tested by copying link to [Validator](https://validator.w3.org/) - W3C Markup Validation Service.
  - All errors have been checked, reviewed and fixed.
 
@@ -125,7 +125,27 @@ to check responsiveness of the site, pages layout change, how all elements are a
 * Based on all checks I've made changes to make navigation, fields, sliders and page layout more user friendly and easy to use to provide better user experience.
 * During testing the google maps places API, I found out that the icons doesn't really look good where displayed together on the map. I've changed the style of markers and they all have been replaced. To decide which colors they should have I've used [color calculator](https://www.sessions.edu/color-calculator/).
 
-Website responsiveness and element animating also was tested on diferrent browsers such as IE and Safari.
+## Testing II
+
+#### Input box - main page postcode field:
+* <strong>Plan: </strong>The main idea of this project was an input field, which will take user information and then this will be passed as a variable to geolocalization script. Unfrotunately when empty input field has been selected and "enter" key was pressed page start to reload and no information about missing value was show.
+* <strong>Implementation: </strong>Adding jQuert event (key press) as a listener to check if enter key was pressed.
+* <strong>Result: </strong>After adding listener script, page stopped reloading and user informartion has been show.
+* <strong>Verdict: </strong>This test passed based on the expected behaviour.
+
+
+#### Google gelocalization - "Find Me":
+* <strong>Plan: </strong>During creating the project I've decided to create google gelocalization script to get user location by clicking "Find Me" button.
+* <strong>Implementation: </strong> I've changed the wrong written Python script to URI.js, which is a javascript library for working with URLs.
+* <strong>Result: </strong>Correct Lat and Long coordinations passed from Google Geloclaztion API to script and then passed to postcode.io API to get Postcode and validate it.
+* <strong>Verdict: </strong>This test passed based on the expected behaviour.
+
+#### Sidebar responsiveness:
+* <strong>Plan: </strong>To create a fully responsive sidebar working correctly on different devices together with a ma
+* <strong>Implementation: </strong>The use of variables in SASS - CSS preprocessor, which allows you to calculate the map width based on the width of the sidebar. It will also create very good visible effect for user experience.
+* <strong>Result: </strong>Both of these features work as expected.
+* <strong>Verdict:</strong>This test passed based on the expected behaviour.
+
 
 ##### Main page:
 * Clicking on each element including logotype icon to make sure, all elements works and react correctly.
