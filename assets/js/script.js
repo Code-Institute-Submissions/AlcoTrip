@@ -61,15 +61,16 @@ $('#select_all_checkbox').click(function() {
  */
 $(document).on("keypress", "input", function(e) {
     if (e.which == 13) {
-        $("#select_all_checkbox").click();
-        initMap();
+        if ($('input').val() === "") {
+            e.preventDefault();
+            mainPostcodeError();
+        }
+        else {
+            $("#select_all_checkbox").click();
+            initMap();
+        }
     }
 });
-
-$("#myButton").click(function() {
-    alert("Button code executed.");
-});
-
 
 /**
  * On click function - run initMap function
@@ -89,6 +90,7 @@ function notValidPostcode() {
         showConfirmButton: false,
         timer: 2000
     });
+    $(".styled-checkbox").prop("checked", false);
 }
 /**
  * This function will show error message below the postcode input field and scroll to the top

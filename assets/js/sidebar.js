@@ -5,7 +5,7 @@ let browserWidth = $(window).width();
 let browserHeight = $(window).height();
 
 /** 
- * need to be remove 
+ * need to be removed
  */
 console.log(browserHeight);
 console.log(browserWidth);
