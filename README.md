@@ -108,7 +108,7 @@ The second replacing font is <strong>San-Serif</strong>.
 I created wireframes in Balsamiq mockups 3. When I've started to creating the project wireframes have been really simple and show only scetch of the project. While making real project I've changed style and I've added more colors, text and pictures to visualize content of the page and sidebar.
 
 You can view my wireframes in wireframs folder as a part of the project materials.
-
+> Wireframes look is different for tablets. During the testing responsivity of website main page style was not working properly. Because of that the style of input field and find me button has been changed.
 
 ## Testing I
 Website code was tested by copying link to [Validator](https://validator.w3.org/) - W3C Markup Validation Service.
