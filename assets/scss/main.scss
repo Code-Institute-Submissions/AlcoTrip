@@ -761,3 +761,30 @@ footer {
         position: absolute;
     }
 }
+
+/* landscape mode desing below 736px for small devices */
+
+@media screen and (max-height: 736px) {
+    .sidebar_footer {
+        .p-text-light1 {
+            font-size: 1.2rem;
+        }
+        .separate_line2 {}
+        .logotype,
+        img {
+            visibility: hidden;
+            height: 0px;
+        }
+    }
+}
+
+@media screen and (max-height: 568px) {
+    .sidebar,
+    .main_sidebar_style {
+        max-height: 100%;
+    }
+    .sidebar_footer {
+        visibility: hidden;
+        height: 0px;
+    }
+}

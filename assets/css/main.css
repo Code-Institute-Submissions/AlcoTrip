@@ -585,5 +585,21 @@ footer {
 @media screen and (min-height: 1260px) {
   footer {
     position: absolute; } }
+/* landscape mode desing below 736px for small devices */
+@media screen and (max-height: 736px) {
+  .sidebar_footer .p-text-light1 {
+    font-size: 1.2rem; }
+  .sidebar_footer .logotype,
+  .sidebar_footer img {
+    visibility: hidden;
+    height: 0px; } }
+@media screen and (max-height: 568px) {
+  .sidebar,
+  .main_sidebar_style {
+    max-height: 100%; }
+
+  .sidebar_footer {
+    visibility: hidden;
+    height: 0px; } }
 
 /*# sourceMappingURL=main.css.map */
