@@ -4,14 +4,14 @@
 /* main paragraph style */
 .p-text-light1 {
   color: #fff;
-  font-size: 13px;
+  font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 1px; }
 
 /* error message style */
 .message_e {
   color: #fff;
-  font-size: 14px;
+  font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 1px; }
 
@@ -30,7 +30,7 @@
 .hint_s_style, .marker_style_wide .slider_container .range_info_container .range_info, .marker_style_wide .slider_container .range_info_container .range_number, .marker_style_wide .inf_container .your_info, .marker_style_wide .inf_container .postcode_info {
   color: #fff;
   font-family: "Roboto", san-serif;
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.8px; }
 
@@ -352,7 +352,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .marker_style_wide .slider_container .range_info_container .range_info, .marker_style_wide .slider_container .range_info_container .range_number, .marker_style_wide .inf_container .your_info, .marker_style_wide .inf_container .postcode_info {
   display: inline-block;
-  font-size: 14px; }
+  font-size: 1.2rem; }
 
 .marker_style_wide .marker {
   display: inline-block;
@@ -363,7 +363,7 @@ input[type="search"]::-webkit-search-cancel-button {
     display: inline-block;
     color: #fff;
     font-family: "Roboto", san-serif;
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: 0.8px;
     margin: 0 auto;
@@ -394,7 +394,7 @@ input[type="search"]::-webkit-search-cancel-button {
   .marker_style_wide .inf_container .your_info {
     width: 100%;
     margin-left: 10px;
-    font-size: 14px; }
+    font-size: 1.2rem; }
   .marker_style_wide .inf_container .postcode_info {
     width: 100%;
     margin-left: 10px;
@@ -499,7 +499,7 @@ input[type="search"]::-webkit-search-cancel-button {
   display: inline-block;
   color: #fff;
   font-family: "Roboto", san-serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.8px;
   margin: 0 auto;

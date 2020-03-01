@@ -450,7 +450,7 @@ input[type="search"]::-webkit-search-cancel-button {
 %inf_class {
     display: inline-block;
     @extend .hint_s_style;
-    font-size: 14px;
+    font-size: 1.2rem;
 } // MARKERS
 .marker_style_wide {
     @extend %m_little_style1;
@@ -463,7 +463,7 @@ input[type="search"]::-webkit-search-cancel-button {
             display: inline-block;
             color: #fff;
             font-family: "Roboto", san-serif;
-            font-size: 12px;
+            font-size: 1.2rem;
             font-weight: 400;
             letter-spacing: 0.8px;
             margin: 0 auto;
@@ -507,7 +507,7 @@ input[type="search"]::-webkit-search-cancel-button {
             @extend %inf_class;
             width: 100%;
             margin-left: 10px;
-            font-size: 14px;
+            font-size: 1.2rem;
         }
 
         .postcode_info {
@@ -644,7 +644,7 @@ input[type="search"]::-webkit-search-cancel-button {
     display: inline-block;
     color: #fff;
     font-family: "Roboto", san-serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: 0.8px;
     margin: 0 auto;
