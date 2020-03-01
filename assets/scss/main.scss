@@ -394,7 +394,7 @@ input[type="search"]::-webkit-search-cancel-button {
 // ICONS AND CALCULATIONS
 :root {
 
-    --sBar_width: 70px; //70px small to be show first 360 to show the normal sidebar
+    --sBar_width: 60px; //60px small to be show first 320 to show the normal sidebar
     --gMap_width: calc(100% - var(--sBar_width)); // 100% - $sBar_width
 }
 
@@ -417,7 +417,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .collapse_sidebar {
-    width: 50px;
+    width: 45px;
     float: right;
     margin-top: 30px;
     transition-timing-function: ease-in-out;
@@ -439,15 +439,15 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 %m_little_style1 {
-    width: 358px;
+    display: flex;
+    width: 320px;
     height: 60px;
     padding: 0;
     margin-top: 20px;
-    margin-left: 2px;
+    justify-content: space-between;
 }
 
 %inf_class {
-    float: left;
     display: inline-block;
     @extend .hint_s_style;
     font-size: 14px;
@@ -456,8 +456,8 @@ input[type="search"]::-webkit-search-cancel-button {
     @extend %m_little_style1;
     .marker {
         display: inline-block;
-        float: left;
         width: 60px;
+        justify-content: center;
         .marker_name {
             width: 100%;
             display: inline-block;
@@ -473,16 +473,18 @@ input[type="search"]::-webkit-search-cancel-button {
     img {
         display: inline-block;
         width: 24px;
-        margin-left: 18px;
+        margin-left: 16px;
         float: left;
     }
     .slider_container {
-        margin-top: 8px;
-        float: right;
-        width: 280px;
+        margin-top: 5px;
+        .slider_container {
+            margin-top: 8px;
+            width: 240px;
+        }
         .range_info_container {
-            width: 258px;
-            margin-bottom: 30px;
+            width: 250px;
+            margin-bottom: 10px;
             .range_info {
                 @extend %inf_class;
             }
@@ -490,26 +492,28 @@ input[type="search"]::-webkit-search-cancel-button {
                 @extend %inf_class;
                 float: right;
                 color: $secondary-color;
-                .distance_class {}
+                margin-right: 20px;
             }
         }
     }
     .inf_container {
         margin-top: 4px;
         float: right;
-        width: 280px;
+        width: 260px;
         h3 {
             margin: 0 0 4px;
         }
         .your_info {
             @extend %inf_class;
             width: 100%;
+            margin-left: 10px;
             font-size: 14px;
         }
 
         .postcode_info {
             @extend %inf_class;
             width: 100%;
+            margin-left: 10px;
             color: $secondary-color;
         }
     }
@@ -517,7 +521,7 @@ input[type="search"]::-webkit-search-cancel-button {
 } // SLIDERS
 .slider {
     -webkit-appearance: none;
-    max-width: 258px;
+    max-width: 230px;
     height: 5px;
     background: #ffffff;
     outline: none;
@@ -556,12 +560,12 @@ input[type="search"]::-webkit-search-cancel-button {
     margin-top: 20px;
     width: 100%;
     height: 30px;
-    display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 } // APPLY AND RESET BUTTON
 .applyrange_button,
 .clearrange_button {
-    width: 150px;
+    width: 135px;
+    margin-top: 20px;
     box-shadow: 0px 4px 0px #303030;
 }
 
@@ -592,7 +596,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 // FOOTER
 .sidebar_footer {
-    width: 360px;
+    width: 320px;
     text-align: center;
     position: absolute;
     bottom: 0;
@@ -607,7 +611,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .logotype {
-    width: 360px;
+    width: 320px;
     display: block;
     .logo_sidebar {
         width: 100%;
@@ -622,7 +626,7 @@ input[type="search"]::-webkit-search-cancel-button {
 .cross_sidebar {
     position: fixed;
     bottom: 0px;
-    width: 68px;
+    width: 60px;
     height: 70px;
     margin: 0px;
 
@@ -630,7 +634,7 @@ input[type="search"]::-webkit-search-cancel-button {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 30px;
+        width: 25px;
         height: 30px;
     }
 }
@@ -707,7 +711,7 @@ footer {
 
 @media screen and (min-width: 320px) {
     :root {
-        --sBar_width: 70px;
+        --sBar_width: 60px;
         --gMap_width: calc(100% - var(--sBar_width)); // 100% - $sBar_width
     }
 }

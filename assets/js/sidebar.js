@@ -75,7 +75,7 @@ $(".go_back").click(function() {
     let tmpAnimation = 0;
     let element = $("#sidebar_collapse_icon");
     document.documentElement.style
-        .setProperty("--sBar_width", "70px");
+        .setProperty("--sBar_width", "60px");
     $({ degrees: tmpAnimation + 180 }).animate({ degrees: tmpAnimation }, {
         duration: 300,
         step: function(now) {
@@ -90,16 +90,15 @@ $(".go_back").click(function() {
 /**
  * This function will change the size of the sidebar when width point is match
  */
-
-if (browserWidth === 360) {
+if (browserWidth === 320) {
     $("#sidebar_collapse_icon").click(function() {
         let toggle_q = $("#sidebar_blue").width();
         let tmpAnimation = 0;
         let element = $("#sidebar_collapse_icon");
         switch (toggle_q) {
-            case 70:
+            case 60:
                 document.documentElement.style
-                    .setProperty("--sBar_width", "360px");
+                    .setProperty("--sBar_width", "320px");
                 tmpAnimation = tmpAnimation - 180;
                 $({ degrees: tmpAnimation - 180 }).animate({ degrees: tmpAnimation }, {
                     duration: 300,
@@ -111,9 +110,9 @@ if (browserWidth === 360) {
                 });
                 showElements();
                 break;
-            case 360:
+            case 320:
                 document.documentElement.style
-                    .setProperty("--sBar_width", "70px");
+                    .setProperty("--sBar_width", "60px");
                 $({ degrees: tmpAnimation + 180 }).animate({ degrees: tmpAnimation }, {
                     duration: 300,
                     step: function(now) {
@@ -133,7 +132,7 @@ else {
         let tmpAnimation = 0;
         let element = $("#sidebar_collapse_icon");
         switch (toggle_q) {
-            case 70:
+            case 60:
                 document.documentElement.style
                     .setProperty("--sBar_width", "320px");
                 tmpAnimation = tmpAnimation - 180;
@@ -149,7 +148,7 @@ else {
                 break;
             case 320:
                 document.documentElement.style
-                    .setProperty("--sBar_width", "70px");
+                    .setProperty("--sBar_width", "60px");
                 $({ degrees: tmpAnimation + 180 }).animate({ degrees: tmpAnimation }, {
                     duration: 300,
                     step: function(now) {
