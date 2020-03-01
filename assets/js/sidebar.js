@@ -7,8 +7,8 @@ let browserHeight = $(window).height();
 /** 
  * need to be removed
  */
-console.log(browserHeight);
-console.log(browserWidth);
+console.log(browserHeight); // 720px need to be changed whole sidebar style
+
 /**
  * This function is checking the with of the screen and it will resize the sidebar for good proportions
  */
@@ -90,75 +90,37 @@ $(".go_back").click(function() {
 /**
  * This function will change the size of the sidebar when width point is match
  */
-if (browserWidth === 320) {
-    $("#sidebar_collapse_icon").click(function() {
-        let toggle_q = $("#sidebar_blue").width();
-        let tmpAnimation = 0;
-        let element = $("#sidebar_collapse_icon");
-        switch (toggle_q) {
-            case 60:
-                document.documentElement.style
-                    .setProperty("--sBar_width", "320px");
-                tmpAnimation = tmpAnimation - 180;
-                $({ degrees: tmpAnimation - 180 }).animate({ degrees: tmpAnimation }, {
-                    duration: 300,
-                    step: function(now) {
-                        element.css({
-                            transform: "rotate(" + now + "deg)"
-                        });
-                    }
-                });
-                showElements();
-                break;
-            case 320:
-                document.documentElement.style
-                    .setProperty("--sBar_width", "60px");
-                $({ degrees: tmpAnimation + 180 }).animate({ degrees: tmpAnimation }, {
-                    duration: 300,
-                    step: function(now) {
-                        element.css({
-                            transform: "rotate(" + now + "deg)"
-                        });
-                    }
-                });
-                hideElements();
-                break;
-        }
-    });
-}
-else {
-    $("#sidebar_collapse_icon").click(function() {
-        let toggle_q = $("#sidebar_blue").width();
-        let tmpAnimation = 0;
-        let element = $("#sidebar_collapse_icon");
-        switch (toggle_q) {
-            case 60:
-                document.documentElement.style
-                    .setProperty("--sBar_width", "320px");
-                tmpAnimation = tmpAnimation - 180;
-                $({ degrees: tmpAnimation - 180 }).animate({ degrees: tmpAnimation }, {
-                    duration: 300,
-                    step: function(now) {
-                        element.css({
-                            transform: "rotate(" + now + "deg)"
-                        });
-                    }
-                });
-                showElements();
-                break;
-            case 320:
-                document.documentElement.style
-                    .setProperty("--sBar_width", "60px");
-                $({ degrees: tmpAnimation + 180 }).animate({ degrees: tmpAnimation }, {
-                    duration: 300,
-                    step: function(now) {
-                        element.css({
-                            transform: "rotate(" + now + "deg)"
-                        });
-                    }
-                });
-                hideElements();
-                break;
-        }
-    });
-}
+$("#sidebar_collapse_icon").click(function() {
+    let toggle_q = $("#sidebar_blue").width();
+    let tmpAnimation = 0;
+    let element = $("#sidebar_collapse_icon");
+    switch (toggle_q) {
+        case 60:
+            document.documentElement.style
+                .setProperty("--sBar_width", "320px");
+            tmpAnimation = tmpAnimation - 180;
+            $({ degrees: tmpAnimation - 180 }).animate({ degrees: tmpAnimation }, {
+                duration: 300,
+                step: function(now) {
+                    element.css({
+                        transform: "rotate(" + now + "deg)"
+                    });
+                }
+            });
+            showElements();
+            break;
+        case 320:
+            document.documentElement.style
+                .setProperty("--sBar_width", "60px");
+            $({ degrees: tmpAnimation + 180 }).animate({ degrees: tmpAnimation }, {
+                duration: 300,
+                step: function(now) {
+                    element.css({
+                        transform: "rotate(" + now + "deg)"
+                    });
+                }
+            });
+            hideElements();
+            break;
+    }
+});
